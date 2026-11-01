@@ -1,0 +1,99 @@
+# 医学论文项目状态模板
+# 只填有来源的事实；未知保持 unknown / not_checked / needs_confirmation。
+
+schema_version: "1.1"
+# 合同见 references/artifact-contract.md；记录路径相对于验证时明确的 --root。
+
+project:
+  id: ""
+  title: ""
+  manuscript_version: ""
+  study_type: ""
+  current_stage: "not_started"
+  updated_at: ""
+
+research:
+  question: ""
+  design:
+    value: ""
+    status: "unknown"
+    source: ""
+  primary_outcome:
+    value: ""
+    status: "unknown"
+    source: ""
+
+target_journal:
+  name: ""
+  status: "not_selected"
+  requirements_checked_at: ""
+  source: ""
+
+source_status:
+  protocol: "not_checked"
+  registration: "not_checked"
+  ethics: "not_checked"
+  data: "not_checked"
+  statistics: "not_checked"
+  references: "not_checked"
+  authorship: "not_checked"
+
+artifacts: []
+# - id: methods
+#   path: paper/sections/02-methods.md
+#   version: v1
+#   sha256: <原始文件字节SHA256，64位小写十六进制>
+#   status: draft
+
+checks: []
+# - id: evidence-audit-run-001
+#   scope: {domain: evidence_audit, description: 本版方法节论断核查}
+#   inputs:
+#     - artifact_id: methods
+#       version: v1
+#       sha256: <运行时实际输入字节SHA256>
+#   execution_status: not_run  # not_run / blocked / failed / completed
+#   applicability: unknown  # applicable / not_applicable / unknown
+#   applicability_reason: 尚未核对检查适用范围
+#   domain_result: null  # completed时用 {namespace: evidence_audit, value: PARTIAL}
+#   report: null  # completed/failed时必填 {path: ..., sha256: ...}
+#   checked_at: null
+# freshness仅由读取时核验推导，不通过手填current取得有效性。
+
+confirmed_facts: []
+# - field: research.primary_outcome
+#   value: ""
+#   source: protocol.pdf#page=4
+#   confirmed_by_role: corresponding_author
+#   confirmed_at: YYYY-MM-DD
+
+open_items: []
+# - id: OPEN-001
+#   issue: ""
+#   severity: major
+#   needs: ""
+#   owner_role: ""
+#   status: open  # open / in_progress / awaiting_verification / verified_closed
+#   verification_check_id: null  # verified_closed须引用当前适用的已执行检查
+#   evidence: null  # verified_closed须有 {path: ..., sha256: ...}
+
+human_approvals:
+  manuscript_final:
+    state: not_confirmed
+    targets: []
+  submission_package:
+    state: not_confirmed
+    targets: []
+  external_submission:
+    state: not_confirmed
+    targets: []
+# confirmed/declined必填 targets:[{artifact_id, version, sha256}]、role、
+# confirmed_at（带时区）、source:{kind: human, actor_id, statement,
+# reference:{path, sha256}, locator}。实际批准须核对原始人类来源及动作范围。
+# 不保存患者信息，不由校验器填写或批准；布尔值和旧字符串仅为未核实记录。
+
+history: []
+# - date: YYYY-MM-DD
+#   action: ""
+#   artifact_or_field: ""
+#   source: ""

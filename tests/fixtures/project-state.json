@@ -1,0 +1,47 @@
+{
+  "kind": "synthetic_contract_fixture",
+  "notice": "仅供临时目录单元测试。所有批准来源和科学结论均为合成记录，不是真实批准或实测医学结果。__SHA256__标记由测试计算替换，不能直接作为passport使用。",
+  "files": {
+    "paper/results.txt": "synthetic N=236\n",
+    "paper/unrelated.txt": "synthetic unrelated notes\n",
+    "paper/check.json": "{\"synthetic\":true,\"result\":\"consistent\",\"locator\":\"Table 2, row 1\"}\n",
+    "paper/approval.txt": "SYNTHETIC human test fixture, not actual consent. Author-alias-01 confirms only this bound result version for local review. No submission authorization.\n"
+  },
+  "passport": {
+    "schema_version": "1.1",
+    "project": {"id": "synthetic-contract-test"},
+    "artifacts": [
+      {"id": "analysis-results", "path": "paper/results.txt", "version": "v1", "sha256": "__SHA256__:paper/results.txt", "status": "draft"}
+    ],
+    "checks": [
+      {
+        "id": "result-check-001",
+        "scope": {"domain": "result_consistency", "description": "Synthetic exact N comparison only; no scientific assessment"},
+        "inputs": [{"artifact_id": "analysis-results", "version": "v1", "sha256": "__SHA256__:paper/results.txt"}],
+        "execution_status": "completed",
+        "applicability": "applicable",
+        "domain_result": {"namespace": "result_consistency", "value": "consistent"},
+        "report": {"path": "paper/check.json", "sha256": "__SHA256__:paper/check.json"},
+        "checked_at": "2026-10-31T12:00:00+00:00"
+      }
+    ],
+    "human_approvals": {
+      "local_review": {
+        "state": "confirmed",
+        "targets": [{"artifact_id": "analysis-results", "version": "v1", "sha256": "__SHA256__:paper/results.txt"}],
+        "role": "corresponding_author",
+        "confirmed_at": "2026-10-31T12:10:00+00:00",
+        "source": {
+          "kind": "human",
+          "actor_id": "synthetic-author-alias-01",
+          "statement": "合成记录：仅同意该版本本地审阅，不授权外传或提交",
+          "locator": "synthetic-message-001",
+          "reference": {"path": "paper/approval.txt", "sha256": "__SHA256__:paper/approval.txt"}
+        }
+      }
+    },
+    "open_items": [],
+    "history": [{"action": "synthetic-only", "custom_history_payload": {"keep": true}}],
+    "custom_extension": {"must_remain": ["unchanged", 7]}
+  }
+}

@@ -1,0 +1,72 @@
+# cross-reference-map.yaml — 默认骨架
+#
+# SKILL.md Phase 2.5（Cross-Reference Validation）引用的交叉核对表。
+# 用途：当某个报告规范条目被标记为 COVERED 时，据此查找与该条目相关联的风险清单条目 / GRADE 证据分级
+# 维度 / 偏倚评估工具，做一次一致性核对（例如"条目已标记COVERED，但对应的风险项仍是hard_block/待处理"
+# 这种矛盾）。
+#
+# 本文件是默认骨架，示例条目ID使用 PRISMA 2020 的真实条目编号作为框架演示，具体"关联条目"内容需要
+# 使用者根据自己项目实际存在的风险清单、GRADE 表和偏倚评估工具记录去补充，
+# 不代表任何真实项目的实际核对结果。
+#
+# 结构：
+#   <checklist_item_id>:
+#     guideline: 该条目所属的报告规范
+#     risk_items: [与此条目相关联的项目风险条目 ID 列表]
+#     grade_domain: 若涉及证据分级，对应的GRADE维度名称（可为空）
+#     bias_tool: 若涉及偏倚评估，应使用的工具名称（可为空）
+#     notes: 关联关系的简短说明
+
+# --- 示例：PRISMA 2020 条目框架（仅作为骨架演示，非某个具体项目的真实核对结果）---
+
+PRISMA-2020.item_7:          # Item 7: Search strategy 检索策略
+  guideline: PRISMA 2020
+  risk_items: [SEARCH-001]   # 示例风险项ID：检索策略是否可重复
+  grade_domain: null
+  bias_tool: null
+  notes: "检索式若不可重复或缺关键数据库，应与风险清单中的检索完整性项联动核查"
+
+PRISMA-2020.item_8:          # Item 8: Selection process 文献筛选过程
+  guideline: PRISMA 2020
+  risk_items: [SCREEN-001]
+  grade_domain: null
+  bias_tool: null
+  notes: "筛选流程（双人独立筛选/一致性核查）与筛选记录的完整性关联"
+
+PRISMA-2020.item_11:         # Item 11: Risk of bias assessment 偏倚风险评估方法
+  guideline: PRISMA 2020
+  risk_items: [BIAS-001]
+  grade_domain: "risk_of_bias"
+  bias_tool: "RoB 2.0 / ROBINS-I（按纳入研究设计类型选择）"
+  notes: "若条目标记COVERED但实际未见对应偏倚评估工具的应用记录，应标记CONFLICT"
+
+PRISMA-2020.item_15:         # Item 15: Certainty assessment 证据确定性评估
+  guideline: PRISMA 2020
+  risk_items: []
+  grade_domain: "overall_certainty"
+  bias_tool: null
+  notes: "对应GRADE证据分级表是否已完成"
+
+# --- 示例：CONSORT 2010 条目框架 ---
+
+CONSORT-2010.item_11a:       # Item 11a: Blinding 盲法
+  guideline: CONSORT 2010
+  risk_items: [BLIND-001]
+  grade_domain: null
+  bias_tool: "RoB 2.0（盲法相关domain）"
+  notes: "若开放标签试验，此条目通常为NOT APPLICABLE，需在风险清单中同步标注，避免被误判为MISSING"
+
+CONSORT-2010.item_17a:       # Item 17a: Outcomes and estimation 结局与效应量估计
+  guideline: CONSORT 2010
+  risk_items: [RESULT-002]
+  grade_domain: null
+  bias_tool: null
+  notes: "效应量与置信区间是否完整报告，与结果一致性风险项联动"
+
+# --- 使用说明 ---
+# 1. 本文件按"条目ID: {guideline, risk_items, grade_domain, bias_tool, notes}"的结构组织，可以按需要
+#    覆盖的报告规范（STROBE/STARD/CARE/TRIPOD/ARRIVE/SPIRIT/MOOSE）继续补充对应条目。
+# 2. risk_items 列表中的 ID 应与项目实际存在的风险清单条目保持一致；本骨架中的
+#    SEARCH-001/SCREEN-001/BIAS-001/BLIND-001/RESULT-002 仅为示例占位ID，不代表已存在的固定清单。
+# 3. 不要在此文件中编造具体项目的检索式、具体研究的偏倚评估结论——这些属于项目专属数据，应由使用者
+#    在实际项目中补充。

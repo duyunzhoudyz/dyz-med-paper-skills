@@ -1,0 +1,161 @@
+# CONSORT 2010 Checklist — 历史版本快照
+# 来源：Schulz KF, Altman DG, Moher D; CONSORT Group. CONSORT 2010 Statement:
+#   updated guidelines for reporting parallel group randomised trials. BMJ 2010.
+# 用途：仅供旧稿追溯或历史对照。CONSORT 2025 已取代 CONSORT 2010；
+#       当前随机试验报告不得把本文件当作默认核对表。
+
+guideline: CONSORT 2010 (legacy)
+applies_to: 平行组随机对照试验（其他RCT设计需结合对应扩展版本，如整群随机、非劣效性试验等）
+
+items:
+  - section: 标题与摘要
+    item_no: "1a"
+    title: "标明为随机试验（标题中）"
+    required: true
+  - item_no: "1b"
+    title: "结构式摘要（试验设计、方法、结果、结论）"
+    required: true
+
+  - section: 引言
+    item_no: "2a"
+    title: "科学背景与理论基础说明"
+    required: true
+  - item_no: "2b"
+    title: "具体目的或假设"
+    required: true
+
+  - section: 方法-试验设计
+    item_no: "3a"
+    title: "描述试验设计（如平行组、析因），含分配比例"
+    required: true
+  - item_no: "3b"
+    title: "试验开始后方法学的重要变更（如纳入标准），及原因"
+    required: false
+
+  - section: 方法-受试者
+    item_no: "4a"
+    title: "受试者纳入标准"
+    required: true
+  - item_no: "4b"
+    title: "数据收集的场所与地点"
+    required: true
+
+  - section: 方法-干预
+    item_no: "5"
+    title: "对每组干预措施的详细描述，包括如何、何时实施，以便可重复"
+    required: true
+
+  - section: 方法-结局
+    item_no: "6a"
+    title: "预先设定的主要与次要结局指标，含如何及何时评估"
+    required: true
+  - item_no: "6b"
+    title: "试验开始后结局指标的变更及原因"
+    required: false
+
+  - section: 方法-样本量
+    item_no: "7a"
+    title: "样本量如何确定"
+    required: true
+  - item_no: "7b"
+    title: "必要时说明期中分析和终止原则"
+    required: false
+
+  - section: 方法-随机化
+    item_no: "8a"
+    title: "生成随机分配序列的方法"
+    required: true
+  - item_no: "8b"
+    title: "随机化类型，任何限制的细节（如区组、区组大小）"
+    required: true
+  - item_no: "9"
+    title: "分配隐藏机制，实施随机前的步骤说明"
+    required: true
+  - item_no: "10"
+    title: "谁生成序列、谁招募受试者、谁分配受试者到干预组"
+    required: true
+
+  - section: 方法-盲法
+    item_no: "11a"
+    title: "设盲对象（受试者/实施者/结局评估者）及如何实现"
+    required: true
+  - item_no: "11b"
+    title: "若相关，描述干预措施间的相似性"
+    required: false
+
+  - section: 方法-统计方法
+    item_no: "12a"
+    title: "用于比较组间主要与次要结局的统计方法"
+    required: true
+  - item_no: "12b"
+    title: "亚组分析和校正分析等附加分析方法"
+    required: false
+
+  - section: 结果-受试者流程
+    item_no: "13a"
+    title: "各组随机分配、接受干预、纳入主要结局分析的人数（建议用流程图）"
+    required: true
+  - item_no: "13b"
+    title: "各组随机化后失访和排除情况及原因"
+    required: true
+
+  - section: 结果-招募
+    item_no: "14a"
+    title: "招募和随访的时间周期"
+    required: true
+  - item_no: "14b"
+    title: "试验为何终止或停止"
+    required: false
+
+  - section: 结果-基线数据
+    item_no: "15"
+    title: "各组基线人口学和临床特征表"
+    required: true
+
+  - section: 结果-纳入分析数
+    item_no: "16"
+    title: "各组纳入每项分析的人数，是否按最初分组分析（ITT）"
+    required: true
+
+  - section: 结果-结局与估计
+    item_no: "17a"
+    title: "各组每个主要和次要结局的结果，效应量估计及精度（如95%CI）"
+    required: true
+  - item_no: "17b"
+    title: "二分类结局，建议同时提供绝对和相对效应量"
+    required: false
+
+  - item_no: "18"
+    title: "其他已开展分析结果，包括亚组分析和校正分析，区分预设与探索性分析"
+    required: true
+
+  - item_no: "19"
+    title: "各组重要不良事件或非预期效应"
+    required: true
+
+  - section: 讨论
+    item_no: "20"
+    title: "试验局限性，潜在偏倚来源、不精确性，以及多重分析（如有）"
+    required: true
+  - item_no: "21"
+    title: "可推广性（外部有效性、适用性）"
+    required: true
+  - item_no: "22"
+    title: "结果解释，需与获益和风险平衡、结合其他相关证据"
+    required: true
+
+  - section: 其他信息
+    item_no: "23"
+    title: "试验注册号和注册机构名称"
+    required: true
+  - item_no: "24"
+    title: "完整试验方案的获取方式（如可能）"
+    required: false
+  - item_no: "25"
+    title: "资助来源和其他支持，资助者的角色"
+    required: true
+
+project_tracking:
+  # 项目实际使用时，为每一条目填写以下字段
+  status_legend: "addressed / partial / missing / not_applicable"
+  note: "本骨架仅提供条目结构，具体项目的填写状态需在使用时逐条补充，不在本模板中预先填写。"

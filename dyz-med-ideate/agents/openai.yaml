@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学研究选题"
+  short_description: "从临床问题出发形成可检验的研究问题、证据缺口与可行性判断"
+  default_prompt: "Use $dyz-med-ideate 根据我的临床问题形成可检验的研究问题，并标出证据缺口和可行性风险。"

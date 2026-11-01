@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 系统综述筛选流程"
+  short_description: "为系统综述建立可追溯的去重、筛选、排除与纳入流程记录"
+  default_prompt: "Use $dyz-med-screening-pipeline 为这项系统综述建立可追溯的文献筛选流程。"

@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文论证与写作计划"
+  short_description: "把研究问题、结果和证据整理成全文论证地图与段落写作计划"
+  default_prompt: "Use $dyz-med-writing-plan 为这篇医学论文建立论证地图和分节写作计划。"

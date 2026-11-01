@@ -1,0 +1,119 @@
+# stats-guide.yaml
+# dyz-med-methods 数据文件：常见统计方法的标准报告句式参考库
+#
+# 用途：SKILL.md Phase 6（统计方法描述）从本文件取用标准句式，与 Phase 3 收集到的混杂因素调整集
+# 合并，生成方法部分"统计分析"小节的文字。本文件是一份合理默认版本，覆盖医学论文中最常见的几类
+# 统计方法；遇到本文件未覆盖的方法（如竞争风险模型、多重插补、贝叶斯方法等），按同样的句式结构
+# 手动扩展即可，不需要等待本文件更新。
+#
+# 使用建议：句式模板中的方括号 [ ] 为需要替换的具体内容占位符，不是可以直接照抄的成品句子；
+# 生成正文时应结合实际研究的变量名、显著性水平、软件版本填入，并保持过去时、主动语态。
+
+version: 1.0.0
+notes: >
+  本文件提供的是"标准报告句式"参考，不是统计方法选择建议——是否适用某种检验/模型，
+  仍由用户结合研究设计和数据分布自行判断，本技能不替用户做方法学选择。
+  以下诊断按实际模型、研究问题及推断用途选择，不是每个模型必做的统一清单。
+  每项实际评估应有观察结果及输出/图定位、适用假设与局限、证据不足或发现问题时的获批处置。
+  单个非显著诊断P值不能证明假设成立；未取得资料标为unverified，不能据此认定模型无效或自动换模型。
+
+methods:
+
+  - id: independent_t_test
+    name: 独立样本t检验 (Independent-samples t-test)
+    use_case: 比较两个独立组的连续变量均值，数据近似正态分布
+    assumptions_to_report:
+      - 正态性检验方法（如Shapiro-Wilk）及结果，或大样本时的近似正态假设说明
+      - 方差齐性检验（如Levene's test），并说明是否使用Welch校正
+    sentence_templates:
+      - "Continuous variables were compared between [组名A] and [组名B] using the independent-samples t-test after confirming normality with [检验方法]."
+      - "Given unequal variances (Levene's test, P = [数值]), Welch's t-test was used to compare [变量名] between groups."
+    reporting_checklist:
+      - 报告均值±标准差或均值(95%CI)
+      - 报告检验统计量t值、自由度、P值
+      - 说明是双侧检验还是单侧检验及显著性水平
+
+  - id: chi_square_test
+    name: 卡方检验 (Chi-square test / Fisher's exact test)
+    use_case: 比较分类变量在两组或多组间的分布
+    assumptions_to_report:
+      - 期望频数是否满足卡方检验假设（通常要求期望频数≥5的格子比例）
+      - 期望频数不满足时改用Fisher精确检验的说明
+    sentence_templates:
+      - "Categorical variables were compared using the chi-square test, or Fisher's exact test when expected cell counts were less than 5."
+      - "The association between [变量A] and [变量B] was assessed using the chi-square test (χ² = [数值], df = [数值], P = [数值])."
+    reporting_checklist:
+      - 报告各组频数和百分比
+      - 报告χ²值、自由度、P值（或Fisher精确检验的P值）
+
+  - id: logistic_regression
+    name: Logistic回归 (Logistic regression)
+    use_case: 结局为二分类变量，估计暴露/因素与结局的关联（OR）
+    assumptions_to_report:
+      - 自变量间多重共线性检查（如VIF）
+      - 模型拟合优度（如Hosmer-Lemeshow检验）
+      - 线性假设（连续自变量与logit的线性关系，如适用）
+    sentence_templates:
+      - "Multivariable logistic regression was used to identify factors associated with [结局名称]. The model was adjusted for [协变量清单，附纳入理由]."
+      - "Results are presented as adjusted odds ratios (aOR) with 95% confidence intervals. Model fit was assessed using the Hosmer-Lemeshow test (P = [数值])."
+    reporting_checklist:
+      - 报告OR/aOR及95%CI
+      - 报告调整协变量清单及每个协变量的纳入理由（与Phase 3混杂因素说明合并）
+      - 报告模型拟合优度或区分度指标（如AUC/C-statistic），如适用
+
+  - id: cox_regression
+    name: Cox比例风险回归 (Cox proportional hazards regression)
+    use_case: 时间-事件结局（生存分析），估计风险比（HR）
+    assumptions_to_report:
+      - 比例风险评估的范围（全局/相关协变量）、适用方法、实际观察及输出/图定位；若使用Schoenfeld残差检验与图形，保留两者结果及不一致
+      - 删失（censoring）的定义、处理方式及所需假设与局限
+    sentence_templates:
+      - "The association between [暴露/因素] and [时间-事件结局] was assessed using multivariable Cox proportional hazards regression, adjusted for [协变量清单，附纳入理由]."
+      - "The proportional hazards assumption was assessed for [评估范围] using [实际方法]. The assessment showed [实际观察；如有检验，报告统计量/P值及输出或图定位], with [适用假设、局限或不一致]. [如需处置，说明已获批且实际执行的方案及记录位置]."
+      - "Participants were censored at [删失定义，如末次随访/研究结束/失访日期]."
+    reporting_checklist:
+      - 报告HR及95%CI
+      - 报告适用的比例风险评估证据及局限，不能仅凭P值写成假设成立；资料缺失保留unverified
+      - 发现不一致或非比例风险时记录解释及获批处置；不得自动切换模型
+      - 明确说明删失定义与随访起止时间点
+      - 报告调整协变量清单及纳入理由
+
+  - id: linear_regression
+    name: 线性回归 (Linear regression)
+    use_case: 结局为连续变量，估计暴露/因素与结局的线性关联
+    assumptions_to_report:
+      - 残差正态性、方差齐性（同方差性）、线性关系的检查方法
+      - 多重共线性检查（如VIF）
+    sentence_templates:
+      - "Multivariable linear regression was used to examine the association between [自变量] and [连续结局], adjusted for [协变量清单，附纳入理由]."
+      - "Model assumptions (linearity, homoscedasticity, normality of residuals) were assessed using [具体方法，如残差图/Q-Q图]."
+    reporting_checklist:
+      - 报告回归系数β及95%CI
+      - 报告调整后R²或模型解释力指标，如适用
+      - 报告调整协变量清单及纳入理由
+
+  - id: kaplan_meier
+    name: Kaplan-Meier生存曲线与Log-rank检验
+    use_case: 描述性展示组间生存/无事件率差异，非调整分析
+    sentence_templates:
+      - "Survival curves were estimated using the Kaplan-Meier method and compared between groups using the log-rank test."
+    reporting_checklist:
+      - 报告各组中位生存时间（如可估计）及95%CI
+      - 说明Log-rank检验P值
+      - 注明该分析未调整混杂因素，调整后关联需参见Cox回归结果
+
+  - id: general_significance_threshold
+    name: 显著性水平与多重比较说明（通用）
+    sentence_templates:
+      - "A two-sided P value < [数值，通常0.05] was considered statistically significant."
+      - "Given the number of comparisons performed, a Bonferroni-corrected threshold of P < [数值] was applied to [具体比较]."
+    reporting_checklist:
+      - 明确显著性水平（通常双侧0.05，如非0.05需说明理由）
+      - 如涉及多重比较，说明校正方法（Bonferroni/FDR等）或说明未校正的理由
+
+  - id: software_statement
+    name: 统计软件声明（通用，必需）
+    sentence_templates:
+      - "All statistical analyses were performed using [软件名称] version [版本号] ([开发者/机构])."
+    reporting_checklist:
+      - 软件名称、版本号缺一不可，不能写"统计软件"这类模糊表述

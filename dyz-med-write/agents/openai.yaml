@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文一次性统稿"
+  short_description: "按明确请求一次性整合全文或修复医学稿件跨节一致性问题"
+  default_prompt: "Use $dyz-med-write 把现有医学论文各节整合成一致的完整稿件。"

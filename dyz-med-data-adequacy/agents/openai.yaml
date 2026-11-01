@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学数据充分性评估"
+  short_description: "评估现有医学数据能否回答研究问题，并列出缺口与下一步建议"
+  default_prompt: "Use $dyz-med-data-adequacy 评估这批数据能否回答研究问题，并列出关键缺口。"

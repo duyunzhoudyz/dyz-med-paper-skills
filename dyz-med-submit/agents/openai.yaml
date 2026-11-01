@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学投稿包准备"
+  short_description: "按当前期刊要求生成可审阅的本地医学投稿材料包与检查清单"
+  default_prompt: "Use $dyz-med-submit 按目标期刊当前要求准备本地投稿材料包。"

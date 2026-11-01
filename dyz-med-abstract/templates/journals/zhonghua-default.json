@@ -1,0 +1,36 @@
+{
+  "journal": "中华医学会系列期刊（默认配置）",
+  "note": "基于中华医学会系列期刊公开的通用摘要撰写惯例整理的默认配置，供内部写作参考。具体期刊（如《中华内科杂志》《中华外科杂志》等）可能有细微差异，正式投稿前请以该刊当期《稿约》为准。",
+  "abstract": {
+    "sections_zh": ["目的", "方法", "结果", "结论"],
+    "sections_en": ["Objective", "Methods", "Results", "Conclusion"],
+    "bilingual_required": true,
+    "word_limit_zh_chars": 300,
+    "word_limit_en_words": 300,
+    "counting_rules": {
+      "zh": {
+        "unit": "汉字字符数",
+        "method": "逐字计数中文汉字，不含标点符号、空格、阿拉伯数字与英文字母（数字和字母单独按字符计但一般不计入'字'的口径，统计时以中华医学会惯例的汉字计数为准）",
+        "excludes": ["标点符号", "空格", "标题", "关键词"]
+      },
+      "en": {
+        "unit": "word",
+        "method": "space-delimited tokens containing at least one letter",
+        "excludes": ["title", "keywords"]
+      }
+    },
+    "trimming_priority_zh": [
+      "第一步：删除'目的'中的背景铺垫，只保留一句话研究目的",
+      "第二步：删除'方法'中的次要方法学细节（如非主要的亚组分析描述、量表全称重复），保留研究设计、对象、主要结局定义、关键统计方法",
+      "第三步：'结果'中保留主要结局的具体数值（效应量+95%置信区间或P值），此项不删；可删除次要结局或仅保留最重要的1个次要结局",
+      "第四步：'结论'精简为一句话直接回答研究目的，避免重复方法或结果已出现的内容",
+      "如果按以上顺序裁剪后仍超字数，提示用户主要结局数值可能需要精简表达方式（如改用更简洁的统计量呈现），而不是删除该数值本身"
+    ],
+    "keywords": {
+      "min": 3,
+      "max": 10,
+      "source": "CMeSH",
+      "source_file": "data/term-store.yaml"
+    }
+  }
+}

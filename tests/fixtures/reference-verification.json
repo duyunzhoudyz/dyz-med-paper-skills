@@ -1,0 +1,33 @@
+{
+  "description": "虚构题录和固定API形状响应，仅用于离线测试，不是实际检索或真实同意。",
+  "references": {
+    "schema_version": "1.0",
+    "references": [
+      {"id":"synthetic-crossref","doi":"10.5555/synthetic.1","title":"Synthetic cohort study: methods and results","year":"2020","first_author":"Example","journal":"Synthetic Journal"},
+      {"id":"synthetic-pubmed","pmid":"12345678","doi":"10.5555/synthetic.2","title":"A synthetic randomized trial","year":"2021","first_author":"Sample AB","journal":"Demonstration Medicine"}
+    ]
+  },
+  "responses": {
+    "schema_version": "1.0",
+    "responses": [
+      {
+        "provider":"crossref","identifier":"10.5555/synthetic.1",
+        "attempts":[{"status":200,"body":{"status":"ok","message-type":"work","message":{"DOI":"10.5555/synthetic.1","title":["Synthetic cohort study: methods and results."],"published":{"date-parts":[[2020,2,1]]},"author":[{"family":"Example","given":"A"}],"container-title":["Synthetic Journal"]}}}]
+      },
+      {
+        "provider":"pubmed","identifier":"12345678",
+        "attempts":[{"status":200,"body":{"header":{"type":"esummary","version":"0.3"},"result":{"uids":["12345678"],"12345678":{"uid":"12345678","title":"A synthetic randomized trial.","pubdate":"2021 May","authors":[{"name":"Sample AB","authtype":"Author"}],"fulljournalname":"Demonstration Medicine","articleids":[{"idtype":"doi","value":"10.5555/synthetic.2"},{"idtype":"pubmed","value":"12345678"}]}}}}]
+      }
+    ]
+  },
+  "failure_cases": [
+    {"name":"not_found","attempts":[{"status":404,"error":"http_error"}],"expected_attempts":1},
+    {"name":"rate_limited","attempts":[{"status":429,"error":"http_error"}],"expected_attempts":1},
+    {"name":"redirect","attempts":[{"status":302,"error":"http_error"}],"expected_attempts":1},
+    {"name":"timeout","attempts":[{"status":null,"error":"timeout"}],"expected_attempts":2},
+    {"name":"server_error","attempts":[{"status":503,"error":"http_error"}],"expected_attempts":2},
+    {"name":"malformed_response","attempts":[{"status":200,"body":[]}],"expected_attempts":1},
+    {"name":"empty_result","attempts":[{"status":200,"body":{"message":{}}}],"expected_attempts":1},
+    {"name":"invalid_json","attempts":[{"status":200,"error":"invalid_json"}],"expected_attempts":1}
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "fixture_type": "synthetic_only",
+  "description": "Invented normalized screening rows; no real literature or patient data.",
+  "base": {
+    "schema_version": "1.0",
+    "protocol_version": "synthetic-protocol-v1",
+    "exclusion_reasons": ["wrong_population", "wrong_design"],
+    "records": [
+      {"record_id": "r1", "source_id": "synthetic-db", "source_record_id": "raw1", "source_type": "database", "pre_screen_decision": "retain", "decision": "include", "decision_source": "synthetic-human-event-1"}
+    ],
+    "reports": [
+      {"report_id": "p1", "source_id": "synthetic-reports", "source_report_id": "report1", "branch": "database_register", "retrieval_status": "retrieved", "decision": "include", "decision_source": "synthetic-human-event-2"},
+      {"report_id": "p2", "source_id": "synthetic-reports", "source_report_id": "report2", "branch": "database_register", "retrieval_status": "retrieved", "decision": "include", "decision_source": "synthetic-human-event-3"}
+    ],
+    "studies": [{"study_id": "s1", "basis": "synthetic-study-link-reviewed"}],
+    "record_reports": [
+      {"record_id": "r1", "report_id": "p1", "basis": "synthetic-reviewed-mapping-1"},
+      {"record_id": "r1", "report_id": "p2", "basis": "synthetic-reviewed-mapping-2"}
+    ],
+    "report_studies": [
+      {"report_id": "p1", "study_id": "s1", "basis": "synthetic-reviewed-study-link-1"},
+      {"report_id": "p2", "study_id": "s1", "basis": "synthetic-reviewed-study-link-2"}
+    ]
+  },
+  "cases": [
+    {"id": "one-study-two-reports", "changes": [], "status": "reconciled", "counts": {"included.studies": 1, "included.reports": 2, "database_register.records_advanced": 1, "database_register.reports_sought": 2}},
+    {"id": "direct-other-method", "changes": [
+      {"path": ["records"], "value": []},
+      {"path": ["record_reports"], "value": []},
+      {"path": ["reports", 0, "branch"], "value": "other_direct"},
+      {"path": ["reports", 1, "branch"], "value": "other_direct"}
+    ], "status": "reconciled", "counts": {"other_direct.reports_sought": 2, "database_register.records_identified": 0, "database_register.reports_sought": 0, "included.studies": 1, "included.reports": 2}},
+    {"id": "not-retrieved-is-not-excluded", "changes": [
+      {"path": ["reports", 1, "retrieval_status"], "value": "not_retrieved"},
+      {"path": ["reports", 1, "decision"], "value": "not_applicable"}
+    ], "status": "reconciled", "counts": {"database_register.reports_not_retrieved": 1, "database_register.reports_excluded": 0, "database_register.reports_assessed": 1, "included.reports": 1}},
+    {"id": "full-text-exclusion", "changes": [
+      {"path": ["reports", 1, "decision"], "value": "exclude"},
+      {"path": ["reports", 1, "primary_exclusion_reason"], "value": "wrong_design"}
+    ], "status": "reconciled", "counts": {"database_register.reports_excluded": 1, "included.reports": 1}},
+    {"id": "unresolved-record", "changes": [
+      {"path": ["records", 0, "decision"], "value": "uncertain"}
+    ], "status": "unverified", "issue_code": "screening_unresolved", "counts": {"database_register.records_unresolved": 1, "database_register.records_excluded": 0}},
+    {"id": "conflicting-reviewers", "changes": [
+      {"path": ["reports", 1, "decision"], "value": "conflict"}
+    ], "status": "unverified", "issue_code": "eligibility_unresolved", "counts": {"database_register.reports_unresolved": 1, "included.reports": 1}},
+    {"id": "missing-study-mapping", "changes": [
+      {"path": ["report_studies"], "value": []}
+    ], "status": "unverified", "issue_code": "missing_study_mapping", "counts": {"included.studies": 0, "included.reports": 2}},
+    {"id": "missing-report-mapping", "changes": [
+      {"path": ["record_reports"], "value": []}
+    ], "status": "unverified", "issue_code": "missing_report_mapping"},
+    {"id": "unknown-decision", "changes": [
+      {"path": ["records", 0, "decision"], "value": "maybe"}
+    ], "status": "invalid", "issue_code": "unknown_decision"},
+    {"id": "not-retrieved-excluded-conflict", "changes": [
+      {"path": ["reports", 1, "retrieval_status"], "value": "not_retrieved"},
+      {"path": ["reports", 1, "decision"], "value": "exclude"},
+      {"path": ["reports", 1, "primary_exclusion_reason"], "value": "wrong_design"}
+    ], "status": "invalid", "issue_code": "conflicting_decision"},
+    {"id": "duplicate-report-id", "changes": [
+      {"path": ["reports", 1, "report_id"], "value": "p1"}
+    ], "status": "invalid", "issue_code": "duplicate_id"},
+    {"id": "unknown-mapping-id", "changes": [
+      {"path": ["record_reports", 1, "report_id"], "value": "missing-report"}
+    ], "status": "invalid", "issue_code": "unknown_mapping_id"},
+    {"id": "direct-report-cross-branch-conflict", "changes": [
+      {"path": ["reports", 1, "branch"], "value": "other_direct"}
+    ], "status": "invalid", "issue_code": "branch_conflict"},
+    {"id": "manual-count-discrepancy", "changes": [
+      {"path": ["expected_counts"], "value": {"included.studies": 2}}
+    ], "status": "discrepancy", "counts": {"included.studies": 1, "included.reports": 2}},
+    {"id": "pending-retrieval", "changes": [
+      {"path": ["reports", 1, "retrieval_status"], "value": "pending"},
+      {"path": ["reports", 1, "decision"], "value": "not_applicable"}
+    ], "status": "unverified", "counts": {"database_register.reports_retrieval_pending": 1, "database_register.reports_not_retrieved": 0}},
+    {"id": "retrieved-not-assessed", "changes": [
+      {"path": ["reports", 1, "decision"], "value": "pending"}
+    ], "status": "unverified", "counts": {"database_register.reports_awaiting_assessment": 1, "database_register.reports_assessed": 1}},
+    {"id": "other-record-screening", "changes": [
+      {"path": ["records", 0, "source_type"], "value": "other_record"},
+      {"path": ["reports", 0, "branch"], "value": "other_record"},
+      {"path": ["reports", 1, "branch"], "value": "other_record"}
+    ], "status": "reconciled", "counts": {"other_record.records_screened": 1, "other_record.reports_sought": 2, "database_register.records_screened": 0}},
+    {"id": "excluded-record-cannot-link-report", "changes": [
+      {"path": ["records", 0, "decision"], "value": "exclude"}
+    ], "status": "invalid", "issue_code": "conflicting_mapping"}
+  ]
+}

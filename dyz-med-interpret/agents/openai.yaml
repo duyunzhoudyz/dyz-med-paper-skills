@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学结果临床解读"
+  short_description: "区分统计显著性与临床重要性，给出有边界的医学结果解释"
+  default_prompt: "Use $dyz-med-interpret 解读这些统计结果的临床意义与不确定性。"

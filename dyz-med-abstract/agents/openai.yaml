@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文标题与摘要"
+  short_description: "从完整正文生成符合当前期刊要求的标题、摘要与关键词"
+  default_prompt: "Use $dyz-med-abstract 从完整正文生成并核对标题、摘要和关键词。"

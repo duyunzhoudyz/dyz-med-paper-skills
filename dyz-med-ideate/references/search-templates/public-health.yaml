@@ -1,0 +1,22 @@
+# 公共卫生领域检索式骨架（默认模板，非可直接使用的检索式）
+#
+# 用途：为公共卫生相关主题（疫苗有效性、空气污染、生活方式干预、社会决定因素、筛查项目等）提供检索式
+# 结构起点。占位符需按实际研究主题替换。
+
+domain: public_health
+common_subtopics:
+  - vaccine_effectiveness
+  - air_pollution
+  - lifestyle_interventions
+  - social_determinants_of_health
+  - screening_programs
+
+query_skeleton:
+  subtopic: "<从上面common_subtopics中选择，或填写实际子主题>"
+  mesh_candidates: []   # 检索前用可用的 PubMed/MeSH 工具生成
+  free_text_terms: []
+  boolean_structure: >
+    (population/exposure terms) AND (intervention/program terms) AND (outcome terms)
+    AND (study design filter)
+  notes: "实际检索式需在执行 PubMed 检索后回填到 references/search-protocol.yaml，此文件
+    只提供结构参考。"

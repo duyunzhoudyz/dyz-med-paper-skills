@@ -1,0 +1,37 @@
+# 资产核对记录（Asset Reconciliation）
+# 路径：paper/runtime/asset-reconciliation.yaml（由 dyz-med-init Phase 4.5 生成）
+# 用途：当用户同时提供叙述性大纲/摘要 和 真实数据文件时，逐条核对大纲声称的关键数字
+#       （样本量、分组人数、主要结局计数/比率、关键基线描述）与数据文件计算出的实际值是否一致。
+# 原则：以数据文件计算结果为准，不能直接照抄大纲里的数字；必须声明哪一个数据源是权威来源。
+
+authoritative_source:
+  file: ""            # 例如: "raw-data/主数据表.xlsx" 的具体 sheet 名称
+  sheet: ""
+  declared_by: ""      # 谁确认这是权威来源（用户/研究者本人）
+  declared_on: ""       # 确认日期
+
+orphan_or_redundant_sheets:
+  - file: ""
+    reason: ""          # 例如: "与主数据表重复，字段口径不一致，已被排除"
+
+claims:
+  - claim_id: "CLAIM-001"
+    description: ""      # 例如: "总样本量为850例"
+    claimed_value: ""    # 大纲/摘要中声称的值
+    actual_value: ""     # 用 pandas 等工具从权威数据源计算得到的实际值
+    status: ""           # match / mismatch / unverified
+    severity: ""         # HIGH / MEDIUM / LOW
+    resolution: ""        # 如果是 mismatch：更正数字 / 采用数据为准 / 记为已知局限
+
+  - claim_id: "CLAIM-002"
+    description: ""
+    claimed_value: ""
+    actual_value: ""
+    status: ""
+    severity: ""
+    resolution: ""
+
+summary:
+  total_claims: 0
+  high_mismatch_unresolved: 0   # 若 > 0，建议在解决前不要基于该数字继续撰写正文
+  notes: ""

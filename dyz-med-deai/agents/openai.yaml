@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文语言自然化"
+  short_description: "改善医学论文机械化文风，同时保留事实、证据与披露责任边界"
+  default_prompt: "Use $dyz-med-deai 在不改变医学事实和披露的前提下自然化这段文字。"

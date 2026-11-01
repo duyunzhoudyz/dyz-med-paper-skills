@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文写作项目初始化"
+  short_description: "基于已有明确研究问题、设计和数据或结果初始化论文写作项目"
+  default_prompt: "Use $dyz-med-init 根据已有研究问题、设计和数据或结果建立论文写作项目与最小 IMRaD 骨架。"

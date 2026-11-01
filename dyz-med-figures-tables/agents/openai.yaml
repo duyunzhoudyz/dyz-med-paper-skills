@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文图表规划"
+  short_description: "规划医学论文图表并核对数据、标题、编号与正文的一致性"
+  default_prompt: "Use $dyz-med-figures-tables 规划这篇医学论文的图表并核对图文一致性。"

@@ -1,0 +1,32 @@
+{
+  "journal": "JAMA",
+  "note": "基于 JAMA 公开的结构化摘要惯例整理的默认配置，供内部写作参考。正式投稿前请以 JAMA 官网当期 Instructions for Authors 为准，JAMA 的分节结构比多数期刊更细，尤其注意 Importance 与 Objective 需要分开陈述。",
+  "abstract": {
+    "sections": [
+      "Importance",
+      "Objective",
+      "Design, Setting, and Participants",
+      "Main Outcomes and Measures",
+      "Results",
+      "Conclusions and Relevance"
+    ],
+    "word_limit": 350,
+    "counting_rules": {
+      "unit": "word",
+      "method": "space-delimited tokens containing at least one letter",
+      "excludes": ["title", "keywords"]
+    },
+    "trimming_priority": [
+      "Importance精简为一句话说明临床/公共卫生意义",
+      "Design, Setting, and Participants中删除次要纳入排除细节，保留研究设计类型、场所、时间范围、样本量",
+      "Main Outcomes and Measures只保留主要结局的确切定义",
+      "保留Results中主要结局的效应量与置信区间/P值，这一项不删",
+      "Conclusions and Relevance精简为一句话回答研究问题+一句话说明意义"
+    ],
+    "keywords": {
+      "min": 3,
+      "max": 10,
+      "source": "MeSH"
+    }
+  }
+}

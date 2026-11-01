@@ -1,0 +1,3 @@
+# Only needed for YAML validation and the developer regression suite.
+# Installing and checking Codex skill files use Python's standard library.
+PyYAML>=6.0.3,<7

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "named_contract_branches_not_line_coverage",
+  "branches": {
+    "missing_input_or_report": ["test_passport_contract.PassportContractTests.test_missing_input_or_report_is_located"],
+    "hash_tamper_and_registered_version": ["test_passport_contract.PassportContractTests.test_result_bytes_change_invalidates_check_and_approval", "test_passport_contract.PassportContractTests.test_registered_new_version_leaves_old_check_stale"],
+    "unrelated_changes_scope_isolation": ["test_passport_contract.PassportContractTests.test_unrelated_registered_input_does_not_invalidate_other_check"],
+    "legacy_not_upgraded": ["test_passport_contract.PassportContractTests.test_legacy_records_are_not_upgraded_and_extensions_preserved"],
+    "unexecuted_result_rejected": ["test_passport_contract.PassportContractTests.test_unexecuted_failed_and_blocked_checks_are_not_current"],
+    "human_provenance_and_pending_approval": ["test_passport_contract.PassportContractTests.test_human_approval_cannot_be_boolean_or_sourceless", "test_passport_contract.PassportContractTests.test_unconfirmed_approval_never_becomes_current"],
+    "closure_requires_current_applicable_evidence": ["test_passport_contract.PassportContractTests.test_issue_closure_requires_current_check_and_evidence", "test_artifact_handoffs.ArtifactHandoffTests.test_lifecycle_results", "test_artifact_handoffs.ArtifactHandoffTests.test_lifecycle_prisma", "test_artifact_handoffs.ArtifactHandoffTests.test_lifecycle_references"],
+    "domain_rejection_is_not_execution_failure": ["test_passport_contract.PassportContractTests.test_scientific_rejection_does_not_equal_execution_failure", "test_artifact_handoffs.ArtifactHandoffTests.test_handoff_results_difference", "test_artifact_handoffs.ArtifactHandoffTests.test_handoff_prisma_difference", "test_artifact_handoffs.ArtifactHandoffTests.test_handoff_references_difference"],
+    "completed_unverified_domain_can_be_current": ["test_artifact_handoffs.ArtifactHandoffTests.test_handoff_results_unverified", "test_artifact_handoffs.ArtifactHandoffTests.test_handoff_prisma_unverified", "test_artifact_handoffs.ArtifactHandoffTests.test_handoff_references_unverified"],
+    "blocked_failed_receipts_not_current": ["test_artifact_handoffs.ArtifactHandoffTests.test_handoff_prisma_invalid", "test_artifact_handoffs.ArtifactHandoffTests.test_handoff_references_blocked"],
+    "path_traversal_and_output_collision": ["test_passport_contract.PassportContractTests.test_root_resolution_and_rejected_paths", "test_result_consistency.ResultConsistencyTests.test_root_restrictions_and_output_collisions", "test_prisma_counts.CliTests.test_unsafe_paths_and_same_output_rejected"],
+    "duplicate_ids_and_unknown_core_state": ["test_passport_contract.PassportContractTests.test_duplicate_ids_rejected", "test_passport_contract.PassportContractTests.test_unknown_core_states_including_wrong_types_are_rejected"],
+    "yaml_dependency_blocked": ["test_passport_contract.PassportContractTests.test_yaml_dependency_missing_is_explicit_blocker"],
+    "result_counts_context_scale_and_rounding": ["test_result_consistency.ResultConsistencyTests.test_236_vs_235_is_discrepant", "test_result_consistency.ResultConsistencyTests.test_reference_group_reversal", "test_result_consistency.ResultConsistencyTests.test_units_population_timepoint_outcome_and_scale", "test_result_consistency.ResultConsistencyTests.test_rounding_does_not_hide_difference", "test_result_consistency.ResultConsistencyTests.test_integer_rounding_is_not_accepted"],
+    "inflight_change_cannot_create_success_receipt": ["test_result_consistency.ResultConsistencyTests.test_inflight_input_change_cannot_generate_record", "test_prisma_counts.CliTests.test_inflight_change_suppresses_counts_and_success_binding", "test_verify_references.ReferenceTests.test_changed_inputs_during_run_refuse_check_record"],
+    "prisma_record_report_study_units": ["test_prisma_counts.CountingTests.test_one_study_two_reports_and_distinct_units", "test_prisma_counts.CountingTests.test_not_retrieved_never_enters_reason_groups", "test_prisma_counts.CountingTests.test_pending_screening_not_counted_as_screened"],
+    "reference_identity_not_claim_support": ["test_verify_references.ReferenceTests.test_crossref_and_pubmed_positive", "test_verify_references.ReferenceTests.test_real_identifier_shape_wrong_title_is_mismatch"],
+    "reference_timeout_rate_limit_offline_responses": ["test_verify_references.ReferenceTests.test_failure_cases_are_unverified_and_retries_bounded", "test_verify_references.ReferenceTests.test_timeout_then_success_retains_failed_attempt"],
+    "external_authorization_absent_or_wrong_zero_sends": ["test_verify_references.ReferenceTests.test_online_without_authorization_zero_sends", "test_verify_references.ReferenceTests.test_authorization_unknown_dimensions_each_send_zero"],
+    "historical_outputs_not_overwritten": ["test_result_consistency.ResultConsistencyTests.test_cli_refuses_overwrite", "test_prisma_counts.CliTests.test_outputs_cannot_overwrite_inputs_or_history", "test_verify_references.ReferenceTests.test_output_overwrite_and_input_collision_refused"],
+    "honest_eval_blocker_not_pass": ["test_eval_results.EvaluationReceiptTests.test_honest_blocker_is_valid_not_a_pass"],
+    "routing_invalid_scenarios_rejected": ["test_routing_coverage.RoutingDeclarationTests.test_scenario_contract_rejects_invalid_declarations"],
+    "offline_network_and_process_enforcement": ["test_offline_guard.OfflineGuardTests.test_network_is_blocked_before_dns_or_socket_creation", "test_offline_guard.OfflineGuardTests.test_model_cli_shell_and_python_command_are_rejected", "test_offline_guard.OfflineGuardTests.test_unknown_script_is_rejected_even_with_known_basename", "test_offline_guard.OfflineGuardTests.test_child_guard_blocks_network_and_grandchild"]
+  }
+}

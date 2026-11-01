@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学稿件修订与回复"
+  short_description: "修订医学稿件并生成逐条审稿回复与可追溯变更记录和开放问题"
+  default_prompt: "Use $dyz-med-revision 根据这些审稿意见制定计划并修订稿件。"

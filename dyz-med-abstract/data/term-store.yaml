@@ -1,0 +1,73 @@
+# CMeSH（中文医学主题词表）映射骨架
+#
+# 用途：dyz-med-abstract 在为中文期刊（如中华系列）生成摘要关键词时，用本文件把英文 MeSH 词条映射为
+# 对应的中文医学主题词，供 Phase 4"MeSH & CMeSH Keywords"步骤参考。
+#
+# 重要说明（如实告知本文件的局限性，不冒充完整词表）：
+# 本文件只是一份结构示例 + 少量真实、常见的示例词条，不是穷尽性的真实 CMeSH 词表（完整词表规模达数万
+# 条，需要专门的数据库/出版物支持）。正式投稿前，建议使用中国中医科学院中医药信息研究所、中华医学会
+# 或万方/维普平台提供的官方 CMeSH 检索工具核对最终关键词，不要仅凭本文件下结论。
+# 如果你有更完整的 CMeSH 词表数据源，可以按下面的字段结构扩充替换本文件，本技能会照常读取。
+#
+# 字段说明：
+#   mesh_en: 英文 MeSH 主题词（Preferred Term）
+#   mesh_id: MeSH Unique ID（如有，供追溯核对用；本骨架中的ID为MeSH官方真实存在的常用词条ID）
+#   cmesh_zh: 对应的中文医学主题词（中华系列期刊惯用表述）
+#   category: 粗略分类，便于按学科筛选（disease/intervention/methodology/anatomy等）
+#   notes: 使用提示或易混淆说明（可选）
+
+terms:
+  - mesh_en: "Diabetes Mellitus, Type 2"
+    mesh_id: "D003924"
+    cmesh_zh: "糖尿病，2型"
+    category: disease
+    notes: "注意与'糖尿病'（不区分分型的上位词，D003920）区分使用"
+
+  - mesh_en: "Hypertension"
+    mesh_id: "D006973"
+    cmesh_zh: "高血压"
+    category: disease
+
+  - mesh_en: "Randomized Controlled Trial"
+    mesh_id: "D016449"
+    cmesh_zh: "随机对照试验"
+    category: methodology
+
+  - mesh_en: "Cohort Studies"
+    mesh_id: "D015331"
+    cmesh_zh: "队列研究"
+    category: methodology
+
+  - mesh_en: "Case-Control Studies"
+    mesh_id: "D002921"
+    cmesh_zh: "病例对照研究"
+    category: methodology
+
+  - mesh_en: "Myocardial Infarction"
+    mesh_id: "D009203"
+    cmesh_zh: "心肌梗死"
+    category: disease
+
+  - mesh_en: "Neoplasms"
+    mesh_id: "D009369"
+    cmesh_zh: "肿瘤"
+    category: disease
+    notes: "作为上位词使用；具体癌种（如'肺肿瘤' D008175）应优先使用更精确的下位词"
+
+  - mesh_en: "Quality of Life"
+    mesh_id: "D011788"
+    cmesh_zh: "生活质量"
+    category: outcome_measure
+
+  - mesh_en: "Risk Factors"
+    mesh_id: "D012307"
+    cmesh_zh: "危险因素"
+    category: methodology
+
+  - mesh_en: "Prognosis"
+    mesh_id: "D011379"
+    cmesh_zh: "预后"
+    category: outcome_measure
+
+# 扩充建议：按需要添加更多词条，保持同样的字段结构；如果某个中文关键词在本文件中找不到对应映射，
+# 技能会如实提示"未在本地词表中找到映射，建议人工核对官方 CMeSH 数据库"，不会为了凑数编造映射关系。

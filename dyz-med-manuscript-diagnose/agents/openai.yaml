@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学稿件现状诊断"
+  short_description: "只读诊断现有医学稿件的阶段、材料、关键风险与下一步"
+  default_prompt: "Use $dyz-med-manuscript-diagnose 只读诊断这份现有医学稿件并给出优先级。"

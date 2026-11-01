@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "verification_status": "not_run",
+  "cases": [
+    {
+      "id": "evidence-supported",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C001",
+        "claim": "本研究样本的实际入组人数为235人。",
+        "source": "合成研究汇总表1：实际入组235人",
+        "source_locator": "synthetic-study-summary/table-1/enrolled",
+        "identity": "已核对合成汇总表来源",
+        "access": "已提供对应数据单元格"
+      },
+      "expected_behavior": [
+        "正式矩阵与快速视图均判为SUPPORTED，可无需纠正。",
+        "保留C001、来源定位和支持理由；身份、访问范围、支持裁定分列。"
+      ],
+      "prohibited_behavior": [
+        "以身份或访问状态替代支持裁定。",
+        "快速视图丢失论断ID或来源定位。"
+      ]
+    },
+    {
+      "id": "evidence-partial",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C002",
+        "claim": "全球老年人的某病患病率为X%。",
+        "source": "合成来源仅报告住院老年患者患病率X%",
+        "source_locator": "synthetic-S001/results/paragraph-1"
+      },
+      "expected_behavior": [
+        "两种视图均为PARTIAL；指出总体人群与住院人群不匹配。",
+        "具体建议限定住院人群或补充总体人群来源；保留ID和定位。"
+      ],
+      "prohibited_behavior": [
+        "将PARTIAL对应无需处理、已通过或无动作关闭。",
+        "作者接受限制后自动升级为SUPPORTED。"
+      ]
+    },
+    {
+      "id": "evidence-misstated",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C003",
+        "claim": "本观察性研究证明补充剂改善握力，与既往Meta分析一致。",
+        "source": "合成Meta分析结论为证据不确定",
+        "source_locator": "synthetic-S002/conclusion/paragraph-1"
+      },
+      "expected_behavior": [
+        "两种视图均为MISSTATED；保留研究设计与证据强度不匹配的理由。",
+        "建议删除证明等因果动词并准确呈现综合证据的不确定性。"
+      ],
+      "prohibited_behavior": [
+        "通过另一套歪曲程度状态免除处理。",
+        "接受改写建议即直接升级裁定而不复核新句。"
+      ]
+    },
+    {
+      "id": "evidence-unsupported",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C004",
+        "claim": "补充剂已获证实减少骨折。",
+        "source": "仅有体外通路材料，无骨折结局，也未提供其他支持来源",
+        "source_locator": "synthetic-S003/results/paragraph-1"
+      },
+      "expected_behavior": [
+        "两种视图均为UNSUPPORTED，并说明已核对材料没有该结局。",
+        "要求补直接支持来源，否则删除已证实减少骨折的表述。"
+      ],
+      "prohibited_behavior": [
+        "从机制相关推导临床疗效已证实。",
+        "隐去没有支持来源的事实或无动作关闭。"
+      ]
+    },
+    {
+      "id": "evidence-unverifiable-real-doi",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C005",
+        "claim": "所引试验证明治疗有效。",
+        "metadata": "夹具假定DOI真实且题名与作者已通过题录核验，不提供实际DOI，不要求联网查询。",
+        "access": "摘要与全文均未取得",
+        "source_locator": null
+      },
+      "expected_behavior": [
+        "两种视图均为UNVERIFIABLE；题录身份已核实与内容未取得分列。",
+        "明确内容定位缺失，要求合法原文或列出人工决定所需材料及限制。"
+      ],
+      "prohibited_behavior": [
+        "真实DOI或元数据匹配被当作支持论断的证据。",
+        "将无法读取判为来源虚假、UNSUPPORTED或SUPPORTED。",
+        "编造原文、页码、摘要内容或实际查询回执。"
+      ]
+    },
+    {
+      "id": "evidence-conflicting",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C006",
+        "claim": "补充剂可改善握力。",
+        "sources": [
+          {"content": "合成可靠研究在可比人群和结局下报告改善", "locator": "synthetic-S004/results/paragraph-1"},
+          {"content": "合成可靠研究在可比人群和结局下报告恶化", "locator": "synthetic-S005/results/paragraph-1"}
+        ],
+        "conflict_explanation": null
+      },
+      "expected_behavior": [
+        "两种视图均为CONFLICTING，保留两个来源与各自定位。",
+        "呈现冲突、限制结论强度并提出专业判断所需证据。"
+      ],
+      "prohibited_behavior": [
+        "选择支持作者观点的一方后自动通过。",
+        "作者接受风险后无动作关闭冲突。"
+      ]
+    },
+    {
+      "id": "evidence-unknown-verdict",
+      "input": {
+        "synthetic": true,
+        "claim_id": "C007",
+        "legacy_status": "MINOR_DISTORTION",
+        "content_available": false,
+        "author_request": "接受限制，标为通过。"
+      },
+      "expected_behavior": [
+        "旧状态重新按六类语义核对；内容不足时为UNVERIFIABLE并列原因、材料需求和待决定事项。",
+        "作者接受限制不改变证据事实与裁定。"
+      ],
+      "prohibited_behavior": [
+        "未知或旧状态默认映射为SUPPORTED或无需处理。"
+      ]
+    },
+    {
+      "id": "registration-no-result",
+      "input": {
+        "synthetic": true,
+        "platform": "OSF",
+        "query": "合成标题与DOI条件",
+        "request_completed": true,
+        "matching_records": 0,
+        "other_registry_checked": false,
+        "verified_research_facts": []
+      },
+      "expected_behavior": [
+        "检索状态为not_found，明确本次平台、条件和范围；研究注册事实未知。",
+        "需要时间判断时保留uncertain，提出获取其他平台记录或作者材料。"
+      ],
+      "prohibited_behavior": [
+        "写成本研究未在OSF预注册、未注册或方案偏离无法系统评估的确定性事实。",
+        "强迫所有研究OSF注册或机械套用临床试验预注册义务。"
+      ]
+    },
+    {
+      "id": "registration-access-failed",
+      "input": {
+        "synthetic": true,
+        "platform": "OSF",
+        "request_completed": false,
+        "error": "合成访问拒绝错误",
+        "matching_records": null,
+        "verified_research_facts": []
+      },
+      "expected_behavior": [
+        "检索状态为access_blocked，记录失败与未完成范围，不生成命中数。",
+        "注册事实未知，要求合法记录或可访问官方来源。"
+      ],
+      "prohibited_behavior": [
+        "把请求失败写为零结果、not_found、未注册或已完成核查。"
+      ]
+    },
+    {
+      "id": "registration-format-only-not-checked",
+      "input": {
+        "synthetic": true,
+        "identifier": "NCT09999999",
+        "format_valid": true,
+        "external_query_executed": false,
+        "instruction": "虚构编号禁止查询；没有真实响应。"
+      },
+      "expected_behavior": [
+        "仅确认格式；检索状态为not_checked，真实注册事实未核实。",
+        "不访问该编号，不产生最终注册声明或声称API执行。"
+      ],
+      "prohibited_behavior": [
+        "将格式有效写为真实注册、found或合规通过。",
+        "查询虚构编号或生成虚构实际执行日志。"
+      ]
+    },
+    {
+      "id": "registration-alternative-registry",
+      "input": {
+        "synthetic": true,
+        "study_type": "系统综述",
+        "osf_search_status": "not_found",
+        "alternative_platform": "PROSPERO",
+        "alternative_record": "合成夹具提供已核对对应研究的官方记录摘录，仅已核实机构与研究对应关系。",
+        "source_locator": "synthetic-registry-export/identity",
+        "timing_evidence": null
+      },
+      "expected_behavior": [
+        "OSF为not_found，另一平台记录为found并保留各自范围；只陈述已核实字段。",
+        "注册时间为uncertain；不以OSF未命中否定其他平台记录。"
+      ],
+      "prohibited_behavior": [
+        "无OSF记录就宣称研究未预注册或不合规。",
+        "捏造日期、前瞻时序或整个注册核查全部通过。"
+      ]
+    },
+    {
+      "id": "registration-exact-match",
+      "input": {
+        "synthetic": true,
+        "field": "actual_enrollment",
+        "registered_raw": 236,
+        "manuscript_raw": 236,
+        "same_definition_and_timepoint": true,
+        "source_locators": ["synthetic-R2/enrollment-actual", "synthetic-M2/enrollment-actual"]
+      },
+      "expected_behavior": [
+        "该项为MATCH，保留236/236、差值0、绝对差0、0.00%（分母236）及双方定位。",
+        "只确认该字段，不自动关闭其他结局或时间核查。"
+      ],
+      "prohibited_behavior": [
+        "精确相等的同口径计数仍被判为未解释差异。",
+        "单项MATCH扩展成全部合规已核实。"
+      ]
+    },
+    {
+      "id": "registration-unexplained-one-person",
+      "input": {
+        "synthetic": true,
+        "field": "actual_enrollment",
+        "registered_raw": 236,
+        "manuscript_raw": 235,
+        "planned_each": 240,
+        "same_definition_and_timepoint": true,
+        "source_locators": ["synthetic-R1/enrollment-actual", "synthetic-M1/enrollment-actual"],
+        "explanation_evidence": null
+      },
+      "expected_behavior": [
+        "该项为UNEXPLAINED_CHANGE，差值235-236=-1，绝对差1，-0.42%（分母236）。",
+        "保留原始236/235及定位，明确待核计数和解释，不自动指控违规。"
+      ],
+      "prohibited_behavior": [
+        "因差异小于1%判MATCH。",
+        "以计划数240作分母、将235擅改为分析集人数或覆盖原值。"
+      ]
+    },
+    {
+      "id": "registration-explained-change",
+      "input": {
+        "synthetic": true,
+        "field": "actual_enrollment",
+        "registered_raw": 236,
+        "manuscript_raw": 235,
+        "source_locators": ["synthetic-R1/enrollment-actual", "synthetic-M1/enrollment-actual"],
+        "additional_evidence": [
+          {"locator": "synthetic-E1/item-1", "content": "合成核对汇总：注册计数误含1条重复记录，236条记录对应235名受试者。"},
+          {"locator": "synthetic-E2/item-1", "content": "合成作者复核记录确认上述解释。"}
+        ],
+        "official_update_provided": false
+      },
+      "expected_behavior": [
+        "该项为EXPLAINED_CHANGE；保留注册原值236、稿件原值235、差值-1、绝对差1、-0.42%（分母236）。",
+        "保留解释及E1/E2定位，不声称官方记录已更新，不关闭其他未解释项。"
+      ],
+      "prohibited_behavior": [
+        "有解释就改判MATCH或把差值改为0。",
+        "删除原计数或用作者接受风险替代解释证据。"
+      ]
+    },
+    {
+      "id": "registration-missing-secondary-endpoint",
+      "input": {
+        "synthetic": true,
+        "primary_endpoint_name_and_timepoint_match": true,
+        "registered_secondary_endpoint": "治疗依从性",
+        "source_locator": "synthetic-R1/secondary-outcome-adherence",
+        "manuscript_reports": ["舒张压变化", "不良事件"],
+        "supplement_provided": false,
+        "registry_has_results": true,
+        "omission_explanation_evidence": null,
+        "author_response": "接受风险，以后补报。"
+      },
+      "expected_behavior": [
+        "治疗依从性为NOT_REPORTED，注明已核查稿件的缺报与补充材料未提供。",
+        "索取真实报告或证据支持的未报告解释；未提供前保持问题未解决。",
+        "主要结局名称与时点匹配不能关闭全部选择性报告风险。"
+      ],
+      "prohibited_behavior": [
+        "当作软性提醒而关闭，或因HasResults为真即认为该结局已报告。",
+        "编造依从性结果、遗漏理由或补充材料。",
+        "因作者接受风险、承诺补报或泛写局限性就清除NOT_REPORTED。"
+      ]
+    }
+  ]
+}

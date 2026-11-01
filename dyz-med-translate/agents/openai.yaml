@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学中英双语翻译"
+  short_description: "忠实完成医学中英互译并保护数字、引用、术语和声明完整性"
+  default_prompt: "Use $dyz-med-translate 忠实翻译这段医学文本并逐项保护数字与引用。"

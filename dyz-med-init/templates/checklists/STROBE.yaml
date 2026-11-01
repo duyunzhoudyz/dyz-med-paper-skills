@@ -1,0 +1,118 @@
+# STROBE Checklist — 条目结构骨架
+# 来源：von Elm E, Altman DG, Egger M, et al. The Strengthening the Reporting of
+#   Observational Studies in Epidemiology (STROBE) Statement. Lancet 2007 / PLoS Med 2007.
+# 用途：观察性研究（队列/病例对照/横断面）报告规范核对。条目编号与标题为真实STROBE条目；
+#       部分条目在三种设计中表述略有差异，已在 note 中标注。
+
+guideline: STROBE
+applies_to: 队列研究 / 病例对照研究 / 横断面研究（三种设计条目基本一致，个别条目按设计有细化要求）
+
+items:
+  - section: 标题与摘要
+    item_no: 1
+    title: "(a) 标题/摘要中标明研究设计；(b) 摘要提供研究背景、方法、结果、结论的信息性总结"
+    required: true
+
+  - section: 引言
+    item_no: 2
+    title: "科学背景和理论基础说明"
+    required: true
+  - item_no: 3
+    title: "具体目的，包括预设假设"
+    required: true
+
+  - section: 方法-研究设计
+    item_no: 4
+    title: "在文中早期呈现研究设计的关键要素"
+    required: true
+
+  - section: 方法-研究场所
+    item_no: 5
+    title: "场所、地点、相关日期，包括招募、暴露、随访、数据收集的时间"
+    required: true
+
+  - section: 方法-研究对象
+    item_no: 6
+    title: "(a) 队列：纳入标准、随访方法说明；病例对照：病例与对照的选择标准；横断面：纳入标准；(b) 队列-配对：配对标准和暴露/非暴露人数；病例对照-配对：配对标准和每个病例的对照数"
+    required: true
+
+  - section: 方法-变量
+    item_no: 7
+    title: "明确定义所有结局、暴露、预测因子、潜在混杂因素、效应修饰因子；如适用给出诊断标准"
+    required: true
+
+  - section: 方法-数据来源/测量
+    item_no: 8
+    title: "对每个感兴趣变量，描述数据来源和测量方法细节；如有≥2组，说明测量方法可比性"
+    required: true
+
+  - section: 方法-偏倚
+    item_no: 9
+    title: "描述解决潜在偏倚来源的任何措施"
+    required: true
+
+  - section: 方法-样本量
+    item_no: 10
+    title: "说明样本量如何确定"
+    required: true
+
+  - section: 方法-定量变量
+    item_no: 11
+    title: "说明定量变量在分析中如何处理；如适用，说明分组方式及原因"
+    required: true
+
+  - section: 方法-统计方法
+    item_no: 12
+    title: "(a) 描述所有统计方法，包括控制混杂的方法；(b) 描述亚组和交互作用分析方法；(c) 说明缺失数据处理方法；(d) 队列：说明如何处理失访；病例对照：说明病例与对照的匹配方法；横断面：说明是否考虑抽样策略；(e) 描述任何敏感性分析"
+    required: true
+
+  - section: 结果-研究对象
+    item_no: 13
+    title: "(a) 报告研究各阶段人数（如潜在合格、确认合格、纳入研究、完成随访、纳入分析）；(b) 说明各阶段退出原因；(c) 建议使用流程图"
+    required: true
+
+  - section: 结果-描述性数据
+    item_no: 14
+    title: "(a) 描述研究对象特征（人口学、临床、社会）及暴露、潜在混杂因素信息；(b) 说明每个变量有缺失数据的人数；(c) 队列：总结随访时间（如平均和总量）"
+    required: true
+
+  - section: 结果-结局数据
+    item_no: 15
+    title: "队列：报告结局事件数或随时间的汇总指标；病例对照：报告每个暴露类别的人数或暴露的汇总指标；横断面：报告结局事件数或汇总指标"
+    required: true
+
+  - section: 结果-主要结果
+    item_no: 16
+    title: "(a) 报告未校正估计值及混杂校正后估计值和精度（如95%CI），说明校正了哪些混杂因素及为何纳入；(b) 分类连续变量时报告分类区间；(c) 如相关，将相对风险转化为有意义时段的绝对风险"
+    required: true
+
+  - section: 结果-其他分析
+    item_no: 17
+    title: "报告其他分析结果，如亚组分析、交互作用分析和敏感性分析"
+    required: true
+
+  - section: 讨论-关键结果
+    item_no: 18
+    title: "结合研究目的总结关键结果"
+    required: true
+  - section: 讨论-局限性
+    item_no: 19
+    title: "讨论研究局限性，考虑潜在偏倚或不精确性来源来源及方向和大小；讨论任何潜在偏倚"
+    required: true
+  - section: 讨论-解释
+    item_no: 20
+    title: "结合目标、局限性、多重分析、类似研究结果及其他相关证据，谨慎给出总体解释"
+    required: true
+  - section: 讨论-可推广性
+    item_no: 21
+    title: "讨论结果的外部有效性（可推广性）"
+    required: true
+
+  - section: 其他信息
+    item_no: 22
+    title: "给出本研究的资助来源，以及资助者在研究中的角色（如适用，包括原始研究的资助来源）"
+    required: true
+
+project_tracking:
+  status_legend: "addressed / partial / missing / not_applicable"
+  note: "本骨架仅提供条目结构，具体项目的填写状态需在使用时逐条补充，不在本模板中预先填写。"

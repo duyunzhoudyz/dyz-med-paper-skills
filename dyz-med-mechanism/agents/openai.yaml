@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学机制推理"
+  short_description: "构建可验证的医学机制假说、证据链、替代解释与验证路径"
+  default_prompt: "Use $dyz-med-mechanism 为这个医学问题构建有证据边界的机制假说和验证路径。"

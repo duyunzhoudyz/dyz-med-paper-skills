@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学稿件导出排版"
+  short_description: "将医学稿件安全导出为期刊要求格式并验证成品完整性和版本记录"
+  default_prompt: "Use $dyz-med-export 把这份医学稿件导出为目标期刊要求的可审阅文件。"

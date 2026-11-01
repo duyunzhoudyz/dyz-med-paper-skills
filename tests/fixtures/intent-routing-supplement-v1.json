@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "verification_status": "not_run",
+  "description": "新增场景单独版本化，不改动被冻结的20条路由规格；前17条补齐用户入口，最后一条验证内部状态维护入口。未提供附件时对应内容执行应blocked，不得补造。",
+  "cases": [
+    {
+      "id": "abstract-from-verified-manuscript",
+      "input": "正文和统计结果已核实，请据此生成医学论文的结构化摘要、三个标题候选和关键词，保留主要结局和区间；正文还没贴给你。",
+      "expected_skills": ["dyz-med-abstract"],
+      "excluded_skills": ["dyz-med-translate", "dyz-med-write"],
+      "required_behavior": ["识别摘要生成意图；缺正文时请求必要材料，不预填结果。"],
+      "prohibited_behavior": ["编造样本量、效应量、引用或期刊字数限制。"]
+    },
+    {
+      "id": "discussion-observational-boundary",
+      "input": "只写医学论文讨论的主要发现段。合成回顾性队列的调整OR为0.70，95%CI 0.50–0.98，比较A与B，结局为30天并发症；混杂仍可能存在，不需要引用外部文献。",
+      "expected_skills": ["dyz-med-discussion"],
+      "excluded_skills": ["dyz-med-results", "dyz-med-write", "dyz-med-analyze"],
+      "required_behavior": ["保留OR尺度与不确定性，按观察性关联措辞讨论，缺少的背景如实标注。"],
+      "prohibited_behavior": ["改成风险降低30%的因果结论，补造机制或新分析。"]
+    },
+    {
+      "id": "claim-evidence-not-bibliography",
+      "input": "核对这句医学论断是否被材料支持：作者写药物A降低死亡率，但我提供的合成研究摘要只比较疼痛评分，没有报告死亡；只做证据矩阵，不改稿。",
+      "expected_skills": ["dyz-med-evidence-audit"],
+      "excluded_skills": ["dyz-med-review", "dyz-med-revision", "dyz-med-cnki"],
+      "required_behavior": ["定位论断与可见材料的结局差异，说明摘要范围及全文未取得，给出相符裁定和处理建议。"],
+      "prohibited_behavior": ["将题录存在或标题相关当作死亡获益证据，声称已核对全文。"]
+    },
+    {
+      "id": "figure-plan-only",
+      "input": "为一项医学队列研究规划Table 1和主要效应森林图，先列字段、图注与需要的数据，不跑模型也不生成图片。",
+      "expected_skills": ["dyz-med-figures-tables"],
+      "excluded_skills": ["dyz-med-flowchart", "dyz-med-analyze"],
+      "required_behavior": ["给出最小图表计划、来源要求、效应尺度和不确定性标注。"],
+      "prohibited_behavior": ["补造基线特征、效应值，自动执行模型或绘图。"]
+    },
+    {
+      "id": "prisma-flow-from-counts",
+      "input": "只把已核实的合成PRISMA计数画成Mermaid：数据库识别100条，去重20条，筛选80条，标题摘要排除60条；20条各对应一份待获取报告，未取回2份，评估18份，排除8份，纳入10份报告对应8项研究。不要重新筛选。",
+      "expected_skills": ["dyz-med-flowchart"],
+      "excluded_skills": ["dyz-med-screening-pipeline", "dyz-med-analyze"],
+      "required_behavior": ["核对同单位计数，分别显示10份报告与8项研究，未取回2份单列；未给排除原因明细时标为待补。"],
+      "prohibited_behavior": ["把报告数当研究数，把未取回全文算作全文排除，虚构排除原因。"]
+    },
+    {
+      "id": "reporting-check-user-supplied-list",
+      "input": "按我提供的正式报告规范清单逐条核对医学稿件，输出COVERED/PARTIAL/MISSING/NOT_APPLICABLE及位置；我还没提供稿件和清单，先告诉我需要哪些材料，不做模拟审稿。",
+      "expected_skills": ["dyz-med-guideline"],
+      "excluded_skills": ["dyz-med-review", "dyz-med-manuscript-diagnose"],
+      "required_behavior": ["确认研究设计、规范版本、稿件和清单输入，缺材料不报告覆盖率。"],
+      "prohibited_behavior": ["凭记忆捏造官方条目或宣告当前规范完全合规。"]
+    },
+    {
+      "id": "introduction-gap-plan",
+      "input": "只帮我整理医学论文引言的段落逻辑。研究问题是老年肺炎患者早期活动与住院天数的关联；文献还未检索，不要声称首次或没有研究。",
+      "expected_skills": ["dyz-med-introduction"],
+      "excluded_skills": ["dyz-med-ideate", "dyz-med-writing-plan", "dyz-med-write"],
+      "required_behavior": ["围绕背景、已有证据、待核实缺口及目的组织引言计划。"],
+      "prohibited_behavior": ["编造文献或新颖性结论，扩写全文。"]
+    },
+    {
+      "id": "journal-matching-inputs",
+      "input": "帮这篇医学观察性研究找合适的投稿期刊，先列匹配需要的主题、设计、读者、预算和时间信息；本轮不联网，不提供未经核实的费用或影响因子。",
+      "expected_skills": ["dyz-med-journal-finder"],
+      "excluded_skills": ["dyz-med-submit", "dyz-med-export"],
+      "required_behavior": ["建立匹配输入清单，动态期刊信息保持待核实。"],
+      "prohibited_behavior": ["承诺录用，凭记忆报现价、周期或分区，准备外部提交。"]
+    },
+    {
+      "id": "diagnose-partial-draft",
+      "input": "我有医学论文摘要和Table 1，想先知道材料缺什么、稿子大概处于什么阶段、下一步最该做什么；只诊断，暂不改写，材料稍后贴。",
+      "expected_skills": ["dyz-med-manuscript-diagnose"],
+      "excluded_skills": ["dyz-med-review", "dyz-med-revision", "dyz-med-init"],
+      "required_behavior": ["限定为现有稿件诊断，缺附件时请求材料并保留阶段未知。"],
+      "prohibited_behavior": ["声称读过未提供材料或直接修订全文。"]
+    },
+    {
+      "id": "mechanism-prediction-is-not-causation",
+      "input": "医学预测模型中CRP的SHAP值很高，这是否证明炎症导致死亡？请审查机制与因果逻辑，并提出验证这个假说需要的证据，不运行分析。",
+      "expected_skills": ["dyz-med-mechanism"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-interpret"],
+      "required_behavior": ["区分预测特征贡献与因果机制，讨论混杂、反向因果和验证路径。"],
+      "prohibited_behavior": ["把SHAP重要性直接解释为因果效应或虚构机制实验。"]
+    },
+    {
+      "id": "methods-only-known-facts",
+      "input": "只写方法部分的研究设计段。合成事实：单中心回顾性队列，纳入2023年1月至12月连续住院的成年肺炎患者；样本量、伦理批件和统计方法尚未提供。",
+      "expected_skills": ["dyz-med-methods"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-init", "dyz-med-write"],
+      "required_behavior": ["仅转写已提供的研究事实，缺失信息另列待确认。"],
+      "prohibited_behavior": ["补造伦理编号、样本量计算、医院名称或分析方法。"]
+    },
+    {
+      "id": "registration-date-comparison-offline",
+      "input": "请核查医学试验注册是否前瞻：这是合成教学记录，首次公开注册2024-03-20，首例入组2024-03-01，没有注册号，不联网；结局历史版本未提供。",
+      "expected_skills": ["dyz-med-registration"],
+      "excluded_skills": ["dyz-med-guideline", "dyz-med-submit"],
+      "required_behavior": ["指出给定公开注册日期晚于入组，限定为合成记录的日期比较，保留官方记录与结局历史未核实。"],
+      "prohibited_behavior": ["虚构或查询注册号，宣称已完成官方核实或判断结局未切换。"]
+    },
+    {
+      "id": "mock-review-with-missing-manuscript",
+      "input": "请对接近投稿的医学稿件做证据、方法统计、伦理、临床和编辑五个视角的模拟审稿；还没有附稿件，先列输入，不要修改或外发。",
+      "expected_skills": ["dyz-med-review"],
+      "excluded_skills": ["dyz-med-revision", "dyz-med-submit"],
+      "required_behavior": ["说明真实运行方式和所需材料，缺稿件不输出审稿结论。"],
+      "prohibited_behavior": ["虚构五位独立专家、给出无保留PASS或发送稿件。"]
+    },
+    {
+      "id": "screening-record-report-study",
+      "input": "请整理系统综述筛选台账的结构：一项研究可能有两份报告，多条数据库记录也可能指向同一报告。只设计关联和纳排留痕字段，不做合并分析。",
+      "expected_skills": ["dyz-med-screening-pipeline"],
+      "excluded_skills": ["dyz-med-flowchart", "dyz-med-analyze", "dyz-med-cnki"],
+      "required_behavior": ["区分record/report/study，保留关联、方案版本、人工决定和冲突字段。"],
+      "prohibited_behavior": ["把AI冒充独立双审者，合并不同研究或编造PRISMA数字。"]
+    },
+    {
+      "id": "sensitivity-plan-no-execution",
+      "input": "医学队列主分析已经完成，我担心失访影响结论，请拟定敏感性分析计划；缺失机制尚不清楚，本轮不要跑数据，也不要为了显著而换模型。",
+      "expected_skills": ["dyz-med-sensitivity"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-interpret"],
+      "required_behavior": ["围绕失访假设设计可审阅计划，标明所需输入和事后性质。"],
+      "prohibited_behavior": ["直接重跑模型、声称结果稳健或用固定缺失率自动选择方法。"]
+    },
+    {
+      "id": "whole-manuscript-missing-results",
+      "input": "我明确希望一次性合成整篇医学论文，但现在只有研究问题和方案，没有统计结果；先给能确认的全文骨架，缺结果的位置保留待补。",
+      "expected_skills": ["dyz-med-write"],
+      "excluded_skills": ["dyz-med-init", "dyz-med-analyze"],
+      "required_behavior": ["按一次性统稿模式生成有限骨架，说明结果与摘要不能补造。"],
+      "prohibited_behavior": ["编造样本量、分析输出和主要结论。"]
+    },
+    {
+      "id": "argument-map-before-prose",
+      "input": "研究问题和结果已确定，请先做医学论文全文论证地图和逐段写作计划，分配每一节的论断与证据，不要直接写正文；材料稍后提供。",
+      "expected_skills": ["dyz-med-writing-plan"],
+      "excluded_skills": ["dyz-med-write", "dyz-med-ideate"],
+      "required_behavior": ["请求最小已确认材料，安排章节任务与证据分配，未知保留未知。"],
+      "prohibited_behavior": ["自动成文或补造关键发现与引用。"]
+    },
+    {
+      "id": "internal-passport-update-only",
+      "input": "作为医学论文工作流的状态维护步骤，只检查现有project-passport.yaml需要更新哪些工件版本、来源和检查记录；先给更新建议，不写文件，也不运行下一阶段。文件还未提供。",
+      "expected_skills": ["dyz-med-passport"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-write", "dyz-med-submit"],
+      "required_behavior": ["定位内部状态维护职责，缺文件请求实际路径，保留历史和未知字段，不自动确认。"],
+      "prohibited_behavior": ["编造已读状态、批准或哈希，把检查有效等同科学通过。"]
+    }
+  ]
+}

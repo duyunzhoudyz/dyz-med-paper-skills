@@ -1,0 +1,57 @@
+{
+  "description": "虚构合成样例，不是患者数据、统计模型执行或医学结论。来源可为外部软件。",
+  "source_text": "Synthetic external statistical output: analysis survival-itt-24m; HR=0.8246; CI=0.6501..0.9502 (unadjusted); Holm-adjusted P=0.08; denominator=236; events=51.\n",
+  "manuscript_text": "Synthetic Table 2: ITT, DFS at 24 months; treatment versus control; HR=0.82, CI=0.65..0.95; adjusted P=0.08; N=236; events=51.\n",
+  "results": {
+    "schema_version": "1.0",
+    "results": [
+      {
+        "analysis_id": "survival-itt-24m",
+        "population": "ITT",
+        "outcome": "DFS",
+        "timepoint": "24 months",
+        "groups": {"comparison": "treatment", "reference": "control"},
+        "effect_scale": "HR",
+        "unit": "dimensionless",
+        "estimate": "0.8246",
+        "ci": {"lower": "0.6501", "upper": "0.9502", "level": "0.95", "adjustment": "unadjusted", "method": "Wald on log-HR"},
+        "denominator": {"value": 236, "kind": "count", "unit": "participants"},
+        "events": 51,
+        "p": {"value": "0.08", "adjustment": "Holm", "method": "two-sided Wald"},
+        "model": "external Cox model",
+        "adjustment_set": ["age"],
+        "execution_status": "completed",
+        "source": {"artifact_id": "external-output", "locator": "analysis survival-itt-24m, coefficient treatment"}
+      }
+    ]
+  },
+  "reported": {
+    "schema_version": "1.0",
+    "reported_values": [
+      {
+        "id": "table2-dfs",
+        "analysis_id": "survival-itt-24m",
+        "locator": {"artifact_id": "manuscript", "location": "Table 2, DFS row, HR/CI/P/N columns"},
+        "context": {
+          "population": "ITT",
+          "outcome": "DFS",
+          "timepoint": "24 months",
+          "groups": {"comparison": "treatment", "reference": "control"},
+          "effect_scale": "HR",
+          "unit": "dimensionless",
+          "ci": {"level": "0.95", "adjustment": "unadjusted", "method": "Wald on log-HR"},
+          "denominator": {"kind": "count", "unit": "participants"},
+          "p": {"adjustment": "Holm", "method": "two-sided Wald"}
+        },
+        "values": {
+          "estimate": {"value": "0.82", "precision": {"places": 2, "mode": "half_up"}},
+          "ci.lower": {"value": "0.65", "precision": {"places": 2, "mode": "half_up"}},
+          "ci.upper": {"value": "0.95", "precision": {"places": 2, "mode": "half_up"}},
+          "p.value": {"value": "0.08"},
+          "denominator.value": {"value": 236},
+          "events": {"value": 51}
+        }
+      }
+    ]
+  }
+}

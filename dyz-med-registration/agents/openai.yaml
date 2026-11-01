@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学研究注册核查"
+  short_description: "核对医学研究是否需要注册，并整理真实注册信息与待确认事项"
+  default_prompt: "Use $dyz-med-registration 核对这个研究的注册要求、现有状态和待确认信息。"

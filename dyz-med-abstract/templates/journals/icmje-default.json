@@ -1,0 +1,24 @@
+{
+  "journal": "ICMJE default",
+  "note": "供未指定具体投稿期刊、或期刊未公开发布自有摘要格式时使用的通用默认配置，参考 ICMJE 关于结构化摘要的一般建议。正式投稿前建议对照目标期刊官网的Instructions for Authors核对。",
+  "abstract": {
+    "sections": ["Background", "Methods", "Results", "Conclusions"],
+    "word_limit": 300,
+    "counting_rules": {
+      "unit": "word",
+      "method": "space-delimited tokens containing at least one letter; numbers and units count as tokens",
+      "excludes": ["title", "keywords", "section headings themselves"]
+    },
+    "trimming_priority": [
+      "先删背景板块中的次要细节，只保留知识缺口一句话",
+      "再删方法板块中的次要方法学细节（如非主要的敏感性分析描述）",
+      "保留主要结局的效应量与置信区间/P值，这一项不删",
+      "结论板块精简为一句话直接回答研究问题"
+    ],
+    "keywords": {
+      "min": 3,
+      "max": 10,
+      "source": "MeSH"
+    }
+  }
+}

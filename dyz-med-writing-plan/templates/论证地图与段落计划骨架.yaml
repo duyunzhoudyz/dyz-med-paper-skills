@@ -1,0 +1,109 @@
+# 论证地图与段落计划骨架
+# 对应 paper/writing/manuscript_argument_map.yaml 和 paper/writing/section_plans/*.yaml
+# 的合并可读版本，可用于人工填写或由当前运行环境直接生成同等结构。
+
+manuscript_argument_map:
+  research_question: ""          # 一句话研究问题，通常引用自 project-passport.yaml
+  core_claim: ""                  # 全文最核心的一句话论点（本研究发现了什么）
+  known_before: ""                 # 已知背景（必须来自 key-literature-map，不可凭空杜撰）
+  gap: ""                          # 本研究试图填补的缺口
+  added_by_this_study: ""           # 本研究相对已知背景新增了什么
+  evidence_support:
+    - claim: ""
+      supporting_result: ""        # 引用 structured_results.yaml 中的具体统计量
+      strength: ""                  # strong / moderate / weak / exploratory
+  claim_boundaries:
+    - claim: ""
+      allowed_language: ""          # 例如: "关联性表述（associated with）"
+      prohibited_language: ""        # 例如: "因果表述（causes / leads to）——观察性设计不支持"
+      design_reason: ""               # 为什么有此边界（如"横断面设计不支持因果推断"）
+  literature_intelligence_status: ""  # available / degraded — 若degraded需说明原因
+  section_thesis:
+    introduction: ""    # 引言部分的论旨句
+    methods: ""           # 方法部分的论旨句（通常是"如何回答研究问题"）
+    results: ""            # 结果部分的论旨句（通常是"数据显示了什么，不含解释"）
+    discussion: ""          # 讨论部分的论旨句（结合背景的解释，受claim_boundaries约束）
+    abstract: ""             # 摘要部分的论旨句（全文浓缩，与body保持一致）
+
+section_plans:
+  introduction:
+    paragraphs:
+      - role: "临床背景与问题重要性"
+        required_sources: []       # 需要引用的关键文献（来自key-literature-map）
+        blocked_language: []        # 该段落禁止出现的表述
+        output_target: "paper/sections/01-intro.md"
+      - role: "已知与未知（文献缺口）"
+        required_sources: []
+        blocked_language: []
+      - role: "本研究目的与假设"
+        required_sources: []
+        blocked_language: ["因果结论性语言（留给讨论部分）"]
+
+  methods:
+    paragraphs:
+      - role: "研究设计与场所"
+        required_sources: []
+        output_target: "paper/sections/02-methods.md"
+      - role: "研究对象与纳排标准"
+        required_sources: []
+      - role: "变量定义与测量"
+        required_sources: []
+      - role: "统计方法"
+        required_sources: []
+
+  results:
+    paragraphs:
+      - role: "受试者流程与基线特征"
+        required_sources: ["structured_results.yaml"]
+        blocked_language: ["解释性论断（属于讨论部分）"]
+        output_target: "paper/sections/03-results.md"
+      - role: "主要结局结果"
+        required_sources: ["structured_results.yaml"]
+        blocked_language: ["因果语言（除非设计支持）", "机制解释（属于讨论部分）"]
+      - role: "次要结局与附加分析"
+        required_sources: ["structured_results.yaml"]
+
+  discussion:
+    paragraphs:
+      - role: "关键结果总结（呼应引言的问题）"
+        required_sources: []
+        output_target: "paper/sections/04-discussion.md"
+      - role: "与已知文献的比较"
+        required_sources: ["key-literature-map.yaml"]
+      - role: "机制解释（受claim_boundaries约束）"
+        required_sources: []
+        blocked_language: ["超出claim_boundaries允许范围的因果/机制语言"]
+      - role: "局限性"
+        required_sources: []
+      - role: "临床意义与未来方向"
+        required_sources: []
+
+  abstract:
+    paragraphs:
+      - role: "背景"
+        required_sources: []
+        output_target: "paper/sections/05-abstract.md"
+      - role: "方法"
+        required_sources: []
+      - role: "结果"
+        required_sources: ["structured_results.yaml"]
+      - role: "结论"
+        required_sources: []
+        blocked_language: ["与正文claim_boundaries不一致的结论强度"]
+
+claim_graph:
+  # 记录论断之间的支持/依赖关系，例如"讨论部分的机制解释claim依赖于结果部分的关联claim"
+  nodes: []
+  edges: []
+
+paragraph_evidence_plan:
+  # 段落级证据分配，每个自然段对应哪些数据/文献来源
+  entries: []
+
+reverse_outline:
+  # 逆向提纲：草稿完成后，对每个已写段落提炼一句话主题句，核对是否服务于core_claim
+  entries:
+    - section: ""
+      paragraph_number: 0
+      topic_sentence: ""
+      linked_to_core_claim: ""   # yes / no / partially

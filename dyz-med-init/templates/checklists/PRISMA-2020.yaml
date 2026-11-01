@@ -1,0 +1,146 @@
+# PRISMA 2020 Checklist — 条目结构骨架
+# 来源：Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 statement: an updated
+#   guideline for reporting systematic reviews. BMJ 2021.
+# 用途：系统综述/meta分析报告规范核对。条目编号与标题为真实PRISMA 2020条目（共27条主条目，
+#       部分含子条目）。
+
+guideline: PRISMA 2020
+applies_to: 系统综述 / meta分析（范围综述请使用 PRISMA-ScR，本骨架未涵盖）
+
+items:
+  - section: 标题
+    item_no: 1
+    title: "标明为系统综述"
+    required: true
+
+  - section: 摘要
+    item_no: 2
+    title: "结构式摘要（参照PRISMA for Abstracts条目）"
+    required: true
+
+  - section: 引言
+    item_no: 3
+    title: "在已有知识背景下描述研究理由"
+    required: true
+  - item_no: 4
+    title: "明确说明本综述的目的或所要回答的问题"
+    required: true
+
+  - section: 方法-纳入标准
+    item_no: 5
+    title: "说明纳入/排除标准，及如何将研究分组用于综合"
+    required: true
+
+  - section: 方法-信息来源
+    item_no: 6
+    title: "描述检索使用的所有数据库、注册库等信息来源及最后检索日期"
+    required: true
+
+  - section: 方法-检索策略
+    item_no: 7
+    title: "呈现至少一个数据库的完整检索策略，含使用的过滤器和限制条件"
+    required: true
+
+  - section: 方法-筛选过程
+    item_no: 8
+    title: "说明筛选研究的方法（如独立筛选人数、是否使用自动化工具）"
+    required: true
+
+  - section: 方法-数据提取
+    item_no: 9
+    title: "说明从纳入研究提取数据的方法（如独立提取人数、如何联系作者获取/确认数据）"
+    required: true
+
+  - section: 方法-数据条目
+    item_no: 10
+    title: "(a) 列出并定义所有提取的结果变量；(b) 列出并定义提取的其他变量（如参与者、干预、暴露、比较、研究设置、资金来源）"
+    required: true
+
+  - section: 方法-偏倚风险评估
+    item_no: 11
+    title: "说明用于评估纳入研究偏倚风险的方法（含工具、独立评估人数）"
+    required: true
+
+  - section: 方法-效应指标
+    item_no: 12
+    title: "说明结果综合与呈现所用的效应指标（如风险比、均数差）"
+    required: true
+
+  - section: 方法-综合方法
+    item_no: 13
+    title: "(a) 描述纳入研究结果准备综合展示/分析的处理过程；(b) 描述用于处理数据缺失的方法；(c) 描述评估结果综合适用性的方法（如异质性检验/可视化）；(d) 描述使用的综合方法（如meta分析模型）及理由；(e) 描述探索结果间差异原因所用方法（如亚组、meta回归）；(f) 描述用于评估综合结果稳健性的敏感性分析"
+    required: true
+
+  - section: 方法-报告偏倚评估
+    item_no: 14
+    title: "描述评估综合结果中报告偏倚（选择性报告）风险的方法"
+    required: true
+
+  - section: 方法-确定性评估
+    item_no: 15
+    title: "描述评估每个结局证据体确定性（可信度）的方法（如GRADE）"
+    required: true
+
+  - section: 结果-研究选择
+    item_no: 16
+    title: "(a) 描述检索和筛选结果，建议使用流程图；(b) 列出被排除但可能被认为符合条件的研究及排除原因"
+    required: true
+
+  - section: 结果-研究特征
+    item_no: 17
+    title: "列出每项纳入研究的特征并引用来源"
+    required: true
+
+  - section: 结果-偏倚风险
+    item_no: 18
+    title: "呈现每项纳入研究的偏倚风险评估结果"
+    required: true
+
+  - section: 结果-单项研究结果
+    item_no: 19
+    title: "对所有结局，呈现每项研究的：(a) 各组汇总统计量；(b) 效应量估计及精度，建议使用森林图"
+    required: true
+
+  - section: 结果-综合结果
+    item_no: 20
+    title: "(a) 简述纳入综合的研究特征和偏倚风险；(b) 呈现所有统计综合结果（如效应量估计及精度、异质性统计量）；(c) 呈现结果差异探索分析结果；(d) 呈现所有敏感性分析结果"
+    required: true
+
+  - section: 结果-报告偏倚
+    item_no: 21
+    title: "呈现每个综合结果的报告偏倚（选择性报告）评估结果"
+    required: true
+
+  - section: 结果-确定性评估
+    item_no: 22
+    title: "呈现每个结局证据体的确定性（可信度）评估结果"
+    required: true
+
+  - section: 讨论
+    item_no: 23
+    title: "(a) 结合其他证据在总体背景下解释结果；(b) 讨论纳入证据的局限性；(c) 讨论综述过程的局限性；(d) 讨论结果对实践、政策、未来研究的意义"
+    required: true
+
+  - section: 其他信息-注册与方案
+    item_no: 24
+    title: "(a) 提供注册信息，包括注册号；(b) 说明方案获取方式；(c) 说明方案与综述之间的差异"
+    required: true
+
+  - section: 其他信息-支持
+    item_no: 25
+    title: "描述本综述的资金来源及资助者角色（或说明未获资助）"
+    required: true
+
+  - section: 其他信息-利益冲突
+    item_no: 26
+    title: "声明作者利益冲突"
+    required: true
+
+  - section: 其他信息-数据可及性
+    item_no: 27
+    title: "报告以下哪些内容可公开获取，以及获取途径：模板数据提取表、纳入研究提取的数据、用于分析的数据、分析代码、其他材料"
+    required: true
+
+project_tracking:
+  status_legend: "addressed / partial / missing / not_applicable"
+  note: "本骨架仅提供条目结构，具体项目的填写状态需在使用时逐条补充，不在本模板中预先填写。"

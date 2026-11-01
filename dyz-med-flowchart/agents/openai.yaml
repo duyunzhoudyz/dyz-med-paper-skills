@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学研究流程图"
+  short_description: "根据真实计数生成并核对医学研究流程图与筛选路径并检查一致性"
+  default_prompt: "Use $dyz-med-flowchart 根据已确认计数生成并核对医学研究流程图。"

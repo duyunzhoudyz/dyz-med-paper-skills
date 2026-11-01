@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 关键医学文献精读"
+  short_description: "从已有候选文献池筛选并全文精读关键医学论文，明确证据边界"
+  default_prompt: "Use $dyz-med-key-literature 从已有候选文献池中筛选并精读关键论文，记录全文访问状态与证据边界。"

@@ -1,0 +1,25 @@
+{
+  "journal": "The Lancet",
+  "note": "基于 Lancet 系列期刊公开的结构化摘要惯例整理的默认配置，供内部写作参考。正式投稿前请以 Lancet 官网当期 Instructions for Authors 为准，字数上限和分节名称可能随期刊政策调整。",
+  "abstract": {
+    "sections": ["Background", "Methods", "Findings", "Interpretation", "Funding"],
+    "word_limit": 300,
+    "counting_rules": {
+      "unit": "word",
+      "method": "space-delimited tokens containing at least one letter",
+      "excludes": ["title", "keywords"]
+    },
+    "trimming_priority": [
+      "先删背景板块中的次要细节",
+      "再删方法板块中的次要方法学细节",
+      "保留Findings中的主要结局效应量与置信区间，这一项不删",
+      "Interpretation精简为一句话直接回答研究问题",
+      "Funding板块（资助来源）通常为固定简短表述，一般不作为裁剪对象"
+    ],
+    "keywords": {
+      "min": 3,
+      "max": 8,
+      "source": "MeSH"
+    }
+  }
+}

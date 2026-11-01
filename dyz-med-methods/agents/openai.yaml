@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论文方法撰写"
+  short_description: "依据真实研究记录撰写可复核且不编造事实的医学论文方法部分"
+  default_prompt: "Use $dyz-med-methods 根据研究方案和实际分析记录撰写方法部分。"

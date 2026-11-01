@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学报告规范核查"
+  short_description: "按当前报告规范逐项核对医学稿件并定位缺失与不适用条目"
+  default_prompt: "Use $dyz-med-guideline 按当前适用的报告规范逐项核对这份医学稿件。"

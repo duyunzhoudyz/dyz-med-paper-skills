@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 中英文医学文献检索"
+  short_description: "检索中英文医学证据并清楚记录数据库覆盖、来源与访问限制"
+  default_prompt: "Use $dyz-med-cnki 检索这个课题的中英文医学证据，并记录来源与覆盖限制。"

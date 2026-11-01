@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "fixture_type": "synthetic_only",
+  "scope": "三类科研场景的工具交接与模型任务输入；预置数值不是统计模型实跑，不代表完整科研端到端通过。",
+  "cases": [
+    {
+      "id": "observational-cohort",
+      "study_type": "retrospective_cohort",
+      "source_text": "SYNTHETIC ONLY. 30-day complications; laparoscopic group: 25 events / 118 participants. Open group: 33 / 96. Unweighted descriptive rates only; no adjusted effect or causal inference.\n",
+      "manuscript_text": "合成教学稿：回顾性队列中，腹腔镜组30天并发症25/118（21.2%），开腹组33/96（34.4%）。分组由观察产生，不能由这些比例确定治疗因果效应。\n",
+      "results": {
+        "schema_version": "1.0",
+        "results": [
+          {
+            "analysis_id": "ldp-complications-30d",
+            "population": "synthetic LDP cohort",
+            "outcome": "any complication",
+            "timepoint": "30 days",
+            "groups": null,
+            "effect_scale": "percentage",
+            "unit": "percent",
+            "estimate": "21.18644067796610169491525424",
+            "ci": null,
+            "denominator": {"value": 118, "kind": "count", "unit": "participants"},
+            "events": 25,
+            "not_applicable": {"groups": "Single-group descriptive proportion", "ci": "This fixture supplies only descriptive arithmetic, no interval estimate"},
+            "source": {"artifact_id": "external-output", "locator": "Synthetic LDP count: 25/118; unweighted percentage"},
+            "execution_status": "completed"
+          }
+        ]
+      },
+      "reported": {
+        "schema_version": "1.0",
+        "reported_values": [
+          {
+            "id": "results-ldp-30d",
+            "analysis_id": "ldp-complications-30d",
+            "locator": {"artifact_id": "manuscript", "location": "Results, LDP complications 30 days"},
+            "context": {"population": "synthetic LDP cohort", "outcome": "any complication", "timepoint": "30 days", "groups": null, "effect_scale": "percentage", "unit": "percent", "ci": null, "denominator": {"kind": "count", "unit": "participants"}},
+            "values": {"estimate": {"value": "21.2", "precision": {"places": 1, "mode": "half_up"}}, "denominator.value": {"value": 118}, "events": {"value": 25}}
+          }
+        ]
+      },
+      "fault": {"field": "estimate", "value": "21.4", "manuscript_text": "合成错误稿：腹腔镜组30天并发症25/118（21.4%）。\n"},
+      "model_prompt": "请用该目录里的合成回顾性队列材料完成一次有限写作与复核：先核对分子分母和比例，再写简短结果及讨论；比较manuscript.txt与fault-manuscript.txt并列出问题；明确没有执行调整模型，不作因果解释。只输出回答，不改文件、不联网、不发起新分析。",
+      "human_review": ["25/118按一位小数应为21.2%，识别错误稿21.4%。", "来源为合成描述数据，不能虚构调整效应、区间、P值、伦理或引文。", "观察性分组保持关联与因果边界。"],
+      "not_covered": ["真实患者数据分析", "调整模型与诊断", "完整稿件与医学专家复核"]
+    },
+    {
+      "id": "randomized-trial",
+      "study_type": "randomized_trial",
+      "source_text": "SYNTHETIC PRECOMPUTED OUTPUT, NOT EXECUTED HERE. ITT; primary symptom change at week 12; treatment minus control; MD=-2.0 points, unadjusted 95% CI [-3.2,-0.8], Holm-adjusted P=0.08. N=200 (100 per arm). Prespecified important benefit threshold: -3 points; lower is better. Trial registration and ethics not supplied.\n",
+      "manuscript_text": "合成试验稿：ITT人群200例，12周症状变化的组间均值差为-2.0分，未作多重性调整的95%CI为-3.2至-0.8分，Holm调整P=0.08；预设重要获益阈值为-3分。两种调整口径分列。\n",
+      "results": {
+        "schema_version": "1.0",
+        "results": [
+          {
+            "analysis_id": "symptom-change-itt-12w",
+            "population": "ITT",
+            "outcome": "symptom change",
+            "timepoint": "12 weeks",
+            "groups": {"comparison": "treatment", "reference": "control"},
+            "effect_scale": "MD",
+            "unit": "points",
+            "estimate": "-2.0",
+            "ci": {"lower": "-3.2", "upper": "-0.8", "level": "0.95", "adjustment": "unadjusted", "method": "synthetic precomputed interval"},
+            "denominator": {"value": 200, "kind": "count", "unit": "participants"},
+            "p": {"value": "0.08", "adjustment": "Holm", "method": "synthetic multiplicity-adjusted test"},
+            "source": {"artifact_id": "external-output", "locator": "Synthetic precomputed primary ITT week-12 row"},
+            "execution_status": "completed"
+          }
+        ]
+      },
+      "reported": {
+        "schema_version": "1.0",
+        "reported_values": [
+          {
+            "id": "results-symptom-12w",
+            "analysis_id": "symptom-change-itt-12w",
+            "locator": {"artifact_id": "manuscript", "location": "Results, primary ITT week-12 outcome"},
+            "context": {"population": "ITT", "outcome": "symptom change", "timepoint": "12 weeks", "groups": {"comparison": "treatment", "reference": "control"}, "effect_scale": "MD", "unit": "points", "ci": {"level": "0.95", "adjustment": "unadjusted", "method": "synthetic precomputed interval"}, "denominator": {"kind": "count", "unit": "participants"}, "p": {"adjustment": "Holm", "method": "synthetic multiplicity-adjusted test"}},
+            "values": {"estimate": {"value": "-2.0"}, "ci.lower": {"value": "-3.2"}, "ci.upper": {"value": "-0.8"}, "p.value": {"value": "0.08"}, "denominator.value": {"value": 200}}
+          }
+        ]
+      },
+      "fault": {"field": "denominator.value", "value": 199, "manuscript_text": "合成错误稿：ITT人群199例，12周MD=-2.0分，未调整95%CI=-3.2至-0.8，Holm调整P=0.08。\n"},
+      "model_prompt": "根据本目录的合成随机试验预置输出写简短结果、临床重要性解释及摘要结果句；核对正常稿和错误稿，保留调整P与未调整CI的口径差异，并与-3分的预设重要获益阈值比较整个区间。未提供伦理、注册和真实模型运行记录。只输出回答，不改文件、不联网、不重跑统计。",
+      "human_review": ["识别200与199的分母冲突。", "不强求Holm调整P与未调整CI一致，不静默改数。", "区间跨过-3分，不能认定重要获益已确定，也不能排除重要获益。", "不编造注册、伦理、试验实际执行或全文科学通过。"],
+      "not_covered": ["随机分配与失访记录核验", "实际推断分析", "正式CONSORT全表核对", "完整稿件与医学专家复核"]
+    },
+    {
+      "id": "systematic-review",
+      "study_type": "systematic_review",
+      "screening": {
+        "schema_version": "1.0",
+        "protocol_version": "synthetic-review-v1",
+        "exclusion_reasons": ["wrong_population", "wrong_design"],
+        "records": [
+          {"record_id": "r1", "source_id": "demo-db", "source_record_id": "raw1", "source_type": "database", "pre_screen_decision": "retain", "decision": "include", "decision_source": "synthetic-decision-r1"},
+          {"record_id": "r2", "source_id": "demo-db", "source_record_id": "raw2", "source_type": "database", "pre_screen_decision": "duplicate", "duplicate_of": "r1", "decision": "not_applicable", "decision_source": "synthetic-decision-r2"},
+          {"record_id": "r3", "source_id": "demo-db", "source_record_id": "raw3", "source_type": "database", "pre_screen_decision": "retain", "decision": "exclude", "decision_source": "synthetic-decision-r3"},
+          {"record_id": "r4", "source_id": "demo-db", "source_record_id": "raw4", "source_type": "database", "pre_screen_decision": "retain", "decision": "include", "decision_source": "synthetic-decision-r4"},
+          {"record_id": "r5", "source_id": "demo-db", "source_record_id": "raw5", "source_type": "database", "pre_screen_decision": "retain", "decision": "include", "decision_source": "synthetic-decision-r5"}
+        ],
+        "reports": [
+          {"report_id": "p1", "source_id": "demo-reports", "source_report_id": "report1", "branch": "database_register", "retrieval_status": "retrieved", "decision": "include", "decision_source": "synthetic-eligibility-p1"},
+          {"report_id": "p2", "source_id": "demo-reports", "source_report_id": "report2", "branch": "database_register", "retrieval_status": "retrieved", "decision": "include", "decision_source": "synthetic-eligibility-p2"},
+          {"report_id": "p3", "source_id": "demo-reports", "source_report_id": "report3", "branch": "database_register", "retrieval_status": "not_retrieved", "decision": "not_applicable", "decision_source": "synthetic-retrieval-p3"},
+          {"report_id": "p4", "source_id": "demo-reports", "source_report_id": "report4", "branch": "database_register", "retrieval_status": "retrieved", "decision": "exclude", "primary_exclusion_reason": "wrong_population", "decision_source": "synthetic-eligibility-p4"}
+        ],
+        "studies": [{"study_id": "s1", "basis": "synthetic reviewed mapping of two reports to one study"}],
+        "record_reports": [{"record_id": "r1", "report_id": "p1", "basis": "synthetic mapping"}, {"record_id": "r1", "report_id": "p2", "basis": "synthetic mapping"}, {"record_id": "r4", "report_id": "p3", "basis": "synthetic mapping"}, {"record_id": "r5", "report_id": "p4", "basis": "synthetic mapping"}],
+        "report_studies": [{"report_id": "p1", "study_id": "s1", "basis": "synthetic study mapping"}, {"report_id": "p2", "study_id": "s1", "basis": "synthetic study mapping"}]
+      },
+      "expected_counts": {"database_register.records_identified": 5, "database_register.records_screened": 4, "database_register.records_advanced": 3, "database_register.reports_sought": 4, "database_register.reports_not_retrieved": 1, "database_register.reports_assessed": 3, "database_register.reports_excluded": 1, "included.reports": 2, "included.studies": 1},
+      "model_prompt": "读取本目录合成筛选台账及计数报告，写PRISMA Mermaid流程图和一段筛选叙述，解释记录、报告与研究的区别。再读取待处理版本的报告，说明为什么不能作为最终计数。所有人工决定均为模拟，未提供真实全文或提取数据。只输出回答，不联网，不运行Meta分析，不声称独立双人审查已完成。",
+      "human_review": ["5条记录去重1条，筛选4条，排除1条，3条进入全文获取，对应4份报告。", "未取回1份不计入全文排除；评估3份、排除1份、纳入2份报告对应1项研究。", "待处理版本不得显示为最终流程。", "不虚构全文、双人审查、合并效应或研究质量结论。"],
+      "not_covered": ["真实数据库检索与全文获取", "独立人工纳排与数据提取", "Meta分析与医学专家复核"]
+    }
+  ]
+}

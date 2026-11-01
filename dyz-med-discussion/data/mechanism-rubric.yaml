@@ -1,0 +1,172 @@
+# mechanism-rubric.yaml
+# ---------------------------------------------------------------------------
+# 用途：/dyz-med-discussion Phase 3.5（Mechanism Integrity Check）和 /dyz-med-mechanism
+# 共用的机制推理评分骨架。本文件是"配置/参考数据"级别的评分标准骨架，不包含任何
+# 具体课题的机制论断——每次实际使用时，把当前论文的机制陈述套进下面的结构里逐条判断，
+# 而不是把这里当成现成答案抄。
+#
+# 定位：这是一份 advisory 的评分辅助表，用于让"机制论断的措辞强度"和"证据实际能支撑
+# 到什么程度"对齐，帮助作者在投稿前自查，不是自动阻断写作的硬性门禁。是否采纳某条
+# 建议的改法，由用户决定。
+# ---------------------------------------------------------------------------
+
+schema_version: "1.0"
+
+# ---------------------------------------------------------------------------
+# 1. 机制链条节点（chain_node）
+# 一条完整的机制论证，理想情况下应该能在下面7个节点上都找到对应内容；
+# 缺哪个节点、哪个节点证据薄弱，都应该在讨论部分里被显式承认，而不是跳过不提。
+# ---------------------------------------------------------------------------
+chain_node:
+  - id: clinical_problem
+    zh: 临床问题
+    description: 这条机制论证试图解释/回应的临床现象或问题是什么。
+  - id: upstream_driver
+    zh: 上游驱动因素
+    description: 触发下游机制级联的起点（暴露、危险因素、信号分子、基因变异等）。
+  - id: mediator
+    zh: 中介环节
+    description: 连接上游驱动因素与最终执行者/表型之间的中间步骤，常是机制论证中最容易被跳过的一环。
+  - id: executor
+    zh: 执行者
+    description: 直接产生表型改变的分子/细胞/生理机制（如某通路的激活、某种细胞损伤）。
+  - id: phenotype
+    zh: 表型/结局
+    description: 最终可观察、可测量的临床或生物学结局。
+  - id: validation_path
+    zh: 验证路径
+    description: 支持这条链条成立、已经完成或计划中的验证性证据（体外/动物/人体队列/干预性研究）。
+  - id: translational_value
+    zh: 转化价值
+    description: 这条机制若成立，对临床决策、生物标志物开发或干预策略的具体意义是什么。
+
+# ---------------------------------------------------------------------------
+# 2. MRL（Mechanism Reasoning Level）证据等级
+# 描述"当前证据能支撑到机制论证的哪一层"，与 evidence_label 搭配使用：
+# 同一个 MRL 等级下，仍然可以按具体措辞谨慎程度分为不同的 evidence_label。
+# ---------------------------------------------------------------------------
+mrl_levels:
+  - id: phenomenon
+    zh: 现象层级
+    description: 仅观察到某个现象或印象，尚未做统计关联验证，也未涉及机制解释。
+  - id: association
+    zh: 关联层级
+    description: 已有统计学关联证据（相关性、回归系数、亚组比较等），但未建立因果或生物学机制路径。
+  - id: mechanism
+    zh: 机制层级
+    description: 有中介/通路/分子层面的证据支持因果路径的生物学合理性（可能来自本研究或文献）。
+  - id: translational
+    zh: 转化层级
+    description: 机制证据已经和具体的临床决策、干预或产品开发路径挂钩，通常需要干预性研究或前瞻性验证支持。
+
+# ---------------------------------------------------------------------------
+# 3. evidence_label：写作时决定措辞强度的直接依据
+# 判断顺序建议：先定位 chain_node 和 mrl_level，再结合"这条陈述的证据来源是什么"
+# （本研究数据 / 引用文献 / 生物学合理性推测）落到下面某一个 label。
+# ---------------------------------------------------------------------------
+evidence_label:
+  - id: supported
+    zh: 证据充分
+    wording_guidance: >
+      可以明确陈述本研究直接支持的路径，但仍应与设计和识别假设匹配，例如
+      "Our data support a pathway in which X is linked to Y through Z."
+      适用条件：本研究或高质量文献已直接验证该中介/通路，且研究设计能够支持这一因果表述
+      （如随机化、明确的时序关系、中介分析满足可识别性假设）。
+    example_phrase: "Our data support a pathway in which X is linked to Y through Z."
+  - id: plausible_inference
+    zh: 合理推测
+    wording_guidance: >
+      使用谨慎语言，明确这是"提示性"而非"证实性"的表述，例如
+      "These findings suggest a possible mechanism whereby X influences Y, potentially mediated by Z."
+      适用条件：有间接证据（如文献里的动物实验、跨研究的关联一致性）支持生物学合理性，
+      但本研究本身未直接验证该中介环节。
+    example_phrase: "These findings suggest a possible mechanism whereby X influences Y, potentially mediated by Z."
+  - id: speculative
+    zh: 推测性/假设性
+    wording_guidance: >
+      只能作为待验证的假设提出，明确写出"目前仍是推测"，并说明需要什么研究来验证，例如
+      "Whether X operates through Z remains speculative; dedicated mechanistic studies are needed."
+      适用条件：仅有生物学合理性上的联想（如同类通路在其他疾病中的作用），
+      没有直接或间接的实证支持。
+    example_phrase: "Whether X operates through Z remains speculative; dedicated mechanistic studies are needed."
+  - id: unsupported
+    zh: 证据不足以支撑
+    wording_guidance: >
+      建议从讨论部分移除这条机制陈述，或明确标记出来交给 /dyz-med-evidence-audit 复核、
+      由用户决定是删除、降级措辞、还是补充证据后保留。不建议以任何确定性或推测性语言呈现。
+    example_phrase: null
+
+# ---------------------------------------------------------------------------
+# 4. 失败模式清单（failure_modes）
+# 每条都是"flag，然后让用户决定怎么改"的语气，不是自动删除或自动阻断。
+# ---------------------------------------------------------------------------
+failure_modes:
+  - id: MECH-001
+    name: 仅有相关性却声称因果
+    trigger_condition: >
+      讨论部分的句子使用了因果语言（causes / leads to / results in），
+      但研究设计是横断面/观察性设计，且未做中介分析或因果推断校正。
+    suggested_action: >
+      标记该句，建议改写为关联性语言（associated with / correlated with），
+      或补充说明为何在本设计下因果表述仍然合理（如有充分的时序和调整依据）。
+    severity: flag_for_user_decision
+
+  - id: MECH-002
+    name: 跳过中介环节
+    trigger_condition: >
+      讨论部分直接把 upstream_driver 和 phenotype 连接起来，
+      中间没有出现任何 mediator 或 executor 层面的描述。
+    suggested_action: >
+      标记该句，建议补充一个合理的中介环节（可来自文献），
+      或明确写出"中介机制尚不清楚，是未来研究方向"这类坦诚表述。
+    severity: flag_for_user_decision
+
+  - id: MECH-003
+    name: 缺乏临床关联
+    trigger_condition: >
+      讨论部分描述了一个分子/细胞机制，但全文没有任何一句话
+      把这个机制和 translational_value（临床决策、干预、标志物等）联系起来。
+    suggested_action: >
+      标记该段，建议补充一句具体的临床意义，或者如果机制本身与临床问题距离尚远，
+      建议明确降级为"基础机制探索，转化意义有待验证"。
+    severity: flag_for_user_decision
+
+  - id: MECH-004
+    name: 仅停留在特征重要性、未映射病理生理
+    trigger_condition: >
+      讨论部分解释一个机器学习/AI模型的结果时，只复述了特征重要性排序
+      （如 SHAP 值、变量重要性得分），没有把重要特征对应到具体的病理生理或临床过程。
+    suggested_action: >
+      标记该段，建议把排名靠前的特征逐一映射到已知的生物学/临床通路，
+      如果暂时无法映射，建议明确写出"该特征的病理生理学意义尚待阐明"。
+    severity: flag_for_user_decision
+
+  - id: MECH-005
+    name: 转化意义过度声称
+    trigger_condition: >
+      讨论部分声称某个机制或模型已经具备临床应用价值（如"可用于临床决策"），
+      但研究本身是临床前/观察性研究，尚未经过前瞻性验证或干预性研究检验。
+    suggested_action: >
+      标记该句，建议下调措辞强度（如改为"具有潜在临床应用前景，尚待前瞻性验证"），
+      并补充说明达到临床应用还需要哪一步验证。
+    severity: flag_for_user_decision
+
+# ---------------------------------------------------------------------------
+# 5. 机制链条完整性检查（chain_completeness_check）
+# 供 /dyz-med-discussion Phase 3.5 第4步引用：把论文的主要机制论证套进这个顺序，
+# 明确标出哪些节点目前是空的或证据薄弱。
+# ---------------------------------------------------------------------------
+chain_completeness_template:
+  order:
+    - clinical_problem
+    - upstream_driver
+    - mediator
+    - executor
+    - phenotype
+    - validation_path
+    - translational_value
+  usage_note: >
+    对论文的主要机制论证，逐节点填写"当前论断 / 证据来源 / evidence_label / 缺口说明"，
+    缺口较大的节点建议在讨论部分显式承认（例如"the mediator between X and Y remains to
+    be identified"），而不是略过不提。这不是要求作者补齐所有证据才能投稿，
+    而是让措辞诚实地反映证据现状。

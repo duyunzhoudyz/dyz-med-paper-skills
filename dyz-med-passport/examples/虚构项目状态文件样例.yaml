@@ -1,0 +1,92 @@
+# 本示例完全虚构，只展示状态与来源的写法，不是真实项目或批准证据。
+# methods保留旧记录，缺字节绑定且示例路径未提供，校验时须报告unverified/缺文件，不能当通过样本。
+# 完整可执行正反例由 tests/test_passport_contract.py 在临时目录生成。
+
+schema_version: "1.1"
+
+project:
+  id: "demo-analgesia-cohort"
+  title: "虚构镇痛方案回顾性队列研究"
+  manuscript_version: "v2"
+  study_type: "retrospective_cohort"
+  current_stage: "methods_drafted"
+  updated_at: "2026-07-06"
+
+research:
+  question: "方案A与方案B是否与术后48小时疼痛评分差异相关"
+  design:
+    value: "回顾性队列研究"
+    status: "confirmed"
+    source: "paper/protocol.md#study-design"
+  primary_outcome:
+    value: "术后48小时疼痛评分"
+    status: "confirmed"
+    source: "paper/protocol.md#outcomes"
+
+target_journal:
+  name: ""
+  status: "not_selected"
+  requirements_checked_at: ""
+  source: ""
+
+source_status:
+  protocol: "available"
+  registration: "not_applicable"
+  ethics: "needs_confirmation"
+  data: "available"
+  statistics: "not_started"
+  references: "in_progress"
+  authorship: "not_checked"
+
+artifacts:
+  - id: methods
+    path: "paper/sections/02-methods.md"
+    version: "v1"
+    sha256: null  # 未读取实际文件，不能编造哈希；旧记录保留为unverified
+    status: "draft"
+    verified_at: ""
+
+checks:
+  - id: legacy-methods-review
+    status: not_run  # 旧式记录无inputs，不自动升级为当前检查
+    report: ""
+    checked_at: ""
+
+confirmed_facts:
+  - field: "research.primary_outcome"
+    value: "术后48小时疼痛评分"
+    source: "paper/protocol.md#outcomes"
+    confirmed_by_role: "principal_investigator"
+    confirmed_at: "2026-06-25"
+
+open_items:
+  - id: "OPEN-001"
+    issue: "伦理批件号尚未对照原件"
+    severity: "critical"
+    needs: "由项目负责人核对伦理批件原件"
+    owner_role: "principal_investigator"
+    status: "open"
+  - id: "OPEN-002"
+    issue: "目标期刊未确定"
+    severity: "minor"
+    needs: "完成期刊匹配"
+    owner_role: "corresponding_author"
+    status: "open"
+
+human_approvals:
+  manuscript_final:
+    state: not_confirmed
+    targets: []
+  submission_package:
+    state: not_confirmed
+    targets: []
+  external_submission:
+    state: not_confirmed
+    targets: []
+# 没有真实来源，不填写confirmed、actor_id或来源证据；确认完整形状见artifact-contract.md。
+
+history:
+  - date: "2026-07-06"
+    action: "created_methods_draft"
+    artifact_or_field: "paper/sections/02-methods.md"
+    source: "current_task"

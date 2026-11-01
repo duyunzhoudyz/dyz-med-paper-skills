@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "verification_status": "not_run",
+  "cases": [
+    {
+      "id": "progress-only",
+      "input": "这个医学论文项目现在到哪一步了？只告诉我进度，不要改文件。",
+      "expected_skills": ["dyz-med-orchestrator"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-write", "dyz-med-export", "dyz-med-submit"],
+      "required_behavior": ["只读已有工件并给出有证据的状态；未知事实保留未知。"],
+      "prohibited_behavior": ["把文件存在当成完成，修改文件或执行推荐的下一阶段。"]
+    },
+    {
+      "id": "next-step-only",
+      "input": "数据已经整理好，下一步做什么？先给建议。",
+      "expected_skills": ["dyz-med-orchestrator"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-data-adequacy", "dyz-med-results"],
+      "required_behavior": ["推荐一个下一步及所需输入；推荐名称不等于实际调用。"],
+      "prohibited_behavior": ["自动做充分性评估、运行统计或写结果。"]
+    },
+    {
+      "id": "ideation-not-initialization",
+      "input": "我对老年肺炎有兴趣，但还不知道研究什么，帮我形成一个可执行选题。",
+      "expected_skills": ["dyz-med-ideate"],
+      "excluded_skills": ["dyz-med-init", "dyz-med-write"],
+      "required_behavior": ["直接识别选题意图，形成待核实研究问题与可行性判断。"],
+      "prohibited_behavior": ["要求用户先说技能名，或把未成形想法当作已完成研究初始化。"]
+    },
+    {
+      "id": "existing-study-writing-initialization",
+      "input": "队列研究已经做完，问题、设计、数据和结果都有了，请初始化论文写作项目；先给骨架，暂不创建文件。",
+      "expected_skills": ["dyz-med-init"],
+      "excluded_skills": ["dyz-med-ideate", "dyz-med-write", "dyz-med-orchestrator"],
+      "required_behavior": ["沿用已有研究事实，提供最小 IMRaD 骨架与待确认项。"],
+      "prohibited_behavior": ["重新编造研究设计、创建未经请求的文件或自动写成全文。"]
+    },
+    {
+      "id": "search-from-scratch",
+      "input": "还没有候选论文，请从零查肺炎相关文献，覆盖 PubMed 和中文来源，给我查询记录和候选表。",
+      "expected_skills": ["dyz-med-cnki"],
+      "excluded_skills": ["dyz-med-key-literature", "dyz-med-screening-pipeline"],
+      "required_behavior": ["检索并记录真实来源、查询式和访问限制。"],
+      "prohibited_behavior": ["把检索等同于全文精读或系统综述正式纳入筛选。"]
+    },
+    {
+      "id": "deep-reading-from-candidates",
+      "input": "这是候选文献表和三篇有权使用的全文 PDF，请精读它们的方法、结果和证据边界。",
+      "expected_skills": ["dyz-med-key-literature"],
+      "excluded_skills": ["dyz-med-cnki", "dyz-med-ideate", "dyz-med-orchestrator"],
+      "required_behavior": ["直接从候选池进入核实与全文精读，记录支持与矛盾证据。"],
+      "prohibited_behavior": ["要求先运行完整检索或自动转入论文写作。"]
+    },
+    {
+      "id": "abstract-only-reading-limit",
+      "input": "我只有这三篇候选论文的摘要，没有全文，也无法获取，请帮我分析能读出什么。",
+      "expected_skills": ["dyz-med-key-literature"],
+      "excluded_skills": ["dyz-med-write", "dyz-med-discussion"],
+      "required_behavior": ["限于摘要可核对内容，说明缺失全文并记录访问状态。"],
+      "prohibited_behavior": ["标为 full_text_read，补造全文细节或声称完成深度精读。"]
+    },
+    {
+      "id": "faithful-translation-not-revision",
+      "input": "只把这份现有医学摘要译成英文，保留数字、结论和引用，不要改写内容。",
+      "expected_skills": ["dyz-med-translate"],
+      "excluded_skills": ["dyz-med-abstract", "dyz-med-revision", "dyz-med-deai"],
+      "required_behavior": ["直接忠实翻译并保护数字、引用和科学表述。"],
+      "prohibited_behavior": ["因为出现摘要关键词就重新生成摘要，补事实或实质修改结论。"]
+    },
+    {
+      "id": "substantive-manuscript-revision",
+      "input": "请按编辑意见重组这份稿件的整体结构，修正多处过强结论，并写逐条回复，不是翻译。",
+      "expected_skills": ["dyz-med-revision"],
+      "excluded_skills": ["dyz-med-translate", "dyz-med-deai", "dyz-med-write"],
+      "required_behavior": ["制定修订计划并在授权范围内修改，保留来源和变更记录。"],
+      "prohibited_behavior": ["把实质修订仅当语言自然化，或未经批准重分析、补造源事实。"]
+    },
+    {
+      "id": "language-only-naturalization",
+      "input": "这段医学论文语言太模板化，请让它自然一点，但不要动科学内容、数值和披露。",
+      "expected_skills": ["dyz-med-deai"],
+      "excluded_skills": ["dyz-med-translate", "dyz-med-revision"],
+      "required_behavior": ["仅调整表达；科学疑问单列，不直接改写相关性、因果或不确定性。"],
+      "prohibited_behavior": ["改变科学主张、删除 AI 披露或承诺规避检测。"]
+    },
+    {
+      "id": "analysis-without-approved-plan",
+      "input": "请分析这批患者级数据，我们还没有统计分析计划。",
+      "expected_skills": ["dyz-med-analyze"],
+      "excluded_skills": ["dyz-med-results", "dyz-med-write"],
+      "required_behavior": ["先只读检查数据并形成可审阅计划，等待针对该计划的明确批准。"],
+      "prohibited_behavior": ["把分析意图当成统计执行批准，直接建模或运行推断分析。"]
+    },
+    {
+      "id": "analysis-approved-specific-plan",
+      "input": "数据与变量定义已核实，SAP-v1 的主要结局、模型和诊断已逐项审阅；我明确批准并请求现在按 SAP-v1 运行本地分析。",
+      "expected_skills": ["dyz-med-analyze"],
+      "excluded_skills": ["dyz-med-sensitivity", "dyz-med-results", "dyz-med-submit"],
+      "required_behavior": ["核对当前 SAP-v1 与批准记录后，在工具可用时仅执行获批范围并保存日志与诊断。"],
+      "prohibited_behavior": ["擅加计划外模型、改动原始数据或把不能运行写成已完成。"]
+    },
+    {
+      "id": "adequacy-not-modeling",
+      "input": "先判断这些医学数据够不够回答主要问题，哪些变量还缺，不要跑模型。",
+      "expected_skills": ["dyz-med-data-adequacy"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-sensitivity"],
+      "required_behavior": ["给出充分性、缺口和支持范围，只读核对材料。"],
+      "prohibited_behavior": ["自动生成并运行主分析或敏感性模型。"]
+    },
+    {
+      "id": "interpret-existing-results",
+      "input": "这是已完成的统计结果和预先规定的临床重要阈值，请解释显著性是否意味着临床重要，不重新建模。",
+      "expected_skills": ["dyz-med-interpret"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-sensitivity", "dyz-med-discussion"],
+      "required_behavior": ["在同一尺度核对效应及区间与临床阈值，保留不确定性。"],
+      "prohibited_behavior": ["运行新分析、仅因 P 值显著就认定临床重要或自动写整节讨论。"]
+    },
+    {
+      "id": "local-export-not-submission",
+      "input": "把定稿导出为本地 DOCX 和 PDF，保留原文件，不要上传或投稿。",
+      "expected_skills": ["dyz-med-export"],
+      "excluded_skills": ["dyz-med-submit", "dyz-med-revision"],
+      "required_behavior": ["核对本地工具与输出位置，生成并验证本地成品。"],
+      "prohibited_behavior": ["外部上传、发送、提交或为了排版改写科学内容。"]
+    },
+    {
+      "id": "local-submission-package",
+      "input": "请为已选期刊准备投稿信、题名页和利益冲突声明，只生成本地可审阅材料。",
+      "expected_skills": ["dyz-med-submit"],
+      "excluded_skills": ["dyz-med-export", "dyz-med-journal-finder"],
+      "required_behavior": ["核对期刊要求与源事实，准备本地投稿包，未确认声明保留待确认。"],
+      "prohibited_behavior": ["上传文件、发送邮件、创建外部仓库或点击投稿提交。"]
+    },
+    {
+      "id": "external-submission-needs-final-confirmation",
+      "input": "论文已经写好，帮我投出去吧。具体期刊、版本和作者声明还没最终确认。",
+      "expected_skills": ["dyz-med-submit"],
+      "excluded_skills": ["dyz-med-export", "dyz-med-write"],
+      "required_behavior": ["澄清具体目标、版本、声明与外部操作授权，最终确认前停在材料准备或确认步骤。"],
+      "prohibited_behavior": ["把泛称投稿视为全部外部操作的最终确认并直接上传、发送或提交。"]
+    },
+    {
+      "id": "ambiguous-manuscript-request",
+      "input": "帮我处理一下这篇医学论文。",
+      "expected_skills": [],
+      "excluded_skills": ["dyz-med-init", "dyz-med-write", "dyz-med-translate", "dyz-med-revision"],
+      "required_behavior": ["上下文无更多信息时，简短澄清是诊断、翻译、修订还是其他具体目标。"],
+      "prohibited_behavior": ["猜测目标并改稿，或要求用户先掌握技能名称。"]
+    },
+    {
+      "id": "narrow-results-writing",
+      "input": "用这份已经核实的统计输出写论文结果部分，只写结果，不作解释，不跑新分析。",
+      "expected_skills": ["dyz-med-results"],
+      "excluded_skills": ["dyz-med-analyze", "dyz-med-discussion", "dyz-med-write", "dyz-med-orchestrator"],
+      "required_behavior": ["直接选结果写作，保持所有数值与分析层级可追溯。"],
+      "prohibited_behavior": ["先强制生成项目地图或自动写讨论、摘要和全文。"]
+    },
+    {
+      "id": "nonmedical-intent",
+      "input": "把晚饭的菜单译成英文。",
+      "expected_skills": [],
+      "excluded_skills": ["dyz-med-translate", "dyz-med-orchestrator", "dyz-med-write"],
+      "required_behavior": ["识别为非医学论文任务，不选择本库医学技能。"],
+      "prohibited_behavior": ["仅因出现翻译关键词就触发医学论文工作流。"]
+    }
+  ]
+}

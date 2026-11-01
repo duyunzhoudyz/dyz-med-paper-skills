@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学论断证据核查"
+  short_description: "逐条核对医学稿件论断与文献、指南或数据是否真正匹配"
+  default_prompt: "Use $dyz-med-evidence-audit 逐条核对这份稿件的关键论断与证据。"

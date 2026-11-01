@@ -1,0 +1,7 @@
+policy:
+  allow_implicit_invocation: true
+
+interface:
+  display_name: "DYZ · 医学敏感性分析"
+  short_description: "检验医学研究主要结论对模型、样本与假设变化的稳健性"
+  default_prompt: "Use $dyz-med-sensitivity 检验这项医学研究主要结论对合理分析选择的稳健性。"

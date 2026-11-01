@@ -1,0 +1,28 @@
+# Local installations and editor state
+.breezell/
+.agents/
+.claude/
+.codex/
+.sakura/
+.vscode/
+# Internal audits, raw runs and backups stay local
+audit-reports/
+tests/results/
+backups/
+# Research projects, patient data and local credentials
+paper/
+.env
+.env.*
+*.pem
+*.key
+# Python and OS caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+# Release scratch output
+dist/
+*.log

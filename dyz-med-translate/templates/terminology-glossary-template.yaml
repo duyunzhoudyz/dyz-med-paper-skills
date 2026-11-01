@@ -1,0 +1,64 @@
+# 术语对照表骨架（模板）
+#
+# 用途：`/dyz-med-translate` Phase 2（Load Terminology Consistency）引用的 data/term-store.yaml 的可读
+# 维护版本骨架。可直接复制到项目 data/term-store.yaml 下按项目术语补充；也可以单独作为人工维护的
+# 术语对照记录使用。
+#
+# 字段说明：
+#   zh: 中文术语
+#   en: 英文术语（首选/canonical译法）
+#   is_medical_term: 是否为医学专有名词（true/false）——非医学通用词汇（如"显著""随访"这类高频写作用语）
+#     也可以收录，但标记为false，用于统一写作风格而非术语准确性
+#   term_type: 术语类别（disease / drug / procedure / statistical / anatomy / general_academic 等）
+#   first_use_annotation_needed: 首次出现是否需要注释/全称展开（true/false），例如缩写词首次出现通常
+#     需要展开全称
+#   notes: 补充说明（如是否为MeSH规范词、是否为INN药物名、是否有争议译法）
+
+terms:
+  - zh: "随机对照试验"
+    en: "randomized controlled trial (RCT)"
+    is_medical_term: false
+    term_type: general_academic
+    first_use_annotation_needed: true
+    notes: "缩写RCT首次出现需展开全称"
+
+  - zh: "糖化血红蛋白"
+    en: "glycated hemoglobin (HbA1c)"
+    is_medical_term: true
+    term_type: procedure
+    first_use_annotation_needed: true
+    notes: "MeSH规范词，缩写HbA1c为通行简称"
+
+  - zh: "二甲双胍"
+    en: "metformin"
+    is_medical_term: true
+    term_type: drug
+    first_use_annotation_needed: false
+    notes: "WHO INN药物国际非专利名称"
+
+  - zh: "比值比"
+    en: "odds ratio (OR)"
+    is_medical_term: true
+    term_type: statistical
+    first_use_annotation_needed: true
+    notes: "统计术语，需与置信区间(CI)配合报告"
+
+  - zh: "差异有统计学意义"
+    en: "the difference was statistically significant"
+    is_medical_term: false
+    term_type: statistical
+    first_use_annotation_needed: false
+    notes: "若原文缺少效应量与95% CI，应在译文外提示作者补充；翻译阶段不得生成缺失数值"
+
+  - zh: "失访"
+    en: "lost to follow-up"
+    is_medical_term: true
+    term_type: procedure
+    first_use_annotation_needed: false
+    notes: ""
+
+# --- 使用说明 ---
+# 1. 以上条目仅为格式示例，展示字段结构和填写方式，不代表任何具体项目已确认的术语库内容。
+# 2. 新增术语时，若该术语在稿件中反复出现且尚未收录，翻译过程中会被标记为"待作者复核"，不会自行
+#    编造译法后悄悄写入术语库；建议由作者确认后再正式收录。
+# 3. term_type 字段可以按项目需要扩充分类（如增加"instrument"用于量表名称等）。

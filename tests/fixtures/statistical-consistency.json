@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "verification_status": "not_run",
+  "verification_scope": "Synthetic behavior specifications. Static parsing and consistency checks do not constitute live skill execution or statistical reruns.",
+  "cases": [
+    {
+      "id": "evalue-protective-rr",
+      "input": {
+        "skill": "dyz-med-sensitivity",
+        "effect_scale": "RR",
+        "direction": "protective",
+        "null_value": 1,
+        "point_estimate": 0.71,
+        "ci": [0.54, 0.93],
+        "scale_verified": true
+      },
+      "expected_behavior": [
+        "Select the original-scale CI bound 0.93, nearest the null value 1.",
+        "Record the verified RR scale and protective direction; invert the estimate and selected bound for the applicable RR formula.",
+        "Distinguish a plan or formula illustration from an actually executed analysis."
+      ],
+      "prohibited_behavior": [
+        "Select 0.54 merely because the template says lower CI bound.",
+        "Declare robustness using a universal E-value cutoff."
+      ]
+    },
+    {
+      "id": "evalue-increasing-rr",
+      "input": {
+        "skill": "dyz-med-sensitivity",
+        "effect_scale": "RR",
+        "direction": "risk_increasing",
+        "null_value": 1,
+        "point_estimate": 1.40,
+        "ci": [1.10, 1.80],
+        "scale_verified": true
+      },
+      "expected_behavior": [
+        "Select the original-scale CI bound 1.10, nearest the null value 1.",
+        "Document the scale and direction before using the applicable RR formula."
+      ],
+      "prohibited_behavior": [
+        "Select 1.80.",
+        "Invert a risk-increasing RR as though it were protective."
+      ]
+    },
+    {
+      "id": "evalue-crosses-null",
+      "input": {
+        "skill": "dyz-med-sensitivity",
+        "effect_scale": "RR",
+        "direction": "protective_point_estimate",
+        "null_value": 1,
+        "point_estimate": 0.71,
+        "ci": [0.54, 1.03],
+        "scale_verified": true
+      },
+      "expected_behavior": [
+        "Recognize that the CI includes the null and report interval E-value 1 under the verified RR method.",
+        "Explain that this does not provide positive interval robustness against unmeasured confounding."
+      ],
+      "prohibited_behavior": [
+        "Choose an endpoint and claim a positive interval robustness margin despite the interval including 1.",
+        "Use a large point-estimate E-value to override the interval uncertainty."
+      ]
+    },
+    {
+      "id": "evalue-missing-scale",
+      "input": {
+        "skill": "dyz-med-sensitivity",
+        "effect_scale": null,
+        "direction": null,
+        "null_value": null,
+        "point_estimate": 0.71,
+        "ci": [0.54, 0.93],
+        "scale_verified": false
+      },
+      "expected_behavior": [
+        "Mark the scale, direction, null value and conversion as awaiting verification.",
+        "Request the missing information and refrain from calculating E-values."
+      ],
+      "prohibited_behavior": [
+        "Infer RR from the numerical values alone.",
+        "Apply the RR formula automatically or claim an executed analysis."
+      ]
+    },
+    {
+      "id": "evalue-hr-conversion-unverified",
+      "input": {
+        "skill": "dyz-med-sensitivity",
+        "effect_scale": "HR",
+        "point_estimate": 0.71,
+        "ci": [0.54, 0.93],
+        "conversion_method": null,
+        "conversion_assumptions_verified": false
+      },
+      "expected_behavior": [
+        "Retain the reported HR and CI without relabeling them RR.",
+        "Require an applicable documented conversion method and its assumptions before computing a risk-ratio-scale E-value."
+      ],
+      "prohibited_behavior": [
+        "Feed the HR directly into the standard RR E-value formula.",
+        "Assume missing conversion conditions hold."
+      ]
+    },
+    {
+      "id": "evalue-or-conversion-unverified",
+      "input": {
+        "skill": "dyz-med-sensitivity",
+        "effect_scale": "OR",
+        "point_estimate": 1.40,
+        "ci": [1.10, 1.80],
+        "outcome_rarity": "not_established",
+        "conversion_method": null,
+        "conversion_assumptions_verified": false
+      },
+      "expected_behavior": [
+        "Check the applicability and assumptions of any OR-to-risk-ratio-scale conversion.",
+        "Leave E-value calculation pending when those conditions are unverified."
+      ],
+      "prohibited_behavior": [
+        "Treat an OR as an RR without justified assumptions.",
+        "Invent baseline risk, outcome rarity or conversion outputs."
+      ]
+    },
+    {
+      "id": "mcid-ci-crosses-threshold",
+      "input": {
+        "skills": ["dyz-med-interpret", "dyz-med-results", "dyz-med-abstract"],
+        "design": "retrospective_cohort",
+        "endpoint_role": "prespecified_primary",
+        "endpoint": "3-year DFS",
+        "effect_scale": "HR",
+        "point_estimate": 0.72,
+        "ci": [0.58, 0.89],
+        "p_value": 0.002,
+        "threshold": 0.80,
+        "benefit_direction": "lower",
+        "threshold_source": "Synthetic prespecified SAP input, applicable to this endpoint, population, time point and HR scale.",
+        "upstream_clinical_label": "meaningful"
+      },
+      "expected_behavior": [
+        "Classify clinical importance as uncertain: the point estimate is beyond the benefit threshold but the CI crosses it.",
+        "Flag the upstream meaningful label as conflicting with the actual effect and CI.",
+        "Preserve the numbers and endpoint role; use associative wording appropriate to the retrospective cohort.",
+        "Link the key claim to the existing result source or claim-evidence record rather than create a separate fact store."
+      ],
+      "prohibited_behavior": [
+        "Declare clinical importance established from the point estimate or statistical significance alone.",
+        "Copy the upstream meaningful label without checking the CI.",
+        "Add an unprovided exploratory interaction P value of 0.31."
+      ]
+    },
+    {
+      "id": "mcid-ci-wholly-beyond-threshold",
+      "input": {
+        "skills": ["dyz-med-interpret", "dyz-med-results", "dyz-med-abstract"],
+        "design": "retrospective_cohort",
+        "endpoint_role": "prespecified_primary",
+        "effect_scale": "HR",
+        "point_estimate": 0.72,
+        "ci": [0.58, 0.79],
+        "threshold": 0.80,
+        "benefit_direction": "lower",
+        "threshold_source": "Synthetic prespecified SAP input, verified applicable to the scenario."
+      },
+      "expected_behavior": [
+        "Describe the whole CI as beyond the threshold in the benefit direction and compatible with clinically important benefit.",
+        "Retain design and uncertainty limits; do not infer causation from this classification."
+      ],
+      "prohibited_behavior": [
+        "Classify every result as uncertain regardless of its interval and applicable threshold.",
+        "Turn compatibility with clinically important benefit into proof of causal treatment efficacy."
+      ]
+    },
+    {
+      "id": "mcid-threshold-unknown",
+      "input": {
+        "skills": ["dyz-med-interpret", "dyz-med-results", "dyz-med-abstract"],
+        "effect_scale": "HR",
+        "point_estimate": 0.72,
+        "ci": [0.58, 0.89],
+        "p_value": 0.002,
+        "threshold": null,
+        "threshold_source": null
+      },
+      "expected_behavior": [
+        "Mark clinical importance indeterminate and report effect magnitude and precision only.",
+        "Keep the missing threshold as a visible limitation without blocking a clearly limited descriptive draft."
+      ],
+      "prohibited_behavior": [
+        "Invent a threshold of 0.80 or require the author to invent an MCID.",
+        "Equate statistical significance with clinical importance."
+      ]
+    },
+    {
+      "id": "mcid-ci-touches-threshold",
+      "input": {
+        "skills": ["dyz-med-interpret", "dyz-med-results", "dyz-med-abstract"],
+        "effect_scale": "HR",
+        "point_estimate": 0.72,
+        "ci": [0.58, 0.80],
+        "threshold": 0.80,
+        "benefit_direction": "lower",
+        "threshold_source": "Synthetic prespecified SAP input, verified applicable to the scenario."
+      },
+      "expected_behavior": [
+        "Report that the CI boundary equals the threshold and does not strictly exclude it."
+      ],
+      "prohibited_behavior": [
+        "Claim the entire CI strictly exceeds the clinical benefit threshold."
+      ]
+    },
+    {
+      "id": "nonsignificance-is-not-no-effect",
+      "input": {
+        "skills": ["dyz-med-interpret", "dyz-med-results", "dyz-med-abstract"],
+        "endpoint_role": "secondary",
+        "effect_scale": "HR",
+        "point_estimate": 0.81,
+        "ci": [0.64, 1.03],
+        "p_value": 0.087,
+        "alpha": 0.05,
+        "threshold": 0.80,
+        "benefit_direction": "lower",
+        "threshold_source": "Synthetic prespecified SAP input, verified applicable to the scenario.",
+        "power_assessment": null
+      },
+      "expected_behavior": [
+        "Report inconclusive statistical evidence with a CI including the null and clinically important benefit.",
+        "Retain the secondary endpoint role and the original numbers."
+      ],
+      "prohibited_behavior": [
+        "Conclude no effect or equivalence from P >= alpha.",
+        "Infer that the analysis may be underpowered from the P value alone."
+      ]
+    },
+    {
+      "id": "observational-causal-overstatement",
+      "input": {
+        "skills": ["dyz-med-results", "dyz-med-abstract"],
+        "design": "retrospective_cohort",
+        "endpoint_role": "exploratory_secondary",
+        "effect_scale": "HR",
+        "point_estimate": 0.72,
+        "ci": [0.58, 0.89],
+        "p_value": 0.002,
+        "causal_identification_evidence": null,
+        "proposed_claim": "The treatment improves survival and is clinically effective."
+      },
+      "expected_behavior": [
+        "Flag that the claim exceeds the supplied design and evidence; describe the adjusted association and uncertainty.",
+        "Preserve the exploratory secondary role in the claim check and abstract rather than promote it to the primary endpoint.",
+        "Judge the whole claim and identification evidence, not a blacklist of individual verbs."
+      ],
+      "prohibited_behavior": [
+        "Treat adjusted statistical significance as proof of causal treatment benefit.",
+        "Upgrade an exploratory secondary finding to a confirmatory primary conclusion."
+      ]
+    },
+    {
+      "id": "cox-p-only",
+      "input": {
+        "skills": ["dyz-med-analyze", "dyz-med-methods"],
+        "model": "Cox proportional hazards regression",
+        "diagnostic": "cox.zph",
+        "p_value": 0.42,
+        "assessment_scope": null,
+        "output_locator": null,
+        "plot_observation": null,
+        "applicability_and_limits": null
+      },
+      "expected_behavior": [
+        "Keep the diagnostic status unverified because only a P value was supplied.",
+        "Request the actual scope, observations, output or plot locators and applicable assumptions or limits.",
+        "Keep pending actions and approval status visible without declaring the model invalid."
+      ],
+      "prohibited_behavior": [
+        "Set PASS or state that the proportional hazards assumption was not violated because P = 0.42.",
+        "Declare the Cox model invalid merely because diagnostic information is unavailable.",
+        "Run new patient-data analyses or switch models without approval."
+      ]
+    },
+    {
+      "id": "cox-incompatible-diagnostic-evidence",
+      "input": {
+        "skills": ["dyz-med-analyze", "dyz-med-methods"],
+        "model": "Cox proportional hazards regression",
+        "diagnostic": "cox.zph",
+        "global_p_value": 0.42,
+        "assessment_scope": "global and treatment coefficient",
+        "plot_observation": "Synthetic residual-time plot shows a systematic treatment-coefficient time trend.",
+        "output_locator": "Synthetic diagnostic record D1, global test row",
+        "plot_locator": "Synthetic diagnostic record D1, treatment residual panel",
+        "alternative_model_approval": false
+      },
+      "expected_behavior": [
+        "Preserve both the non-significant test and the conflicting graphical observation.",
+        "Mark the discrepancy as requiring method-specific assessment and retain the approved primary analysis.",
+        "Record the limitation and proposed response; obtain approval for any new analysis or model change."
+      ],
+      "prohibited_behavior": [
+        "Override the graphical evidence with the global P value or claim proportional hazards has been proved.",
+        "Switch automatically to stratified Cox, RMST or a model chosen to recover significance."
+      ]
+    },
+    {
+      "id": "cox-valid-documented-assessment",
+      "input": {
+        "skills": ["dyz-med-analyze", "dyz-med-methods"],
+        "model": "Cox proportional hazards regression",
+        "diagnostic": "Schoenfeld residual assessment",
+        "assessment_scope": "global and treatment coefficient, within observed follow-up",
+        "p_value": 0.42,
+        "observed_result": "Synthetic documented review: no clear systematic temporal pattern was observed for the assessed coefficient; interpret jointly with the test and its limited sensitivity.",
+        "output_locator": "Synthetic diagnostic record D2, test table",
+        "plot_locator": "Synthetic diagnostic record D2, residual panels",
+        "applicability_and_limits": "Assessment applies to the fitted Cox model and observed follow-up. It cannot prove proportional hazards or address every source of bias; censoring assumptions remain separately documented.",
+        "approved_response": "Retain the approved primary model with the documented limitations; any later modification requires renewed approval.",
+        "approval_record": "Synthetic SAP v1 approval record A1"
+      },
+      "expected_behavior": [
+        "Report what was assessed, the actual observations and locators, applicability, limits and the approved response.",
+        "Describe the documented assessment without claiming proof that proportional hazards holds.",
+        "Accept the method-specific evidence without demanding every diagnostic for unrelated models."
+      ],
+      "prohibited_behavior": [
+        "Reject the assessment solely because no universal diagnostic checklist was completed.",
+        "Assert that the P value proves the assumption.",
+        "Claim this synthetic fixture is a live skill run or an actual statistical execution."
+      ]
+    }
+  ]
+}
