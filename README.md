@@ -1,26 +1,41 @@
 <!-- README_SYNC: source=working-tree; updated=2026-11-02 -->
 
-简体中文 · [English](README_EN.md)
+<p align="center">
+  简体中文 · <a href="README_EN.md">English</a>
+</p>
 
-# DYZ MedPaper
+<h1 align="center">DYZ MedPaper</h1>
 
-![DYZ MedPaper 工作流介绍：从研究证据、论证规划到稿件写作与修订，面向 Claude Code、Codex 和兼容 Agent Skills 的智能体](docs/assets/readme-overview.png)
+<p align="center">
+  <img src="docs/assets/readme-overview.png" alt="DYZ MedPaper 工作流介绍：从研究证据、论证规划到稿件写作与修订，面向 Claude Code、Codex 和兼容 Agent Skills 的智能体" width="880">
+</p>
 
-**临床已经够忙了，写论文，多一个能干活的帮手。**
+<p align="center">
+  <strong>临床已经够忙了，<br>写论文，多一个能干活的帮手。</strong>
+</p>
+
+<p align="center">
+  ⭐ <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills">点亮 Star，把这个科研帮手收进工具箱</a>，下次写论文、改稿时回来找它。
+</p>
+
+<p align="center">
+  <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square" alt="Stars"></a>
+  <a href="#status"><img src="https://img.shields.io/badge/status-public_beta-amber?style=flat-square" alt="Status: Public Beta"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square" alt="Agent Skills"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square" alt="Python 3.10+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square" alt="License: PolyForm NC 1.0.0"></a>
+</p>
+
+<p align="center">
+  <a href="#skills">能帮你做什么</a> · <a href="#for-clinicians">适合国内医生</a> · <a href="#examples">任务与示例</a><br>
+  <a href="#quick-start">安装使用</a> · <a href="#status">项目状态</a> · <a href="#license">许可与联系</a>
+</p>
+
+---
 
 DYZ MedPaper 是给**临床医生和医学研究生**准备的一套 AI 科研工作流。从选题、查文献、看结果，到写初稿、改讨论、回审稿意见，帮你把手头的材料一步步变成能讨论、能修改的论文稿。
 
 把这 **32 个技能**装进 **Claude Code、Codex 或其他支持 Agent Skills 的智能体**，就可以用中文交代任务，从眼前最头疼的那一步开始。[查看安装方式](#quick-start)
-
-⭐ [点亮 Star，把这个科研帮手收进工具箱](https://github.com/duyunzhoudyz/dyz-med-paper-skills)，下次写论文、改稿时回来找它。
-
-[![Stars](https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square)](https://github.com/duyunzhoudyz/dyz-med-paper-skills)
-[![Status: Public Beta](https://img.shields.io/badge/status-public_beta-amber?style=flat-square)](#status)
-[![Agent Skills](https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square)](#skills)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)](https://www.python.org/downloads/)
-[![License: PolyForm NC 1.0.0](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square)](LICENSE)
-
-**快速导航：** [能帮你做什么](#skills) · [适合国内医生](#for-clinicians) · [任务与示例](#examples) · [安装使用](#quick-start) · [项目状态](#status) · [许可与联系](#license)
 
 <a id="skills"></a>
 
@@ -264,4 +279,8 @@ python scripts/install_codex.py --check
 
 有问题可以提 [Issue](https://github.com/duyunzhoudyz/dyz-med-paper-skills/issues)，写明使用的系统、智能体、操作步骤和脱敏后的报错，不上传患者资料或账号凭据。
 
-**把时间留给值得琢磨的研究问题，让论文里的细活多一个帮手。** 如果这套方法对你有用，欢迎[点亮 Star](https://github.com/duyunzhoudyz/dyz-med-paper-skills)，也让更多正在写论文的同行发现它。
+---
+
+<p align="center">
+  <strong>把时间留给值得琢磨的研究问题，让论文里的细活多一个帮手。</strong><br> 如果这套方法对你有用，欢迎<a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills">点亮 Star</a>，也让更多正在写论文的同行发现它。
+</p>

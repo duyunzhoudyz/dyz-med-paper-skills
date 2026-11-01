@@ -1,26 +1,41 @@
 <!-- README_SYNC: source=working-tree; updated=2026-11-02 -->
 
-[简体中文](README.md) · English
+<p align="center">
+  <a href="README.md">简体中文</a> · English
+</p>
 
-# DYZ MedPaper
+<h1 align="center">DYZ MedPaper</h1>
 
-![DYZ MedPaper overview: from research evidence and argument planning to manuscript drafting and revision, for Claude Code, Codex and Agent Skills-compatible agents](docs/assets/readme-overview.png)
+<p align="center">
+  <img src="docs/assets/readme-overview.png" alt="DYZ MedPaper overview: from research evidence and argument planning to manuscript drafting and revision, for Claude Code, Codex and Agent Skills-compatible agents" width="880">
+</p>
 
-**Clinical work keeps you busy. Give your paper a capable helping hand.**
+<p align="center">
+  <strong>Clinical work keeps you busy.<br>Give your paper a capable helping hand.</strong>
+</p>
+
+<p align="center">
+  ⭐ <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills">Star this research companion for your toolkit</a>, so you can find it when your next draft or revision comes around.
+</p>
+
+<p align="center">
+  <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square" alt="Stars"></a>
+  <a href="#status"><img src="https://img.shields.io/badge/status-public_beta-amber?style=flat-square" alt="Status: Public Beta"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square" alt="Agent Skills"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square" alt="Python 3.10+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square" alt="License: PolyForm NC 1.0.0"></a>
+</p>
+
+<p align="center">
+  <a href="#skills">What it does</a> · <a href="#for-clinicians">For clinicians</a> · <a href="#examples">Examples</a><br>
+  <a href="#quick-start">Install</a> · <a href="#status">Status</a> · <a href="#license">License &amp; contact</a>
+</p>
+
+---
 
 DYZ MedPaper is an AI research workflow for **clinicians and medical postgraduate students**. It helps you work through research questions, literature, results, first drafts, discussion sections and reviewer responses—turning the material you already have into a manuscript you can discuss and revise.
 
 Install its **32 skills** in **Claude Code, Codex or another Agent Skills-compatible agent**, describe the task in everyday language, and start with the part that is holding you up. The workflow is primarily written in Chinese. [See installation options](#quick-start).
-
-⭐ [Star this research companion for your toolkit](https://github.com/duyunzhoudyz/dyz-med-paper-skills), so you can find it when your next draft or revision comes around.
-
-[![Stars](https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square)](https://github.com/duyunzhoudyz/dyz-med-paper-skills)
-[![Status: Public Beta](https://img.shields.io/badge/status-public_beta-amber?style=flat-square)](#status)
-[![Agent Skills](https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square)](#skills)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)](https://www.python.org/downloads/)
-[![License: PolyForm NC 1.0.0](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square)](LICENSE)
-
-**Quick navigation:** [What it helps with](#skills) · [Clinicians in China](#for-clinicians) · [Tasks and examples](#examples) · [Installation](#quick-start) · [Project status](#status) · [License and contact](#license)
 
 <a id="skills"></a>
 
@@ -264,4 +279,8 @@ This project is **source-available** under the [PolyForm Noncommercial License 1
 
 Report problems through [Issues](https://github.com/duyunzhoudyz/dyz-med-paper-skills/issues), including your operating system, agent, reproduction steps and de-identified errors. Do not upload patient records or credentials.
 
-**Keep your attention on the research questions worth thinking about, with help for the work around them.** If these workflows are useful to you, [give the project a Star](https://github.com/duyunzhoudyz/dyz-med-paper-skills) and help other clinicians discover it.
+---
+
+<p align="center">
+  <strong>Keep your attention on the research questions worth thinking about, with help for the work around them.</strong><br> If these workflows are useful to you, <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills">give the project a Star</a> and help other clinicians discover it.
+</p>
