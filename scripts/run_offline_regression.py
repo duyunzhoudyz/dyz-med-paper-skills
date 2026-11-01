@@ -216,7 +216,7 @@ def run(output):
         summary['evidence_files'] = {p.relative_to(output).as_posix(): sha(p) for p in sorted(output.rglob('*')) if p.is_file()}
         write(output / 'summary.json', summary)
     print(json.dumps({'status': summary['status'], 'tests': summary['tests'], 'checks': summary['checks'],
-                      'report': output.relative_to(root).as_posix() + '/summary.json'}, ensure_ascii=False), flush=True)
+                      'report': output.relative_to(root).as_posix() + '/summary.json'}, ensure_ascii=True), flush=True)
     return 0 if summary['status'] == 'pass' else 1
 
 
@@ -227,7 +227,7 @@ def main():
     try:
         return run(args.output)
     except (OSError, ValueError) as exc:
-        print(json.dumps({'status': 'blocked', 'error': str(exc)}, ensure_ascii=False))
+        print(json.dumps({'status': 'blocked', 'error': str(exc)}, ensure_ascii=True))
         return 2
 
 

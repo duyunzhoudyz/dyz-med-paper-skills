@@ -32,6 +32,7 @@ class Guard:
     def __init__(self, event_file=None):
         self.active = False
         self.expected_popen = None
+        self.expected_posix_spawn = None
         self.event_file = Path(event_file) if event_file else None
         self.events = []
         self.allowed_processes = 0
@@ -54,6 +55,15 @@ class Guard:
             audited_argv = argv if isinstance(argv, str) else tuple(argv)
             if self.expected_popen == (executable, audited_argv):
                 self.expected_popen = None
+                # POSIX上的Popen可能继续触发一次底层spawn事件，仍须绑定同一命令。
+                if os.name != 'nt':
+                    self.expected_posix_spawn = (os.fsdecode(executable), audited_argv)
+                return
+            self.deny(event)
+        if event == 'os.posix_spawn':
+            expected = self.expected_posix_spawn
+            self.expected_posix_spawn = None
+            if expected == (os.fsdecode(args[0]), tuple(args[1])):
                 return
             self.deny(event)
         if (event in {'os.system', 'os.fork', 'os.forkpty', 'os.startfile', 'os.startfile/2'}
@@ -103,6 +113,7 @@ class Guard:
                 return process
             finally:
                 self.expected_popen = None
+                self.expected_posix_spawn = None
 
         with patch.object(subprocess, 'Popen', guarded_popen):
             yield

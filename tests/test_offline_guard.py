@@ -41,12 +41,37 @@ class OfflineGuardTests(unittest.TestCase):
         guard = offline.Guard()
         script = ROOT / 'dyz-med-passport/scripts/validate_passport.py'
         with guard.installed(), guard.local_tools():
-            result = subprocess.run([sys.executable, '-B', str(script)],
-                                    capture_output=True, text=True, timeout=30)
-        self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
-        self.assertIn('usage:', result.stderr)
-        self.assertEqual(guard.allowed_processes, 1)
+            for close_fds in (True, False):
+                with self.subTest(close_fds=close_fds):
+                    result = subprocess.run([sys.executable, '-B', str(script)],
+                                            capture_output=True, text=True, timeout=30,
+                                            close_fds=close_fds)
+                    self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
+                    self.assertIn('usage:', result.stderr)
+                    self.assertIsNone(guard.expected_popen)
+                    self.assertIsNone(guard.expected_posix_spawn)
+        self.assertEqual(guard.allowed_processes, 2)
         self.assertEqual(guard.events, [])
+
+    def test_posix_spawn_requires_matching_single_use_authorization(self):
+        # 只发送审计事件，不创建进程；Windows也能验证底层启动的授权边界。
+        guard = offline.Guard()
+        command = (sys.executable, '-I', '-B', 'guarded-child.py')
+        with guard.installed():
+            with self.assertRaises(offline.OfflineViolation):
+                sys.audit('os.posix_spawn', sys.executable, command, {})
+            guard.expected_posix_spawn = (sys.executable, command)
+            sys.audit('os.posix_spawn', sys.executable, command, {})
+            self.assertIsNone(guard.expected_posix_spawn)
+            with self.assertRaises(offline.OfflineViolation):
+                sys.audit('os.posix_spawn', sys.executable, command, {})
+            for executable, argv in (('other-python', command),
+                                     (sys.executable, (sys.executable, '-c', 'pass'))):
+                with self.subTest(executable=executable, argv=argv):
+                    guard.expected_posix_spawn = (sys.executable, command)
+                    with self.assertRaises(offline.OfflineViolation):
+                        sys.audit('os.posix_spawn', executable, argv, {})
+                    self.assertIsNone(guard.expected_posix_spawn)
 
     def test_isolated_child_preserves_chinese_error_receipt(self):
         with tempfile.TemporaryDirectory() as temp:

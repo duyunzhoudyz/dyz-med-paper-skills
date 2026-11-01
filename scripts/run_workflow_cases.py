@@ -184,7 +184,8 @@ def run(output):
                                      'not_covered': case['not_covered']})
         except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
             summary['cases'].append({'id': case['id'], 'tool_integration': 'fail', 'reason': str(exc)})
-        print(json.dumps(summary['cases'][-1], ensure_ascii=False), flush=True)
+        # 控制台JSON转义非ASCII字符，避免西文Windows管道编码中断已完成的检查。
+        print(json.dumps(summary['cases'][-1], ensure_ascii=True), flush=True)
     summary['source_unchanged'] = source_hashes == {p: sha(root / p) for p in source_hashes}
     summary['all_tool_checks_pass'] = summary['source_unchanged'] and all(c['tool_integration'] == 'pass' for c in summary['cases'])
     write(output / 'summary.json', summary)
@@ -198,7 +199,7 @@ def main():
     try:
         return run(Path(args.output))
     except (OSError, ValueError) as exc:
-        print(json.dumps({'error': str(exc)}, ensure_ascii=False))
+        print(json.dumps({'error': str(exc)}, ensure_ascii=True))
         return 1
 
 
