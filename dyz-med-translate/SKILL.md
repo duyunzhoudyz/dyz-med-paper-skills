@@ -4,6 +4,7 @@ description: >-
   在中文与英文之间忠实翻译医学论文、摘要、投稿材料或审稿回复，统一医学术语，同时逐项保护数字、单位、
   统计量、引用、伦理与注册信息。当用户明确要求中译英、英译中或制作双语版本时使用；不负责大范围内容
   重构，也不会为了“符合学术写作”补造原文缺失的效应量、事实或引用。
+  Use for Chinese–English medical translation with numerical, citation and terminology preservation.
 ---
 
 # 医学中英翻译

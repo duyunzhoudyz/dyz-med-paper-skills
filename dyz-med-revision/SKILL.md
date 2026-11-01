@@ -4,6 +4,7 @@ description: >-
   修订已有医学稿件或逐条回应编辑和审稿人意见，覆盖语言、结构、科学表述、改投适配和拒稿后恢复，并保留
   可追溯的修改记录。当用户明确要求修改稿件、回复审稿意见或按新期刊重整时使用；先给修订计划，文字和
   格式修改可在授权范围内执行，涉及新数据、重分析、伦理、作者或其他源事实时必须先获得确认。
+  Use for manuscript revision, response to reviewers and journal resubmission preparation.
 ---
 
 # 医学稿件修订与审稿回复

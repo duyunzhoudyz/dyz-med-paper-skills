@@ -4,6 +4,7 @@ description: >-
   围绕既有医学研究结果的具体不确定性，规划、执行或记录替代模型、缺失数据、偏倚假设、分析人群和研究纳入
   变化，产出可追溯的稳健性比较与局限性说明。当用户问“结果稳不稳”“换假设会不会变”或明确要求敏感性分析
   时使用；原始主分析交给 dyz-med-analyze，临床重要性解释交给 dyz-med-interpret。
+  Use for approved sensitivity analyses and robustness comparisons of existing findings.
 ---
 
 # 医学研究敏感性与稳健性分析

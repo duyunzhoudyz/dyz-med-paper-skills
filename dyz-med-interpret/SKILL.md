@@ -4,6 +4,7 @@ description: >-
   把既有医学统计结果与预先规定、来源可追溯的临床重要阈值放在同一尺度上，区分统计证据、效应大小和临床
   重要性，产出逐结局解释表及谨慎措辞。当用户问“显著但有临床意义吗”“区间是否排除重要获益或伤害”时使用；
   不负责重新建模或计算原始数据，也不替代 dyz-med-sensitivity 的稳健性分析。
+  Use to interpret existing statistical results and clinical importance without rerunning models.
 ---
 
 # 医学结果的临床重要性解释

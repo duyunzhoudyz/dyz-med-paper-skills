@@ -4,6 +4,7 @@ description: >-
   把尚未成形的临床观察、兴趣领域、导师方向或数据库线索，转化为结构化且可验证的医学研究问题，并完成
   PICO、PECO、PICOS、FINER、机制层级和初步文献缺口判断。当用户说“不知道研究什么”“这个想法能否
   做成课题”“想找一个可执行选题”时使用；已有明确问题和数据需要立项时转交 dyz-med-init，已有稿件时不要使用。
+  Use for clinical research ideation, PICO questions and feasibility exploration.
 ---
 
 # 医学研究选题与问题构建

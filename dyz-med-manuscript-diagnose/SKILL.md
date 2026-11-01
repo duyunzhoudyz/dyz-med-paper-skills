@@ -4,6 +4,7 @@ description: >-
   对用户已有的医学稿件、部分草稿、摘要、表格、拒稿信或审稿意见做只读现状诊断，给出材料清单、当前阶段、
   主要科学与写作风险、投稿准备度和优先级。当用户想先知道“这篇稿子现在有什么问题、下一步怎么走”时使用；
   本 Skill 不直接改写稿件，具体修订交给 dyz-med-revision 或分节 Skill。
+  Use for read-only manuscript assessment and revision priorities.
 ---
 
 # 现有医学稿件诊断

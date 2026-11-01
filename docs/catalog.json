@@ -1,0 +1,674 @@
+[
+  {
+    "id": "dyz-med-ideate",
+    "group": "start",
+    "title": {
+      "zh": "医学科研选题",
+      "en": "Research questions"
+    },
+    "summary": {
+      "zh": "从临床观察梳理可验证的研究问题",
+      "en": "Use for clinical research ideation, PICO questions and feasibility exploration."
+    },
+    "input": {
+      "zh": "临床观察、兴趣与资源限制",
+      "en": "Clinical observations, interests and constraints"
+    },
+    "output": {
+      "zh": "候选问题与可行性路线",
+      "en": "Candidate questions and feasibility routes"
+    },
+    "example": "dyz-med-ideate/examples/示例-社区获得性肺炎选题推导.md"
+  },
+  {
+    "id": "dyz-med-init",
+    "group": "start",
+    "title": {
+      "zh": "论文项目初始化",
+      "en": "Project setup"
+    },
+    "summary": {
+      "zh": "为已明确的研究建立论文项目与结构",
+      "en": "Use to initialize a medical manuscript project from an established study."
+    },
+    "input": {
+      "zh": "研究问题、设计与已有材料",
+      "en": "Research question, design and available materials"
+    },
+    "output": {
+      "zh": "项目骨架与材料缺口",
+      "en": "Project structure and material gaps"
+    },
+    "example": "dyz-med-init/examples/示例-老年髋部骨折队列研究立项.md"
+  },
+  {
+    "id": "dyz-med-manuscript-diagnose",
+    "group": "start",
+    "title": {
+      "zh": "医学稿件诊断",
+      "en": "Manuscript diagnosis"
+    },
+    "summary": {
+      "zh": "先评估已有稿件的问题与修改顺序",
+      "en": "Use for read-only manuscript assessment and revision priorities."
+    },
+    "input": {
+      "zh": "初稿、摘要或拒稿意见",
+      "en": "Draft, abstract or rejection feedback"
+    },
+    "output": {
+      "zh": "诊断报告与修改优先级",
+      "en": "Diagnosis and prioritized next steps"
+    },
+    "example": "dyz-med-manuscript-diagnose/examples/worked-example-rejected-manuscript.md"
+  },
+  {
+    "id": "dyz-med-orchestrator",
+    "group": "start",
+    "title": {
+      "zh": "论文进度与下一步",
+      "en": "Workflow navigation"
+    },
+    "summary": {
+      "zh": "根据现有材料判断下一步任务",
+      "en": "Use to review medical research workflow progress and recommend the next task."
+    },
+    "input": {
+      "zh": "论文文件夹与当前需求",
+      "en": "Paper workspace and current request"
+    },
+    "output": {
+      "zh": "进度地图与下一步建议",
+      "en": "Progress map and next-step recommendation"
+    },
+    "example": "dyz-med-orchestrator/examples/虚构项目进度地图样例.md"
+  },
+  {
+    "id": "dyz-med-passport",
+    "group": "start",
+    "title": {
+      "zh": "项目状态记录",
+      "en": "Project state"
+    },
+    "summary": {
+      "zh": "内部维护已确认事实与产出版本",
+      "en": "Use internally to maintain confirmed project facts, provenance and artifact versions."
+    },
+    "input": {
+      "zh": "已确认事实、材料和批准记录",
+      "en": "Confirmed facts, artifacts and approvals"
+    },
+    "output": {
+      "zh": "可追溯的项目状态",
+      "en": "Traceable project state"
+    },
+    "example": "dyz-med-passport/examples/虚构项目状态文件样例.yaml"
+  },
+  {
+    "id": "dyz-med-mechanism",
+    "group": "evidence",
+    "title": {
+      "zh": "机制与因果逻辑",
+      "en": "Mechanisms and causality"
+    },
+    "summary": {
+      "zh": "检查机制假设、因果路径与证据层级",
+      "en": "Use to examine causal reasoning, mechanism hypotheses and study logic."
+    },
+    "input": {
+      "zh": "研究问题、设计与支持证据",
+      "en": "Research question, design and evidence"
+    },
+    "output": {
+      "zh": "机制链、假设缺口与验证路径",
+      "en": "Mechanism chain, gaps and validation plan"
+    },
+    "example": "dyz-med-mechanism/examples/示例-炎症因子与术后认知功能障碍机制推导.md"
+  },
+  {
+    "id": "dyz-med-data-adequacy",
+    "group": "evidence",
+    "title": {
+      "zh": "数据充分性检查",
+      "en": "Data adequacy"
+    },
+    "summary": {
+      "zh": "判断数据能支持的问题和分析范围",
+      "en": "Use to assess medical research data adequacy before statistical analysis."
+    },
+    "input": {
+      "zh": "数据字典、设计与获准数据",
+      "en": "Data dictionary, design and authorized data"
+    },
+    "output": {
+      "zh": "充分性报告与可分析范围",
+      "en": "Adequacy report and defensible analysis scope"
+    },
+    "example": "dyz-med-data-adequacy/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-registration",
+    "group": "evidence",
+    "title": {
+      "zh": "研究注册核查",
+      "en": "Study registration"
+    },
+    "summary": {
+      "zh": "对照官方注册记录与方案、稿件",
+      "en": "Use to check trial registration records against protocols and manuscripts."
+    },
+    "input": {
+      "zh": "注册号、方案与稿件",
+      "en": "Registry identifier, protocol and manuscript"
+    },
+    "output": {
+      "zh": "注册对照表与待核实差异",
+      "en": "Registration comparison and unresolved differences"
+    },
+    "example": "dyz-med-registration/examples/示例-降压药物RCT注册核查.md"
+  },
+  {
+    "id": "dyz-med-cnki",
+    "group": "evidence",
+    "title": {
+      "zh": "PubMed 与中文文献检索",
+      "en": "Medical literature search"
+    },
+    "summary": {
+      "zh": "设计 PubMed 和中文医学来源检索并记录覆盖范围",
+      "en": "Use for PubMed and Chinese medical literature search; database execution requires access."
+    },
+    "input": {
+      "zh": "研究问题、数据库与纳排范围",
+      "en": "Question, databases and eligibility scope"
+    },
+    "output": {
+      "zh": "检索式、记录与候选文献池",
+      "en": "Queries, search log and candidate references"
+    },
+    "example": "dyz-med-cnki/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-key-literature",
+    "group": "evidence",
+    "title": {
+      "zh": "关键文献精读",
+      "en": "Critical literature reading"
+    },
+    "summary": {
+      "zh": "对已有文献作结构化阅读与证据比较",
+      "en": "Use for critical appraisal and synthesis of available full-text medical literature."
+    },
+    "input": {
+      "zh": "候选文献与可访问全文",
+      "en": "Candidate papers and accessible full texts"
+    },
+    "output": {
+      "zh": "单篇简报与证据地图",
+      "en": "Paper briefs and evidence map"
+    },
+    "example": "dyz-med-key-literature/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-screening-pipeline",
+    "group": "evidence",
+    "title": {
+      "zh": "系统综述文献筛选",
+      "en": "Systematic review screening"
+    },
+    "summary": {
+      "zh": "管理去重、筛选、纳排理由与 PRISMA 计数",
+      "en": "Use for systematic review and meta-analysis screening, extraction and PRISMA counts."
+    },
+    "input": {
+      "zh": "检索记录、筛选协议与全文",
+      "en": "Search records, screening protocol and full texts"
+    },
+    "output": {
+      "zh": "筛选记录、提取表与计数",
+      "en": "Screening log, extraction tables and counts"
+    },
+    "example": "dyz-med-screening-pipeline/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-evidence-audit",
+    "group": "evidence",
+    "title": {
+      "zh": "论断与引用核查",
+      "en": "Claim–evidence audit"
+    },
+    "summary": {
+      "zh": "检查文献和数据是否支持稿件论断",
+      "en": "Use to audit manuscript claims against cited literature and study evidence."
+    },
+    "input": {
+      "zh": "稿件、来源文献与研究结果",
+      "en": "Manuscript, cited sources and study results"
+    },
+    "output": {
+      "zh": "论断—证据矩阵与问题定位",
+      "en": "Claim–evidence matrix and located issues"
+    },
+    "example": "dyz-med-evidence-audit/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-analyze",
+    "group": "analysis",
+    "title": {
+      "zh": "医学统计分析",
+      "en": "Biostatistical analysis"
+    },
+    "summary": {
+      "zh": "先形成计划，再按批准范围执行统计",
+      "en": "Use for biostatistical analysis planning and approved R or other local statistical execution."
+    },
+    "input": {
+      "zh": "获准数据、数据字典与研究问题",
+      "en": "Authorized data, dictionary and research question"
+    },
+    "output": {
+      "zh": "分析计划、脚本与结果记录",
+      "en": "Analysis plan, scripts and recorded results"
+    },
+    "example": "dyz-med-analyze/examples/worked-example-cohort.md"
+  },
+  {
+    "id": "dyz-med-interpret",
+    "group": "analysis",
+    "title": {
+      "zh": "统计结果与临床意义",
+      "en": "Clinical interpretation"
+    },
+    "summary": {
+      "zh": "区分统计证据、效应大小与临床重要性",
+      "en": "Use to interpret existing statistical results and clinical importance without rerunning models."
+    },
+    "input": {
+      "zh": "统计结果与有来源的临床阈值",
+      "en": "Existing results and sourced clinical thresholds"
+    },
+    "output": {
+      "zh": "逐结局解释与谨慎措辞",
+      "en": "Outcome-level interpretation and calibrated wording"
+    },
+    "example": "dyz-med-interpret/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-sensitivity",
+    "group": "analysis",
+    "title": {
+      "zh": "敏感性与稳健性分析",
+      "en": "Sensitivity analysis"
+    },
+    "summary": {
+      "zh": "围绕明确的不确定性比较替代假设",
+      "en": "Use for approved sensitivity analyses and robustness comparisons of existing findings."
+    },
+    "input": {
+      "zh": "主要结果、具体假设与批准范围",
+      "en": "Primary results, assumptions and approved scope"
+    },
+    "output": {
+      "zh": "稳健性比较与局限说明",
+      "en": "Robustness comparisons and limitations"
+    },
+    "example": "dyz-med-sensitivity/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-figures-tables",
+    "group": "analysis",
+    "title": {
+      "zh": "医学论文图表",
+      "en": "Manuscript tables and figures"
+    },
+    "summary": {
+      "zh": "规划和核对 Table 1、森林图等图表",
+      "en": "Use for medical manuscript tables, statistical figures and text–figure consistency."
+    },
+    "input": {
+      "zh": "已执行分析输出与数据来源",
+      "en": "Executed analysis outputs and provenance"
+    },
+    "output": {
+      "zh": "图表、图注与一致性清单",
+      "en": "Figures, tables, captions and consistency checklist"
+    },
+    "example": "dyz-med-figures-tables/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-flowchart",
+    "group": "analysis",
+    "title": {
+      "zh": "研究流程图",
+      "en": "Study flow diagrams"
+    },
+    "summary": {
+      "zh": "由真实计数整理 PRISMA、CONSORT 等流程图",
+      "en": "Use for PRISMA, CONSORT and observational study flow diagrams from traceable counts."
+    },
+    "input": {
+      "zh": "研究流程、筛选记录与计数",
+      "en": "Study flow, screening records and counts"
+    },
+    "output": {
+      "zh": "流程图、图注与计数核对",
+      "en": "Flow diagram, caption and count checks"
+    },
+    "example": "dyz-med-flowchart/examples/worked-example.md"
+  },
+  {
+    "id": "dyz-med-writing-plan",
+    "group": "writing",
+    "title": {
+      "zh": "论文论证与写作提纲",
+      "en": "Manuscript writing plan"
+    },
+    "summary": {
+      "zh": "把研究问题、结果与证据组织成段落计划",
+      "en": "Use for medical manuscript argument maps and paragraph-level writing plans."
+    },
+    "input": {
+      "zh": "研究问题、已核实结果与文献",
+      "en": "Question, verified results and literature"
+    },
+    "output": {
+      "zh": "论证地图与章节提纲",
+      "en": "Argument map and section outline"
+    },
+    "example": "dyz-med-writing-plan/examples/示例-他汀类药物队列论证地图构建.md"
+  },
+  {
+    "id": "dyz-med-introduction",
+    "group": "writing",
+    "title": {
+      "zh": "医学论文引言",
+      "en": "Introduction writing"
+    },
+    "summary": {
+      "zh": "围绕具体知识缺口组织引言",
+      "en": "Use to draft or revise a medical manuscript introduction and research rationale."
+    },
+    "input": {
+      "zh": "研究问题、写作提纲与核实文献",
+      "en": "Question, outline and verified literature"
+    },
+    "output": {
+      "zh": "引言草稿与逻辑说明",
+      "en": "Introduction draft and rationale"
+    },
+    "example": "dyz-med-introduction/examples/worked-example-knowledge-gap.md"
+  },
+  {
+    "id": "dyz-med-methods",
+    "group": "writing",
+    "title": {
+      "zh": "医学论文方法部分",
+      "en": "Methods writing"
+    },
+    "summary": {
+      "zh": "将实际研究过程写成可复核方法",
+      "en": "Use to write methods sections from actual study procedures and approved analysis plans."
+    },
+    "input": {
+      "zh": "方案、执行记录与分析计划",
+      "en": "Protocol, execution records and analysis plan"
+    },
+    "output": {
+      "zh": "方法正文与缺项清单",
+      "en": "Methods draft and missing-information list"
+    },
+    "example": "dyz-med-methods/examples/示例-队列研究方法部分撰写.md"
+  },
+  {
+    "id": "dyz-med-results",
+    "group": "writing",
+    "title": {
+      "zh": "医学论文结果部分",
+      "en": "Results writing"
+    },
+    "summary": {
+      "zh": "把核实后的统计输出写成结果正文",
+      "en": "Use to write results sections while preserving verified effect estimates and numerical provenance."
+    },
+    "input": {
+      "zh": "已核实统计输出、表格和图",
+      "en": "Verified statistical outputs, tables and figures"
+    },
+    "output": {
+      "zh": "结果正文与数字对应关系",
+      "en": "Results draft and numerical traceability"
+    },
+    "example": "dyz-med-results/examples/worked-example-xelox-dfs.md"
+  },
+  {
+    "id": "dyz-med-discussion",
+    "group": "writing",
+    "title": {
+      "zh": "医学论文讨论",
+      "en": "Discussion writing"
+    },
+    "summary": {
+      "zh": "组织主要发现、证据比较、意义与局限",
+      "en": "Use to draft or revise medical discussions, evidence comparisons and limitations."
+    },
+    "input": {
+      "zh": "已核实结果、研究设计与文献",
+      "en": "Verified results, design and literature"
+    },
+    "output": {
+      "zh": "讨论草稿与论断边界",
+      "en": "Discussion draft and limits of claims"
+    },
+    "example": "dyz-med-discussion/examples/示例-他汀类药物与骨密度机制论断的证据分级.md"
+  },
+  {
+    "id": "dyz-med-abstract",
+    "group": "writing",
+    "title": {
+      "zh": "标题、摘要与关键词",
+      "en": "Titles and abstracts"
+    },
+    "summary": {
+      "zh": "从已完成正文生成结构化摘要",
+      "en": "Use for medical manuscript titles, structured abstracts and bilingual abstracts."
+    },
+    "input": {
+      "zh": "完整正文、核实结果与期刊要求",
+      "en": "Completed manuscript, verified results and journal rules"
+    },
+    "output": {
+      "zh": "标题、摘要与关键词",
+      "en": "Title, abstract and keywords"
+    },
+    "example": "dyz-med-abstract/examples/worked-example-zhonghua-trimming.md"
+  },
+  {
+    "id": "dyz-med-write",
+    "group": "writing",
+    "title": {
+      "zh": "全文初稿与统稿",
+      "en": "Full manuscript drafting"
+    },
+    "summary": {
+      "zh": "按明确请求整合材料或统一已有章节",
+      "en": "Use for explicitly requested full manuscript drafts or coherence editing across completed sections."
+    },
+    "input": {
+      "zh": "已确认研究材料或完成的章节",
+      "en": "Confirmed research materials or completed sections"
+    },
+    "output": {
+      "zh": "完整初稿或统稿版本",
+      "en": "Full draft or coordinated revision"
+    },
+    "example": "dyz-med-write/examples/worked-example-final-coherence-check.md"
+  },
+  {
+    "id": "dyz-med-translate",
+    "group": "delivery",
+    "title": {
+      "zh": "医学论文中英翻译",
+      "en": "Medical translation"
+    },
+    "summary": {
+      "zh": "翻译正文与回复并保护数字、引用和术语",
+      "en": "Use for Chinese–English medical translation with numerical, citation and terminology preservation."
+    },
+    "input": {
+      "zh": "原文、术语表与目标语言",
+      "en": "Source text, glossary and target language"
+    },
+    "output": {
+      "zh": "译文、术语表与保护检查",
+      "en": "Translation, glossary and protected-content checks"
+    },
+    "example": "dyz-med-translate/examples/worked-example-cn2en.md"
+  },
+  {
+    "id": "dyz-med-deai",
+    "group": "delivery",
+    "title": {
+      "zh": "学术语言自然化",
+      "en": "Academic style editing"
+    },
+    "summary": {
+      "zh": "改善重复空泛表达并保留事实和作者语气",
+      "en": "Use to improve repetitive academic prose while preserving facts and disclosure; not detector evasion."
+    },
+    "input": {
+      "zh": "原稿与表达偏好",
+      "en": "Draft and style preferences"
+    },
+    "output": {
+      "zh": "自然化稿件与修改说明",
+      "en": "Edited prose and change notes"
+    },
+    "example": "dyz-med-deai/examples/worked-example-before-after.md"
+  },
+  {
+    "id": "dyz-med-guideline",
+    "group": "delivery",
+    "title": {
+      "zh": "医学研究报告规范",
+      "en": "Reporting guidelines"
+    },
+    "summary": {
+      "zh": "核对 STROBE、CONSORT、PRISMA 等适用条目",
+      "en": "Use to check applicable medical reporting guidelines including STROBE, CONSORT and PRISMA."
+    },
+    "input": {
+      "zh": "稿件、研究类型与适用规范",
+      "en": "Manuscript, study type and applicable guideline"
+    },
+    "output": {
+      "zh": "条目覆盖表与定位建议",
+      "en": "Coverage checklist and located recommendations"
+    },
+    "example": "dyz-med-guideline/examples/worked-example-consort.md"
+  },
+  {
+    "id": "dyz-med-review",
+    "group": "delivery",
+    "title": {
+      "zh": "投稿前模拟审稿",
+      "en": "Pre-submission review"
+    },
+    "summary": {
+      "zh": "从证据、方法等视角评估稿件",
+      "en": "Use for simulated pre-submission peer review and located revision recommendations."
+    },
+    "input": {
+      "zh": "接近完成的稿件与附件",
+      "en": "Near-complete manuscript and supporting files"
+    },
+    "output": {
+      "zh": "模拟审稿报告与修改建议",
+      "en": "Simulated review and revision recommendations"
+    },
+    "example": "dyz-med-review/examples/worked-example-review-council.md"
+  },
+  {
+    "id": "dyz-med-revision",
+    "group": "delivery",
+    "title": {
+      "zh": "改稿与审稿意见回复",
+      "en": "Revision and reviewer responses"
+    },
+    "summary": {
+      "zh": "逐条落实修改并记录正文位置",
+      "en": "Use for manuscript revision, response to reviewers and journal resubmission preparation."
+    },
+    "input": {
+      "zh": "稿件、审稿意见与已完成改动",
+      "en": "Manuscript, reviewer comments and completed changes"
+    },
+    "output": {
+      "zh": "修订稿、逐条回复与修改定位",
+      "en": "Revision, point-by-point response and change locations"
+    },
+    "example": "dyz-med-revision/examples/worked-example-reviewer-response.md"
+  },
+  {
+    "id": "dyz-med-journal-finder",
+    "group": "delivery",
+    "title": {
+      "zh": "医学论文选刊",
+      "en": "Journal selection"
+    },
+    "summary": {
+      "zh": "按主题、读者、预算与当前要求筛选期刊",
+      "en": "Use for medical journal selection based on verified scope, requirements and fees."
+    },
+    "input": {
+      "zh": "稿件主题、文章类型、预算与时间",
+      "en": "Topic, article type, budget and timeline"
+    },
+    "output": {
+      "zh": "分层候选期刊与核实依据",
+      "en": "Tiered journal shortlist and verified rationale"
+    },
+    "example": "dyz-med-journal-finder/examples/示例-2型糖尿病队列研究期刊推荐.md"
+  },
+  {
+    "id": "dyz-med-export",
+    "group": "delivery",
+    "title": {
+      "zh": "Word 审阅稿导出",
+      "en": "Word review draft export"
+    },
+    "summary": {
+      "zh": "整理章节、引用和图表生成基础 DOCX",
+      "en": "Use to assemble basic DOCX review drafts; advanced formatting requires suitable external tools."
+    },
+    "input": {
+      "zh": "完成的章节、图表与文献",
+      "en": "Completed sections, figures, tables and references"
+    },
+    "output": {
+      "zh": "基础 DOCX 审阅稿与导出报告",
+      "en": "Basic DOCX review draft and export report"
+    },
+    "example": "dyz-med-export/examples/虚构稿件导出流程示例.md"
+  },
+  {
+    "id": "dyz-med-submit",
+    "group": "delivery",
+    "title": {
+      "zh": "投稿材料准备",
+      "en": "Submission package"
+    },
+    "summary": {
+      "zh": "准备投稿信、题名页与声明等本地文件",
+      "en": "Use to prepare local cover letters and journal submission packages; external submission needs authorization."
+    },
+    "input": {
+      "zh": "稿件、作者确认信息与期刊要求",
+      "en": "Manuscript, confirmed author details and journal rules"
+    },
+    "output": {
+      "zh": "投稿包与待确认清单",
+      "en": "Submission package and confirmation checklist"
+    },
+    "example": "dyz-med-submit/examples/虚构课题投稿材料生成示例.md"
+  }
+]

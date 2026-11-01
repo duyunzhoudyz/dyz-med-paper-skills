@@ -4,6 +4,7 @@ description: >-
   将已完成的医学稿件及其参考文献、表格和图片整理为目标期刊要求的 Word、PDF 或其他交付格式，并核对
   跨节数字、引用和图表链接。当用户要求导出 DOCX、合并稿件、套用期刊格式或制作可审阅文件时使用；
   不改动原始稿件、不假设本地工具存在，也不把导出等同于投稿或科学内容通过审核。
+  Use to assemble basic DOCX review drafts; advanced formatting requires suitable external tools.
 ---
 
 # 医学稿件导出与排版

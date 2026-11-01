@@ -3,6 +3,7 @@ name: dyz-med-introduction
 description: >-
   基于已确认的研究问题、论证地图和已核实文献撰写或修订医学论文引言，形成临床背景、已有证据、具体知识
   缺口与研究目的之间的清晰逻辑。当用户明确要写引言或修复引言逻辑时使用；不负责讨论、结果解释或整篇统稿。
+  Use to draft or revise a medical manuscript introduction and research rationale.
 ---
 
 # 医学论文引言撰写

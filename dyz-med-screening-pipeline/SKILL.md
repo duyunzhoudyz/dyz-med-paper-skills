@@ -4,6 +4,7 @@ description: >-
   管理系统综述、Meta 分析或范围综述从检索导入、保守去重、标题摘要与全文筛选，到研究/报告关联、数据提取
   和 PRISMA 计数的可审计证据链。当用户要执行文献筛选、记录纳排理由或准备证据合成输入时使用；研究问题与
   方案设计不是本技能的主要任务，流程图交给 dyz-med-flowchart，原始研究数据统计与合并模型交给 dyz-med-analyze。
+  Use for systematic review and meta-analysis screening, extraction and PRISMA counts.
 ---
 
 # 系统综述与范围综述筛选管线

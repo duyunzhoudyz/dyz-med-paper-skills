@@ -4,6 +4,7 @@ description: >-
   规划、生成和核对医学论文的结果表格与统计图，建立数据来源清单，检查正文、图表和已执行分析输出的一致性，
   并生成可审阅的标题、图注和脚注。当用户问“需要哪些图表”“帮我做森林图/Table 1”或要求核对图文数字时
   使用；CONSORT、STROBE、PRISMA 等流程图由 dyz-med-flowchart 专门处理。
+  Use for medical manuscript tables, statistical figures and text–figure consistency.
 ---
 
 # 医学论文图表规划、生成与核对

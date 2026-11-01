@@ -4,6 +4,7 @@ description: >-
   从可追溯的研究流程计数生成并核对随机试验、观察性研究、系统综述或范围综述流程图，交付结构化计数、
   Mermaid/可渲染图稿、图注和流程叙述。当用户要求 CONSORT、STROBE、PRISMA 或 PRISMA-ScR 流程图时使用；
   文献去重与筛选由 dyz-med-screening-pipeline 负责，其他统计图表由 dyz-med-figures-tables 负责。
+  Use for PRISMA, CONSORT and observational study flow diagrams from traceable counts.
 ---
 
 # 医学研究流程图生成与核对

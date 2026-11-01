@@ -3,6 +3,7 @@ name: dyz-med-writing-plan
 description: >-
   在医学论文成文前，把已确认的研究问题、研究设计、统计结果和文献证据整理成全文论证地图与段落级写作计划。
   当用户想先理清论文逻辑、章节任务、论断边界或证据分配时使用；不代替分节撰写、统计分析或文献真实性核查。
+  Use for medical manuscript argument maps and paragraph-level writing plans.
 ---
 
 # 医学论文论证地图与写作计划

@@ -4,6 +4,7 @@ description: >-
   对接近投稿状态的医学稿件做五个视角的模拟审稿：证据、方法统计、伦理合规、临床领域与期刊编辑，并汇总
   为定位明确的 PASS、REVISE 或 REJECT 建议。当用户要求投稿前全面把关、模拟同行评议或评估拒稿风险时
   使用；这是决策支持，不是真实同行评议，也不会自动修改、导出或投稿。
+  Use for simulated pre-submission peer review and located revision recommendations.
 ---
 
 # 医学论文多视角模拟审稿

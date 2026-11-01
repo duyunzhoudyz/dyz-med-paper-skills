@@ -33,6 +33,8 @@ flowchart LR
 
 ## 32 个技能，按任务取用
 
+[完整中英任务索引、输入输出与示例](skills.md) · [English catalog](skills.en.md) · [在线筛选技能](https://duyunzhoudyz.github.io/dyz-med-paper-skills/skills/)
+
 目录均以 `dyz-med-` 开头。每个技能以 `SKILL.md` 为核心，并按需携带模板、参考材料、示例和脚本。`agents/openai.yaml` 提供 Codex 的附加界面与调用配置；其他宿主按自身机制发现和调用技能。
 
 | 环节 | 技能目录后缀 |

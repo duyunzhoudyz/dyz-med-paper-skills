@@ -5,6 +5,7 @@ description: >-
   “覆盖 PubMed 和中文来源”或核实某研究问题的文献范围时使用；本技能负责发现与记录，深度精读交给
   dyz-med-key-literature，系统综述的正式筛选与纳入流程交给 dyz-med-screening-pipeline。无法直接访问知网、万方或
   维普时只能提供 discovery_only 线索，不得声称完成了数据库检索或全文获取。
+  Use for PubMed and Chinese medical literature search; database execution requires access.
 ---
 
 # 医学文献检索网关

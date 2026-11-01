@@ -4,6 +4,7 @@ description: >-
   在用户明确要求时，把已确认的医学研究材料一次性整合为完整初稿，或对已完成的各章节做全文连贯性与
   一致性修订。当用户说“一次性写成全文”“合成一稿”或“全文统稿”时使用；默认分节写作仍由
   dyz-med-introduction、dyz-med-methods、dyz-med-results、dyz-med-discussion 和 dyz-med-abstract 分别负责。
+  Use for explicitly requested full manuscript drafts or coherence editing across completed sections.
 ---
 
 # 医学论文一次性统稿

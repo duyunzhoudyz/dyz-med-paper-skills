@@ -4,6 +4,7 @@ description: >-
   供医学论文工作流内部读取和更新项目状态文件，记录已确认事实、产出版本、来源、开放问题、人工批准和质量
   检查历史。当其他 dyz-med-* Skill 需要共享项目状态或避免重复询问时使用；用户想查看进度时优先使用
   dyz-med-orchestrator。本 Skill 只记录已有事实，不作医学判断，也不把缺失字段自动填成已确认。
+  Use internally to maintain confirmed project facts, provenance and artifact versions.
 ---
 
 # 医学论文项目状态文件

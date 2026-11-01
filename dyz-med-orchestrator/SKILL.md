@@ -4,6 +4,7 @@ description: >-
   读取医学论文项目状态与现有工件，生成当前进度地图、关键风险和一个最合适的下一步建议。当用户问“现在
   到哪一步”“下一步做什么”“从哪里开始”或需要澄清多种医学任务的选择时使用；状态查询只推荐下一步，
   明确的自然语言任务直接匹配最窄职责 Skill，无需说出技能名；不自动串联后续阶段或宣告稿件可投稿。
+  Use to review medical research workflow progress and recommend the next task.
 ---
 
 # 医学论文进度地图与路由

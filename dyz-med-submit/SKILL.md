@@ -4,6 +4,7 @@ description: >-
   根据目标期刊当前要求准备医学论文投稿包，包括投稿信、题名页、作者贡献、利益冲突、数据可用性及其他
   指定附件。当用户要求准备投稿材料、cover letter 或投稿前清单时使用；默认只生成本地文件，绝不自动
   上传、发送、点击提交或创建外部数据仓库，任何外部提交动作都需要用户另行明确授权并最终确认。
+  Use to prepare local cover letters and journal submission packages; external submission needs authorization.
 ---
 
 # 医学论文投稿包准备

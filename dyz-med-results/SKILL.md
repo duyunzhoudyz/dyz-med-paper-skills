@@ -4,6 +4,7 @@ description: >-
   把已核实的统计输出、表格和图转写为医学论文结果部分，保持样本量、效应量、置信区间、P 值、模型及分析
   层级可追溯。当用户需要撰写或修订结果正文、图表引用或数值一致性时使用；不运行新分析、不补造缺失数字，
   也不承担讨论解释。
+  Use to write results sections while preserving verified effect estimates and numerical provenance.
 ---
 
 # 医学论文结果部分撰写

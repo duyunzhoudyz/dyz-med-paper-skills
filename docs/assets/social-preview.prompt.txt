@@ -1,0 +1,11 @@
+Generated with the built-in imagegen tool on 2026-11-02.
+Reference: docs/assets/readme-overview.png (existing project cover).
+Delivery: resized to 1280 x 640 and encoded as JPEG quality 90 for GitHub's <1 MB requirement.
+
+Use case: ads-marketing. Create a GitHub social preview image for DYZ MedPaper, using the attached existing project cover as visual reference. This is a new sibling asset for the same project; preserve the refined medical research editorial identity: ivory paper, navy typography, subtle muted teal, realistic manuscript pages and a clinician's pen at right. Wide 2:1 landscape composition, ideally 1280 by 640. Simplify greatly for mobile sharing readability. On the left, generous clear space with EXACT text:
+"DYZ MedPaper"
+"医学论文写作与科研"
+"32 Agent Skills"
+"Claude Code · Codex"
+Small bottom line: "选题 · 文献 · 中英写作 · 审稿修回"
+Keep all five text lines sharp, well spaced, within 8% safe margins. Do not include a URL, extra wording, stock watermarks, fictional badges, medical promises or logos. Solid background. Preserve premium professional publication design, photoreal medical research workspace right half; navy serif title and readable Chinese typography.

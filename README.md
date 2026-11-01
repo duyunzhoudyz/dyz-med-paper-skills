@@ -4,7 +4,11 @@
   简体中文 · <a href="README_EN.md">English</a>
 </p>
 
-<h1 align="center">DYZ MedPaper</h1>
+<h1 align="center">DYZ MedPaper — 医学论文写作与科研 Agent Skills</h1>
+
+<p align="center"><strong>32 medical writing and research skills for Claude Code and Codex.</strong><br>面向中国医生与医学研究生，支持中文沟通、中英论文写作、PubMed 文献检索与审稿修回。</p>
+
+<p align="center"><a href="https://duyunzhoudyz.github.io/dyz-med-paper-skills/">中文文档站</a> · <a href="https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/">English docs</a> · <a href="docs/skills.md">32 个技能索引</a> · <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills/releases">版本发布</a></p>
 
 <p align="center">
   <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="docs/assets/readme-overview.png" alt="DYZ MedPaper：为中国医生与医学研究生定制的医学论文助手。中文沟通、中英写作、导师改稿、投稿修回。仓库：https://github.com/duyunzhoudyz/dyz-med-paper-skills" width="880"></a>
@@ -23,6 +27,8 @@
   <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square" alt="Stars"></a>
   <a href="#status"><img src="https://img.shields.io/badge/status-public_beta-amber?style=flat-square" alt="Status: Public Beta"></a>
   <a href="#skills"><img src="https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square" alt="Agent Skills"></a>
+  <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills/actions/workflows/check.yml"><img src="https://github.com/duyunzhoudyz/dyz-med-paper-skills/actions/workflows/check.yml/badge.svg" alt="Offline checks — 本地工具与安装检查"></a>
+  <a href="https://duyunzhoudyz.github.io/dyz-med-paper-skills/"><img src="https://img.shields.io/badge/Docs-中文%20%7C%20English-1c625c?style=flat-square" alt="中英文文档"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square" alt="Python 3.10+"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square" alt="License: PolyForm NC 1.0.0"></a>
 </p>
@@ -45,6 +51,8 @@ DYZ MedPaper 是一套**围绕中国医生与医学研究生科研场景设计�
 <a id="skills"></a>
 
 ## 🎯 从选题到修回，费劲的地方都有帮手
+
+按任务进入教程：[医学论文写作](https://duyunzhoudyz.github.io/dyz-med-paper-skills/tutorials/writing/) · [PubMed 文献检索](https://duyunzhoudyz.github.io/dyz-med-paper-skills/tutorials/pubmed/) · [系统综述与 PRISMA](https://duyunzhoudyz.github.io/dyz-med-paper-skills/tutorials/systematic-review/) · [统计结果解读](https://duyunzhoudyz.github.io/dyz-med-paper-skills/tutorials/statistics/) · [中英翻译](https://duyunzhoudyz.github.io/dyz-med-paper-skills/tutorials/translation/) · [审稿意见回复](https://duyunzhoudyz.github.io/dyz-med-paper-skills/tutorials/reviewer-response/)。
 
 有数据却迟迟定不下选题，结果做出来了却写不出讨论，稿子改了几轮还是说不清亮点——这些都可以成为起点。你把现有材料和想解决的问题交代清楚，助手就能按对应方法帮你往下做。
 
@@ -274,7 +282,9 @@ python scripts/install_codex.py --check
 
 ### 技能目录与详细文档
 
-想了解全部 32 个技能、本地工具的能力范围、演示和测试方法，可以看[完整说明与开发验证](docs/readme-reference.md)；文献整理、正文核对、翻译和 Word 导出如何接起来，见[具体操作说明](docs/executable-workflow.md)。
+在[完整技能索引](docs/skills.md)中查看全部 32 个技能的中英文任务名、最小输入、主要输出和教学示例；也可在[在线技能目录](https://duyunzhoudyz.github.io/dyz-med-paper-skills/skills/)中按关键词筛选。
+
+本地工具的能力范围、演示和测试方法见[完整说明与开发验证](docs/readme-reference.md)；文献整理、正文核对、翻译和 Word 导出如何接起来，见[具体操作说明](docs/executable-workflow.md)。参与改进请看[贡献说明](CONTRIBUTING.md)，版本变化见[更新记录](CHANGELOG.md)。
 
 <a id="license"></a>
 

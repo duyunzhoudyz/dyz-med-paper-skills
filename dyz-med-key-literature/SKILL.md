@@ -4,6 +4,7 @@ description: >-
   从已有候选文献池中筛选前沿、奠基、指南、系统综述、矛盾证据和本土关键文献，完成全文级结构化精读并形成
   可复用的文献地图、单篇简报和证据综合。当用户要“精读几篇关键论文”“找绕不开的文献”或核对与结论矛盾的
   研究时使用；从零检索文献应先用 dyz-med-cnki，只有摘要或题录时不得声称已完成深度精读。
+  Use for critical appraisal and synthesis of available full-text medical literature.
 ---
 
 # 关键文献筛选与精读

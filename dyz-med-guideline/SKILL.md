@@ -4,6 +4,7 @@ description: >-
   按当前适用的医学研究报告规范逐条核对稿件，标记 COVERED、PARTIAL、MISSING、NOT_APPLICABLE，并给出
   可定位的修改建议。当用户明确要检查 CONSORT、STROBE、PRISMA、STARD、CARE、TRIPOD、ARRIVE、SPIRIT
   等规范符合性时使用；笼统稿件诊断、论断证据核查和模拟审稿分别交给相应技能，本技能不出具合规认证。
+  Use to check applicable medical reporting guidelines including STROBE, CONSORT and PRISMA.
 ---
 
 # 医学报告规范逐条核查

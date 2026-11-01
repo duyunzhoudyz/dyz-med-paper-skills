@@ -4,6 +4,7 @@ description: >-
   根据医学稿件的主题、文章类型、研究设计、目标读者、开放获取预算和时间要求，核实候选期刊的当前范围、
   投稿要求与费用并给出分层短名单。当用户问“适合投什么期刊”“这本期刊匹配吗”或需要改投梯队时使用；
   不承诺录用，不凭记忆提供影响因子、接受率、审稿周期或版面费。
+  Use for medical journal selection based on verified scope, requirements and fees.
 ---
 
 # 医学期刊匹配

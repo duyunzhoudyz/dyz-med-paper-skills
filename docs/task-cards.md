@@ -1,5 +1,7 @@
 # 常见任务与交付
 
+[返回项目首页](../README.md) · [32 个技能索引](skills.md) · [双语任务教程](https://duyunzhoudyz.github.io/dyz-med-paper-skills/) · [English guides](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/)
+
 | 你现在的材料 | 可以直接说 | 最小输入 | 主要交付 |
 |---|---|---|---|
 | 研究方向不清 | 帮我找可行研究问题 | 临床问题、可用材料与限制 | 待核实问题与可行性路线 |

@@ -4,6 +4,7 @@ description: >-
   根据研究方案、实际执行记录和统计分析计划撰写或修订医学论文方法部分。当用户需要把研究设计、研究对象、
   变量测量、偏倚控制、统计方法及适用的伦理注册信息写成可复核正文时使用；不替用户设计未确认的方法，
   不运行统计分析，也不编造批件号、日期、软件版本或数据共享安排。
+  Use to write methods sections from actual study procedures and approved analysis plans.
 ---
 
 # 医学论文方法部分撰写

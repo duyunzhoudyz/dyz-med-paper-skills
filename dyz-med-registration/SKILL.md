@@ -5,6 +5,7 @@ description: >-
   结局、样本量及结果报告差异。当用户提供 NCT、ChiCTR、ISRCTN、UMIN 等注册号，询问是否前瞻注册、是否
   存在结局切换或需要注册声明时使用；报告规范的全面检查交给 dyz-med-guideline，未查到原始记录时不得生成
   确定性注册声明。
+  Use to check trial registration records against protocols and manuscripts.
 ---
 
 # 研究注册与方案一致性核查

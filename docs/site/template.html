@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#163b48">
+  <link rel="canonical" href="{{canonical}}">
+  <link rel="alternate" hreflang="zh-CN" href="{{zh_url}}">
+  <link rel="alternate" hreflang="en" href="{{en_url}}">
+  <link rel="alternate" hreflang="x-default" href="{{zh_url}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DYZ MedPaper">
+  <meta property="og:locale" content="{{locale}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{image}}">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="DYZ MedPaper — 32 medical writing and research Agent Skills for Claude Code and Codex">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="{{image}}">
+  <link rel="icon" href="{{base}}assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{base}}assets/site.css">
+  <script src="{{base}}assets/site.js" defer></script>
+  <script type="application/ld+json">{{schema}}</script>
+</head>
+<body class="{{kind}}">
+  <a class="skip-link" href="#main">{{skip}}</a>
+  <header class="site-header">
+    <a class="brand" href="{{root}}"><span class="brand-mark" aria-hidden="true">M<span>·</span></span>DYZ MedPaper</a>
+    <div class="header-actions"><span class="beta">PUBLIC BETA</span><a class="language" href="{{other}}" lang="{{other_lang}}">{{other_label}}</a><a href="{{repo}}">GitHub ↗</a><button id="nav-toggle" aria-controls="doc-nav" aria-expanded="false">{{menu}}</button></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><nav id="doc-nav" aria-label="{{menu}}">{{nav}}</nav><div class="sidebar-note"><span>32</span><p>MEDICAL RESEARCH<br>AGENT SKILLS</p></div></aside>
+    <main id="main" tabindex="-1">
+      <header class="page-heading"><p class="eyebrow">{{eyebrow}}</p><h1>{{heading}}</h1><p class="lede">{{lead}}</p><div class="heading-rule" aria-hidden="true"></div></header>
+      <article class="prose">{{content}}</article>
+      <footer class="page-footer"><a href="{{edit_url}}">{{edit_label}} ↗</a><p>{{footer}}</p><a href="{{repo}}/blob/main/LICENSE">License</a> · <a href="{{repo}}/issues">Issues</a></footer>
+    </main>
+  </div>
+</body>
+</html>

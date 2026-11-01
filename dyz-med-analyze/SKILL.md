@@ -5,6 +5,7 @@ description: >-
   R 或既定统计代码，交付脚本、日志、诊断和可追溯结果。当用户要求分析 CSV、Excel、SPSS、Stata 等患者级
   数据或拟定统计方案时使用；仅判断数据能支持什么问题交给 dyz-med-data-adequacy，解释既有结果交给
   dyz-med-interpret，检验既有结果稳健性则交给 dyz-med-sensitivity。
+  Use for biostatistical analysis planning and approved R or other local statistical execution.
 ---
 
 # 医学数据统计分析

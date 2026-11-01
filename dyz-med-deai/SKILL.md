@@ -4,6 +4,7 @@ description: >-
   在不改变医学事实和证据的前提下，改善医学论文中模板化、重复、空泛或机械的语言，使表达更自然、具体且
   符合作者语气。当用户说文字“太像 AI”“太模板化”“不自然”或要求医学学术语言自然化时使用；本 Skill
   不用于规避 AI 检测，不判断文本作者身份，也不删除必要的 AI 使用披露。
+  Use to improve repetitive academic prose while preserving facts and disclosure; not detector evasion.
 ---
 
 # 医学论文语言自然化

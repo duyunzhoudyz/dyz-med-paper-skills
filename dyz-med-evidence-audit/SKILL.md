@@ -4,6 +4,7 @@ description: >-
   核对医学稿件中的关键论断是否被所引文献、指南、用户数据或明确标注的推断真正支持，输出逐条论断—证据
   矩阵、来源定位和待处理问题。当用户要求检查引用是否对题、论断有没有依据、知识缺口是否夸大或结论是否
   超出证据时使用；不代替完整同行评议、报告规范检查或参考文献排版。
+  Use to audit manuscript claims against cited literature and study evidence.
 ---
 
 # 医学论断—证据审计

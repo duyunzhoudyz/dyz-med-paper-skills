@@ -4,7 +4,11 @@
   <a href="README.md">简体中文</a> · English
 </p>
 
-<h1 align="center">DYZ MedPaper</h1>
+<h1 align="center">DYZ MedPaper — Medical Writing &amp; Research Agent Skills</h1>
+
+<p align="center"><strong>32 medical writing and research skills for Claude Code and Codex.</strong><br>Chinese-first workflows for doctors and medical postgraduates: PubMed literature search, bilingual manuscripts and reviewer responses.</p>
+
+<p align="center"><a href="https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/">English documentation</a> · <a href="https://duyunzhoudyz.github.io/dyz-med-paper-skills/">中文文档站</a> · <a href="docs/skills.en.md">All 32 skills</a> · <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills/releases">Releases</a></p>
 
 <p align="center">
   <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="docs/assets/readme-overview.png" alt="DYZ MedPaper: medical manuscript support tailored for doctors and medical postgraduate students in China. Work in Chinese, write in Chinese or English, address supervisor feedback and revise for submission. Repository: https://github.com/duyunzhoudyz/dyz-med-paper-skills" width="880"></a>
@@ -23,6 +27,8 @@
   <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square" alt="Stars"></a>
   <a href="#status"><img src="https://img.shields.io/badge/status-public_beta-amber?style=flat-square" alt="Status: Public Beta"></a>
   <a href="#skills"><img src="https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square" alt="Agent Skills"></a>
+  <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills/actions/workflows/check.yml"><img src="https://github.com/duyunzhoudyz/dyz-med-paper-skills/actions/workflows/check.yml/badge.svg" alt="Offline checks — local tools and installation"></a>
+  <a href="https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/"><img src="https://img.shields.io/badge/Docs-中文%20%7C%20English-1c625c?style=flat-square" alt="Chinese and English documentation"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square" alt="Python 3.10+"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square" alt="License: PolyForm NC 1.0.0"></a>
 </p>
@@ -274,7 +280,11 @@ This is a **public beta**. The repository includes automated installation and lo
 
 ### Skill catalog and detailed documentation
 
-For all 32 skills, detailed tool capabilities, demos and tests, see the [full reference and developer checks](docs/readme-reference.md). The [step-by-step tool guide](docs/executable-workflow.md) explains how literature records, manuscript checks, translation and Word export connect. Both guides are in Chinese.
+Browse the [complete skill catalog](docs/skills.en.md) for all 32 tasks, required inputs, main outputs and teaching examples, or filter the [online catalog](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/skills/) by keyword.
+
+Start with a task guide: [manuscript writing](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/tutorials/writing/), [PubMed literature search](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/tutorials/pubmed/), [systematic review and PRISMA](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/tutorials/systematic-review/), [statistical interpretation](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/tutorials/statistics/), [medical translation](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/tutorials/translation/) or [response to reviewers](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/tutorials/reviewer-response/).
+
+Detailed tool capabilities, demos and tests are in the [full reference](docs/readme-reference.md); the [tool guide](docs/executable-workflow.md) explains how literature records, manuscript checks, translation and Word export connect. These two references are in Chinese. See [Contributing](CONTRIBUTING.md) and the [Changelog](CHANGELOG.md) for project maintenance and releases.
 
 <a id="license"></a>
 
