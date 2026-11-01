@@ -1,14 +1,19 @@
-Generated with the built-in image_gen tool on 2026-11-02.
-Conceptual project illustration; not a product screenshot or research output.
+Edited with the built-in image_gen tool on 2026-11-02.
+Reference: the previous medical-manuscript-themed DYZ MedPaper banner.
+Conceptual illustration; not a product screenshot, patient record or research output.
 
-Use case: ads-marketing.
-Asset type: a polished editorial introduction banner for the top of the bilingual GitHub README of DYZ MedPaper, a collection of 32 medical manuscript Agent Skills usable with Claude Code, Codex and other compatible agents.
-Primary request: Create one finished wide landscape banner, approximately 1800 x 900 pixels, with beautiful restrained typography and a clear visual explanation of research materials becoming a reasoned manuscript. This is a conceptual project introduction, not a product screenshot.
-Composition: warm ivory background, generous margins, large dark navy project title across the top left; an elegant scientific editorial illustration across the lower two-thirds. Three interconnected paper-and-ink scenes flow left to right: a small stack of source papers and a subtle results table; an argument map with neatly connected evidence nodes and a fountain-pen nib; a finished manuscript with teal editorial annotations. Integrate the scenes with a fine teal line and small directional arrows. Soft tactile paper shadows, thin precise linework, restrained teal and muted terracotta accents. Flat editorial composition with slight paper depth, not a dashboard or app mockup. Premium scientific journal cover meets practical research notebook. Keep it readable when shown at 900 pixels wide.
-Exact text to include, with no other words:
-Large title: "DYZ MedPaper"
-Chinese subtitle: "理清研究思路，写好每一段论文"
-Small subtitle beneath: "Medical research & manuscript workflows"
-Three stage labels, one beneath each scene: "EVIDENCE", "ARGUMENT", "MANUSCRIPT"
-Small footer: "32 SKILLS  /  Claude Code · Codex · Agent Skills"
-Constraints: exact spelling and clear Chinese characters. Do not include patient details, invented study results, numerical performance claims, clinical efficacy statements, endorsements, vendor logos, certification seals, UI screenshots, star counts or watermarks. Use abstract strokes rather than fabricated scientific sentences inside the paper illustrations. The illustration must communicate organizing evidence, writing and revising. Opaque background.
+Use case: text-localization / precise-object-edit.
+Edit target: the supplied current DYZ MedPaper banner.
+Primary request: keep this medical-paper themed banner, but make its positioning unmistakably tailored for doctors and medical postgraduate students in China, and add the repository's full GitHub address as visible text.
+Preserve: the same wide 2:1 aspect ratio, elegant ivory/navy/teal editorial style, clinician's hand annotating a medical manuscript, forest plot and schematic survival graph, medical journal papers, anatomical heart drawing, scan, laptop and stethoscope. Keep the illustration and calm scholarly atmosphere as close to the original as possible. The doctor's hand, manuscript and charts must remain clearly visible.
+Replace the existing top-left text block with this hierarchy and these EXACT words:
+1. Largest title: "DYZ MedPaper"
+2. Prominent Chinese positioning headline across two lines:
+"为中国医生与医学研究生"
+"定制的医学论文助手"
+3. Smaller Chinese benefit line: "中文沟通 · 中英写作 · 导师改稿 · 投稿修回"
+Remove the old Chinese slogan and old English supporting line.
+Add a clean warm-ivory footer strip at the very bottom, integrated naturally into the composition, with thin subtle teal separation if useful. Center this EXACT URL on one line, in highly legible dark navy sans serif:
+"https://github.com/duyunzhoudyz/dyz-med-paper-skills"
+The URL must be spelled character-for-character exactly. It should be comfortably readable at a displayed banner width of 880px (approximately 16px apparent type size at that scale), not tiny, not broken into multiple lines. Keep all text safely inset from edges.
+The audience headline should be the most prominent text after the project title. Chinese glyphs must be correct and sharp, typography must not collide with the illustration. Do not add other words, slogans, badges, flags, seals, QR codes or logos. Do not invent scientific results or numbers; paper body text remains abstract strokes. Opaque background.

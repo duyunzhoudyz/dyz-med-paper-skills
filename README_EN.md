@@ -7,15 +7,16 @@
 <h1 align="center">DYZ MedPaper</h1>
 
 <p align="center">
-  <img src="docs/assets/readme-overview.png" alt="DYZ MedPaper overview: from research evidence and argument planning to manuscript drafting and revision, for Claude Code, Codex and Agent Skills-compatible agents" width="880">
+  <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills"><img src="docs/assets/readme-overview.png" alt="DYZ MedPaper: medical manuscript support tailored for doctors and medical postgraduate students in China. Work in Chinese, write in Chinese or English, address supervisor feedback and revise for submission. Repository: https://github.com/duyunzhoudyz/dyz-med-paper-skills" width="880"></a>
 </p>
 
-<p align="center">
-  <strong>Clinical work keeps you busy.<br>Give your paper a capable helping hand.</strong>
-</p>
+<h2 align="center">For doctors and medical<br>postgraduates in China</h2>
+
+<h3 align="center">Work in Chinese · Write in Chinese or English · From ideas to revisions</h3>
 
 <p align="center">
-  ⭐ <a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills">Star this research companion for your toolkit</a>, so you can find it when your next draft or revision comes around.
+  ⭐ <strong><a href="https://github.com/duyunzhoudyz/dyz-med-paper-skills">Star this research companion for your toolkit</a></strong><br>
+  Clinical work, rotations and research keep you busy. Give your paper a capable helping hand.
 </p>
 
 <p align="center">
@@ -27,13 +28,17 @@
 </p>
 
 <p align="center">
-  <a href="#skills">What it does</a> · <a href="#for-clinicians">For clinicians</a> · <a href="#examples">Examples</a><br>
+  <a href="#skills">What it does</a> · <a href="#for-clinicians">Built for you</a> · <a href="#examples">Examples</a><br>
   <a href="#quick-start">Install</a> · <a href="#status">Status</a> · <a href="#license">License &amp; contact</a>
 </p>
 
 ---
 
-DYZ MedPaper is an AI research workflow for **clinicians and medical postgraduate students**. It helps you work through research questions, literature, results, first drafts, discussion sections and reviewer responses—turning the material you already have into a manuscript you can discuss and revise.
+### From departmental data and thesis projects to journal revisions
+
+DYZ MedPaper is an **AI manuscript workflow designed around the research needs of doctors and medical postgraduate students in China**. Start with departmental case data or a thesis project, discuss research questions and statistical results in Chinese, connect Chinese and English literature with manuscript writing, and turn supervisor and reviewer feedback into specific edits—building **a manuscript you can discuss and revise** from the material you have.
+
+Whether you are advancing a project between clinical duties or preparing a thesis alongside rotations, start with the step that needs attention: **a research question, literature search, first draft, discussion section or reviewer response**.
 
 Install its **32 skills** in **Claude Code, Codex or another Agent Skills-compatible agent**, describe the task in everyday language, and start with the part that is holding you up. The workflow is primarily written in Chinese. [See installation options](#quick-start).
 
@@ -45,13 +50,13 @@ You may have data without a clear research question, results without a discussio
 
 | Where you are stuck | How it can help | What you can work with next |
 |---|---|---|
-| Clinical data, but no clear paper idea | Consider the clinical question, available variables and practical constraints; identify gaps first | Possible research questions, feasibility assessment and missing material |
-| A pile of papers with no clear direction | Plan searches in English and Chinese, organize key studies and compare what remains unanswered | Search plans, literature summaries and questions worth pursuing |
-| Statistical results that are hard to explain | Interpret the main findings, distinguish statistical differences from clinical relevance, and organize tables and text | Results explanations, figure and table suggestions, and a draft results section |
-| An introduction that wanders or a discussion that repeats results | Clarify the paper's question, plan each paragraph, and draft from the findings and literature | An outline, section drafts and reasons for the changes |
-| Major changes requested by a supervisor | Locate the most consequential problems, prioritize them and help rewrite the affected passages | A problem list, revision order and revised text |
-| A long set of reviewer comments | Work through each comment, plan manuscript changes and draft replies tied to completed work | A response letter, change locations and outstanding tasks |
-| A manuscript that needs a journal and submission materials | Compare journals by topic, article type, budget and requirements; organize abstracts, tables and text | A journal shortlist with reasons, Chinese and English abstracts, and a basic Word review draft |
+| **Clinical data, but no clear paper idea** | Consider the clinical question, available variables and practical constraints; identify gaps first | Possible research questions, feasibility assessment and missing material |
+| **A pile of papers with no clear direction** | Plan searches in English and Chinese, organize key studies and compare what remains unanswered | Search plans, literature summaries and questions worth pursuing |
+| **Statistical results that are hard to explain** | Interpret the main findings, distinguish statistical differences from clinical relevance, and organize tables and text | Results explanations, figure and table suggestions, and a draft results section |
+| **An introduction that wanders or a discussion that repeats results** | Clarify the paper's question, plan each paragraph, and draft from the findings and literature | An outline, section drafts and reasons for the changes |
+| **Major changes requested by a supervisor** | Locate the most consequential problems, prioritize them and help rewrite the affected passages | A problem list, revision order and revised text |
+| **A long set of reviewer comments** | Work through each comment, plan manuscript changes and draft replies tied to completed work | A response letter, change locations and outstanding tasks |
+| **A manuscript that needs a journal and submission materials** | Compare journals by topic, article type, budget and requirements; organize abstracts, tables and text | A journal shortlist with reasons, Chinese and English abstracts, and a basic Word review draft |
 
 For statistical work, it can also help discuss the analysis approach, prepare code and plan additional analyses. **Approve the specific plan before execution, with the required software and data available.**
 
@@ -59,13 +64,13 @@ A single paragraph, abstract or discussion section is enough to begin. You do no
 
 <a id="for-clinicians"></a>
 
-## 🩺 Built around clinicians in China
+## 🩺 Designed for the research routines of doctors and medical postgraduates in China
 
-### Think it through in Chinese
+### Reason in Chinese, then write in Chinese or English
 
-Research questions, results and revision choices can all be discussed in Chinese. Once the reasoning is clear, work on the English manuscript. This lets you focus first on what the research actually says.
+Discuss research questions, results and a supervisor's concerns about a paragraph's logic in Chinese. Clarify the question and argument first, then draft a Chinese paper, English sections or bilingual abstracts as needed. Language follows the research reasoning.
 
-### Start with what your department has
+### Start with the realities of departmental data and thesis projects
 
 Available records, follow-up, missing measurements and time all shape a feasible study. The workflow can begin with a clinical observation or existing data and help narrow a broad direction into a question worth investigating. Bring the constraints of your thesis, research project or intended submission into that conversation.
 
@@ -73,9 +78,13 @@ Available records, follow-up, missing measurements and time all shape a feasible
 
 Plan searches around sources such as PubMed, as well as Chinese databases including CNKI, Wanfang and VIP, and organize records you already have. Actual database searches and full texts still require the appropriate access. Continue from a Chinese draft to English sections and bilingual abstracts, checking numbers, terminology and the strength of the claims during translation.
 
-### Include the practicalities of journal selection
+### Turn supervisor feedback into paragraph edits and a revision plan
 
-Alongside scope and article type, compare publication fees, time constraints and institutional requirements. Get candidate journals with reasons to discuss with your supervisor. Current requirements are checked where possible; unavailable information is marked as such.
+If a supervisor questions the contribution, finds the discussion unfocused or sees a mismatch between results and conclusions, share the draft and specific feedback. Locate the problems and missing material, prioritize changes, revise the passages and review the reasons before your next discussion with the supervisor.
+
+### Account for thesis requirements, publication fees and institutional criteria
+
+Provide your university's thesis requirements, target journal, publication budget, timeline and institutional criteria. Use them to organize writing and submission checklists and compare candidate journals with reasons. Current requirements are checked where possible; unavailable information is marked for discussion with your supervisor.
 
 ### Leave a record for when clinical work interrupts
 
