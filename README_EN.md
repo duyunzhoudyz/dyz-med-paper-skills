@@ -4,13 +4,15 @@
 
 # DYZ MedPaper
 
-![DYZ MedPaper workflow overview: research evidence, argument planning, manuscript writing and revision with Claude Code, Codex and Agent Skills-compatible agents](docs/assets/readme-overview.png)
+![DYZ MedPaper overview: from research evidence and argument planning to manuscript drafting and revision, for Claude Code, Codex and Agent Skills-compatible agents](docs/assets/readme-overview.png)
 
-**An AI manuscript workflow for clinicians and medical researchers: turn the data, results and drafts you already have into a clear argument, then work through writing and revision.**
+**Clinical work keeps you busy. Give your paper a capable helping hand.**
 
-Built on Agent Skills for **Claude Code, Codex and other agents that support the standard**. [Choose your setup](#agents)
+DYZ MedPaper is an AI research workflow for **clinicians and medical postgraduate students**. It helps you work through research questions, literature, results, first drafts, discussion sections and reviewer responses—turning the material you already have into a manuscript you can discuss and revise.
 
-⭐ [Star this workflow](https://github.com/duyunzhoudyz/dyz-med-paper-skills) to keep it handy for your next paper.
+Install its **32 skills** in **Claude Code, Codex or another Agent Skills-compatible agent**, describe the task in everyday language, and start with the part that is holding you up. The workflow is primarily written in Chinese. [See installation options](#quick-start).
+
+⭐ [Star this research companion for your toolkit](https://github.com/duyunzhoudyz/dyz-med-paper-skills), so you can find it when your next draft or revision comes around.
 
 [![Stars](https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square)](https://github.com/duyunzhoudyz/dyz-med-paper-skills)
 [![Status: Public Beta](https://img.shields.io/badge/status-public_beta-amber?style=flat-square)](#status)
@@ -18,56 +20,101 @@ Built on Agent Skills for **Claude Code, Codex and other agents that support the
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)](https://www.python.org/downloads/)
 [![License: PolyForm NC 1.0.0](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square)](LICENSE)
 
-[Teaching examples](#examples) · [Quick start](#quick-start) · [Workflow](#workflow) · [Skill map](#skills)
+**Quick navigation:** [What it helps with](#skills) · [Clinicians in China](#for-clinicians) · [Tasks and examples](#examples) · [Installation](#quick-start) · [Project status](#status) · [License and contact](#license)
 
-## Start with the task holding up your paper
+<a id="skills"></a>
 
-You have results tables but no clear argument. You have read the literature, yet the discussion still repeats the results. Or a major revision has arrived, and you need to decide what to change first. DYZ MedPaper organizes these jobs into connected tasks: assess the material, plan the argument, draft sections, check evidence, and prepare revisions and deliverables.
+## 🎯 Help from research questions to revisions
 
-Install the skills in your chosen agent and describe the task. The 32 skills supply instructions, templates and selected local tools; the assistant selects the relevant steps from your request and available material. Chinese requests are the primary interaction path.
+You may have data without a clear research question, results without a discussion, or a draft whose contribution is still hard to explain. Start there. Share the material you have and the problem you want to solve; the assistant can use the relevant workflow to help move it forward.
 
-| What you have | Example request | Deliverable for this step |
+| Where you are stuck | How it can help | What you can work with next |
 |---|---|---|
-| A data dictionary and study idea | Assess which questions these data can answer and what is missing. Do not run statistics. | Data adequacy assessment, gaps and a feasible route |
-| Verified results and literature | Clarify the paper's main argument, then plan the questions each discussion paragraph should answer. | Core claim, supporting evidence and paragraph plan |
-| Results tables and a discussion draft | Rewrite the discussion from these materials, explain the structure, and list unsupported points separately. | Discussion draft, revision rationale and open questions |
-| An existing manuscript | Identify the most consequential problems, locate them in the text, and prioritize revisions. | Manuscript diagnosis and revision priorities |
-| A manuscript and reviewer comments | Map each comment to manuscript changes and a response. Separate completed work from pending work. | Point-by-point response table, locations and task status |
+| Clinical data, but no clear paper idea | Consider the clinical question, available variables and practical constraints; identify gaps first | Possible research questions, feasibility assessment and missing material |
+| A pile of papers with no clear direction | Plan searches in English and Chinese, organize key studies and compare what remains unanswered | Search plans, literature summaries and questions worth pursuing |
+| Statistical results that are hard to explain | Interpret the main findings, distinguish statistical differences from clinical relevance, and organize tables and text | Results explanations, figure and table suggestions, and a draft results section |
+| An introduction that wanders or a discussion that repeats results | Clarify the paper's question, plan each paragraph, and draft from the findings and literature | An outline, section drafts and reasons for the changes |
+| Major changes requested by a supervisor | Locate the most consequential problems, prioritize them and help rewrite the affected passages | A problem list, revision order and revised text |
+| A long set of reviewer comments | Work through each comment, plan manuscript changes and draft replies tied to completed work | A response letter, change locations and outstanding tasks |
+| A manuscript that needs a journal and submission materials | Compare journals by topic, article type, budget and requirements; organize abstracts, tables and text | A journal shortlist with reasons, Chinese and English abstracts, and a basic Word review draft |
 
-Enter at the stage your existing material supports. Translation, abstracts and local edits can also be handled individually. See the [task cards](docs/task-cards.md) for inputs and deliverables.
+For statistical work, it can also help discuss the analysis approach, prepare code and plan additional analyses. **Approve the specific plan before execution, with the required software and data available.**
 
-## Build the argument into the manuscript
+A single paragraph, abstract or discussion section is enough to begin. You do not need to learn all 32 skill names. See [more task examples](docs/task-cards.md).
 
-**Establish what the paper answers.** The writing plan brings the research question, existing evidence, study contribution and core claim into one argument map, then assigns them to sections. The discussion returns to the question raised in the introduction.
+<a id="for-clinicians"></a>
 
-**Give each paragraph a purpose.** Section guidance covers topic sentences, comparisons with the literature, interpretation, limitations and reverse outlining. For revisions, request the original wording, revision and rationale to see why the structure or expression changed. See the [writing guidance and synthetic examples](dyz-med-writing-plan/references/writing-craft.md).
+## 🩺 Built around clinicians in China
 
-**Check the text alongside its sources.** Literature imports retain provenance, manuscript tools check registered claims against the current text, and translation tools compare numbers and citations. These mechanical checks detect certain discrepancies; researchers still assess whether the evidence supports the claim.
+### Think it through in Chinese
 
-**Leave a record for the next session.** Project state can record confirmed facts, manuscript versions, open questions and revision history. Sections, response tables and basic Word review drafts can be saved in the paper project. The assistant can read those records when work resumes.
+Research questions, results and revision choices can all be discussed in Chinese. Once the reasoning is clear, work on the English manuscript. This lets you focus first on what the research actually says.
+
+### Start with what your department has
+
+Available records, follow-up, missing measurements and time all shape a feasible study. The workflow can begin with a clinical observation or existing data and help narrow a broad direction into a question worth investigating. Bring the constraints of your thesis, research project or intended submission into that conversation.
+
+### Connect Chinese and English literature and writing
+
+Plan searches around sources such as PubMed, as well as Chinese databases including CNKI, Wanfang and VIP, and organize records you already have. Actual database searches and full texts still require the appropriate access. Continue from a Chinese draft to English sections and bilingual abstracts, checking numbers, terminology and the strength of the claims during translation.
+
+### Include the practicalities of journal selection
+
+Alongside scope and article type, compare publication fees, time constraints and institutional requirements. Get candidate journals with reasons to discuss with your supervisor. Current requirements are checked where possible; unavailable information is marked as such.
+
+### Leave a record for when clinical work interrupts
+
+Keep track of completed sections, confirmed numbers, supervisor feedback and unresolved reviewer comments in the paper project. At the next session, ask the assistant to read those records and continue. Sections and responses can be saved with the project and assembled into a basic Word draft for supervisors and coauthors to edit.
 
 <a id="examples"></a>
 
-## See the deliverables
+## 📝 From tasks to manuscript drafts
 
-These are **synthetic teaching examples** stored in the repository. They illustrate methods and output structure, not actual user cases, published studies or model-quality evaluation results.
+### Turn the help into text you can actually work on
 
-| Example | What it shows |
+Organizing sources, outlining, drafting, explaining edits and preparing replies can all build on the same paper. **You guide the research; the assistant helps put your thinking into words and turn feedback into revisions.**
+
+With the relevant material available, a task might look like this:
+
+> Here are my results tables, several verified papers and a draft discussion. Rewrite the discussion: explain the main findings, compare them with previous studies, then cover clinical relevance and limitations. List unsupported points separately and explain your changes in Chinese.
+
+That task can produce concrete working material:
+
+- **A discussion draft** with a clear purpose and connection for each paragraph.
+- **Notes connecting claims to results and sources**, so you can check the basis for important statements.
+- **Reasons for the revisions**, explaining repetition, gaps in reasoning or overstated conclusions.
+- **A list of open questions**, including missing references, additional analyses or decisions that need your input.
+
+Continue by asking for a shorter version, a rewritten paragraph, an English translation or changes responding to a reviewer. The [writing methods and examples](dyz-med-writing-plan/references/writing-craft.md) show how this work is organized.
+
+### Explore the teaching examples
+
+These are **synthetic teaching examples** from the repository. They illustrate the approach and the resulting documents; they are not clinician testimonials or published studies.
+
+| Step to explore | What the example shows |
 |---|---|
-| [From cohort results to an argument map](dyz-med-writing-plan/examples/示例-他汀类药物队列论证地图构建.md) | Connecting the research question, key finding, literature gap and discussion paragraphs |
-| [Diagnosing a rejected manuscript](dyz-med-manuscript-diagnose/examples/worked-example-rejected-manuscript.md) | Locating issues, setting priorities and choosing the next step |
-| [Translating a results paragraph](dyz-med-translate/examples/worked-example-cn2en.md) | Source text, protected content, English translation and separate editorial notes |
-| [Responding to reviewers](dyz-med-revision/examples/worked-example-reviewer-response.md) | Linking comments to response strategies, manuscript locations and revision records |
+| [Building a paper from study results](dyz-med-writing-plan/examples/示例-他汀类药物队列论证地图构建.md) | Connecting the research question and main findings to the purpose of each discussion paragraph |
+| [Prioritizing changes after rejection](dyz-med-manuscript-diagnose/examples/worked-example-rejected-manuscript.md) | Locating problems, deciding what matters most and planning concrete revisions |
+| [Translating a results passage into English](dyz-med-translate/examples/worked-example-cn2en.md) | Comparing source and translation, preserving essential content and separating issues that need further work |
+| [Responding to reviewers comment by comment](dyz-med-revision/examples/worked-example-reviewer-response.md) | Drafting replies, locating manuscript changes and recording unfinished work |
 
-A runnable [synthetic delivery demo](scripts/run_delivery_demo.py) connects literature import, manuscript binding checks, number and citation comparison, and basic DOCX export. It also introduces a numerical change to check whether the tool detects it. It does not call a model or demonstrate writing quality. Commands are in [Validation](#validation).
+<a id="workflow"></a>
+
+### Start where the paper is now
+
+**An idea calls for a research question. Results call for writing. A draft calls for revision. Reviewer comments call for a response.**
+
+You do not need to repeat every earlier stage. Ask for one bounded task or authorize a connected set of tasks. The assistant can continue within that scope and bring back specific decisions when your judgment is needed.
+
+The workflows cover writing for observational studies, randomized trials and systematic reviews. Different study types need different records and reporting checks. The assistant selects a next step from the available material; a single invocation does not automatically complete the whole paper.
 
 <a id="quick-start"></a>
 
-## Quick start
+## 🚀 Installation and first steps
 
 <a id="agents"></a>
 
-### Choose your agent
+### 1. Choose your agent
 
 Skills use the [Agent Skills](https://agentskills.io/specification) directory format built around `SKILL.md`. The core workflow and local scripts travel with the complete skill directory; discovery, tool permissions and invocation are provided by the host.
 
@@ -79,7 +126,7 @@ Skills use the [Agent Skills](https://agentskills.io/specification) directory fo
 
 Local installation options follow. Other agents must be able to read complete skill directories and provide the tools needed for scripts, literature search and file processing. Format compatibility does not establish verified runtime behavior on every host; see [Status](#status) for the evaluation scope.
 
-### 1. Prepare your environment and material
+### 2. Prepare your environment and material
 
 - A working **Agent Skills** host, such as Claude Code or Codex, with any required account setup completed.
 - **Python 3.10+** for installation and local checks. The installer uses only the standard library.
@@ -89,7 +136,7 @@ Local installation options follow. Other agents must be able to read complete sk
 
 On Windows, check `python --version`. If your Python command is `py -3`, substitute it for `python` below; macOS/Linux commonly use `python3`. Install Python from its [official website](https://www.python.org/downloads/) if needed.
 
-### 2. Download and install
+### 3. Download and install
 
 Choose **Code → Download ZIP** on the [repository page](https://github.com/duyunzhoudyz/dyz-med-paper-skills), extract it and open a terminal in that directory. Alternatively, use Git:
 
@@ -137,81 +184,19 @@ python scripts/install_codex.py --project "/path/to/my-paper" --check
 
 </details>
 
-### 3. Open the paper project and describe the task
+### 4. Open the paper project and describe the immediate task
 
-For example, after adding verified results and literature to the project:
+Open the paper folder in your chosen agent, add the prepared materials and describe what you need in ordinary language. If you are unsure where to begin, ask:
 
-> Use the results and literature in this folder to organize the paper's core claim and discussion paragraph plan. Identify the results and sources for each paragraph, list material gaps separately, and explain the structure.
+> Use dyz-med-orchestrator to look at the paper materials in this folder. Identify the most important issue to address now and help me work through that step. List any additional material you need.
 
-The intended first deliverable is **an argument plan you can review**. If essential material is missing, begin with a usable outline and a gap list. Once the direction is agreed, request the relevant manuscript section.
+For explicit invocation, use `/dyz-med-orchestrator` in Claude Code or `$dyz-med-orchestrator` in Codex; follow other agents' invocation mechanisms. Check the assistant's understanding and any missing material before continuing to drafting or revision.
 
-If you are unsure where to begin, ask:
-
-> Use dyz-med-orchestrator to read the existing paper materials, identify the current stage, and suggest the next step.
-
-For explicit invocation, use `/dyz-med-orchestrator` in Claude Code or `$dyz-med-orchestrator` in Codex; follow other agents' invocation mechanisms. See [Maintenance and troubleshooting](#maintenance) for skill discovery. File checks establish installation consistency; actual skill loading and task selection must still be verified in your host.
-
-<a id="workflow"></a>
-
-## How the workflow connects
-
-```mermaid
-flowchart LR
-    A[Study idea or existing material] --> B[Question and feasibility]
-    B --> C[Design and evidence]
-    C --> D[Approved analysis and results]
-    D --> E[Argument and section drafting]
-    E --> F[Revision and review draft]
-```
-
-This is an optional sequence. Existing results can lead straight into writing; existing manuscripts can enter diagnosis or revision. The navigator identifies the stage and recommends a next step, while your agent selects skills for specific tasks. The workflow does not automatically execute every stage in one run.
-
-| Study type | Sequence and handoff priorities |
-|---|---|
-| Observational study | Protocol and dictionary → data adequacy → approved analysis → results and writing → applicable reporting guidance → review draft; figures and text use the same results version |
-| Randomized trial | Protocol, registration and approved analysis plan → actual conduct records and results → registered-outcome comparison → writing and reporting checks → review draft |
-| Systematic review | Search protocol → import and deduplication → independent screening → extraction and bias assessment → approved synthesis → writing and reporting checks → review draft |
-
-Within a fully authorized task, the assistant may continue through necessary supporting steps. Statistical execution and plan changes require approval of the specific plan; external submission requires explicit authorization and final confirmation. A request for the next step receives a recommendation. The assistant maintains project state and tool input manifests, so users do not need to write JSON, YAML or hashes.
-
-See the [executable workflow](docs/executable-workflow.md) for literature, manuscript checks, translation and export handoffs.
-
-<a id="skills"></a>
-
-## 32 skills, selected by task
-
-All directories start with `dyz-med-`. Each centers on `SKILL.md`, with templates, references, examples and scripts where needed. `agents/openai.yaml` supplies additional Codex interface and invocation metadata; other hosts use their own discovery and invocation mechanisms.
-
-| Stage | Skill directory suffixes |
-|---|---|
-| Starting point and state | `ideate`, `init`, `manuscript-diagnose`, `orchestrator`, `passport` |
-| Study design and evidence | `mechanism`, `data-adequacy`, `registration`, `cnki`, `key-literature`, `screening-pipeline`, `evidence-audit` |
-| Analysis and presentation | `analyze`, `interpret`, `sensitivity`, `figures-tables`, `flowchart` |
-| Argument and writing | `writing-plan`, `introduction`, `methods`, `results`, `discussion`, `abstract`, `write` |
-| Revision and delivery | `translate`, `deai`, `guideline`, `review`, `revision`, `journal-finder`, `export`, `submit` |
-
-`passport` maintains internal project state and usually needs no direct invocation. `cnki` is the directory name for Chinese and English literature search; it includes no CNKI account or full-text access rights.
-
-<a id="status"></a>
-
-## Status and dependencies
-
-**Public beta for Claude Code, Codex and other Agent Skills-compatible agents.** The repository provides skill instructions, templates, local scripts and offline regression checks. Installation checks verify copying and byte consistency, not actual loading or invocation in any host. Host-specific natural-language routing accuracy, sustained multi-turn use, blinded writing review and medical quality have not completed independent acceptance review. Unexecuted checks remain `not_run`.
-
-| Task | Requirements and current scope |
-|---|---|
-| Text explanation, writing and translation | A working agent, model and clear source material; skill instructions and most supporting documents are primarily in Chinese |
-| Formal statistical analysis | An approved plan, R or the project's chosen statistical engine, and its packages; skill installation does not install these environments |
-| Literature and journal checks | Network access, search tools and lawful access permissions; the bundled online search script covers PubMed only and cannot alone fulfill a multi-database systematic-review search |
-| Literature import and local checks | Python's standard library supports RIS, literal-value BibTeX, NBIB and PubMed XML imports, manuscript binding checks, and number/citation comparison |
-| File reading and Word delivery | Excel/Word/PDF reading needs suitable parsers; the standard-library exporter produces basic DOCX review drafts. Complex layouts, equations and native tracked changes need other tools; visual inspection requires local Word or LibreOffice |
-| YAML validation and the full developer suite | PyYAML; JSON contract scripts use only the standard library |
-
-Local checks cover only their implemented scope. For example, number comparison may detect additions and removals but cannot detect values swapped between groups or changes in claim strength. Consistent manuscript bindings do not establish evidentiary support. Researchers and relevant specialists must review the outputs; the tools do not replace statistical, ethics or medical judgment, or guarantee publication.
+Installation checks establish file consistency. Actual skill loading still needs to be verified in your agent; see [installation maintenance and troubleshooting](#maintenance) below.
 
 <a id="maintenance"></a>
 
-## Maintenance and troubleshooting
+### Installation maintenance and troubleshooting
 
 <details>
 <summary>Skills do not appear after installation</summary>
@@ -247,50 +232,36 @@ The assistant locates `scripts/`, `templates/` and `references/` relative to the
 
 </details>
 
+<a id="status"></a>
+
+## 📌 Project status and further details
+
+### Where the project stands
+
+This is a **public beta**. The repository includes automated installation and local tool checks, along with the teaching examples above. Evaluation of sustained writing sessions, behavior across agents and independent medical quality is not yet complete. Results also depend on the model, source material and task instructions.
+
+### Before you use it
+
+- Literature searches need a working network, tools and database access. Installation does not include a CNKI account. The built-in online search tool currently covers PubMed only; a multi-database systematic review needs additional sources.
+- Formal statistical work requires the relevant software and your approval of the analysis plan. Reading Excel, PDF and Word files also requires suitable tools. The built-in Word exporter creates basic review drafts; complex layouts, equations and tracked changes need other tools.
+- The assistant helps search, write, revise and check. Research judgments and the final manuscript still require review by you and the relevant professionals. Passing a check does not establish that a conclusion is valid or guarantee publication. Actual submission requires your explicit authorization and final confirmation.
+
 <a id="validation"></a>
 
-## Development and validation
+### Skill catalog and detailed documentation
 
-Run the synthetic toolchain demo without a model account. The output must be a new directory under `tests/results/`:
+For all 32 skills, detailed tool capabilities, demos and tests, see the [full reference and developer checks](docs/readme-reference.md). The [step-by-step tool guide](docs/executable-workflow.md) explains how literature records, manuscript checks, translation and Word export connect. Both guides are in Chinese.
 
-```bash
-python -B scripts/run_delivery_demo.py --output tests/results/my-delivery-demo
-python -B scripts/sync_shared_resources.py
-```
+<a id="license"></a>
 
-The demo produces literature records, check reports and a DOCX marked for internal review, and checks one injected numerical change. It makes no network or model calls and runs no statistical analysis. Word visual inspection and semantic review are separate. The second command only checks shared-resource synchronization.
+## 📄 License and contact
 
-The full offline suite requires PyYAML. If needed, install the developer dependency and run:
+### License
 
-```bash
-python -m pip install -r requirements-dev.txt
-python -B scripts/run_offline_regression.py
-```
+This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](LICENSE), for noncommercial uses allowed by its terms. Uses outside that permission require [separate written commercial authorization](COMMERCIAL-LICENSE.md). Third-party materials remain subject to their own terms.
 
-The suite covers skill declarations, artifact handoffs, installation checks, local delivery tools and three synthetic study workflows. Reports go to a new `tests/results/` subdirectory. Installation checks use temporary directories; existing workspace copies receive read-only checks. See the [offline regression guide](tests/offline-regression.md) and [CI workflow](.github/workflows/check.yml).
+### Report a problem
 
-<details>
-<summary>Model evaluation and writing-quality evidence</summary>
+Report problems through [Issues](https://github.com/duyunzhoudyz/dyz-med-paper-skills/issues), including your operating system, agent, reproduction steps and de-identified errors. Do not upload patient records or credentials.
 
-Offline success does not establish actual skill invocation, medical correctness or submission readiness. Record real-host and medical acceptance results under the [model evaluation protocol](tests/evaluation-protocol.md); evaluate writing separately using the [blinded review protocol](tests/writing-blind-review.md).
-
-Prepare frozen source and evaluation inputs:
-
-```bash
-python -B scripts/prepare_evaluation.py --output tests/results/my-evaluation
-python -B scripts/check_eval_results.py tests/results/my-evaluation/results.json --check-current-source
-```
-
-The preparation script creates 60 inputs and an initial 30-case sequence. It does not run a model or fill in passing results. Tested sessions receive only the current prompt and matching skill sources, not scoring criteria, audit reports or test files from the frozen snapshot. Keep results `blocked` / `not_run` until host, actual model, skill set and human review are verified. Check historical records against the matching old source; do not rewrite old snapshots.
-
-Public source excludes local installed copies, internal audits, raw execution logs, authentication material and paper data.
-
-</details>
-
-## License and contact
-
-This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](LICENSE). Its original text governs permitted purposes and conditions. Uses outside those grants require a [separate written commercial agreement](COMMERCIAL-LICENSE.md) in advance. The project does not claim OSI open-source status; third-party material remains subject to its own terms.
-
-Report problems through [Issues](https://github.com/duyunzhoudyz/dyz-med-paper-skills/issues), including your operating system, agent name and version, reproduction steps and sanitized errors. Do not upload patient information or credentials.
-
-If these methods and examples help your work, [Star the repository](https://github.com/duyunzhoudyz/dyz-med-paper-skills) as a reference for your next manuscript.
+**Keep your attention on the research questions worth thinking about, with help for the work around them.** If these workflows are useful to you, [give the project a Star](https://github.com/duyunzhoudyz/dyz-med-paper-skills) and help other clinicians discover it.
