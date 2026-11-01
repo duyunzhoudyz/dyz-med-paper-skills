@@ -73,6 +73,10 @@ description: >-
 - 目的句可直接映射到研究设计和主要结局；
 - 不含虚构引用、结果泄露或过度因果表述。
 
+## 写作方法参考
+
+用户需要结构改进、逐项修改理由或写作教学时，按需读取[写作方法与合成样例](references/writing-craft.md)。仅翻译或自然化时不据教学样例静默改变科学主张。
+
 ## 配套资源
 
 - [漏斗式引言骨架](templates/funnel-introduction-skeleton.md)

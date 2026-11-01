@@ -35,6 +35,7 @@ def inventory():
     paths = set(ROOT.glob('scripts/*.py')) | set(ROOT.glob('tests/test_*.py'))
     paths.update(ROOT.glob('tests/fixtures/**/*'))
     paths.update(ROOT.glob('tests/*.md'))
+    paths.update(ROOT.glob('docs/**/*.md'))
     paths.update(ROOT / name for name in ('README.md', 'LICENSE', 'NOTICE', 'COMMERCIAL-LICENSE.md',
                                           'requirements-dev.txt', '.gitignore', '.gitattributes'))
     for folder in ROOT.glob('dyz-med-*'):

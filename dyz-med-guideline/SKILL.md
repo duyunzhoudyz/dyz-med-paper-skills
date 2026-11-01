@@ -148,6 +148,10 @@ description: >-
 - 所有缺失项有可执行且不虚构事实的建议；
 - 结果没有被描述为合规认证或录用保证。
 
+## 版本记录
+
+按[版本索引](references/versioned-guidelines.md)定位官方来源并保存实际取得的版本、日期、文件哈希和扩展适用性；索引不能代替完整官方清单。
+
 ## 配套资源
 
 - `templates/checklists/consort-2010-legacy.md`：历史版 CONSORT 2010 骨架，仅用于旧版对照，不用于当前 RCT 默认检查。

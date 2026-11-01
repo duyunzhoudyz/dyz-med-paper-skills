@@ -29,6 +29,7 @@ python -B scripts/run_offline_regression.py --output tests/results/offline-my-ru
 | 工件交接 | results、PRISMA、references实际生成回执，交给passport；11种生产者状态组合与3组生命周期 | `test-events.json`、`unittest.log` |
 | 关键失败分支 | 23组命名合同分支映射到实际执行的测试ID；缺失、失败或跳过不会算覆盖 | `failure-coverage.json` |
 | 三类合成流程 | 观察队列、RCT、系统综述的正常/故障/待决定/版本失效；保留输入、报告与实际CLI回执 | `workflows/` |
+| 新增写作交付工具 | 实际正文改数/移位、中文与英文数字和负号、引用/剂量/声明、四类文献导入与冲突、PubMed分页/缺页/查询绑定、DOCX内容与预检、评测包防答案混入 | `test_toolchain` 测试及 `test-events.json` |
 | 工程检查 | 结构、链接、临时目录中Codex安装和字节自检；若本地工作区安装副本存在则另行只读核对；源文件与历史文件哈希前后比较 | `structure.json`、`installation.json`、`source-manifest.json` |
 
 声明锚点由 `fixtures/routing-contract-v1.json` 独立维护，只忽略空白，不执行关键词分类。文案改变时应审阅其语义及职责边界，再更新合同锚点；不能直接从当前描述自动生成期望以消除失败。原语义fixture仍保持 `verification_status: not_run`，其必需/禁止行为文本是后续模型评测的判据，离线检查不声称已执行这些自然语言行为。
@@ -42,6 +43,10 @@ python -B scripts/run_offline_regression.py --output tests/results/offline-my-ru
 护栏自检中的故意拒绝记录在自检结果中；业务测试若尝试越界，即使测试自行捕获异常，父/子进程的 `guard-events.jsonl` 仍会使总结果失败。正常运行没有该文件。报告分别记录允许的本地Python进程次数与意外阻断操作。
 
 这是防止测试误联网或误启动外部模型的护栏，不是抵御恶意Python代码、原生扩展或系统级绕过的OS沙箱。题录测试中的模拟网络次数只代表mock transport，不代表真实HTTP；真实联网受上述护栏阻断。入口不读取认证文件或调用模型服务。
+
+新工具测试在当前受护栏保护的 Python 进程内调用实际模块，PubMed 使用显式合成 transport；不会为新增脚本扩大子进程白名单。DOCX 测试检查文件包 XML、中文、数字、图表和引文，不冒充视觉检查。实际在线连通和 LibreOffice 渲染应另存证据，不加入离线入口。
+
+`scripts/run_delivery_demo.py --output tests/results/<新目录>` 提供可重复的合成文献→正文→翻译→DOCX演示，产物及故障注入回执保存在新目录。它不替代三类原有合同流程、独立实际CLI试用或写作医学审阅。
 
 ## 结果解释
 

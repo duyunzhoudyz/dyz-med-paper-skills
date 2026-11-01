@@ -85,6 +85,10 @@ description: >-
 - 关键词来源清楚；
 - 没有把计数报告、裁剪说明或内部备注混入摘要正文。
 
+## 写作方法参考
+
+用户需要结构改进、逐项修改理由或写作教学时，按需读取[写作方法与合成样例](references/writing-craft.md)。仅翻译或自然化时不据教学样例静默改变科学主张。
+
 ## 配套资源
 
 - [通用结构化摘要骨架](templates/abstract-structure-skeleton.md)

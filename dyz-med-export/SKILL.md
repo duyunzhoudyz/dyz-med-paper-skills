@@ -100,6 +100,11 @@ blocked/failed 需 reason。以唯一 check ID 绑定完整实际输入、范围
 导出副本另登记工件 ID/版本/哈希，不把源稿 PASS 直接赋给导出件。纯排版字节改变也默认使原绑定 stale；
 沿用科学判断须新建当前输入绑定记录，附内容等价性和新旧页码/定位重核依据，保留旧记录与其过期状态。
 
+## 稳定本地路径
+
+对于支持的 Markdown、PNG 和已核实引文输入，可按[本地 Word 接口](references/local-docx-cli.md)使用 export_docx.py。
+它只生成标记清楚的审阅版 DOCX 和清单，不声称符合具体期刊、科学审核通过或支持原生修订。生成后继续执行成品视觉检查。
+
 ## 输出
 
 默认在 `paper/submissions/` 或用户指定目录生成：

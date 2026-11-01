@@ -83,7 +83,7 @@ description: >-
 - 被引数、影响力标签和“高质量”判断必须注明来源和查询日期。
 - 合法开放全文定位成功只表示可以访问；实际读取并核对全文后才能标为 `full_text_read`。
 - 可选使用自包含标准库 `scripts/verify_references.py` 对规范化JSON/CSV题录做确定性身份核验；
-  不建设RIS/BibTeX通用导入，也不自动改原始文献库。具体字段、授权合同与命令见
+  该身份核验脚本不承担RIS/BibTeX导入，也不自动改原始文献库；导入使用下述独立工具。具体字段、授权合同与命令见
   [检索记录模板的题录核验接口](templates/search-record-skeleton.md#题录身份核验接口)。
 - 工具默认离线，接受有版本绑定的固定响应；离线matched只是重放结果，不是实时数据库核验。
   联网须显式`--online`及完整当前人类授权记录，只发送获准裸DOI/PMID到固定Crossref/PubMed API。
@@ -114,6 +114,11 @@ description: >-
 4. 关键未覆盖来源和人工补充步骤；
 5. 推荐交给 `dyz-med-key-literature` 深读的候选文献；
 6. 若用于系统综述，明确转交 `dyz-med-screening-pipeline` 的导入与筛选要求。
+
+## 可重复导入与主题检索
+
+已有 RIS、字面值 BibTeX、NBIB 或 PubMed XML 时，按[文献工具接口](references/literature-cli.md)使用 import_references.py，生成有来源的文献库与每批最多100条的身份核验输入。
+需要主题检索时可使用 search_pubmed.py，保留完整查询、分页、失败和在线/重放身份；partial 不能声明全量完成。上述任务不扩大到全文阅读。
 
 ## 完成检查
 

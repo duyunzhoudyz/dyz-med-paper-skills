@@ -1,109 +1,188 @@
-# dyz-med-paper-skills
+<!-- README_SYNC: source=working-tree; updated=2026-11-02 -->
 
-**用大白话推进医学科研与论文写作的32个 Codex 技能。**
+简体中文 · [English](README_EN.md)
 
-从临床想法、现有数据、已有稿件开始，获得选题、文献、统计计划、写作、修订和投稿材料准备方面的帮助。你可以直接说“先看看这份数据够不够写论文”“把摘要翻成英文，数字别改”，无需记住技能名。
+# DYZ MedPaper
 
-**当前状态：公开测试版。** 已提供离线路由声明和工件合同回归；真实 Codex 自然语言路由准确率、连续多轮使用效果及医学质量尚未完成独立验收。主导航负责判断阶段和推荐下一步，明确任务由 Codex 直接匹配对应技能；这套工具不会自动把所有阶段串完，也不保证论文发表。
+![DYZ MedPaper 工作流介绍：从研究证据、论证规划到稿件写作与修订，面向 Claude Code、Codex 和兼容 Agent Skills 的智能体](docs/assets/readme-overview.png)
 
-**许可：源码公开，非商业用途采用 [PolyForm Noncommercial 1.0.0](LICENSE)，商业用途可申请[单独商业授权](COMMERCIAL-LICENSE.md)。** 由于存在用途限制，本项目不宣称符合 OSI 的开源定义。用途是否获准以许可原文和书面商业协议为准。
+**面向临床医生与医学研究生的 AI 论文工作流：从手头的数据、结果和初稿出发，理清论证，推进写作与修订。**
 
-## 五分钟开始
+基于 Agent Skills，可接入 **Claude Code、Codex 和其他支持该规范的智能体**。[查看接入方式](#agents)
 
-### 1. 准备
+⭐ [Star 收藏这套工作流](https://github.com/duyunzhoudyz/dyz-med-paper-skills)，方便下次写论文时找到它。
 
-- 可正常使用、已登录且支持技能的 Codex；项目不会替你配置模型账号或读取凭据。
-- Python **3.10或以上**，供安装和本地文件自检使用；安装器仅使用标准库。
-- 一个单独的论文项目文件夹。首次体验请用虚构材料或已脱敏且获准处理的数据。
+[![Stars](https://img.shields.io/github/stars/duyunzhoudyz/dyz-med-paper-skills?style=flat-square)](https://github.com/duyunzhoudyz/dyz-med-paper-skills)
+[![Status: Public Beta](https://img.shields.io/badge/status-public_beta-amber?style=flat-square)](#status)
+[![Agent Skills](https://img.shields.io/badge/Agent_Skills-32_skills-222222?style=flat-square)](#skills)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)](https://www.python.org/downloads/)
+[![License: PolyForm NC 1.0.0](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue?style=flat-square)](LICENSE)
 
-Windows 可在终端运行 `python --version`；若你的命令是 `py -3`，可把下文 `python` 换成 `py -3`。macOS/Linux 通常用 `python3`。没有 Python 时可从 [python.org](https://www.python.org/downloads/) 安装，或采用下面的手动安装方式。
+[查看教学示例](#examples) · [快速开始](#quick-start) · [工作流](#workflow) · [技能地图](#skills)
 
-### 2. 下载
+## 从你卡住的那一步开始
 
-在 [仓库主页](https://github.com/duyunzhoudyz/dyz-med-paper-skills) 点击 **Code → Download ZIP**，解压后在该文件夹打开终端。
+结果表已经有了，论文主线还没理清；文献读了不少，讨论仍在重复结果；收到大修意见，却不知道先改哪一处。DYZ MedPaper 把这些工作拆成可以衔接的任务：判断材料、组织论证、撰写章节、核对证据、整理修订与交付。
 
-熟悉 Git 的用户也可以运行：
+安装到所用智能体后，用中文描述任务即可。32 个技能提供各环节的操作说明、模板和部分本地工具，助手根据当前材料选择相应步骤。
+
+| 你手上的材料 | 可以直接这样说 | 这一步的交付 |
+|---|---|---|
+| 数据字典与研究设想 | 先判断这份数据能回答什么问题，还缺什么，不运行统计。 | 数据充分性判断、缺口与可行路线 |
+| 已核实的结果与文献 | 先帮我理清论文主线，再列出讨论每一段要回答的问题。 | 核心论断、证据对应关系与段落计划 |
+| 结果表与讨论草稿 | 根据这些材料重写讨论，解释为什么这样组织，缺依据的地方单列。 | 讨论草稿、修改理由与待核实问题 |
+| 已有稿件 | 找出最影响这篇论文的几个问题，定位原文，给出修改顺序。 | 稿件诊断与修订优先级 |
+| 稿件与审稿意见 | 把每条意见对应到正文修改和回复，区分已完成与待处理。 | 逐条回复表、修改位置与处理状态 |
+
+已有可靠材料，可以从对应环节进入；只做翻译、摘要或局部修订，也可以单独完成。更多输入与交付见[常见任务卡](docs/task-cards.md)。
+
+## 把研究思路写进论文
+
+**先理清论文要回答什么。** 写作计划把研究问题、已有证据、本研究新增内容和核心论断放在一张论证地图上，再分配到各章节。引言提出的问题，在讨论中得到回应。
+
+**让每一段承担明确任务。** 章节写作指导覆盖主题句、文献比较、结果解释、局限性与反向提纲。需要修订时，可以给出“原句 → 改写 → 理由”，说明结构和表达为什么改变。具体方法见[写作说明与合成样例](dyz-med-writing-plan/references/writing-craft.md)。
+
+**把文字与依据放在一起核对。** 文献导入保留来源，正文证据工具检查登记论断与当前稿件的绑定，翻译工具比较数字和引用。机械检查负责发现部分差异，证据是否真正支持结论仍由研究者审阅。
+
+**让下一轮工作有据可接。** 项目状态记录已确认事实、稿件版本、开放问题和修改历史。章节、回复表和基础 Word 审阅稿可以落在论文项目目录中；继续工作时，助手可读取已有记录再推进。
+
+<a id="examples"></a>
+
+## 先看交付长什么样
+
+以下均为仓库内的**合成教学示例**，用于展示方法与输出结构，不是实际用户案例、已发表研究或模型质量评测结果。
+
+| 示例 | 可以看到什么 |
+|---|---|
+| [从队列研究结果到论证地图](dyz-med-writing-plan/examples/示例-他汀类药物队列论证地图构建.md) | 研究问题、核心发现、文献缺口和讨论段落怎样对应 |
+| [一份被拒稿件的诊断](dyz-med-manuscript-diagnose/examples/worked-example-rejected-manuscript.md) | 如何定位问题、分清优先级并安排下一步 |
+| [结果段落的中译英](dyz-med-translate/examples/worked-example-cn2en.md) | 原文、受保护内容、译文与稿外提示的完整对照 |
+| [审稿意见逐条回复](dyz-med-revision/examples/worked-example-reviewer-response.md) | 意见如何对应回应策略、稿件位置和修改记录 |
+
+另有一个可在本地运行的[合成交付演示](scripts/run_delivery_demo.py)：文献导入 → 正文绑定检查 → 数字与引用比较 → 基础 DOCX 导出，并植入一次数字变化检查工具是否发现差异。它不调用模型，不能作为写作质量证明，运行方法见[验证说明](#validation)。
+
+<a id="quick-start"></a>
+
+## 快速开始
+
+<a id="agents"></a>
+
+### 选择你的智能体
+
+技能以 [Agent Skills](https://agentskills.io/specification) 的 `SKILL.md` 目录形式组织。核心工作流与本地脚本可以随完整技能目录安装到不同宿主；技能发现、工具权限与调用入口由宿主提供。
+
+| 宿主 | 个人级技能目录 | 项目级技能目录 | 显式调用示例 |
+|---|---|---|---|
+| [Claude Code](https://code.claude.com/docs/en/skills) | `~/.claude/skills/` | `.claude/skills/` | `/dyz-med-orchestrator` |
+| [Codex](https://developers.openai.com/codex/skills) | `~/.agents/skills/` | `.agents/skills/` | `$dyz-med-orchestrator` |
+| 其他支持 Agent Skills 的智能体 | 以宿主文档为准 | 以宿主文档为准 | 按宿主方式加载或指定技能 |
+
+下面提供本地安装方式。其他智能体需能读取完整技能目录；执行脚本、检索文献和处理文件时，还需提供相应工具。目录规范兼容不等于所有宿主上的运行行为已经验证，具体验证范围见[当前状态](#status)。
+
+### 1. 准备环境与材料
+
+- 可正常使用、已完成必要账号配置且支持 **Agent Skills** 的智能体，例如 Claude Code 或 Codex。
+- **Python 3.10+**，用于安装与本地检查；安装器只使用标准库。
+- 一个独立的论文项目文件夹，以及合成材料或已脱敏、获准处理的研究材料。
+
+**数据提示：** 本地脚本运行不代表整个 AI 会话离线。模型服务可能接收会话中提供的内容；请按所在机构要求处理数据，不提交可识别患者信息、医院凭据或未获准材料。
+
+Windows 可先运行 `python --version`；如果使用 `py -3`，将后续 `python` 替换为 `py -3`。macOS/Linux 通常使用 `python3`。Python 可从[官网](https://www.python.org/downloads/)安装。
+
+### 2. 下载并安装
+
+在[仓库主页](https://github.com/duyunzhoudyz/dyz-med-paper-skills)选择 **Code → Download ZIP**，解压后在该目录打开终端；或使用 Git：
 
 ```bash
 git clone https://github.com/duyunzhoudyz/dyz-med-paper-skills.git
 cd dyz-med-paper-skills
 ```
 
-### 3. 安装并自检
+**Claude Code：**
+
+```bash
+python scripts/install_codex.py --target "~/.claude/skills"
+python scripts/install_codex.py --target "~/.claude/skills" --check
+```
+
+**Codex：**
 
 ```bash
 python scripts/install_codex.py
 python scripts/install_codex.py --check
 ```
 
-默认复制全部32个 `dyz-med-*` 技能到 `~/.agents/skills/`；Windows 的 `~` 指当前用户主目录。每个技能同时携带许可文件。成功后会显示 `PASS`、技能数、安装路径和下一步提示。
+安装器沿用 `install_codex.py` 文件名，默认目录为 `~/.agents/skills/`，也支持通过 `--target` 指定 Claude Code 或其他宿主的技能目录。上述命令均复制全部 32 个技能及许可文件，成功后显示 `PASS`、技能数和安装路径。安装器不联网，不安装模型或 R/Python 包，不修改宿主设置、账号或其他技能；同名技能内容有差异时会停止。
 
-安装器不会修改 Codex 设置、登录状态或其他技能，不联网、不安装 Python/R 包，也不会运行模型。重复安装相同内容不会重写文件；发现同名技能内容不同会停止，升级方法见下文。
+其他智能体可使用 `--target` 指定其文档要求的目录，或按[手动安装说明](#maintenance)复制完整技能文件夹。
 
-只想让一个论文项目使用这些技能时，指定已有项目目录：
+<details>
+<summary>只为一个论文项目安装</summary>
+
+把路径替换为已经存在的论文项目目录。Claude Code 使用：
+
+```bash
+python scripts/install_codex.py --target "/path/to/my-paper/.claude/skills"
+python scripts/install_codex.py --target "/path/to/my-paper/.claude/skills" --check
+```
+
+Codex 使用：
 
 ```bash
 python scripts/install_codex.py --project "/path/to/my-paper"
 python scripts/install_codex.py --project "/path/to/my-paper" --check
 ```
 
-随后在该项目目录启动 Codex。不要同时安装个人级和项目级副本，以免出现同名重复条目。命令中的路径请替换成你自己的目录；Windows路径含空格时保留引号。
+`--project` 固定安装到项目的 `.agents/skills/`；Claude Code 项目请使用上面的 `--target`。随后在该项目中打开所选智能体。同一宿主的个人级与项目级安装二选一，避免同名重复条目；Windows 路径含空格时保留引号。
 
-### 4. 在 Codex 说第一句话
+</details>
 
-打开你的论文项目文件夹，在 Codex 中输入：
+### 3. 打开论文项目，描述当前任务
 
-> 我想开展一个医学论文项目。先不要写正文，帮我判断我现在处于哪个阶段；每次只问当前最必要的问题，用中文解释下一步。
+例如，把已核实的结果和文献放进项目后输入：
 
-也可以从具体工作开始：
+> 请根据这个文件夹里的结果和文献，先整理论文的核心论断和讨论段落计划。标明每段使用的结果与文献，把材料缺口单列，用中文解释安排理由。
 
-| 你想做什么 | 可以直接这样说 |
-|---|---|
-| 找研究方向 | 我是呼吸科医生，手上有一批回顾性资料，帮我先找可行问题，不要编造数据。 |
-| 看数据能做什么 | 先判断这份数据能支持什么问题、还缺什么，不要跑统计模型。 |
-| 正式分析 | 帮我检查这份数据并拟一个统计分析计划，等我确认后再执行。 |
-| 诊断已有稿件 | 帮我看看这篇稿子最需要改什么，先别改原文。 |
-| 翻译 | 把这段摘要翻成英文，保留数字、引用和结论强度。 |
-| 写讨论 | 根据这些已核实的结果帮我写讨论，缺依据的地方单独列出来。 |
-| 看进度 | 读取这个文件夹里的论文材料，告诉我做到哪一步、下一步最值得做什么。 |
-| 回复审稿人 | 根据这份审稿意见准备逐条回复，没做的分析不要写成已经完成。 |
+这一步的目标是一份**可以审阅的论证计划**。如果材料不足，先得到可用骨架和缺口清单；确认方向后，再要求撰写相应章节。
 
-Codex CLI/IDE 中可用 `/skills` 或输入 `$` 查看技能；主导航名为 `dyz-med-orchestrator`，显示名称为“医学论文进度导航”。如果没有自动选中，可明确输入：
+不确定从哪里开始，可以直接说：
 
-```text
-$dyz-med-orchestrator 请先判断这个论文项目现在到哪一步，并建议下一步。
+> 请使用 dyz-med-orchestrator，读取现有论文材料，判断当前阶段，并建议下一步。
+
+需要显式调用时，Claude Code 使用 `/dyz-med-orchestrator`，Codex 使用 `$dyz-med-orchestrator`；其他智能体按其调用方式操作。安装发现与排查见[维护和常见问题](#maintenance)。文件自检通过只证明安装内容一致，实际技能加载和任务选择仍需在所用宿主中核实。
+
+<a id="workflow"></a>
+
+## 工作流怎样衔接
+
+```mermaid
+flowchart LR
+    A[研究想法或现有材料] --> B[问题与可行性]
+    B --> C[设计与证据]
+    C --> D[获批分析与结果]
+    D --> E[论证与章节写作]
+    E --> F[修订与审阅稿]
 ```
 
-Codex 按名称和描述发现技能，选中后读取完整说明。安装后没出现时，先核对安装路径和 `--check` 输出，再重新打开 Codex。文件自检通过不等于宿主实际加载或模型路由通过；可要求 Codex说明本轮实际读取了哪个 `SKILL.md`，不要把回答中仅提及技能名称当成调用证据。参见 [Codex官方技能文档](https://developers.openai.com/codex/build-skills)。
+这是可选的工作顺序。已有结果可以直接进入写作，已有稿件可以进入诊断或修订；主导航负责判断阶段与推荐下一步，具体任务由所用智能体选择对应技能，整个流程不会自动一次跑完。
 
-## 主路由怎样工作
-
-- **具体任务**：直接选择最窄职责技能，不要求每次先运行主导航。
-- **不知道从哪开始 / 查询进度**：主导航结合已有材料解释阶段并推荐下一步。
-- **信息不足**：先澄清影响判断的问题，不猜研究设计、伦理信息、缺失值编码或结果。
-- **下一步执行**：你明确提出任务后再推进；统计执行需要针对具体分析计划的批准，外部投稿另需明确授权和最终确认。
-
-例如，“下一步干什么”只要求建议；“按你的建议，先检查数据是否够用”则是具体任务。“继续”不能替代尚未确认的统计分析计划。项目状态文件由助手维护，你不需要手写 JSON、YAML 或哈希。
-
-## 能力与依赖
-
-安装技能提供的是操作说明、模板和部分本地检查脚本，不会自动安装完整科研软件环境。
-
-| 工作 | 可能还需要 |
+| 研究类型 | 工作顺序与衔接重点 |
 |---|---|
-| 解释、翻译、整理粘贴文本 | 可用的 Codex 模型和明确材料 |
-| Excel/Word/PDF读取与导出 | 本机可用的解析或导出工具，具体依格式而定 |
-| 运行正式统计分析 | 获批计划、R或项目既定统计引擎及所需包 |
-| YAML合同校验、完整开发回归 | PyYAML；JSON合同脚本使用标准库 |
-| 文献、注册与期刊要求核查 | 当前可用的网络/检索工具，部分数据库需合法访问权限 |
+| 观察性研究 | 方案与字典 → 数据充分性 → 获批分析 → 结果与写作 → 适用报告规范 → 审阅稿；图表与正文使用同一结果版本 |
+| 随机试验 | 方案、注册与获批分析计划 → 实际执行记录与结果 → 注册结局对照 → 写作与报告规范核对 → 审阅稿 |
+| 系统综述 | 检索协议 → 记录导入与去重 → 独立筛选 → 提取与偏倚评估 → 获批合成 → 写作与报告规范核对 → 审阅稿 |
 
-`--check` 会提示当前能发现的 Codex、Rscript 和 PyYAML，但不会因某个可选依赖缺失而阻止纯文本任务。它不验证账号、网络、R包或文档工具是否实际可用。
+用户给出完整任务授权后，助手可连续完成必要的辅助步骤；统计执行及方案变更需要针对具体方案的批准，外部投稿需要明确授权和最终确认。只问“下一步做什么”时提供建议。项目状态和工具输入清单由助手维护，用户无需手写 JSON、YAML 或哈希。
 
-**隐私：本地运行脚本不等于整个 AI 会话离线。** Codex模型服务可能接收会话中提供的内容；不要把可识别患者信息、医院凭据或未获准材料提交给模型或公开 Issue。先遵守所在机构的数据处理规定并完成必要脱敏。工具不能替代研究者、临床专家、统计师或伦理审查。
+具体的文献、正文检查、翻译和导出衔接见[可执行工作流](docs/executable-workflow.md)。
 
-## 全部32个技能
+<a id="skills"></a>
 
-| 环节 | 技能目录（均以 `dyz-med-` 开头） |
+## 32 个技能，按任务取用
+
+目录均以 `dyz-med-` 开头。每个技能以 `SKILL.md` 为核心，并按需携带模板、参考材料、示例和脚本。`agents/openai.yaml` 提供 Codex 的附加界面与调用配置；其他宿主按自身机制发现和调用技能。
+
+| 环节 | 技能目录后缀 |
 |---|---|
 | 起点与状态 | `ideate`、`init`、`manuscript-diagnose`、`orchestrator`、`passport` |
 | 研究设计与证据 | `mechanism`、`data-adequacy`、`registration`、`cnki`、`key-literature`、`screening-pipeline`、`evidence-audit` |
@@ -111,44 +190,107 @@ Codex 按名称和描述发现技能，选中后读取完整说明。安装后�
 | 论证与写作 | `writing-plan`、`introduction`、`methods`、`results`、`discussion`、`abstract`、`write` |
 | 修订与交付 | `translate`、`deai`、`guideline`、`review`、`revision`、`journal-finder`、`export`、`submit` |
 
-`passport` 是内部状态维护入口，一般无需医生单独调用。`cnki` 是中英文文献检索技能名称，不代表自带知网账号或全文下载权限。
+`passport` 供内部维护项目状态，通常无需单独调用。`cnki` 是中英文文献检索技能的目录名，不附带知网账号或全文下载权限。
 
-## 升级、手动安装与卸载
+<a id="status"></a>
 
-升级时先下载新版本，在新版本源码目录运行。相同内容直接跳过；若提示差异，请先检查自己是否改过安装副本，再显式升级并指定一个尚不存在的备份目录：
+## 当前状态与依赖
+
+**公开测试版，面向 Claude Code、Codex 和其他支持 Agent Skills 的智能体。** 仓库提供技能说明、模板、本地脚本和离线回归。安装检查验证文件复制与字节一致性，不认证任何宿主的实际加载或调用。各宿主的真实自然语言路由准确率、连续多轮使用效果、写作盲评与医学质量尚未完成独立验收；尚未执行的检查保留为 `not_run`。
+
+| 工作 | 所需条件与当前范围 |
+|---|---|
+| 文本解释、写作与翻译 | 可用的智能体、模型和明确材料；技能正文与多数配套文档以中文为主 |
+| 正式统计分析 | 获批计划、R 或项目既定统计引擎及所需包；技能安装不包含这些环境 |
+| 文献与期刊要求核查 | 可用网络、检索工具及合法访问权限；内置在线检索脚本仅覆盖 PubMed，不能单独完成多数据库系统综述检索 |
+| 文献导入与本地检查 | Python 标准库支持 RIS、字面值 BibTeX、NBIB、PubMed XML 导入，以及正文绑定、数字和引用比较 |
+| 文件读取与 Word 交付 | Excel/Word/PDF 读取依赖相应解析工具；内置标准库导出器支持基础 DOCX 审阅稿，复杂排版、公式和原生修订需另用工具；视觉检查需要本地 Word 或 LibreOffice |
+| YAML 校验与完整开发回归 | PyYAML；JSON 合同脚本仅用标准库 |
+
+本地检查只能覆盖明确实现的范围。例如，数字比较可能发现增删，却不能识别两组数值互换或结论强度改变；正文绑定一致也不等于来源支持论断。输出需由研究者、相关专业人员审阅，工具不能替代统计、伦理或医学判断，也不保证论文发表。
+
+<a id="maintenance"></a>
+
+## 维护和常见问题
+
+<details>
+<summary>安装后没有出现技能</summary>
+
+带上安装时相同的 `--target` 或 `--project` 参数运行 `--check`，核对路径后重新打开宿主。Claude Code 可输入 `/dyz-med-orchestrator`；Codex 可用 `/skills`、`$` 或明确指定 `$dyz-med-orchestrator`。其他智能体使用其技能管理入口。可要求助手说明本轮实际读取了哪个 `SKILL.md`；仅提及技能名不能证明已加载。参见 [Claude Code 技能文档](https://code.claude.com/docs/en/skills)和 [Codex 技能文档](https://developers.openai.com/codex/skills)。
+
+`--check` 附带的环境探测只检查 Codex、Rscript 和 PyYAML 是否能被发现；它不探测 Claude Code 或其他宿主，也不验证账号、网络、包版本或文档工具是否实际可用。
+
+</details>
+
+<details>
+<summary>升级、手动安装与卸载</summary>
+
+在新版本源码目录运行安装器，相同内容会跳过。有差异时，先核对是否修改过安装副本，再指定一个尚不存在、位于源码与安装目录之外的备份目录：
 
 ```bash
 python scripts/install_codex.py --upgrade --backup "/path/to/new-backup"
 python scripts/install_codex.py --check
 ```
 
-项目级安装需继续带相同的 `--project` 参数。备份包括被替换的旧文件和安装清单；不会删除额外文件或其他技能。发现安装目录内额外文件时停止，先自行审阅与保留。恢复时按备份清单逐项核对，新版本新增文件不会自动删除。
+以上为 Codex 默认目录示例。Claude Code 或其他自定义目录的升级与自检都须继续带上原来的 `--target`；Codex 项目级安装继续带相同的 `--project`。备份包含被替换的旧文件和安装清单；额外文件会保留并使升级停止。恢复时按备份清单核对，新版本新增文件不会自动删除。
 
-手动安装：把32个 `dyz-med-*` 目录完整复制到 `~/.agents/skills/`（或论文项目的 `.agents/skills/`），每个技能目录中都放入仓库的 `LICENSE`、`NOTICE` 和 `COMMERCIAL-LICENSE.md`。不要只复制 `SKILL.md`，模板与脚本同样需要。不要把外层整个仓库当成单个技能目录。
+手动安装时，将全部 32 个 `dyz-med-*` 目录完整复制到[宿主对应的技能目录](#agents)：Claude Code 使用 `.claude/skills/`，Codex 使用 `.agents/skills/`，其他宿主以其文档为准。每个技能目录都放入仓库的 `LICENSE`、`NOTICE` 和 `COMMERCIAL-LICENSE.md`。模板与脚本也需复制，不能只复制 `SKILL.md` 或把整个仓库作为单个技能安装。
 
-卸载：先备份自己修改过的内容，然后仅删除所选安装目录下本项目的32个 `dyz-med-*` 文件夹。论文项目材料位于你的工作目录，与技能安装目录分开保存。旧版 `med-*` 不会自动删除，自检会提示可能重复，需自行确认后处理。
+卸载前备份自己的改动，然后仅删除本项目的 32 个技能目录。论文材料另存在项目目录中。旧版 `med-*` 不会自动删除，自检发现后需自行核对。
 
-## 本地工具路径
+</details>
 
-助手应从实际加载的 `SKILL.md` 所在目录定位 `scripts/`、`templates/`、`references/`。论文输入和输出路径相对于你的论文项目根目录。两者不是同一目录。技能内 `"<技能目录>/..."` 是需要替换为实际路径的示意，不应原样运行，也不要把论文输出写进全局技能目录。
+<details>
+<summary>论文材料与工具分别放在哪里</summary>
+
+助手应从实际加载的 `SKILL.md` 所在目录定位 `scripts/`、`templates/` 和 `references/`。论文输入与输出位于论文项目目录；不要把稿件写进全局技能目录。各说明中的示意路径应替换成实际路径。
+
+</details>
+
+<a id="validation"></a>
 
 ## 开发与验证
 
-安装器及其自检不需要第三方包。完整开发回归需要已有PyYAML；如需安装，以下命令由你主动执行：
+无需模型账号即可运行合成工具链演示，输出目录必须是 `tests/results/` 下尚不存在的新目录：
+
+```bash
+python -B scripts/run_delivery_demo.py --output tests/results/my-delivery-demo
+python -B scripts/sync_shared_resources.py
+```
+
+演示生成文献记录、检查报告和带内部审阅标记的 DOCX，并验证一次植入的数值变化。它不联网、不调用模型、不执行统计；Word 视觉检查与语义审阅另计。第二条命令只检查共享资源是否同步。
+
+完整离线回归需要已有 PyYAML；如需安装开发依赖，可运行：
 
 ```bash
 python -m pip install -r requirements-dev.txt
 python -B scripts/run_offline_regression.py
 ```
 
-默认报告写入全新的 `tests/results/offline-<时间戳>/`，不覆盖历史。完整回归覆盖32技能声明、38条语义规格、192个声明负向变体、23组命名合同分支与三类合成流程。参见 [离线回归说明](tests/offline-regression.md) 和 [真实模型评测协议](tests/evaluation-protocol.md)。
+回归覆盖技能声明、工件交接、安装自检、本地交付工具和三类合成研究流程；报告写入新的 `tests/results/` 子目录。安装检查在临时目录完成；已有工作区安装副本仅作只读核对。测试范围见[离线回归说明](tests/offline-regression.md)，持续集成配置见 [CI 工作流](.github/workflows/check.yml)。
 
-公开仓库不包含本机安装副本、内部审计、原始运行日志、认证信息或论文数据。干净下载可独立运行回归；回归会在临时目录完成安装和自检，不要求你先改动个人技能目录。若仓库已有本地安装副本，会另外只读核对它。
+<details>
+<summary>模型评测与写作质量的验证口径</summary>
 
-离线测试通过不能证明模型医学结论正确、文献真实、实际技能调用成功或稿件可以投稿。真实宿主与医学验收未完成的项目仍明确标为 `not_run`。
+离线通过不能证明真实技能调用成功、医学结论正确或稿件可以投稿。真实宿主与医学验收应按[模型评测协议](tests/evaluation-protocol.md)记录；写作质量按[写作盲评说明](tests/writing-blind-review.md)另行评价。
 
-## 反馈与商业授权
+准备冻结源码与评测输入：
 
-通过 [Issues](https://github.com/duyunzhoudyz/dyz-med-paper-skills/issues) 提交可复现问题，说明操作系统、Codex版本、使用的句子及脱敏后的报错。请勿提交患者资料或凭据。
+```bash
+python -B scripts/prepare_evaluation.py --output tests/results/my-evaluation
+python -B scripts/check_eval_results.py tests/results/my-evaluation/results.json --check-current-source
+```
 
-商业授权请阅读 [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md)，再联系维护者；未签署有效书面协议前，按 [LICENSE](LICENSE) 判断你的用途是否获准。
+准备脚本生成 60 条输入与首批 30 条顺序，不执行模型，也不填写通过结果。受测会话仅接收当前提示与匹配技能源，不接收评分判据、审计报告或冻结快照内的测试文件。宿主、实际模型、技能集合及人类审阅未核实时保持 `blocked` / `not_run`。历史记录使用匹配旧源码检查，不改写旧快照。
+
+公开源码不包含本机安装副本、内部审计、原始运行日志、认证信息或论文数据。
+
+</details>
+
+## 许可与联系
+
+本项目**源码公开**，采用 [PolyForm Noncommercial License 1.0.0](LICENSE)。许可允许的用途与条件以原文为准；不属于其允许范围的使用，需事先取得[单独书面商业授权](COMMERCIAL-LICENSE.md)。本项目不宣称符合 OSI 的开源定义，第三方资料仍受各自条款约束。
+
+问题可通过 [Issues](https://github.com/duyunzhoudyz/dyz-med-paper-skills/issues) 提交，请附操作系统、智能体名称与版本、复现步骤及脱敏后的报错，不上传患者资料或凭据。
+
+如果这些方法和示例对你有帮助，可以 [Star 收藏](https://github.com/duyunzhoudyz/dyz-med-paper-skills)，留作下一篇论文的工作参考。
