@@ -1,5 +1,5 @@
 ---
-title: Response to Reviewers for Medical Manuscripts
+title: Response to Reviewers for Medical Papers
 description: Organize reviewer comments, plan manuscript revisions and draft a point-by-point response with change locations and clearly marked unfinished work.
 ---
 Use `dyz-med-revision` to revise a manuscript, prepare responses or adapt it for another journal. If a rejection letter leaves the main problem unclear, start with a read-only `manuscript-diagnose` assessment.

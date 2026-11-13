@@ -1,5 +1,5 @@
 ---
-title: Interpreting Medical Statistics and Clinical Importance
+title: Medical Statistics and Clinical Importance
 description: Separate data adequacy, statistical execution, result interpretation and sensitivity analysis when discussing effect sizes, uncertainty and clinical importance.
 ---
 The statistical tasks have distinct owners: `data-adequacy` assesses what data can support; `analyze` plans and executes approved analyses; `interpret` explains existing results; and `sensitivity` examines specific changes in assumptions.

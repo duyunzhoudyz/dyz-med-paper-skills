@@ -1,6 +1,6 @@
 ---
 title: 医学论文写作与科研 Agent Skills
-heading: 从手头的研究，走到可修改的稿件。
+heading: 医学论文写作：从手头的研究，走到可修改的稿件。
 description: DYZ MedPaper 为中国医生与医学研究生提供 32 个医学论文 Agent Skills，适用于 Claude Code、Codex，覆盖选题、PubMed 文献检索、中英写作与审稿修回。
 ---
 [安装并开始使用 →]({{root}}install/){: .primary-link}

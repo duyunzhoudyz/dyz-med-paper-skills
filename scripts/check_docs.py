@@ -16,6 +16,7 @@ class Page(HTMLParser):
         self.ids=set(); self.duplicates=[]; self.urls=[]; self.links=[]; self.meta={}
         self.lang=None; self.headings=0; self.title=''; self.in_title=False
         self.jsons=[]; self.in_json=False; self.current_json=''
+        self.breadcrumb_links=[]; self.in_breadcrumb=False
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
@@ -23,6 +24,8 @@ class Page(HTMLParser):
         if tag=='html': self.lang=a.get('lang')
         if tag=='h1': self.headings+=1
         if tag=='title': self.in_title=True
+        if tag=='nav' and 'breadcrumbs' in a.get('class','').split(): self.in_breadcrumb=True
+        if tag=='a' and self.in_breadcrumb: self.breadcrumb_links.append(a.get('href'))
         if tag=='script' and a.get('type')=='application/ld+json': self.in_json=True
         if 'id' in a:
             if a['id'] in self.ids: self.duplicates.append(a['id'])
@@ -34,6 +37,7 @@ class Page(HTMLParser):
             if a.get(attr): self.urls.append(a[attr])
 
     def handle_endtag(self,tag):
+        if tag=='nav': self.in_breadcrumb=False
         if tag=='title': self.in_title=False
         if tag=='script' and self.in_json:
             self.jsons.append(json.loads(self.current_json)); self.current_json=''; self.in_json=False
@@ -46,6 +50,8 @@ class Page(HTMLParser):
 def check(site):
     metadata=json.loads((ROOT/'docs/repository-metadata.json').read_text(encoding='utf-8'))
     base=metadata['homepage']; prefix=urlsplit(base).path; host=urlsplit(base).netloc
+    verification_names={'google':'google-site-verification','bing':'msvalidate.01'}
+    verification=metadata.get('site_verification',{})
     docs={p.relative_to(site).as_posix():Page(p.read_text(encoding='utf-8')) for p in site.rglob('*.html')}
     errors=[]; checked_links=0; titles=set(); descriptions=set(); canonicals=set()
     for name,page in docs.items():
@@ -66,7 +72,41 @@ def check(site):
         if not description or description in descriptions: errors.append(f'{name}: empty or duplicated description')
         descriptions.add(description)
         if page.meta.get('og:url')!=expected_url or page.meta.get('og:image')!=base+'assets/social-preview.jpg': errors.append(f'{name}: social metadata mismatch')
-        if not page.jsons or page.jsons[0].get('url')!=expected_url: errors.append(f'{name}: invalid structured data')
+        if not page.jsons: errors.append(f'{name}: missing structured data')
+        graph=[n for doc in page.jsons if isinstance(doc,dict) for n in doc.get('@graph',[])]
+        types={n.get('@type') for n in graph}
+        nodes={n.get('@id'):n for n in graph}
+        if {'WebSite','WebPage'} - types: errors.append(f'{name}: incomplete structured data graph')
+        web_page=nodes.get(expected_url,{})
+        if web_page.get('@type')!='WebPage' or web_page.get('url')!=expected_url or web_page.get('inLanguage')!=expected_lang:
+            errors.append(f'{name}: WebPage node does not match canonical URL or language')
+        site_node=nodes.get(base+'#website',{})
+        if site_node.get('@type')!='WebSite' or site_node.get('url')!=base or web_page.get('isPartOf')!={'@id':base+'#website'}:
+            errors.append(f'{name}: invalid WebSite reference')
+        for node in graph:
+            for prop in ('isPartOf','mainEntityOfPage','mainEntity','breadcrumb'):
+                ref=node.get(prop,{})
+                if isinstance(ref,dict) and '@id' in ref and ref['@id'] not in nodes:
+                    errors.append(f'{name}: unresolved structured data reference {prop}')
+        tutorial=name.startswith(('tutorials/','en/tutorials/'))
+        article=nodes.get(expected_url+'#article',{})
+        if tutorial and (article.get('@type')!='TechArticle' or article.get('mainEntityOfPage')!={'@id':expected_url}
+                         or web_page.get('mainEntity')!={'@id':expected_url+'#article'}
+                         or article.get('inLanguage')!=expected_lang):
+            errors.append(f'{name}: invalid task guide article markup')
+        if page.meta.get('og:type')!=('article' if tutorial else 'website'):
+            errors.append(f'{name}: incorrect Open Graph page type')
+        for provider,meta_name in verification_names.items():
+            if page.meta.get(meta_name)!=verification.get(provider): errors.append(f'{name}: verification tag mismatch for {provider}')
+        crumbs=[n for n in graph if n.get('@type')=='BreadcrumbList']
+        if name in ('index.html','en/index.html'):
+            if crumbs or page.breadcrumb_links: errors.append(f'{name}: home page should not carry a breadcrumb')
+        else:
+            home_url=base+('en/' if expected_lang=='en' else '')
+            items=crumbs[0].get('itemListElement',[]) if len(crumbs)==1 else []
+            if len(crumbs)!=1 or [i.get('position') for i in items]!=[1,2] or [i.get('item') for i in items]!=[home_url,expected_url]:
+                errors.append(f'{name}: missing or malformed breadcrumb trail')
+            if page.breadcrumb_links!=[urlsplit(home_url).path]: errors.append(f'{name}: visible breadcrumb does not match markup')
         for url in page.urls:
             u=urlsplit(url)
             if u.netloc and u.netloc!=host:

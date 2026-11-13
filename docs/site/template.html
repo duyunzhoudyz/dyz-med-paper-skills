@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
+  {{verification}}
   <meta name="theme-color" content="#163b48">
   <link rel="canonical" href="{{canonical}}">
   <link rel="alternate" hreflang="zh-CN" href="{{zh_url}}">
   <link rel="alternate" hreflang="en" href="{{en_url}}">
   <link rel="alternate" hreflang="x-default" href="{{zh_url}}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{og_type}}">
   <meta property="og:site_name" content="DYZ MedPaper">
   <meta property="og:locale" content="{{locale}}">
   <meta property="og:title" content="{{title}}">
@@ -24,6 +25,7 @@
   <meta name="twitter:title" content="{{title}}">
   <meta name="twitter:description" content="{{description}}">
   <meta name="twitter:image" content="{{image}}">
+  <meta name="twitter:image:alt" content="DYZ MedPaper — 32 medical writing and research Agent Skills for Claude Code and Codex">
   <link rel="icon" href="{{base}}assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{{base}}assets/site.css">
   <script src="{{base}}assets/site.js" defer></script>
@@ -38,6 +40,7 @@
   <div class="layout">
     <aside class="sidebar"><nav id="doc-nav" aria-label="{{menu}}">{{nav}}</nav><div class="sidebar-note"><span>32</span><p>MEDICAL RESEARCH<br>AGENT SKILLS</p></div></aside>
     <main id="main" tabindex="-1">
+      {{breadcrumb}}
       <header class="page-heading"><p class="eyebrow">{{eyebrow}}</p><h1>{{heading}}</h1><p class="lede">{{lead}}</p><div class="heading-rule" aria-hidden="true"></div></header>
       <article class="prose">{{content}}</article>
       <footer class="page-footer"><a href="{{edit_url}}">{{edit_label}} ↗</a><p>{{footer}}</p><a href="{{repo}}/blob/main/LICENSE">License</a> · <a href="{{repo}}/issues">Issues</a></footer>

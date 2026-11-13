@@ -1,5 +1,5 @@
 ---
-title: Project Status, Validation Scope and License
+title: Project Status, Validation and License
 description: Understand the DYZ MedPaper public beta, validation boundaries, tool dependencies, PolyForm Noncommercial license and contribution process.
 ---
 ## Current status
@@ -26,6 +26,8 @@ Real-host routing, sustained writing and independent medical quality have not al
 The project is source-available under [PolyForm Noncommercial License 1.0.0]({{repo}}/blob/main/LICENSE). Uses outside the license's permitted noncommercial scope require [separate written commercial authorization]({{repo}}/blob/main/COMMERCIAL-LICENSE.md). Third-party materials retain their own terms.
 
 ## Feedback and contributions
+
+The maintainer, public source and change history are available on the [GitHub project page]({{repo}}). The "Current status" and "Tools and access" sections above describe which checks run in local scripts and which still depend on the model and human review.
 
 Report your system, host, reproduction steps and de-identified errors in [GitHub Issues]({{repo}}/issues). Improvements to examples, terminology and installation documentation are welcome. Do not upload patient records or credentials.
 

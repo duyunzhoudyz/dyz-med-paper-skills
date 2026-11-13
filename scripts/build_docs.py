@@ -109,12 +109,49 @@ def page_route(key):
     return ('en/' if lang == 'en' else '') + ('' if slug == 'index' else slug + '/')
 
 
+def page_schema(meta, url, base_url, zh, slug):
+    """Describe the site, page and visible navigation without inventing authorship."""
+    lang = 'zh-CN' if zh else 'en'
+    site = base_url + '#website'
+    home_url = base_url + ('' if zh else 'en/')
+    graph = [
+        {'@type': 'WebSite', '@id': site, 'name': 'DYZ MedPaper', 'url': base_url,
+         'inLanguage': ['zh-CN', 'en'], 'sameAs': [REPO]},
+    ]
+    page = {'@type': 'WebPage', '@id': url, 'url': url, 'name': meta['title'],
+            'description': meta['description'], 'inLanguage': lang,
+            'isPartOf': {'@id': site}}
+    if slug != 'index':
+        page['breadcrumb'] = {'@id': url + '#breadcrumb'}
+        graph.append({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': '首页' if zh else 'Home', 'item': home_url},
+            {'@type': 'ListItem', 'position': 2, 'name': meta['title'], 'item': url}]})
+    graph.append(page)
+    if slug.startswith('tutorials/'):
+        page['mainEntity'] = {'@id': url + '#article'}
+        graph.append({'@type': 'TechArticle', '@id': url + '#article', 'headline': meta['title'],
+                      'description': meta['description'], 'inLanguage': lang,
+                      'mainEntityOfPage': {'@id': url}, 'isPartOf': {'@id': site}})
+    return json.dumps({'@context': 'https://schema.org', '@graph': graph},
+                      ensure_ascii=False).replace('<', '\\u003c')
+
+
 def build(output, base_url, sync_indexes=False):
     base_url = base_url.rstrip('/') + '/'
     parts = urlsplit(base_url)
     if parts.scheme != 'https' or not parts.netloc or parts.query or parts.fragment:
         raise ValueError('base-url must be an absolute HTTPS URL without query or fragment')
     base_path = parts.path
+    metadata = json.loads((ROOT/'docs/repository-metadata.json').read_text(encoding='utf-8'))
+    verification = metadata.get('site_verification', {})
+    verification_names = {'google': 'google-site-verification', 'bing': 'msvalidate.01'}
+    if not isinstance(verification, dict) or verification.keys() - verification_names.keys():
+        raise ValueError('site_verification supports only google and bing tokens')
+    verification_tags = []
+    for provider, token in verification.items():
+        if not isinstance(token, str) or not token.strip():
+            raise ValueError(f'Empty or invalid site verification token: {provider}')
+        verification_tags.append(f'<meta name="{verification_names[provider]}" content="{html.escape(token, quote=True)}">')
     catalog = json.loads((ROOT/'docs/catalog.json').read_text(encoding='utf-8'))
     actual = {p.parent.name for p in ROOT.glob('dyz-med-*/SKILL.md')}
     if len(catalog) != 32 or len({s['id'] for s in catalog}) != 32 or {s['id'] for s in catalog} != actual:
@@ -160,6 +197,13 @@ def build(output, base_url, sync_indexes=False):
         for i,(name,labels) in enumerate(GUIDES.items(),1):
             current=' aria-current="page"' if slug=='tutorials/'+name else ''
             nav.append(f'<a href="{lang_root}tutorials/{name}/"{current}><span class="nav-number">{i:02}</span>{labels[0 if zh else 1]}</a>')
+        breadcrumb = ''
+        if slug != 'index':
+            label = '当前位置' if zh else 'Breadcrumb'
+            home = '首页' if zh else 'Home'
+            breadcrumb = (f'<nav class="breadcrumbs" aria-label="{label}">'
+                          f'<a href="{lang_root}">{home}</a><span aria-hidden="true"> / </span>'
+                          f'<span aria-current="page">{html.escape(meta["title"])}</span></nav>')
         data={
             'html_lang':'zh-CN' if zh else 'en','title':html.escape(meta['title']+' | DYZ MedPaper'),
             'description':html.escape(meta['description'],quote=True),'canonical':url,
@@ -174,7 +218,9 @@ def build(output, base_url, sync_indexes=False):
             'footer':'源码公开 · PolyForm Noncommercial 1.0.0 · 公开测试版' if zh else 'Source-available · PolyForm Noncommercial 1.0.0 · Public beta',
             'edit_label':'在 GitHub 查看本页源码' if zh else 'View page source on GitHub',
             'edit_url':source_link(path.relative_to(ROOT).as_posix()),
-            'schema':json.dumps({'@context':'https://schema.org','@type':'WebPage','name':meta['title'],'description':meta['description'],'url':url,'inLanguage':'zh-CN' if zh else 'en','isPartOf':{'@type':'WebSite','name':'DYZ MedPaper','url':base_url}},ensure_ascii=False).replace('<','\\u003c'),
+            'schema':page_schema(meta,url,base_url,zh,slug),
+            'breadcrumb':breadcrumb,'verification':'\n  '.join(verification_tags),
+            'og_type':'article' if slug.startswith('tutorials/') else 'website',
         }
         rendered=template
         for token,value in data.items():

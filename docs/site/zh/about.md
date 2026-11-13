@@ -27,6 +27,8 @@ DYZ MedPaper 是面向中国医生与医学研究生的公开测试版医学论�
 
 ## 反馈与参与
 
+维护者、公开源码和变更记录可在 [GitHub 项目主页]({{repo}}) 查看。上方「当前状态」与「工具与访问条件」说明哪些检查由本地脚本完成、哪些仍依赖模型与人工判断。
+
 在 [GitHub Issues]({{repo}}/issues) 提供系统、宿主、复现步骤和脱敏报错。示例改进、术语修正和安装问题都可以反馈；请勿上传患者资料或账号凭据。
 
 [贡献说明]({{repo}}/blob/main/CONTRIBUTING.md) · [维护与发布]({{repo}}/blob/main/docs/maintaining-discoverability.md) · [项目介绍与引用文案]({{repo}}/blob/main/docs/discovery-kit.md)

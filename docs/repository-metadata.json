@@ -1,12 +1,12 @@
 {
   "repository": "duyunzhoudyz/dyz-med-paper-skills",
-  "description": "医学论文写作与科研助手：面向中国医生和医学研究生的 32 个 Agent Skills，适用于 Claude Code、Codex，覆盖选题、PubMed 文献检索、中英写作、选刊投稿与审稿修回。Medical writing & research skills.",
+  "description": "面向中国医生与医学研究生的医学论文写作 Agent Skills：32 个技能覆盖 PubMed 文献检索、统计分析、中英写作、选刊投稿与审稿修回，适用于 Claude Code、Codex。Medical writing skills for Claude Code & Codex.",
   "homepage": "https://duyunzhoudyz.github.io/dyz-med-paper-skills/",
   "topics": [
     "agent-skills",
     "claude-code",
     "codex",
-    "ai-agents",
+    "medical-education",
     "medical-writing",
     "medical-research",
     "clinical-research",
@@ -19,7 +19,8 @@
     "pubmed",
     "biostatistics",
     "research-workflow",
-    "python",
+    "prompt-engineering",
     "translation"
-  ]
+  ],
+  "site_verification": {}
 }

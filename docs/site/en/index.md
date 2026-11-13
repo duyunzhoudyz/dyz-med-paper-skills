@@ -1,6 +1,6 @@
 ---
 title: Medical Writing & Research Agent Skills
-heading: From your research materials to a draft you can revise.
+heading: Medical writing — from your research materials to a draft you can revise.
 description: DYZ MedPaper provides 32 medical writing and research Agent Skills for Claude Code and Codex, tailored to doctors and medical postgraduate students in China.
 ---
 [Install and get started →]({{root}}install/){: .primary-link}

@@ -1,5 +1,5 @@
 ---
-title: Chinese–English Medical Translation with Protected Content
+title: Chinese–English Medical Translation
 description: Translate medical manuscripts, abstracts and reviewer responses while preserving numbers, statistical values, citations, terminology and claim strength.
 ---
 Use `dyz-med-translate` for Chinese-to-English, English-to-Chinese or bilingual versions. Resolve major argument changes separately; translation follows the confirmed source and does not supply missing study facts.

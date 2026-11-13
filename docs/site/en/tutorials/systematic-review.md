@@ -1,5 +1,5 @@
 ---
-title: Systematic Review Screening and PRISMA Flow Diagrams
+title: Systematic Review Screening and PRISMA
 description: Manage record imports, deduplication, eligibility decisions, extraction and PRISMA counts for systematic reviews, meta-analyses and scoping reviews.
 ---
 Start with an established search protocol and database records. `screening-pipeline` maintains the screening evidence trail, `flowchart` prepares diagrams, and `guideline` checks applicable reporting items.

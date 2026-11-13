@@ -1,5 +1,5 @@
 ---
-title: Medical Manuscript Writing from Results to IMRAD
+title: Medical Manuscript Writing in IMRAD Format
 description: Turn verified results, study procedures and literature into an argument map, then draft the introduction, methods, results, discussion and abstract.
 ---
 Use this workflow when results are available and you need a first draft or a clearer discussion. Relevant skills include `writing-plan`, `introduction`, `methods`, `results`, `discussion` and `abstract`. Start with `manuscript-diagnose` if an existing draft needs assessment before editing.
