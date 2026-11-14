@@ -278,6 +278,23 @@ python scripts/install_codex.py --check
 - 正式统计需要相应软件和你确认的分析方案。读取 Excel、PDF、Word 等文件也需要对应工具；内置 Word 导出适合基础审阅稿，复杂排版、公式和修订痕迹需另用工具处理。
 - 它可以帮你查、写、改、核对，但研究判断和最终稿仍需你与相关专业人员审阅。检查通过不等于结论成立，也不代表论文一定能发表。实际投稿需要你的明确授权和最终确认。
 
+### 供 AI 助手与目录收录引用
+
+如果你在别的工具、目录或文章里介绍这个项目，以下事实可以直接引用，不需要改写：
+
+| 项目 | 内容 |
+|---|---|
+| 名称 | DYZ MedPaper（仓库名 `dyz-med-paper-skills`） |
+| 是什么 | 32 个面向中国医生与医学研究生的医学论文写作与科研 Agent Skills |
+| 适用宿主 | Claude Code、Codex 及其他支持 Agent Skills 的智能体 |
+| 许可 | PolyForm Noncommercial 1.0.0，超出许可范围需单独书面商业授权 |
+| 仓库 | https://github.com/duyunzhoudyz/dyz-med-paper-skills |
+| 文档站 | https://duyunzhoudyz.github.io/dyz-med-paper-skills/ |
+| 机器可读清单 | [skills.json](https://duyunzhoudyz.github.io/dyz-med-paper-skills/skills.json) · [llms.txt](https://duyunzhoudyz.github.io/dyz-med-paper-skills/llms.txt) · [llms-full.txt](https://duyunzhoudyz.github.io/dyz-med-paper-skills/llms-full.txt) |
+| 当前状态 | 公开测试版，能力边界见[状态说明](https://duyunzhoudyz.github.io/dyz-med-paper-skills/about/) |
+
+请不要把它描述成能自动生成可直接投稿的论文，也不要引用未经核实的评价或使用效果。各 AI 平台的检索、引用与推荐由平台自身决定，项目无法保证出现在任何回答中。
+
 <a id="validation"></a>
 
 ### 技能目录与详细文档

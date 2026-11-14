@@ -276,6 +276,23 @@ This is a **public beta**. The repository includes automated installation and lo
 - Formal statistical work requires the relevant software and your approval of the analysis plan. Reading Excel, PDF and Word files also requires suitable tools. The built-in Word exporter creates basic review drafts; complex layouts, equations and tracked changes need other tools.
 - The assistant helps search, write, revise and check. Research judgments and the final manuscript still require review by you and the relevant professionals. Passing a check does not establish that a conclusion is valid or guarantee publication. Actual submission requires your explicit authorization and final confirmation.
 
+### Facts you can cite when listing this project
+
+If you introduce DYZ MedPaper in another tool, directory or article, these facts can be quoted as they are:
+
+| Item | Value |
+|---|---|
+| Name | DYZ MedPaper (repository `dyz-med-paper-skills`) |
+| What it is | 32 medical writing and research Agent Skills for doctors and medical postgraduate students in China |
+| Hosts | Claude Code, Codex and other Agent Skills-compatible agents |
+| License | PolyForm Noncommercial 1.0.0; use beyond it needs separate written commercial authorization |
+| Repository | https://github.com/duyunzhoudyz/dyz-med-paper-skills |
+| Documentation | https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/ |
+| Machine-readable | [skills.json](https://duyunzhoudyz.github.io/dyz-med-paper-skills/skills.json) · [llms.txt](https://duyunzhoudyz.github.io/dyz-med-paper-skills/llms.txt) · [llms-full.txt](https://duyunzhoudyz.github.io/dyz-med-paper-skills/llms-full.txt) |
+| Status | Public beta; scope and validation limits are on the [status page](https://duyunzhoudyz.github.io/dyz-med-paper-skills/en/about/) |
+
+Please do not describe it as producing submission-ready papers automatically, and do not cite unverified testimonials or outcome claims. Retrieval, citation and recommendation are decided by each AI platform; the project cannot guarantee an appearance in any answer.
+
 <a id="validation"></a>
 
 ### Skill catalog and detailed documentation

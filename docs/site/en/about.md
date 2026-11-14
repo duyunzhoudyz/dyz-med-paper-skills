@@ -31,4 +31,4 @@ The maintainer, public source and change history are available on the [GitHub pr
 
 Report your system, host, reproduction steps and de-identified errors in [GitHub Issues]({{repo}}/issues). Improvements to examples, terminology and installation documentation are welcome. Do not upload patient records or credentials.
 
-[Contributing]({{repo}}/blob/main/CONTRIBUTING.md) · [Maintaining the site and releases]({{repo}}/blob/main/docs/maintaining-discoverability.md) · [Project descriptions and links]({{repo}}/blob/main/docs/discovery-kit.md)
+[Contributing]({{repo}}/blob/main/CONTRIBUTING.md) · [Maintaining the site and releases]({{repo}}/blob/main/docs/maintaining-discoverability.md) · [Generative engine optimization]({{repo}}/blob/main/docs/geo-playbook.md) · [Project descriptions and links]({{repo}}/blob/main/docs/discovery-kit.md)

@@ -1,0 +1,62 @@
+[
+  {
+    "q": {
+      "zh": "DYZ MedPaper 是什么？",
+      "en": "What is DYZ MedPaper?"
+    },
+    "a": {
+      "zh": "DYZ MedPaper 是一套面向中国医生与医学研究生的医学论文写作与科研 Agent Skills 集合，包含 32 个技能，覆盖选题、PubMed 文献检索、统计分析与结果解读、中英写作、选刊投稿与审稿修回。源码仓库为 github.com/duyunzhoudyz/dyz-med-paper-skills，文档站为 duyunzhoudyz.github.io/dyz-med-paper-skills。当前为公开测试版，采用 PolyForm Noncommercial 1.0.0 许可。",
+      "en": "DYZ MedPaper is a set of 32 medical writing and research Agent Skills for doctors and medical postgraduate students in China. It covers research questions, PubMed literature search, statistical analysis and result interpretation, Chinese and English writing, journal selection and reviewer responses. The source repository is github.com/duyunzhoudyz/dyz-med-paper-skills and the documentation site is duyunzhoudyz.github.io/dyz-med-paper-skills. It is a public beta under the PolyForm Noncommercial 1.0.0 license."
+    }
+  },
+  {
+    "q": {
+      "zh": "可以在哪些智能体里使用？",
+      "en": "Which agents can use it?"
+    },
+    "a": {
+      "zh": "任何支持 Agent Skills 的宿主都可以加载完整技能目录：Claude Code 安装到 ~/.claude/skills，Codex 默认安装到 ~/.agents/skills，也可用 --target 指定其他宿主的技能目录。技能由 Markdown 说明、模板、参考资料和本地 Python 脚本组成，不绑定某个模型厂商；实际的任务路由与触发效果需要在目标宿主中核实。",
+      "en": "Any host that supports Agent Skills can load the complete skill directories: Claude Code installs into ~/.claude/skills, Codex installs into ~/.agents/skills by default, and --target points at another host's skill directory. Each skill is Markdown instructions plus templates, references and local Python scripts, with no dependency on one model vendor. Actual task routing and triggering still need to be verified in the target host."
+    }
+  },
+  {
+    "q": {
+      "zh": "32 个技能分别覆盖什么？",
+      "en": "What do the 32 skills cover?"
+    },
+    "a": {
+      "zh": "技能按五组组织：起点与项目状态 5 个、研究设计与文献证据 7 个、统计分析与图表 5 个、论证与论文写作 7 个、翻译修订与交付 8 个，合计 32 个。完整清单见 docs/skills.md；skills.json 还给出每个技能的中英标题、输入输出、触发词和指令地址。",
+      "en": "The skills are organised in five groups: 5 starting points and project state, 7 study design and literature evidence, 5 statistical analysis and figures, 7 argument and manuscript writing, and 8 translation, revision and delivery, 32 in total. The complete list is in docs/skills.md; skills.json adds each skill's bilingual title, inputs, outputs, trigger text and instructions URL."
+    }
+  },
+  {
+    "q": {
+      "zh": "如何安装并开始第一项任务？",
+      "en": "How do I install it and start the first task?"
+    },
+    "a": {
+      "zh": "下载仓库或执行 git clone 后，在仓库目录运行 python scripts/install_codex.py --target \"~/.claude/skills\"（Claude Code）或 python scripts/install_codex.py（Codex，默认 ~/.agents/skills），再加 --check 校验文件一致性。安装器只使用 Python 标准库，需要 Python 3.10+。安装后在宿主中打开论文项目文件夹，直接描述任务，例如「请用 dyz-med-orchestrator 先看现有材料，指出最该先解决的一步」。",
+      "en": "Download the repository or run git clone, then in the repository run python scripts/install_codex.py --target \"~/.claude/skills\" for Claude Code, or python scripts/install_codex.py for Codex (defaults to ~/.agents/skills), adding --check to verify file consistency. The installer uses only the Python standard library and requires Python 3.10+. Afterwards, open the paper project folder in the host and describe the task directly."
+    }
+  },
+  {
+    "q": {
+      "zh": "是否免费？许可如何？",
+      "en": "Is it free, and under which license?"
+    },
+    "a": {
+      "zh": "源码公开，采用 PolyForm Noncommercial License 1.0.0：许可证允许的非商业用途可以免费使用；超出许可范围需要单独书面商业授权，见仓库中的 COMMERCIAL-LICENSE.md。第三方材料遵循各自条款。",
+      "en": "The source is public under the PolyForm Noncommercial License 1.0.0: noncommercial use within the license is free, and use beyond it needs a separate written commercial license, described in COMMERCIAL-LICENSE.md. Third-party materials keep their own terms."
+    }
+  },
+  {
+    "q": {
+      "zh": "能自动产出一篇可直接投稿的论文吗？",
+      "en": "Does it produce a submission-ready paper automatically?"
+    },
+    "a": {
+      "zh": "不能。技能提供流程、模板和可追溯的检查点；正式统计分析、数据库访问、复杂排版和最终医学判断仍需要人和相应软件环境。内置在线检索脚本只覆盖 PubMed，知网、万方、维普等需要合法访问权限。教学示例均为合成材料，不是已发表研究或使用效果证明。",
+      "en": "No. The skills provide workflows, templates and traceable checkpoints; formal statistical analysis, database access, advanced typesetting and final medical judgement still need people and the relevant software. The built-in online search script covers PubMed only; CNKI, Wanfang and VIP need legitimate access. Teaching examples are synthetic and are not published studies or evidence of results."
+    }
+  }
+]

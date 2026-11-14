@@ -31,4 +31,4 @@ DYZ MedPaper 是面向中国医生与医学研究生的公开测试版医学论�
 
 在 [GitHub Issues]({{repo}}/issues) 提供系统、宿主、复现步骤和脱敏报错。示例改进、术语修正和安装问题都可以反馈；请勿上传患者资料或账号凭据。
 
-[贡献说明]({{repo}}/blob/main/CONTRIBUTING.md) · [维护与发布]({{repo}}/blob/main/docs/maintaining-discoverability.md) · [项目介绍与引用文案]({{repo}}/blob/main/docs/discovery-kit.md)
+[贡献说明]({{repo}}/blob/main/CONTRIBUTING.md) · [维护与发布]({{repo}}/blob/main/docs/maintaining-discoverability.md) · [GEO 与机器可读层]({{repo}}/blob/main/docs/geo-playbook.md) · [项目介绍与引用文案]({{repo}}/blob/main/docs/discovery-kit.md)

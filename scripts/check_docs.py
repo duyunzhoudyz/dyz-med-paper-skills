@@ -47,9 +47,67 @@ class Page(HTMLParser):
         if self.in_json: self.current_json+=data
 
 
+def check_machine_layer(site, base, page_urls, skill_ids, faq):
+    """Validate the files agents read directly: llms.txt, llms-full.txt, skills.json, robots.txt."""
+    errors=[]
+    llms=site/'llms.txt'
+    if not llms.is_file(): return ['llms.txt is missing']
+    text=llms.read_text(encoding='utf-8')
+    if not text.startswith('# ') or '\n> ' not in text: errors.append('llms.txt needs an H1 and a summary blockquote')
+    missing=[url for url in sorted(page_urls) if f']({url})' not in text]
+    if missing: errors.append(f'llms.txt omits {len(missing)} page(s), first: {missing[0]}')
+    absent=sorted(skill_ids-{i for i in skill_ids if i in text})
+    if absent: errors.append(f'llms.txt omits {len(absent)} skill(s), first: {absent[0]}')
+    for artifact in ('llms-full.txt','skills.json'):
+        if artifact not in text: errors.append(f'llms.txt does not point at {artifact}')
+    full=site/'llms-full.txt'
+    if not full.is_file(): errors.append('llms-full.txt is missing')
+    else:
+        body=full.read_text(encoding='utf-8')
+        if len(body)<20_000: errors.append(f'llms-full.txt looks truncated ({len(body)} characters)')
+        absent=[i for i in sorted(skill_ids) if i not in body]
+        if absent: errors.append(f'llms-full.txt omits skill {absent[0]}')
+        absent=[url for url in sorted(page_urls) if url not in body]
+        if absent: errors.append(f'llms-full.txt omits page {absent[0]}')
+    manifest=site/'skills.json'
+    if not manifest.is_file(): errors.append('skills.json is missing')
+    else:
+        data=json.loads(manifest.read_text(encoding='utf-8'))
+        if data.get('schema_version')!=1 or data.get('name')!='DYZ MedPaper': errors.append('skills.json header is invalid')
+        if data.get('homepage')!=base: errors.append('skills.json homepage must equal the configured site URL')
+        entries=data.get('skills') if isinstance(data.get('skills'),list) else []
+        if len(entries)!=len(skill_ids) or {e.get('id') for e in entries}!=skill_ids:
+            errors.append('skills.json must list every catalog skill exactly once')
+        for entry in entries:
+            for field in ('triggers','instructions_url','example_url'):
+                if not isinstance(entry.get(field),str) or not entry[field].strip():
+                    errors.append(f'skills.json {entry.get("id")}: {field} is empty'); break
+            for language in ('zh','en'):
+                if not entry.get('title',{}).get(language) or not entry.get('summary',{}).get(language):
+                    errors.append(f'skills.json {entry.get("id")}: missing {language} title or summary'); break
+    robots=site/'robots.txt'
+    if not robots.is_file(): errors.append('robots.txt is missing')
+    else:
+        rules=robots.read_text(encoding='utf-8')
+        required=('OAI-SearchBot','ChatGPT-User','Claude-SearchBot','Claude-User','PerplexityBot',
+                  'GPTBot','ClaudeBot','Google-Extended','Bytespider')
+        absent=[token for token in required if token not in rules]
+        if absent: errors.append(f'robots.txt omits AI crawler token {absent[0]}')
+        if f'Sitemap: {base}sitemap.xml' not in rules: errors.append('robots.txt sitemap URL does not match the site')
+        if 'Disallow' in rules: errors.append('robots.txt must not block crawling for a public beta site')
+    key=json.loads((ROOT/'docs/indexnow.json').read_text(encoding='utf-8')).get('key')
+    key_file=site/f'{key}.txt'
+    if not key_file.is_file() or key_file.read_text(encoding='utf-8').strip()!=key:
+        errors.append(f'IndexNow key file {key}.txt is missing or does not contain the key')
+    return errors
+
+
 def check(site):
     metadata=json.loads((ROOT/'docs/repository-metadata.json').read_text(encoding='utf-8'))
     base=metadata['homepage']; prefix=urlsplit(base).path; host=urlsplit(base).netloc
+    catalog=json.loads((ROOT/'docs/catalog.json').read_text(encoding='utf-8'))
+    faq=json.loads((ROOT/'docs/faq.json').read_text(encoding='utf-8'))
+    skill_ids={s['id'] for s in catalog}
     verification_names={'google':'google-site-verification','bing':'msvalidate.01'}
     verification=metadata.get('site_verification',{})
     docs={p.relative_to(site).as_posix():Page(p.read_text(encoding='utf-8')) for p in site.rglob('*.html')}
@@ -96,6 +154,20 @@ def check(site):
             errors.append(f'{name}: invalid task guide article markup')
         if page.meta.get('og:type')!=('article' if tutorial else 'website'):
             errors.append(f'{name}: incorrect Open Graph page type')
+        if page.meta.get('robots')!='index, follow, max-snippet:-1, max-image-preview:large':
+            errors.append(f'{name}: missing snippet-friendly robots meta')
+        if name in ('index.html','en/index.html'):
+            if not {'SoftwareApplication','FAQPage'}<=types:
+                errors.append(f'{name}: missing application or FAQ structured data')
+            if nodes.get(expected_url+'#application',{}).get('name')!='DYZ MedPaper':
+                errors.append(f'{name}: application node is missing or misnamed')
+            questions=nodes.get(expected_url+'#faq',{}).get('mainEntity',[])
+            if len(questions)!=len(faq) or any(not q.get('acceptedAnswer',{}).get('text') for q in questions):
+                errors.append(f'{name}: FAQ structured data does not match docs/faq.json')
+        if name.endswith('skills/index.html'):
+            items=nodes.get(expected_url+'#skills',{}).get('itemListElement',[])
+            if len(items)!=len(catalog) or [i.get('position') for i in items]!=list(range(1,len(catalog)+1)):
+                errors.append(f'{name}: skill ItemList must cover all {len(catalog)} skills in order')
         for provider,meta_name in verification_names.items():
             if page.meta.get(meta_name)!=verification.get(provider): errors.append(f'{name}: verification tag mismatch for {provider}')
         crumbs=[n for n in graph if n.get('@type')=='BreadcrumbList']
@@ -143,6 +215,7 @@ def check(site):
         skill_ids={s['id'] for s in json.loads((ROOT/'docs/catalog.json').read_text(encoding='utf-8'))}
         if not skill_ids<=docs[catalog_path].ids: errors.append(f'{catalog_path}: incomplete skill index')
     if (site/'assets/social-preview.jpg').stat().st_size>=1_000_000: errors.append('Social preview must stay below 1 MB')
+    errors.extend(check_machine_layer(site, base, canonicals, skill_ids, faq))
     for p in site.rglob('*'):
         if p.is_file() and any(part in {'.git','.env','tests','audit-reports','profile'} for part in p.relative_to(site).parts): errors.append(f'Non-public artifact in site: {p}')
     if errors:

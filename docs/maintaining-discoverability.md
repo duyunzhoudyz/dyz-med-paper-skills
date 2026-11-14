@@ -6,6 +6,7 @@
 
 - `docs/repository-metadata.json` 保存批准使用的 Description、Topics 和文档站地址；修改它不会自动修改 GitHub 设置。
 - `docs/catalog.json` 是 32 个技能名称、用途、输入、输出和示例链接的唯一索引源。
+- `docs/faq.json` 是首页问答的正文与 `FAQPage` 结构化数据的唯一来源；`docs/catalog.json` 同时生成 `skills.json` 与两个语言的技能索引。
 - `docs/site/zh/` 和 `docs/site/en/` 保存双语文档正文；每个页面必须有相同路径的另一语言版本。
 - `docs/site/template.html` 管理标题、摘要、canonical、hreflang 和 Open Graph；结构化数据由 `scripts/build_docs.py` 的 `page_schema()` 生成。
 - 每页通过 `@graph` 关联 WebSite 与 WebPage；非首页的 BreadcrumbList 与可见面包屑一致，英文页返回英文首页。`tutorials/` 下的任务教程另有 TechArticle；未核实的作者资质、机构关系、日期和评价不写入标记。
@@ -40,11 +41,23 @@ python scripts/check_docs.py
 
 ## 元数据、预览图与发布
 
-Description 和 Topics 位于仓库首页 About 齿轮；发布前核对 `docs/repository-metadata.json`。Topics 目前为 18 个，不按数量硬凑到上限。
+Description 和 Topics 位于仓库首页 About 齿轮；发布前核对 `docs/repository-metadata.json`。Topics 目前为 21 个，不按数量硬凑到上限。
 
 社交预览上传 `docs/assets/social-preview.jpg`。更换时维持 1280×640、低于 1 MB，修改标题或技能数量后同步检查图片文字。README 中的封面与 GitHub Social preview 是两个独立配置。
 
 发布测试版 Release 时，将 tag 绑定到已检查的提交，附上安装入口、变化、验证范围和已知限制。离线检查通过不表示实际宿主路由或医学质量已通过验收。
+
+## GEO：让 AI 助手读到同一份事实
+
+各 AI 平台不提供收录申请，能做的只是把同一份事实放在它们真正会读的位置。策略、分平台动作与验收查询见 [GEO 说明](geo-playbook.md)，这里只列每次构建会生成、必须通过检查的文件：
+
+- `llms.txt`：站点根目录的 agent 目录页，列出全部 20 个页面的标题与摘要、32 个技能，并指向全量文件。
+- `llms-full.txt`：全部页面正文与技能条目的纯 Markdown，供上下文较大的客户端一次性读取。
+- `skills.json`：结构化技能清单，`triggers` 逐字取自各 `SKILL.md` frontmatter，与宿主看到的一致。
+- `robots.txt`：显式列出检索与训练抓取 UA。抓取器只读域名根级文件，项目子路径这份仅对主动请求该路径的客户端生效。
+- 结构化数据：首页为 `SoftwareApplication` 与 `FAQPage`，技能目录页为 32 项 `ItemList`，教程页为 `TechArticle`。
+
+`scripts/check_docs.py` 会验证这些文件齐全、未截断、与 `catalog.json` / `faq.json` 一致，且 `robots.txt` 没有误加 `Disallow`。它证明文件完整，不证明任何搜索引擎或 AI 已收录或已推荐。
 
 ## 记录实际效果
 

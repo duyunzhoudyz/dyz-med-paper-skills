@@ -38,3 +38,5 @@ Each skill bundles a `SKILL.md` file with relevant templates, references and loc
 ## Current scope
 
 This is a public beta. Database searches require access, and the built-in online search script covers PubMed only. Statistical execution needs an appropriate environment and approval of the specific plan. Real-host behavior, sustained writing and independent medical quality have not all been validated. Teaching examples are synthetic, not publication outcomes or user testimonials.
+
+{{faq}}
