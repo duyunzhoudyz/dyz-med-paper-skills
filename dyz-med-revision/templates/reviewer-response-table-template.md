@@ -24,9 +24,9 @@
 
 ## 点对点回应表
 
-| 来源/原始编号 | 稳定问题 ID | 原始意见 | 类型 | 严重度 | 作者回应与实际改动/理由 | 稿件位置 | response_stance | 问题 status | verification_check_id / evidence |
-|---|---|---|---|---|---|---|---|---|---|
-| [来源与编号] | [ID] | [原文] | [见下] | critical / major / minor | [据实填写] | [未修改则写不适用及理由] | [未回应留空] | open | [未验证留空] |
+| 来源/原始编号 | 稳定问题 ID | 原始意见 | 类型 | 严重度 | 作者回应与实际改动/理由 | 稿件位置 | response_stance | blind_check_status / blind_check_locator | 问题 status | verification_check_id / evidence |
+|---|---|---|---|---|---|---|---|---|---|---|
+| [来源与编号] | [ID] | [原文] | [见下] | critical / major / minor | [据实填写] | [未修改则写不适用及理由] | [未回应留空] | [resolved_in_text / partially_addressed / not_found_in_text / not_applicable_disagree；定位] | open | [未验证留空] |
 
 类型与正文一致：editorial / interpretive / methodological / data_or_analysis / ethics_or_authorship / journal_adaptation。
 `evidence` 记录 path/sha256；每个字段须来自实际材料，不将模板占位符登记为证据。

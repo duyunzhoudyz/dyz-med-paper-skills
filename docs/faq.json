@@ -35,8 +35,8 @@
       "en": "How do I install it and start the first task?"
     },
     "a": {
-      "zh": "下载仓库或执行 git clone 后，在仓库目录运行 python scripts/install_codex.py --target \"~/.claude/skills\"（Claude Code）或 python scripts/install_codex.py（Codex，默认 ~/.agents/skills），再加 --check 校验文件一致性。安装器只使用 Python 标准库，需要 Python 3.10+。安装后在宿主中打开论文项目文件夹，直接描述任务，例如「请用 dyz-med-orchestrator 先看现有材料，指出最该先解决的一步」。",
-      "en": "Download the repository or run git clone, then in the repository run python scripts/install_codex.py --target \"~/.claude/skills\" for Claude Code, or python scripts/install_codex.py for Codex (defaults to ~/.agents/skills), adding --check to verify file consistency. The installer uses only the Python standard library and requires Python 3.10+. Afterwards, open the paper project folder in the host and describe the task directly."
+      "zh": "支持三种零依赖安装方式：1）双击 installers/install-windows.bat 或 installers/install-macos.command；2）Claude Code 2.1.275+ 可用 /plugin install dyz-med-all --marketplace duyunzhoudyz/dyz-med-paper-skills 或按 5 个阶段轻量包安装（dyz-med-start/evidence/analysis/writing/delivery）；3）终端运行 python scripts/install_codex.py [--pack all|start|evidence|analysis|writing|delivery] [--target 目录] 并加 --check 校验。需要 Python 3.10+。",
+      "en": "Three stdlib-only options are available: (1) double-click installers/install-windows.bat or installers/install-macos.command; (2) in Claude Code 2.1.275+, install the full suite or one of 5 stage packs via /plugin install dyz-med-all --marketplace duyunzhoudyz/dyz-med-paper-skills; or (3) run python scripts/install_codex.py [--pack all|start|evidence|analysis|writing|delivery] [--target DIR] followed by --check. Requires Python 3.10+."
     }
   },
   {

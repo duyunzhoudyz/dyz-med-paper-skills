@@ -1,0 +1,653 @@
+{
+  "kind": "km",
+  "title": "Demo 01: Kaplan-Meier Event-Free Survival (Synthetic Cohort, N=240)",
+  "xlabel": "Follow-up (months)",
+  "ylabel": "Event-Free Survival Probability",
+  "risk_ticks": [
+    0.0,
+    12.0,
+    24.0,
+    36.0
+  ],
+  "annotation": "Log-rank P = 0.0001",
+  "curves": [
+    {
+      "label": "Exposed (n=120, events=13)",
+      "short_label": "Exposed",
+      "points": [
+        {
+          "t": 0.0,
+          "s": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "at_risk": 120,
+          "events": 0,
+          "censored": 0
+        },
+        {
+          "t": 3.3,
+          "s": 0.991667,
+          "ci_low": 0.975402,
+          "ci_high": 1.0,
+          "at_risk": 120,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 6.1,
+          "s": 0.983333,
+          "ci_low": 0.960428,
+          "ci_high": 1.0,
+          "at_risk": 119,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 7.2,
+          "s": 0.975,
+          "ci_low": 0.947066,
+          "ci_high": 1.0,
+          "at_risk": 118,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 10.3,
+          "s": 0.975,
+          "ci_low": 0.947066,
+          "ci_high": 1.0,
+          "at_risk": 117,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 10.7,
+          "s": 0.975,
+          "ci_low": 0.947066,
+          "ci_high": 1.0,
+          "at_risk": 116,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 11.5,
+          "s": 0.966522,
+          "ci_low": 0.934265,
+          "ci_high": 0.998779,
+          "at_risk": 115,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 12.3,
+          "s": 0.966522,
+          "ci_low": 0.934265,
+          "ci_high": 0.998779,
+          "at_risk": 114,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 12.4,
+          "s": 0.957968,
+          "ci_low": 0.921903,
+          "ci_high": 0.994034,
+          "at_risk": 113,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 12.5,
+          "s": 0.949415,
+          "ci_low": 0.909967,
+          "ci_high": 0.988863,
+          "at_risk": 112,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 16.6,
+          "s": 0.940862,
+          "ci_low": 0.898356,
+          "ci_high": 0.983367,
+          "at_risk": 111,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 18.6,
+          "s": 0.940862,
+          "ci_low": 0.898356,
+          "ci_high": 0.983367,
+          "at_risk": 110,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 18.8,
+          "s": 0.940862,
+          "ci_low": 0.898356,
+          "ci_high": 0.983367,
+          "at_risk": 109,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 20.5,
+          "s": 0.923439,
+          "ci_low": 0.875348,
+          "ci_high": 0.971529,
+          "at_risk": 108,
+          "events": 2,
+          "censored": 0
+        },
+        {
+          "t": 21.4,
+          "s": 0.914727,
+          "ci_low": 0.864149,
+          "ci_high": 0.965304,
+          "at_risk": 106,
+          "events": 1,
+          "censored": 1
+        },
+        {
+          "t": 22.2,
+          "s": 0.914727,
+          "ci_low": 0.864149,
+          "ci_high": 0.965304,
+          "at_risk": 104,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 23.6,
+          "s": 0.905846,
+          "ci_low": 0.852849,
+          "ci_high": 0.958843,
+          "at_risk": 103,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 25.5,
+          "s": 0.905846,
+          "ci_low": 0.852849,
+          "ci_high": 0.958843,
+          "at_risk": 102,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 28.0,
+          "s": 0.905846,
+          "ci_low": 0.852849,
+          "ci_high": 0.958843,
+          "at_risk": 101,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 28.6,
+          "s": 0.905846,
+          "ci_low": 0.852849,
+          "ci_high": 0.958843,
+          "at_risk": 100,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 30.0,
+          "s": 0.905846,
+          "ci_low": 0.852849,
+          "ci_high": 0.958843,
+          "at_risk": 99,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 30.2,
+          "s": 0.896603,
+          "ci_low": 0.841136,
+          "ci_high": 0.952069,
+          "at_risk": 98,
+          "events": 1,
+          "censored": 1
+        },
+        {
+          "t": 34.3,
+          "s": 0.896603,
+          "ci_low": 0.841136,
+          "ci_high": 0.952069,
+          "at_risk": 96,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 35.3,
+          "s": 0.887165,
+          "ci_low": 0.82928,
+          "ci_high": 0.94505,
+          "at_risk": 95,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 36.0,
+          "s": 0.887165,
+          "ci_low": 0.82928,
+          "ci_high": 0.94505,
+          "at_risk": 94,
+          "events": 0,
+          "censored": 94
+        }
+      ],
+      "at_risk": [
+        120,
+        114,
+        102,
+        94
+      ]
+    },
+    {
+      "label": "Unexposed (n=120, events=37)",
+      "short_label": "Unexposed",
+      "points": [
+        {
+          "t": 0.0,
+          "s": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "at_risk": 120,
+          "events": 0,
+          "censored": 0
+        },
+        {
+          "t": 0.2,
+          "s": 0.991667,
+          "ci_low": 0.975402,
+          "ci_high": 1.0,
+          "at_risk": 120,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 0.6,
+          "s": 0.983333,
+          "ci_low": 0.960428,
+          "ci_high": 1.0,
+          "at_risk": 119,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 1.2,
+          "s": 0.966667,
+          "ci_low": 0.93455,
+          "ci_high": 0.998784,
+          "at_risk": 118,
+          "events": 2,
+          "censored": 0
+        },
+        {
+          "t": 3.2,
+          "s": 0.958333,
+          "ci_low": 0.922581,
+          "ci_high": 0.994086,
+          "at_risk": 116,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 4.1,
+          "s": 0.95,
+          "ci_low": 0.911005,
+          "ci_high": 0.988995,
+          "at_risk": 115,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 4.5,
+          "s": 0.941667,
+          "ci_low": 0.899733,
+          "ci_high": 0.9836,
+          "at_risk": 114,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 5.2,
+          "s": 0.933333,
+          "ci_low": 0.888703,
+          "ci_high": 0.977964,
+          "at_risk": 113,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 6.7,
+          "s": 0.925,
+          "ci_low": 0.877874,
+          "ci_high": 0.972126,
+          "at_risk": 112,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 8.1,
+          "s": 0.916667,
+          "ci_low": 0.867216,
+          "ci_high": 0.966117,
+          "at_risk": 111,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 8.2,
+          "s": 0.908333,
+          "ci_low": 0.856705,
+          "ci_high": 0.959961,
+          "at_risk": 110,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 8.4,
+          "s": 0.9,
+          "ci_low": 0.846324,
+          "ci_high": 0.953676,
+          "at_risk": 109,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 9.1,
+          "s": 0.891667,
+          "ci_low": 0.836058,
+          "ci_high": 0.947275,
+          "at_risk": 108,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 9.2,
+          "s": 0.883333,
+          "ci_low": 0.825896,
+          "ci_high": 0.940771,
+          "at_risk": 107,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 10.0,
+          "s": 0.875,
+          "ci_low": 0.815828,
+          "ci_high": 0.934172,
+          "at_risk": 106,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 10.4,
+          "s": 0.875,
+          "ci_low": 0.815828,
+          "ci_high": 0.934172,
+          "at_risk": 105,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 10.9,
+          "s": 0.866587,
+          "ci_low": 0.805729,
+          "ci_high": 0.927444,
+          "at_risk": 104,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 11.2,
+          "s": 0.858173,
+          "ci_low": 0.795712,
+          "ci_high": 0.920634,
+          "at_risk": 103,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 11.7,
+          "s": 0.84976,
+          "ci_low": 0.785771,
+          "ci_high": 0.913748,
+          "at_risk": 102,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 11.8,
+          "s": 0.841346,
+          "ci_low": 0.775901,
+          "ci_high": 0.906791,
+          "at_risk": 101,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 13.7,
+          "s": 0.832933,
+          "ci_low": 0.766097,
+          "ci_high": 0.899768,
+          "at_risk": 100,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 15.4,
+          "s": 0.832933,
+          "ci_low": 0.766097,
+          "ci_high": 0.899768,
+          "at_risk": 99,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 16.1,
+          "s": 0.824433,
+          "ci_low": 0.756235,
+          "ci_high": 0.892631,
+          "at_risk": 98,
+          "events": 1,
+          "censored": 1
+        },
+        {
+          "t": 16.2,
+          "s": 0.815846,
+          "ci_low": 0.746312,
+          "ci_high": 0.885379,
+          "at_risk": 96,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 16.8,
+          "s": 0.815846,
+          "ci_low": 0.746312,
+          "ci_high": 0.885379,
+          "at_risk": 95,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 17.3,
+          "s": 0.807166,
+          "ci_low": 0.736322,
+          "ci_high": 0.878011,
+          "at_risk": 94,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 17.6,
+          "s": 0.798487,
+          "ci_low": 0.726391,
+          "ci_high": 0.870583,
+          "at_risk": 93,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 18.1,
+          "s": 0.789808,
+          "ci_low": 0.716516,
+          "ci_high": 0.8631,
+          "at_risk": 92,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 19.7,
+          "s": 0.789808,
+          "ci_low": 0.716516,
+          "ci_high": 0.8631,
+          "at_risk": 91,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 20.7,
+          "s": 0.789808,
+          "ci_low": 0.716516,
+          "ci_high": 0.8631,
+          "at_risk": 90,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 22.3,
+          "s": 0.772059,
+          "ci_low": 0.6964,
+          "ci_high": 0.847719,
+          "at_risk": 89,
+          "events": 2,
+          "censored": 0
+        },
+        {
+          "t": 23.5,
+          "s": 0.772059,
+          "ci_low": 0.6964,
+          "ci_high": 0.847719,
+          "at_risk": 87,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 24.9,
+          "s": 0.763082,
+          "ci_low": 0.686283,
+          "ci_high": 0.839881,
+          "at_risk": 86,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 27.3,
+          "s": 0.754105,
+          "ci_low": 0.67622,
+          "ci_high": 0.831989,
+          "at_risk": 85,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 28.8,
+          "s": 0.73615,
+          "ci_low": 0.656243,
+          "ci_high": 0.816056,
+          "at_risk": 84,
+          "events": 2,
+          "censored": 0
+        },
+        {
+          "t": 29.4,
+          "s": 0.727172,
+          "ci_low": 0.646326,
+          "ci_high": 0.808019,
+          "at_risk": 82,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 29.6,
+          "s": 0.718195,
+          "ci_low": 0.636454,
+          "ci_high": 0.799935,
+          "at_risk": 81,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 31.0,
+          "s": 0.709217,
+          "ci_low": 0.626627,
+          "ci_high": 0.791808,
+          "at_risk": 80,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 31.6,
+          "s": 0.70024,
+          "ci_low": 0.616841,
+          "ci_high": 0.783639,
+          "at_risk": 79,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 33.1,
+          "s": 0.691263,
+          "ci_low": 0.607097,
+          "ci_high": 0.775428,
+          "at_risk": 78,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 34.8,
+          "s": 0.691263,
+          "ci_low": 0.607097,
+          "ci_high": 0.775428,
+          "at_risk": 77,
+          "events": 0,
+          "censored": 1
+        },
+        {
+          "t": 35.1,
+          "s": 0.682167,
+          "ci_low": 0.597242,
+          "ci_high": 0.767092,
+          "at_risk": 76,
+          "events": 1,
+          "censored": 0
+        },
+        {
+          "t": 36.0,
+          "s": 0.682167,
+          "ci_low": 0.597242,
+          "ci_high": 0.767092,
+          "at_risk": 75,
+          "events": 0,
+          "censored": 75
+        }
+      ],
+      "at_risk": [
+        120,
+        100,
+        86,
+        75
+      ]
+    }
+  ],
+  "computed_by": "km_survival/1.0",
+  "source_sha256": "fdf9a1fa8dd75e22487cc485816824a516b1ffe94c79c53c1098efa557317eb5"
+}

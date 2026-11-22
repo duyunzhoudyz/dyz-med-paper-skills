@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="996" height="754" viewBox="0 0 996 754" font-family="Arial, Helvetica, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="20" y="30" font-size="15" font-weight="bold" fill="#111827">Demo 02: Allocation-Based RoB 2 D1 Matrix Across All 13 BCG Trials</text>
+<text x="251.0" y="66" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#374151">D1</text>
+<text x="297.0" y="66" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#374151">D2</text>
+<text x="343.0" y="66" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#374151">D3</text>
+<text x="389.0" y="66" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#374151">D4</text>
+<text x="435.0" y="66" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#374151">D5</text>
+<text x="481.0" y="66" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#374151">Overall</text>
+<text x="20" y="105.0" font-size="11.5" fill="#111827">Aronson (1948)</text>
+<circle cx="251.0" cy="101.0" r="13" fill="#009E73"/>
+<text x="251.0" y="106.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="101.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="106.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="101.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="106.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="101.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="106.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="101.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="106.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="101.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="106.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="151.0" font-size="11.5" fill="#111827">Ferguson &amp; Simes (1949)</text>
+<circle cx="251.0" cy="147.0" r="13" fill="#009E73"/>
+<text x="251.0" y="152.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="147.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="152.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="147.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="152.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="147.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="152.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="147.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="152.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="147.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="152.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="197.0" font-size="11.5" fill="#111827">Rosenthal et al. (1960)</text>
+<circle cx="251.0" cy="193.0" r="13" fill="#009E73"/>
+<text x="251.0" y="198.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="193.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="198.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="193.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="198.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="193.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="198.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="193.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="198.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="193.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="198.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="243.0" font-size="11.5" fill="#111827">Hart &amp; Sutherland (1977)</text>
+<circle cx="251.0" cy="239.0" r="13" fill="#009E73"/>
+<text x="251.0" y="244.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="239.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="244.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="239.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="244.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="239.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="244.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="239.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="244.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="239.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="244.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="289.0" font-size="11.5" fill="#111827">Frimodt-Moller et al. (1973)</text>
+<circle cx="251.0" cy="285.0" r="13" fill="#D55E00"/>
+<text x="251.0" y="290.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<circle cx="297.0" cy="285.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="290.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="285.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="290.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="285.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="290.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="285.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="290.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="285.0" r="13" fill="#D55E00"/>
+<text x="481.0" y="290.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<text x="20" y="335.0" font-size="11.5" fill="#111827">Stein &amp; Aronson (1953)</text>
+<circle cx="251.0" cy="331.0" r="13" fill="#D55E00"/>
+<text x="251.0" y="336.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<circle cx="297.0" cy="331.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="336.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="331.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="336.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="331.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="336.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="331.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="336.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="331.0" r="13" fill="#D55E00"/>
+<text x="481.0" y="336.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<text x="20" y="381.0" font-size="11.5" fill="#111827">Vandiviere et al. (1973)</text>
+<circle cx="251.0" cy="377.0" r="13" fill="#009E73"/>
+<text x="251.0" y="382.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="377.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="382.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="377.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="382.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="377.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="382.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="377.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="382.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="377.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="382.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="427.0" font-size="11.5" fill="#111827">TPT Madras (1980)</text>
+<circle cx="251.0" cy="423.0" r="13" fill="#009E73"/>
+<text x="251.0" y="428.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="423.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="428.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="423.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="428.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="423.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="428.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="423.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="428.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="423.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="428.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="473.0" font-size="11.5" fill="#111827">Coetzee &amp; Berjak (1968)</text>
+<circle cx="251.0" cy="469.0" r="13" fill="#009E73"/>
+<text x="251.0" y="474.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+</text>
+<circle cx="297.0" cy="469.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="474.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="469.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="474.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="469.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="474.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="469.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="474.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="469.0" r="13" fill="#9CA3AF"/>
+<text x="481.0" y="474.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<text x="20" y="519.0" font-size="11.5" fill="#111827">Rosenthal et al. (1961)</text>
+<circle cx="251.0" cy="515.0" r="13" fill="#D55E00"/>
+<text x="251.0" y="520.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<circle cx="297.0" cy="515.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="520.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="515.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="520.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="515.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="520.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="515.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="520.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="515.0" r="13" fill="#D55E00"/>
+<text x="481.0" y="520.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<text x="20" y="565.0" font-size="11.5" fill="#111827">Comstock et al. (1974)</text>
+<circle cx="251.0" cy="561.0" r="13" fill="#D55E00"/>
+<text x="251.0" y="566.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<circle cx="297.0" cy="561.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="566.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="561.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="566.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="561.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="566.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="561.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="566.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="561.0" r="13" fill="#D55E00"/>
+<text x="481.0" y="566.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<text x="20" y="611.0" font-size="11.5" fill="#111827">Comstock &amp; Webster (1969)</text>
+<circle cx="251.0" cy="607.0" r="13" fill="#D55E00"/>
+<text x="251.0" y="612.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<circle cx="297.0" cy="607.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="612.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="607.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="612.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="607.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="612.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="607.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="612.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="607.0" r="13" fill="#D55E00"/>
+<text x="481.0" y="612.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<text x="20" y="657.0" font-size="11.5" fill="#111827">Comstock et al. (1976)</text>
+<circle cx="251.0" cy="653.0" r="13" fill="#D55E00"/>
+<text x="251.0" y="658.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<circle cx="297.0" cy="653.0" r="13" fill="#9CA3AF"/>
+<text x="297.0" y="658.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="343.0" cy="653.0" r="13" fill="#9CA3AF"/>
+<text x="343.0" y="658.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="389.0" cy="653.0" r="13" fill="#9CA3AF"/>
+<text x="389.0" y="658.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="435.0" cy="653.0" r="13" fill="#9CA3AF"/>
+<text x="435.0" y="658.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">?</text>
+<circle cx="481.0" cy="653.0" r="13" fill="#D55E00"/>
+<text x="481.0" y="658.0" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">-</text>
+<text x="20" y="718" font-size="11" fill="#374151">Legend: (+) Low risk   (!) Some concerns   (-) High risk   (?) No information / not assessed</text>
+<text x="20" y="738" font-size="10.5" fill="#4B5563">D1 mapped from published `alloc` (random=low; alternate/systematic=high). D2–D5 marked (?) no_information because full-text RoB 2 adjudication was not run.</text>
+</svg>

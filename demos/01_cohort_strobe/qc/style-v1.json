@@ -1,0 +1,71 @@
+{
+  "tool": "style_check/2.0",
+  "checked_at": "2026-11-22T00:00:00+00:00",
+  "input": {
+    "path": null,
+    "sha256": "003dd25177786cda5d22d426a0e51b1031351b524b999ab3ff668d50b8692e14"
+  },
+  "sentence_stats": {
+    "total_sentences": 3,
+    "english": {
+      "count": 3,
+      "mean": 25.3,
+      "q1": 18.0,
+      "median": 24.0,
+      "q3": 32.0,
+      "iqr": 14.0,
+      "long_gt_38": 1
+    },
+    "chinese": {
+      "count": 0,
+      "mean": 0.0,
+      "q1": 0.0,
+      "median": 0.0,
+      "q3": 0.0,
+      "iqr": 0.0,
+      "long_gt_85": 0
+    },
+    "english_passive_sentence_pct": 33.3,
+    "transition_per_10_sentences": 0.0,
+    "long_sentence_outliers": [
+      {
+        "line": 5,
+        "lang": "en",
+        "units": 40,
+        "excerpt": "During up to 36 months of follow-up, 13 outcome events occurred in the exposed group and 37 in the u"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "must_review",
+      "code": "EN_AI_REGISTER",
+      "phrase": "utilized",
+      "count": 1,
+      "lines": [
+        5
+      ],
+      "suggestion": "use / using"
+    },
+    {
+      "severity": "must_review",
+      "code": "EN_AI_REGISTER",
+      "phrase": "It is worth noting that",
+      "count": 1,
+      "lines": [
+        5
+      ],
+      "suggestion": "delete filler opener"
+    },
+    {
+      "severity": "scientific_warning",
+      "code": "EN_STRONG_CAUSAL",
+      "count": 1,
+      "lines": [
+        5
+      ],
+      "detail": "强因果/确证措辞，观察性或单中心研究需核对证据层级"
+    }
+  ],
+  "disclaimer": "本检查仅识别可观察的套话、过强措辞、过渡词密度和自定义术语偏好，不用于 AI 检测规避或作者身份判定；任何涉及科学强度的改动均须核实原研究设计与用户确认。"
+}

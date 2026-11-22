@@ -38,11 +38,32 @@ def plain_path(path):
     return path.resolve()
 
 
-def source_files(root):
+def pack_skill_names(root: Path, pack: str) -> set[str] | None:
+    """Resolve stage pack skill names from .claude-plugin/marketplace.json (single source of truth)."""
+    if not pack or pack == 'all':
+        return None
+    mpath = root / '.claude-plugin/marketplace.json'
+    if not mpath.is_file():
+        raise ValueError(f'缺少分包清单: {mpath}')
+    market = json.loads(mpath.read_text(encoding='utf-8-sig'))
+    target_name = pack if pack.startswith('dyz-med-') else f'dyz-med-{pack}'
+    for entry in market.get('plugins', []):
+        if entry.get('name') == target_name:
+            return {Path(s).name for s in entry.get('skills', [])}
+    valid = [p.get('name', '').removeprefix('dyz-med-') for p in market.get('plugins', [])]
+    raise ValueError(f'未知分包 {pack!r}；可选: {", ".join(valid)}')
+
+
+def source_files(root, pack='all'):
     root = plain_path(root)
     directories = sorted(p for p in root.glob('dyz-med-*') if p.is_dir())
     if len(directories) != 32:
         raise ValueError(f'需要完整32个技能目录，实际为{len(directories)}')
+    wanted = pack_skill_names(root, pack)
+    if wanted is not None:
+        directories = [d for d in directories if d.name in wanted]
+        if len(directories) != len(wanted):
+            raise ValueError(f'分包 {pack} 缺少技能目录')
     files = collect(root, directories)
     for directory in directories:
         name = directory.name
@@ -76,8 +97,8 @@ def environment():
             'note': '仅探测存在性；不运行程序，不核对登录、包版本或宿主实际加载。'}
 
 
-def synchronize(root=ROOT, target=None, check=False, dry_run=False, upgrade=False, backup=None):
-    root, directories, sources = source_files(Path(root))
+def synchronize(root=ROOT, target=None, check=False, dry_run=False, upgrade=False, backup=None, pack='all'):
+    root, directories, sources = source_files(Path(root), pack=pack)
     target = plain_path(Path(target) if target is not None else Path.home() / '.agents/skills')
     if target.exists() and not target.is_dir():
         raise ValueError('安装目标必须是目录')
@@ -121,7 +142,7 @@ def synchronize(root=ROOT, target=None, check=False, dry_run=False, upgrade=Fals
             'recovery': '按replaced恢复旧文件；created是新增文件，回滚前人工核对。'},
             ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         report['backup'] = str(backup_path)
-    if source_files(root)[2] != sources or collect(target, [target / d.name for d in directories]) != installed:
+    if source_files(root, pack=pack)[2] != sources or collect(target, [target / d.name for d in directories]) != installed:
         raise ValueError('源或安装文件在预检后改变；未开始写入')
     target.mkdir(parents=True, exist_ok=True)
     # 每个替换先写同目录临时文件，再原子替换；新文件用xb避免静默覆盖并发创建。
@@ -144,9 +165,9 @@ def synchronize(root=ROOT, target=None, check=False, dry_run=False, upgrade=Fals
         else:
             with dest.open('xb') as stream:
                 stream.write(sources[name])
-    if collect(target, [target / d.name for d in directories]) != sources or source_files(root)[2] != sources:
+    if collect(target, [target / d.name for d in directories]) != sources or source_files(root, pack=pack)[2] != sources:
         raise ValueError('写后字节核对失败；不能标记安装成功')
-    report.update(status='pass', copied=len(changed) + len(missing), missing=[], changed=[])
+    report.update(status='pass', copied=len(changed) + len(missing), missing=[], changed=[], pack=pack)
     return report
 
 
@@ -158,6 +179,9 @@ def main(argv=None):
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument('--check', action='store_true', help='只读核对，不安装')
     mode.add_argument('--dry-run', action='store_true', help='只显示可执行安装计划')
+    parser.add_argument('--pack', default='all',
+                        choices=('all', 'start', 'evidence', 'analysis', 'writing', 'delivery'),
+                        help='选择安装全部32技能或单个阶段包（避免超出宿主技能描述预算）')
     parser.add_argument('--upgrade', action='store_true')
     parser.add_argument('--backup', type=Path)
     parser.add_argument('--json', action='store_true', help='输出JSON')
@@ -174,22 +198,29 @@ def main(argv=None):
                 raise ValueError('--project须指定已存在的论文项目目录')
             target = project / '.agents/skills'
         report = synchronize(target=target, check=args.check, dry_run=args.dry_run,
-                             upgrade=args.upgrade, backup=args.backup)
+                             upgrade=args.upgrade, backup=args.backup, pack=args.pack)
     except (OSError, ValueError, UnicodeError) as exc:
         print(json.dumps({'status': 'blocked', 'error': str(exc)}, ensure_ascii=False))
         return 2
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
-        print(f"{report['status'].upper()}: {report['skill_count']} skills, {report['file_count']} files")
+        print(f"{report['status'].upper()}: {report['skill_count']} skills (pack={args.pack}), {report['file_count']} files")
         print('安装目录: ' + report['target'])
         print(f"本次复制 {report['copied']}，缺失 {len(report['missing'])}，差异 {len(report['changed'])}，额外 {len(report['extra'])}")
         print('环境探测: ' + json.dumps(report['environment'], ensure_ascii=False))
         if report['legacy_skills']:
             print('发现旧版med-*，可能重复；未修改: ' + ', '.join(report['legacy_skills']))
         if report['status'] == 'pass':
-            print('文件核对通过；在论文项目中打开Codex，用 /skills 或 $ 查看 dyz-med-orchestrator。')
-            print('宿主实际加载与模型选择仍需在Codex验证；这里未运行模型。')
+            t_low = report['target'].lower()
+            if '.claude' in t_low:
+                print('文件核对通过；重启 Claude Code 后用 /dyz-med-orchestrator 或自然语言调用。')
+                print('如需启用 Hooks 与阶段插件包，请见 docs/host-compatibility.md 的 Claude Code 插件市场命令。')
+            elif '.cursor' in t_low or '.copilot' in t_low or '.gemini' in t_low:
+                print('文件核对通过；重启对应智能体后即可按技能名或任务描述调用（实际加载需在宿主内核实）。')
+            else:
+                print('文件核对通过；在论文项目中打开Codex，用 /skills 或 $ 查看 dyz-med-orchestrator。')
+                print('宿主实际加载与模型选择仍需在Codex验证；这里未运行模型。')
         elif report['status'] == 'mismatch':
             print('运行安装命令修复缺失；有修改时先核对，再使用 --upgrade --backup。可加 --json 查看具体文件。')
     return 1 if report['status'] == 'mismatch' else 0

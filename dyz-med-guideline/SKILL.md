@@ -49,7 +49,7 @@ description: >-
 
 ### 3. 逐条核对
 
-对官方清单的每个条目记录：
+针对 STROBE（`STROBE-Cohort` 34 子项 / `STROBE-CaseControl` 33 子项 / `STROBE-CrossSectional` 32 子项）、`PRISMA-2020`（42 子项）、`CONSORT-2025`（30 主条 / 42 子项）、`STARD-2015`（30 主条 / 34 子项）、`CARE`（13 主条 / 30 子项）、`TRIPOD+AI`（27 主条 / 52 子项），先用随包脚本 `scripts/audit_guideline.py init` 生成绑定当前稿件 SHA-256 的全子项骨架，逐条填写后再运行 `scripts/audit_guideline.py check --manuscript <file>` 强制校验：`COVERED` 必填可定位证据、`PARTIAL` 必填缺失说明、`NOT_APPLICABLE` 必填理由、拒绝漏条/重条/未知编号并核验稿件哈希新鲜度。对官方清单的每个条目记录：
 
 | 字段 | 要求 |
 |---|---|
@@ -148,6 +148,10 @@ description: >-
 - 百分比分母已说明；
 - 所有缺失项有可执行且不虚构事实的建议；
 - 结果没有被描述为合规认证或录用保证。
+
+## 结构化清单与机械核对边界
+
+`data/structured-checklists.json` 覆盖上述 6 套规范（含 STROBE 三设计分化共 8 份完整子项编号表）。脚本 `scripts/audit_guideline.py` 仅做结构完整度、适用条目覆盖率计算与稿件哈希新鲜度校验，完整官方条款原文仍以 [版本索引](references/versioned-guidelines.md) 指向的官方页面为准，且不构成合规认证。
 
 ## 版本记录
 

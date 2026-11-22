@@ -197,6 +197,112 @@ class OfflineTransport:
         return dict(attempts[min(index, len(attempts) - 1)])
 
 
+def extract_publication_notices(query, response):
+    """Inspect Crossref work / PubMed ESummary payload for retraction, concern, erratum, or update-notice signals.
+
+    Important Crossref semantics:
+      - `updated-by` appears on the ORIGINAL paper and lists retractions/corrections applied to it.
+      - `update-to` appears on the RETRACTION/ERRATUM NOTICE ITSELF pointing to the target paper.
+    """
+    notices = []
+    if not isinstance(response, dict):
+        return notices
+
+    def classify_type(raw_type: str) -> str | None:
+        low = raw_type.lower().replace("-", "_").replace(" ", "_")
+        if any(tok in low for tok in ("retract", "withdraw")):
+            return "retraction"
+        if "concern" in low:
+            return "expression_of_concern"
+        if any(tok in low for tok in ("errat", "corrig", "correct")):
+            return "erratum"
+        return None
+
+    if query["provider"] == "crossref":
+        value = response.get("message")
+        if not isinstance(value, dict):
+            return notices
+        # 1. Primary Crossref signal on an original article: `updated-by` (Crossmark / Retraction Watch).
+        for upd in value.get("updated-by", []) or []:
+            if not isinstance(upd, dict):
+                continue
+            utype = str(upd.get("type", ""))
+            label = str(upd.get("label", ""))
+            kind = classify_type(utype) or classify_type(label)
+            if kind:
+                notices.append({
+                    "kind": kind,
+                    "source": "crossref_updated_by",
+                    "detail": label or utype,
+                    "notice_doi": upd.get("DOI"),
+                    "record_source": upd.get("source"),
+                })
+        # 2. Crossref `relation` links on original article.
+        relation = value.get("relation")
+        if isinstance(relation, dict):
+            for key, kind in (("is-retracted-by", "retraction"),
+                              ("has-expression-of-concern", "expression_of_concern"),
+                              ("is-corrected-by", "erratum")):
+                entries = relation.get(key)
+                if isinstance(entries, list) and entries:
+                    notices.append({"kind": kind, "source": f"crossref_relation.{key}", "count": len(entries)})
+        # 3. `update-to` indicates the cited DOI is ITSELF a retraction/correction notice, not the original paper.
+        for upd in value.get("update-to", []) or []:
+            if not isinstance(upd, dict):
+                continue
+            utype = str(upd.get("type", ""))
+            label = str(upd.get("label", ""))
+            kind = classify_type(utype) or classify_type(label)
+            if kind:
+                notices.append({
+                    "kind": "is_update_notice_itself",
+                    "update_kind": kind,
+                    "source": "crossref_update_to",
+                    "detail": label or utype,
+                    "target_doi": upd.get("DOI"),
+                })
+        # 4. Fallback title prefix signal (some publishers prepend RETRACTED:/WITHDRAWN:).
+        titles = value.get("title") or []
+        if isinstance(titles, list) and titles:
+            t0 = str(titles[0]).strip()
+            if re.match(r"^(?:RETRACTED|WITHDRAWN)\b", t0, re.IGNORECASE):
+                notices.append({"kind": "retraction", "source": "crossref_title_prefix", "detail": t0[:80]})
+        return notices
+
+    result = response.get("result", {})
+    value = result.get(query["value"]) if isinstance(result, dict) else None
+    if not isinstance(value, dict):
+        return notices
+    pubtypes = value.get("pubtype") or []
+    if isinstance(pubtypes, list):
+        for pt in pubtypes:
+            low = str(pt).lower()
+            if "retracted publication" in low:
+                notices.append({"kind": "retraction", "source": "pubmed_pubtype", "detail": str(pt)})
+            elif "retraction of publication" in low or "retraction notice" in low:
+                notices.append({"kind": "is_update_notice_itself", "update_kind": "retraction", "source": "pubmed_pubtype", "detail": str(pt)})
+            elif "expression of concern" in low:
+                notices.append({"kind": "expression_of_concern", "source": "pubmed_pubtype", "detail": str(pt)})
+            elif "published erratum" in low:
+                notices.append({"kind": "is_update_notice_itself", "update_kind": "erratum", "source": "pubmed_pubtype", "detail": str(pt)})
+            elif "erratum" in low or "corrected and republished" in low:
+                notices.append({"kind": "erratum", "source": "pubmed_pubtype", "detail": str(pt)})
+    # Inspect PubMed ESummary references array (reftypes like 'Retraction in', 'Partial retraction in', 'Erratum in').
+    for ref in value.get("references") or []:
+        if not isinstance(ref, dict):
+            continue
+        rtype = str(ref.get("reftype", "")).lower()
+        if any(tok in rtype for tok in ("retraction in", "partial retraction in", "retracted and republished in")):
+            notices.append({"kind": "retraction", "source": "pubmed_references", "detail": str(ref.get("refsource", rtype))})
+        elif "retraction of" in rtype:
+            notices.append({"kind": "is_update_notice_itself", "update_kind": "retraction", "source": "pubmed_references", "detail": str(ref.get("refsource", rtype))})
+        elif "expression of concern in" in rtype:
+            notices.append({"kind": "expression_of_concern", "source": "pubmed_references", "detail": str(ref.get("refsource", rtype))})
+        elif any(tok in rtype for tok in ("erratum in", "corrected and republished in")):
+            notices.append({"kind": "erratum", "source": "pubmed_references", "detail": str(ref.get("refsource", rtype))})
+    return notices
+
+
 def metadata(query, response):
     """按单条Crossref work/PubMed ESummary提取最小字段，缺字段保留为空。"""
     if not isinstance(response, dict):
@@ -291,13 +397,38 @@ def verify(rows, transport=None, timeout=10.0, max_attempts=1, mode="offline", b
                 item["identity_status"], item["fields"] = compare(row, actual)
                 item["differences"] = [field for field in item["fields"] if field["status"] == "mismatch"]
                 item["missing_fields"] = [field["field"] for field in item["fields"] if field["status"] == "unverified"]
+                notices = extract_publication_notices(query, response.get("body"))
+                item["publication_notices"] = notices
+                kinds = {n["kind"] for n in notices}
+                item["retraction_status"] = (
+                    "retracted" if "retraction" in kinds
+                    else "expression_of_concern" if "expression_of_concern" in kinds
+                    else "is_update_notice_itself" if "is_update_notice_itself" in kinds
+                    else "erratum_noted" if "erratum" in kinds
+                    else "no_notice_in_record"
+                )
             except (ValueError, TypeError, AttributeError):
                 item["reason"] = "unrecognized_or_missing_metadata"
         records.append(item)
     states = {item["identity_status"] for item in records}
     conclusion = ("mismatch" if "mismatch" in states else "unverified"
                   if not records or "unverified" in states else "matched")
+    retraction_alerts = [
+        {"id": r["id"], "retraction_status": r["retraction_status"], "notices": r["publication_notices"]}
+        for r in records
+        if r.get("retraction_status") in ("retracted", "expression_of_concern", "is_update_notice_itself", "erratum_noted")
+    ]
+    alert_statuses = {a["retraction_status"] for a in retraction_alerts}
+    integrity_status = (
+        "retraction_alert" if "retracted" in alert_statuses
+        else "expression_of_concern" if "expression_of_concern" in alert_statuses
+        else "update_notice_cited" if "is_update_notice_itself" in alert_statuses
+        else "erratum_noted" if "erratum_noted" in alert_statuses
+        else "no_notice_in_record"
+    )
     return {"tool": "verify_references/1.0", "mode": mode, "conclusion": conclusion,
+            "integrity_status": integrity_status,
+            "retraction_alerts": retraction_alerts,
             "records": records, "network_requests": sent,
             "limitations": ["仅题录身份；不证明全文已读、研究质量或六类论断支持裁定",
                             "无结果、404、缺DOI、429或网络失败均不证明文献虚构",
@@ -431,8 +562,13 @@ def run(manifest_path: Path, root: Path, report_name: str, record_name: str,
         json.dump(record, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
     code = 3 if blocked else {"matched": 0, "mismatch": 1, "unverified": 3}[report["conclusion"]]
+    if code == 0 and report.get("integrity_status") == "retraction_alert":
+        # Non-zero exit (4) ensures pipelines never silently pass retracted references as clean.
+        code = 4
     return {"report": report_name, "record": record_name, "mode": report["mode"],
             "execution_status": execution, "conclusion": report["conclusion"],
+            "integrity_status": report.get("integrity_status", "no_notice_in_record"),
+            "retraction_alert_count": len(report.get("retraction_alerts", [])),
             "network_requests": report["network_requests"]}, code
 
 

@@ -25,6 +25,6 @@ Markdown 子集：1–3级标题、段落、粗体、1–8列表格、独立行 
 
 输出 manuscript-review.docx、export-check-report.json；默认持续行号、中文/英文字体、表格与图注。所有输出明确标记内部审阅版。占位符保留并警告，不为美观删除。默认格式不是任何期刊的官方要求；正式期刊版仍按当前作者指南调整并记录依据。forbidden_identity_terms 只能检查提供的字符串，不能证明完整匿名化。
 
-本工具不支持 Word 原生修订，不设置投稿完成或科学通过。退出0仅表示生成审阅文件；视觉检查为 not_run，须实际渲染后另存回执。源文件不变，输出目录不能已存在。
+`export_docx.py` 本身只生成清洁审阅稿，不设置投稿完成或科学通过。需要 Word 原生修订留痕稿（`<w:trackRevisions/>` + `<w:ins>`/`<w:del>`）时，使用同目录 `export_tracked_docx.py --old <v1.md> --new <v2.md> --output <tracked.docx>`；不要把彩色高亮模拟称为原生 tracked changes。退出0仅表示生成审阅文件；视觉检查为 not_run，须实际渲染后另存回执。源文件不变，输出目录不能已存在。
 
-预览优先使用已安装的本地 LibreOffice/Word 转为 PDF，再逐页检查。无预览工具时如实交付 DOCX 并说明未视觉核验，不上传到外部转换服务。返修对照稿沿用独立变更表；不要把彩色标记称为原生 tracked changes。
+预览优先使用已安装的本地 LibreOffice/Word 转为 PDF，再逐页检查。无预览工具时如实交付 DOCX 并说明未视觉核验，不上传到外部转换服务。

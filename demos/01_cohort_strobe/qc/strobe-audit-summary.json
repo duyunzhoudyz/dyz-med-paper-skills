@@ -1,0 +1,23 @@
+{
+  "tool": "audit_guideline/2.0",
+  "guideline_id": "STROBE-Cohort",
+  "guideline_version": "2007 (v4, Cohort)",
+  "official_main_items": 22,
+  "official_subitems": 34,
+  "granularity": "full_subitems",
+  "official_url": "https://www.strobe-statement.org/checklists/",
+  "manuscript_freshness": "current",
+  "total_items": 34,
+  "applicable_items": 34,
+  "counts": {
+    "COVERED": 3,
+    "NOT_APPLICABLE": 0,
+    "MISSING": 29,
+    "PARTIAL": 2
+  },
+  "applicable_coverage_pct": 8.8,
+  "contract_status": "valid",
+  "issues": [],
+  "warnings": [],
+  "certification": "not_certified_requires_human_review"
+}

@@ -72,6 +72,14 @@ def validate(root):
         errors.append(f"Expected {EXPECTED_SKILL_COUNT} dyz-med-* skill directories, found {len(skills)}")
 
     structured = set(root.glob("tests/fixtures/**/*.json"))
+    for extra_cfg in (
+        root / ".claude-plugin/marketplace.json",
+        root / "hooks/hooks.json",
+        root / "CITATION.cff",
+        root / "docs/catalog.json",
+    ):
+        if extra_cfg.is_file():
+            structured.add(extra_cfg)
     for directory in skills:
         structured.update(path for path in directory.rglob("*")
                           if path.is_file() and path.suffix.lower() in {".yaml", ".yml", ".json"})

@@ -1,0 +1,29 @@
+{
+  "description": "DYZ MedPaper deterministic safety and workflow hooks (PHI guard, plan-first gate, post-edit statistical tag check). Default mode is advisory; set DYZ_MED_HOOK_MODE=strict for blocking.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" post-edit"
+          }
+        ]
+      }
+    ]
+  }
+}

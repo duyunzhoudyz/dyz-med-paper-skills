@@ -1,0 +1,65 @@
+{
+  "tool": "km_survival/1.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "input": {
+    "path": "cohort_deidentified.csv",
+    "sha256": "fdf9a1fa8dd75e22487cc485816824a516b1ffe94c79c53c1098efa557317eb5",
+    "excluded_invalid_rows": 0
+  },
+  "columns": {
+    "group": "exposure",
+    "time": "followup_months",
+    "event": "event"
+  },
+  "risk_ticks": [
+    0.0,
+    12.0,
+    24.0,
+    36.0
+  ],
+  "groups": {
+    "Exposed": {
+      "n": 120,
+      "events": 13,
+      "censored": 107,
+      "median_survival": null,
+      "survival_at_ticks": {
+        "0.0": 1.0,
+        "12.0": 0.9665,
+        "24.0": 0.9058,
+        "36.0": 0.8872
+      },
+      "number_at_risk": {
+        "0.0": 120,
+        "12.0": 114,
+        "24.0": 102,
+        "36.0": 94
+      }
+    },
+    "Unexposed": {
+      "n": 120,
+      "events": 37,
+      "censored": 83,
+      "median_survival": null,
+      "survival_at_ticks": {
+        "0.0": 1.0,
+        "12.0": 0.8413,
+        "24.0": 0.7721,
+        "36.0": 0.6822
+      },
+      "number_at_risk": {
+        "0.0": 120,
+        "12.0": 100,
+        "24.0": 86,
+        "36.0": 75
+      }
+    }
+  },
+  "log_rank_test": {
+    "chi2": 14.6666,
+    "df": 1,
+    "p_value": 0.000128,
+    "observed_group0": 13,
+    "expected_group0": 26.503
+  }
+}

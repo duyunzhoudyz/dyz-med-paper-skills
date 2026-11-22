@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "DYZ MedPaper: Medical Writing and Clinical Research Agent Skills"
+message: "If you use DYZ MedPaper skills or verification utilities in academic work, please cite this software and record the exact version/commit used."
+type: software
+authors:
+  - name: "DYZ MedPaper Maintainers"
+repository-code: "https://github.com/duyunzhoudyz/dyz-med-paper-skills"
+url: "https://duyunzhoudyz.github.io/dyz-med-paper-skills/"
+version: "0.2.0-beta.1"
+date-released: "2026-11-22"
+license-url: "https://github.com/duyunzhoudyz/dyz-med-paper-skills/blob/main/LICENSE"
+keywords:
+  - medical-writing
+  - clinical-research
+  - agent-skills
+  - reporting-guidelines
+  - pubmed
+  - systematic-review
+  - biostatistics

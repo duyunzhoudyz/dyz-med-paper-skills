@@ -36,7 +36,13 @@ def inventory():
     paths.update(ROOT.glob('tests/fixtures/**/*'))
     paths.update(ROOT.glob('tests/*.md'))
     paths.update(ROOT.glob('docs/**/*.md'))
-    paths.update(ROOT / name for name in ('README.md', 'LICENSE', 'NOTICE', 'COMMERCIAL-LICENSE.md',
+    paths.update(ROOT.glob('docs/*.json'))
+    paths.update(ROOT.glob('.claude-plugin/*.json'))
+    paths.update(ROOT.glob('hooks/*'))
+    paths.update(ROOT.glob('installers/*'))
+    paths.update(ROOT.glob('demos/**/*'))
+    paths.update(ROOT / name for name in ('README.md', 'README_EN.md', 'CHANGELOG.md', 'CITATION.cff',
+                                          'LICENSE', 'NOTICE', 'COMMERCIAL-LICENSE.md',
                                           'requirements-dev.txt', '.gitignore', '.gitattributes'))
     for folder in ROOT.glob('dyz-med-*'):
         if folder.is_dir():

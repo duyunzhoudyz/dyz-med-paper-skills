@@ -1,0 +1,152 @@
+{
+  "kind": "rob2",
+  "title": "Demo 02: Allocation-Based RoB 2 D1 Matrix Across All 13 BCG Trials",
+  "footnote": "D1 mapped from published `alloc` (random=low; alternate/systematic=high). D2–D5 marked (?) no_information because full-text RoB 2 adjudication was not run.",
+  "computed_by": "build_demos/alloc_map",
+  "source_sha256": "0eb11fa729791eeaaafea686af2fc16b21bcb3d504d169457792b55c46ba9c6f",
+  "studies": [
+    {
+      "label": "Aronson (1948)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "Ferguson & Simes (1949)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "Rosenthal et al. (1960)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "Hart & Sutherland (1977)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "Frimodt-Moller et al. (1973)",
+      "judgments": {
+        "D1": "high",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "high"
+      }
+    },
+    {
+      "label": "Stein & Aronson (1953)",
+      "judgments": {
+        "D1": "high",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "high"
+      }
+    },
+    {
+      "label": "Vandiviere et al. (1973)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "TPT Madras (1980)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "Coetzee & Berjak (1968)",
+      "judgments": {
+        "D1": "low",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "no_information"
+      }
+    },
+    {
+      "label": "Rosenthal et al. (1961)",
+      "judgments": {
+        "D1": "high",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "high"
+      }
+    },
+    {
+      "label": "Comstock et al. (1974)",
+      "judgments": {
+        "D1": "high",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "high"
+      }
+    },
+    {
+      "label": "Comstock & Webster (1969)",
+      "judgments": {
+        "D1": "high",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "high"
+      }
+    },
+    {
+      "label": "Comstock et al. (1976)",
+      "judgments": {
+        "D1": "high",
+        "D2": "no_information",
+        "D3": "no_information",
+        "D4": "no_information",
+        "D5": "no_information",
+        "Overall": "high"
+      }
+    }
+  ]
+}

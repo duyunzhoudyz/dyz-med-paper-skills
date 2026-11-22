@@ -1,0 +1,227 @@
+{
+  "tool": "table1_summary/2.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "input": {
+    "path": "cohort_deidentified.csv",
+    "sha256": "fdf9a1fa8dd75e22487cc485816824a516b1ffe94c79c53c1098efa557317eb5",
+    "raw_rows": 240,
+    "analyzed_rows": 240,
+    "excluded_missing_group_rows": 0
+  },
+  "group_column": "exposure",
+  "group_order": [
+    "Exposed",
+    "Unexposed"
+  ],
+  "group_counts": {
+    "Exposed": 120,
+    "Unexposed": 120
+  },
+  "continuous_style": "both",
+  "rows": [
+    {
+      "variable": "age_years",
+      "type": "continuous",
+      "level": "Mean ± SD / Median [IQR]",
+      "missing_total": 0,
+      "missing_by_group": {
+        "Exposed": 0,
+        "Unexposed": 0
+      },
+      "overall": "62.03 ± 9.37 / 61.70 [55.63, 68.17]",
+      "groups": {
+        "Exposed": "62.08 ± 9.75 / 61.95 [55.27, 68.93]",
+        "Unexposed": "61.99 ± 9.02 / 61.20 [55.98, 67.50]"
+      },
+      "numeric": {
+        "overall": {
+          "n": 240,
+          "mean": 62.0308,
+          "sd": 9.3724,
+          "median": 61.7,
+          "q1": 55.625,
+          "q3": 68.175
+        },
+        "groups": {
+          "Exposed": {
+            "n": 120,
+            "mean": 62.0758,
+            "sd": 9.7515,
+            "median": 61.95,
+            "q1": 55.275,
+            "q3": 68.925
+          },
+          "Unexposed": {
+            "n": 120,
+            "mean": 61.9858,
+            "sd": 9.0182,
+            "median": 61.2,
+            "q1": 55.975,
+            "q3": 67.5
+          }
+        }
+      },
+      "smd": 0.01
+    },
+    {
+      "variable": "bmi",
+      "type": "continuous",
+      "level": "Mean ± SD / Median [IQR]",
+      "missing_total": 0,
+      "missing_by_group": {
+        "Exposed": 0,
+        "Unexposed": 0
+      },
+      "overall": "25.90 ± 3.33 / 25.90 [23.48, 28.30]",
+      "groups": {
+        "Exposed": "26.34 ± 3.42 / 26.65 [23.78, 28.80]",
+        "Unexposed": "25.47 ± 3.20 / 25.55 [23.03, 27.63]"
+      },
+      "numeric": {
+        "overall": {
+          "n": 240,
+          "mean": 25.9021,
+          "sd": 3.3331,
+          "median": 25.9,
+          "q1": 23.475,
+          "q3": 28.3
+        },
+        "groups": {
+          "Exposed": {
+            "n": 120,
+            "mean": 26.3367,
+            "sd": 3.4238,
+            "median": 26.65,
+            "q1": 23.775,
+            "q3": 28.8
+          },
+          "Unexposed": {
+            "n": 120,
+            "mean": 25.4675,
+            "sd": 3.1951,
+            "median": 25.55,
+            "q1": 23.025,
+            "q3": 27.625
+          }
+        }
+      },
+      "smd": 0.262
+    },
+    {
+      "variable": "hba1c_pct",
+      "type": "continuous",
+      "level": "Mean ± SD / Median [IQR]",
+      "missing_total": 0,
+      "missing_by_group": {
+        "Exposed": 0,
+        "Unexposed": 0
+      },
+      "overall": "7.61 ± 1.12 / 7.61 [6.91, 8.35]",
+      "groups": {
+        "Exposed": "7.77 ± 1.13 / 7.77 [7.12, 8.42]",
+        "Unexposed": "7.44 ± 1.08 / 7.41 [6.57, 8.22]"
+      },
+      "numeric": {
+        "overall": {
+          "n": 240,
+          "mean": 7.609,
+          "sd": 1.1179,
+          "median": 7.61,
+          "q1": 6.9075,
+          "q3": 8.35
+        },
+        "groups": {
+          "Exposed": {
+            "n": 120,
+            "mean": 7.7738,
+            "sd": 1.1346,
+            "median": 7.77,
+            "q1": 7.1225,
+            "q3": 8.4175
+          },
+          "Unexposed": {
+            "n": 120,
+            "mean": 7.4443,
+            "sd": 1.0807,
+            "median": 7.405,
+            "q1": 6.5725,
+            "q3": 8.22
+          }
+        }
+      },
+      "smd": 0.297
+    },
+    {
+      "variable": "sex",
+      "type": "categorical",
+      "level": "Female",
+      "missing_total": 0,
+      "missing_by_group": {
+        "Exposed": 0,
+        "Unexposed": 0
+      },
+      "overall": "107 (44.6%)",
+      "groups": {
+        "Exposed": "46 (38.3%)",
+        "Unexposed": "61 (50.8%)"
+      },
+      "smd": 0.253
+    },
+    {
+      "variable": "sex",
+      "type": "categorical",
+      "level": "Male",
+      "missing_total": 0,
+      "missing_by_group": {},
+      "overall": "133 (55.4%)",
+      "groups": {
+        "Exposed": "74 (61.7%)",
+        "Unexposed": "59 (49.2%)"
+      },
+      "smd": null
+    },
+    {
+      "variable": "ckd_stage",
+      "type": "categorical",
+      "level": "Stage I",
+      "missing_total": 0,
+      "missing_by_group": {
+        "Exposed": 0,
+        "Unexposed": 0
+      },
+      "overall": "108 (45.0%)",
+      "groups": {
+        "Exposed": "56 (46.7%)",
+        "Unexposed": "52 (43.3%)"
+      },
+      "smd": 0.068
+    },
+    {
+      "variable": "ckd_stage",
+      "type": "categorical",
+      "level": "Stage II",
+      "missing_total": 0,
+      "missing_by_group": {},
+      "overall": "85 (35.4%)",
+      "groups": {
+        "Exposed": "41 (34.2%)",
+        "Unexposed": "44 (36.7%)"
+      },
+      "smd": null
+    },
+    {
+      "variable": "ckd_stage",
+      "type": "categorical",
+      "level": "Stage III",
+      "missing_total": 0,
+      "missing_by_group": {},
+      "overall": "47 (19.6%)",
+      "groups": {
+        "Exposed": "23 (19.2%)",
+        "Unexposed": "24 (20.0%)"
+      },
+      "smd": null
+    }
+  ],
+  "method_note": "两组基线比较默认报告绝对标准化均数差 |SMD|（多分类变量采用 Yang & Dalton 2012 多元马氏距离公式），不以基线假设检验 P 值替代研究设计或协变量选择；缺失分组行已从 Overall 排除并单列计数。"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "consistent",
+  "issues": [],
+  "semantic_review": "required",
+  "phrase_count": 0,
+  "limitations": [
+    "Occurrence comparison cannot detect swapped values, negation, causal strength or semantic equivalence.",
+    "Add explicit phrase pairs for doses, units, timepoints and declarations; review sentence alignment.",
+    "Numeric normalization allows trailing zeros and decimal/scientific notation, not unit conversion."
+  ]
+}

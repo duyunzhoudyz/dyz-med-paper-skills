@@ -21,6 +21,18 @@ TOOLS = (
     'dyz-med-results/scripts/check_result_consistency.py',
     'dyz-med-screening-pipeline/scripts/compute_prisma_counts.py',
     'dyz-med-cnki/scripts/verify_references.py',
+    'dyz-med-data-adequacy/scripts/deidentify_check.py',
+    'dyz-med-analyze/scripts/table1_summary.py',
+    'dyz-med-analyze/scripts/km_survival.py',
+    'dyz-med-analyze/scripts/meta_analysis.py',
+    'dyz-med-analyze/scripts/diagnostic_accuracy.py',
+    'dyz-med-figures-tables/scripts/plot_clinical_svg.py',
+    'dyz-med-guideline/scripts/audit_guideline.py',
+    'dyz-med-deai/scripts/style_check.py',
+    'dyz-med-revision/scripts/blind_rereview_pack.py',
+    'dyz-med-journal-finder/scripts/fetch_journal_policy.py',
+    'dyz-med-export/scripts/export_tracked_docx.py',
+    'hooks/med_guard.py',
 )
 
 

@@ -1,0 +1,322 @@
+{
+  "schema_version": "2.0",
+  "guideline_id": "STROBE-Cohort",
+  "guideline_version": "2007 (v4, Cohort)",
+  "official_main_items": 22,
+  "official_subitems": 34,
+  "granularity": "full_subitems",
+  "official_url": "https://www.strobe-statement.org/checklists/",
+  "manuscript": {
+    "path": "results-v2.md",
+    "sha256": "7cae617d24a30c084f2f9cf8ef3bff76af62493e8e7dc4686cd9521c4e511fd5"
+  },
+  "checked_at": "2026-11-22T00:00:00+00:00",
+  "items": [
+    {
+      "id": "1a",
+      "section": "Title/Abstract",
+      "topic": "Indicate study design with commonly used term in title or abstract",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "1b",
+      "section": "Title/Abstract",
+      "topic": "Informative and balanced summary of what was done and found",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "2",
+      "section": "Introduction",
+      "topic": "Scientific background and rationale for investigation",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "3",
+      "section": "Introduction",
+      "topic": "Specific objectives including prespecified hypotheses",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "4",
+      "section": "Methods",
+      "topic": "Key elements of study design presented early in paper",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "5",
+      "section": "Methods",
+      "topic": "Setting, locations, and relevant dates (recruitment, exposure, follow-up, data collection)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "6a",
+      "section": "Methods",
+      "topic": "Cohort: eligibility criteria, sources, methods of participant selection and follow-up",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "6b",
+      "section": "Methods",
+      "topic": "Cohort (matched): matching criteria and number of exposed and unexposed",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "7",
+      "section": "Methods",
+      "topic": "Clearly define outcomes, exposures, predictors, potential confounders, effect modifiers, diagnostic criteria",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "8",
+      "section": "Methods",
+      "topic": "Data sources and measurement details; comparability of assessment methods across groups",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "9",
+      "section": "Methods",
+      "topic": "Efforts to address potential sources of bias",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "10",
+      "section": "Methods",
+      "topic": "Explain how the study size was arrived at",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "11",
+      "section": "Methods",
+      "topic": "Handling of quantitative variables and rationale for groupings",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12a",
+      "section": "Methods",
+      "topic": "All statistical methods including those used to control for confounding",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12b",
+      "section": "Methods",
+      "topic": "Methods used to examine subgroups and interactions",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12c",
+      "section": "Methods",
+      "topic": "How missing data were addressed",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12d",
+      "section": "Methods",
+      "topic": "Cohort: explain how loss to follow-up was addressed",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12e",
+      "section": "Methods",
+      "topic": "Describe any sensitivity analyses",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13a",
+      "section": "Results",
+      "topic": "Numbers of individuals at each stage (potentially eligible, examined, confirmed, included, followed up, analysed)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13b",
+      "section": "Results",
+      "topic": "Reasons for non-participation at each stage",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13c",
+      "section": "Results",
+      "topic": "Consider use of a flow diagram",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "14a",
+      "section": "Results",
+      "topic": "Characteristics of study participants and information on exposures and confounders",
+      "status": "COVERED",
+      "evidence": "results/table1.md (baseline age, sex, BMI, HbA1c, CKD stage with |SMD|)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "14b",
+      "section": "Results",
+      "topic": "Number of participants with missing data for each variable of interest",
+      "status": "COVERED",
+      "evidence": "results/table1.md Missing column (0 missing across baseline variables)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "14c",
+      "section": "Results",
+      "topic": "Cohort: summarize follow-up time (e.g., average and total amount)",
+      "status": "PARTIAL",
+      "evidence": "",
+      "comment": "Maximum follow-up (36 months) and number-at-risk table reported; median follow-up and total person-years belong in full paper.",
+      "suggested_fix": ""
+    },
+    {
+      "id": "15",
+      "section": "Results",
+      "topic": "Cohort: numbers of outcome events or summary measures over time",
+      "status": "COVERED",
+      "evidence": "manuscript/results-v2.md (13 vs 37 events; 36m KM survival) & figures/figure1-km.svg",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "16a",
+      "section": "Results",
+      "topic": "Unadjusted and confounder-adjusted estimates with precision (e.g., 95% CI); list adjusted confounders and rationale",
+      "status": "PARTIAL",
+      "evidence": "",
+      "comment": "Unadjusted KM survival and log-rank P reported; confounder-adjusted multivariable Cox HR requires full clinical model.",
+      "suggested_fix": ""
+    },
+    {
+      "id": "16b",
+      "section": "Results",
+      "topic": "Category boundaries when continuous variables were categorized",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "16c",
+      "section": "Results",
+      "topic": "Consider translating relative risk estimates into absolute risk for meaningful time period",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "17",
+      "section": "Results",
+      "topic": "Report other analyses done (subgroups, interactions, sensitivity analyses)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "18",
+      "section": "Discussion",
+      "topic": "Summarize key results with reference to study objectives",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "19",
+      "section": "Discussion",
+      "topic": "Discuss limitations taking into account sources of bias or imprecision (direction and magnitude)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "20",
+      "section": "Discussion",
+      "topic": "Cautious overall interpretation considering objectives, limitations, multiplicity, similar studies",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "21",
+      "section": "Discussion",
+      "topic": "Discuss generalizability (external validity) of study results",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "22",
+      "section": "Other",
+      "topic": "Source of funding and role of funders for present study and original study if applicable",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    }
+  ]
+}

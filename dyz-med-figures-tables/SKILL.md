@@ -66,7 +66,7 @@ description: >-
 
 ### 4. 生成统计图
 
-- 从实际输入模式生成最短可复现脚本；不要套用字段未核对的通用代码。
+- 从实际输入模式生成最短可复现脚本；不要套用字段未核对的通用代码。需要森林图（含权重方块/Events/Weight%/异质性脚注）、Kaplan-Meier 生存曲线（含 95% CI 带与底部风险表）、RoB 2 交通灯图（缺失域显式标 `?` `no_information`）或 ROC 曲线时，可直接运行本技能随包脚本 `scripts/plot_clinical_svg.py` 消费上游计算生成的 JSON spec 与 `--source-data`，生成色盲友好、CJK 字体兼容的矢量 SVG 与 `.provenance.json`，并在交付前用 `--check` 校验溯源完整性。
 - 对比值型效应使用正确的对数轴和无效线，对差值型效应使用线性轴和零线。
 - 展示区间、删失、风险集、样本量或其他理解图形所必需的信息。
 - 亚组图优先展示交互检验，不用“某亚组显著、另一亚组不显著”推断组间差异。
@@ -146,6 +146,7 @@ paper/data/figures/consistency-report.md
 
 ## 参考材料
 
+- `scripts/plot_clinical_svg.py`：纯标准库色盲友好临床矢量图工具，支持森林图（`forest`）、Kaplan-Meier 含风险表（`km`）、RoB 2 交通灯图（`rob2`）与 ROC 曲线（`roc`），输出 `.provenance.json` 并支持 `--check` 溯源防篡改校验。
 - [图文一致性清单](templates/figure-text-consistency-checklist.md)
 - [虚构教学示例](examples/worked-example.md)
 - [方法学与报告规范](references/methodology-references.md)

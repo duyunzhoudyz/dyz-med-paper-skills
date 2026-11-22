@@ -1,0 +1,19 @@
+{
+  "tool": "plot_clinical_svg/2.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "kind": "roc",
+  "computed_by": "diagnostic_accuracy/1.0",
+  "spec": {
+    "path": "roc-spec.json",
+    "sha256": "c6b9958c545318d1d40d9798f13990234aa2432e170d5fd1e7fcc104bc63b234"
+  },
+  "source_data": {
+    "path": "diagnostic_cohort.csv",
+    "sha256": "92a5548ae04237e40e6a73d7fd72db7f148f9443084ab95626e8814efce64edd"
+  },
+  "output": {
+    "path": "figure1-roc.svg",
+    "sha256": "8536e3fa2e13a236c77d1ebdbbc4c181bf0cd57ac8bee4fe5a2a05fae3225fe2"
+  },
+  "provenance_scope": "hash_and_computation_bound"
+}

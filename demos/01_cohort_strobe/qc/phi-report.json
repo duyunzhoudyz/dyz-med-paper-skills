@@ -1,0 +1,24 @@
+{
+  "tool": "deidentify_check/2.0",
+  "checked_at": "2026-11-22T00:00:00+00:00",
+  "network_used": false,
+  "input": {
+    "path": "cohort_deidentified.csv",
+    "sha256": "fdf9a1fa8dd75e22487cc485816824a516b1ffe94c79c53c1098efa557317eb5",
+    "detected_encoding": "utf-8-sig",
+    "rows": 240,
+    "columns": 9,
+    "malformed_extra_column_rows": 0
+  },
+  "status": "no_obvious_phi_detected",
+  "direct_identifier_columns": [],
+  "quasi_identifier_columns": [],
+  "non_phi_code_columns_preserved": [
+    "subject_id"
+  ],
+  "pattern_hits": {},
+  "suspected_hits_needs_review": {},
+  "age_over_89_count": 0,
+  "output_written": null,
+  "disclaimer": "本脚本仅做基于规则与表头的确定性初筛，不构成法定去标识化认证或伦理豁免；自由文本、罕见病组合和医学影像元信息仍须由人工与伦理/合规人员复核。"
+}

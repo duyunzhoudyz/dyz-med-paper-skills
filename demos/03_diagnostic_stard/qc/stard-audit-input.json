@@ -1,0 +1,322 @@
+{
+  "schema_version": "2.0",
+  "guideline_id": "STARD-2015",
+  "guideline_version": "2015",
+  "official_main_items": 30,
+  "official_subitems": 34,
+  "granularity": "full_subitems",
+  "official_url": "https://www.equator-network.org/reporting-guidelines/stard/",
+  "manuscript": {
+    "path": "results.md",
+    "sha256": "cb7d98e7d72a3e7c628c7da9f1d252c25229fc02f61439f5ceba661134baf14e"
+  },
+  "checked_at": "2026-11-22T00:00:00+00:00",
+  "items": [
+    {
+      "id": "1",
+      "section": "Title/Abstract",
+      "topic": "Identification as a study of diagnostic accuracy using at least one measure of accuracy",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "2",
+      "section": "Abstract",
+      "topic": "Structured summary of study design, methods, results, and conclusions",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "3",
+      "section": "Introduction",
+      "topic": "Scientific and clinical background including intended use and clinical role of index test",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "4",
+      "section": "Introduction",
+      "topic": "Study objectives and hypotheses",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "5",
+      "section": "Methods",
+      "topic": "Whether data collection was planned before (prospective) or after (retrospective) tests were performed",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "6",
+      "section": "Methods",
+      "topic": "Eligibility criteria",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "7",
+      "section": "Methods",
+      "topic": "On what basis potentially eligible participants were identified",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "8",
+      "section": "Methods",
+      "topic": "Where and when potentially eligible participants were identified (setting, location, dates)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "9",
+      "section": "Methods",
+      "topic": "Whether participants formed a consecutive, random, or convenience series",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "10a",
+      "section": "Methods",
+      "topic": "Index test in sufficient detail to allow replication",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "10b",
+      "section": "Methods",
+      "topic": "Reference standard in sufficient detail to allow replication",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "11",
+      "section": "Methods",
+      "topic": "Rationale for choosing reference standard if alternatives exist",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12a",
+      "section": "Methods",
+      "topic": "Definition of and rationale for test positivity cut-offs or result categories of index test (prespecified vs exploratory)",
+      "status": "COVERED",
+      "evidence": "results/diagnostic-metrics.json (prespecified_threshold=0.50)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12b",
+      "section": "Methods",
+      "topic": "Definition of and rationale for test positivity cut-offs or result categories of reference standard",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13a",
+      "section": "Methods",
+      "topic": "Whether clinical information and reference standard results were available to performers/readers of index test",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13b",
+      "section": "Methods",
+      "topic": "Whether clinical information and index test results were available to assessors of reference standard",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "14",
+      "section": "Methods",
+      "topic": "Methods for estimating or comparing measures of diagnostic accuracy",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "15",
+      "section": "Methods",
+      "topic": "How indeterminate index test or reference standard results were handled",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "16",
+      "section": "Methods",
+      "topic": "How missing data on index test and reference standard were handled",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "17",
+      "section": "Methods",
+      "topic": "Any analyses of variability in diagnostic accuracy (prespecified vs exploratory)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "18",
+      "section": "Methods",
+      "topic": "Intended sample size and how it was determined",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "19",
+      "section": "Results",
+      "topic": "Flow of participants using a diagram",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "20",
+      "section": "Results",
+      "topic": "Baseline demographic and clinical characteristics of participants",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "21a",
+      "section": "Results",
+      "topic": "Distribution of severity of disease in those with target condition",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "21b",
+      "section": "Results",
+      "topic": "Distribution of alternative diagnoses in those without target condition",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "22",
+      "section": "Results",
+      "topic": "Time interval and any clinical interventions between index test and reference standard",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "23",
+      "section": "Results",
+      "topic": "Cross tabulation of index test results (or distribution) by results of reference standard",
+      "status": "COVERED",
+      "evidence": "manuscript/results.md & results/confusion-and-metrics.md (full 2x2 cross-tabulation)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "24",
+      "section": "Results",
+      "topic": "Estimates of diagnostic accuracy and their precision (such as 95% CIs)",
+      "status": "COVERED",
+      "evidence": "manuscript/results.md & figures/figure1-roc.svg (Sens/Spec/PPV/NPV Wilson 95% CIs, LR+/LR-, DeLong AUC 95% CI)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "25",
+      "section": "Results",
+      "topic": "Any adverse events from performing the index test or reference standard",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "26",
+      "section": "Discussion",
+      "topic": "Study limitations including sources of potential bias, statistical uncertainty, and generalisability",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "27",
+      "section": "Discussion",
+      "topic": "Implications for practice including intended use and clinical role of index test",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "28",
+      "section": "Other",
+      "topic": "Registration number and name of registry",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "29",
+      "section": "Other",
+      "topic": "Where the full study protocol can be accessed",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "30",
+      "section": "Other",
+      "topic": "Sources of funding and other support; role of funders",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "tool": "diagnostic_accuracy/1.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "input": {
+    "path": "diagnostic_cohort.csv",
+    "sha256": "92a5548ae04237e40e6a73d7fd72db7f148f9443084ab95626e8814efce64edd",
+    "n": 300,
+    "excluded_invalid_rows": 0
+  },
+  "prespecified_threshold": 0.5,
+  "prevalence": 0.3667,
+  "confusion_matrix": {
+    "tp": 94,
+    "fn": 16,
+    "fp": 47,
+    "tn": 143
+  },
+  "sensitivity": 0.8545,
+  "sensitivity_wilson_95ci": [
+    0.7767,
+    0.9084
+  ],
+  "specificity": 0.7526,
+  "specificity_wilson_95ci": [
+    0.6867,
+    0.8086
+  ],
+  "ppv": 0.6667,
+  "ppv_wilson_95ci": [
+    0.5853,
+    0.7391
+  ],
+  "npv": 0.8994,
+  "npv_wilson_95ci": [
+    0.8428,
+    0.9371
+  ],
+  "lr_positive": 3.455,
+  "lr_negative": 0.193,
+  "roc_auc": 0.8728,
+  "roc_auc_delong_95ci": [
+    0.8331,
+    0.9124
+  ]
+}

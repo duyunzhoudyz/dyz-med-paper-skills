@@ -103,8 +103,10 @@ blocked/failed 需 reason。以唯一 check ID 绑定完整实际输入、范围
 
 ## 稳定本地路径
 
-对于支持的 Markdown、PNG 和已核实引文输入，可按[本地 Word 接口](references/local-docx-cli.md)使用 export_docx.py。
-它只生成标记清楚的审阅版 DOCX 和清单，不声称符合具体期刊、科学审核通过或支持原生修订。生成后继续执行成品视觉检查。
+对于支持的 Markdown、PNG 和已核实引文输入，可按[本地 Word 接口](references/local-docx-cli.md)使用 `scripts/export_docx.py`。
+它只生成标记清楚的审阅版 DOCX 和清单，不声称符合具体期刊或科学审核通过。
+
+对于导师改稿或审稿修回需要交付“带修订留痕版（Marked-up Manuscript）”的场景，可使用同目录纯标准库脚本 `scripts/export_tracked_docx.py` 对比旧稿与新稿 Markdown：自动写入 `word/settings.xml` 激活 `<w:trackRevisions/>`、默认剥离 `[claim:...]`/`[evidence:...]` 内部标记、清理 XML 控制字符并写前校验良构性，支持 H1–H4、列表、粗斜体、基础管道表格与相似度段落对齐。生成后仍须在 Word 或 LibreOffice 中执行视觉检查；数学公式与复杂合并表格另行校对。
 
 ## 输出
 

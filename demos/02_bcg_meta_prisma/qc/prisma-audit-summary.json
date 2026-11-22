@@ -1,0 +1,23 @@
+{
+  "tool": "audit_guideline/2.0",
+  "guideline_id": "PRISMA-2020",
+  "guideline_version": "2020",
+  "official_main_items": 27,
+  "official_subitems": 42,
+  "granularity": "full_subitems",
+  "official_url": "https://www.prisma-statement.org/prisma-2020-checklist",
+  "manuscript_freshness": "current",
+  "total_items": 42,
+  "applicable_items": 42,
+  "counts": {
+    "COVERED": 5,
+    "NOT_APPLICABLE": 0,
+    "MISSING": 36,
+    "PARTIAL": 1
+  },
+  "applicable_coverage_pct": 11.9,
+  "contract_status": "valid",
+  "issues": [],
+  "warnings": [],
+  "certification": "not_certified_requires_human_review"
+}

@@ -1,0 +1,141 @@
+{
+  "kind": "forest",
+  "scale": "log",
+  "null_value": 1.0,
+  "title": "Demo 02: BCG Vaccine Effectiveness Meta-Analysis (Colditz 1994, k=13)",
+  "xlabel": "Risk Ratio (95% CI, log scale)",
+  "favours_left": "Favours Treatment",
+  "favours_right": "Favours Control",
+  "footnote": "Heterogeneity: Q = 152.23 (df = 12), tau² = 0.3088, I² = 92.1%; 95% PI 0.14–1.77",
+  "items": [
+    {
+      "label": "Aronson (1948)",
+      "events_t": "4/123",
+      "events_c": "11/139",
+      "weight": 5.04,
+      "estimate": 0.4109,
+      "ci_low": 0.1343,
+      "ci_high": 1.2574
+    },
+    {
+      "label": "Ferguson & Simes (1949)",
+      "events_t": "6/306",
+      "events_c": "29/303",
+      "weight": 6.35,
+      "estimate": 0.2049,
+      "ci_low": 0.0863,
+      "ci_high": 0.4864
+    },
+    {
+      "label": "Rosenthal et al. (1960)",
+      "events_t": "3/231",
+      "events_c": "11/220",
+      "weight": 4.41,
+      "estimate": 0.2597,
+      "ci_low": 0.0734,
+      "ci_high": 0.9186
+    },
+    {
+      "label": "Hart & Sutherland (1977)",
+      "events_t": "62/13598",
+      "events_c": "248/12867",
+      "weight": 9.72,
+      "estimate": 0.2366,
+      "ci_low": 0.1793,
+      "ci_high": 0.3121
+    },
+    {
+      "label": "Frimodt-Moller et al. (1973)",
+      "events_t": "33/5069",
+      "events_c": "47/5808",
+      "weight": 8.88,
+      "estimate": 0.8045,
+      "ci_low": 0.5163,
+      "ci_high": 1.2536
+    },
+    {
+      "label": "Stein & Aronson (1953)",
+      "events_t": "180/1541",
+      "events_c": "372/1451",
+      "weight": 10.12,
+      "estimate": 0.4556,
+      "ci_low": 0.3871,
+      "ci_high": 0.5362
+    },
+    {
+      "label": "Vandiviere et al. (1973)",
+      "events_t": "8/2545",
+      "events_c": "10/629",
+      "weight": 6.01,
+      "estimate": 0.1977,
+      "ci_low": 0.0784,
+      "ci_high": 0.4989
+    },
+    {
+      "label": "TPT Madras (1980)",
+      "events_t": "505/88391",
+      "events_c": "499/88391",
+      "weight": 10.22,
+      "estimate": 1.012,
+      "ci_low": 0.8946,
+      "ci_high": 1.1449
+    },
+    {
+      "label": "Coetzee & Berjak (1968)",
+      "events_t": "29/7499",
+      "events_c": "45/7277",
+      "weight": 8.75,
+      "estimate": 0.6254,
+      "ci_low": 0.3926,
+      "ci_high": 0.9962
+    },
+    {
+      "label": "Rosenthal et al. (1961)",
+      "events_t": "17/1716",
+      "events_c": "65/1665",
+      "weight": 8.37,
+      "estimate": 0.2538,
+      "ci_low": 0.1494,
+      "ci_high": 0.431
+    },
+    {
+      "label": "Comstock et al. (1974)",
+      "events_t": "186/50634",
+      "events_c": "141/27338",
+      "weight": 9.95,
+      "estimate": 0.7122,
+      "ci_low": 0.5725,
+      "ci_high": 0.886
+    },
+    {
+      "label": "Comstock & Webster (1969)",
+      "events_t": "5/2498",
+      "events_c": "3/2341",
+      "weight": 3.8,
+      "estimate": 1.5619,
+      "ci_low": 0.3737,
+      "ci_high": 6.5284
+    },
+    {
+      "label": "Comstock et al. (1976)",
+      "events_t": "27/16913",
+      "events_c": "29/17854",
+      "weight": 8.4,
+      "estimate": 0.9828,
+      "ci_low": 0.5821,
+      "ci_high": 1.6593
+    },
+    {
+      "label": "Random-Effects Pooled (DL)",
+      "events_t": "1065/191064",
+      "events_c": "1510/166283",
+      "weight": 100.0,
+      "estimate": 0.4896,
+      "ci_low": 0.3449,
+      "ci_high": 0.695,
+      "pooled": true
+    }
+  ],
+  "computed_by": "meta_analysis/1.0",
+  "source_sha256": "0eb11fa729791eeaaafea686af2fc16b21bcb3d504d169457792b55c46ba9c6f"
+}

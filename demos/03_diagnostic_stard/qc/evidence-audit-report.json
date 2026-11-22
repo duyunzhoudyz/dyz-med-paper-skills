@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "tool": "audit_manuscript",
+  "checked_at": "2026-11-22T13:50:15.872062+00:00",
+  "status": "consistent",
+  "scientific_acceptance": "not_assessed",
+  "inputs": [
+    {
+      "path": "manuscript/results.md",
+      "sha256": "cb7d98e7d72a3e7c628c7da9f1d252c25229fc02f61439f5ceba661134baf14e"
+    },
+    {
+      "path": "qc/claim-registry.json",
+      "sha256": "c979dfcf83af0a2406222d4f91503520e39519526cde744653140f99d2e45fde"
+    },
+    {
+      "path": "results/diagnostic-metrics.json",
+      "sha256": "38eaf9d3963814237a3b41af4a039d644bb95d43ee416ee8d6642f8bcb4b2fc3"
+    }
+  ],
+  "issues": [],
+  "observed_claims": [
+    {
+      "claim_id": "C001",
+      "line": 5,
+      "text_sha256": "5bff3a94590670ab8a6f7774cc74a09e4555536fdbdbf83f1fca2d2fbf6325e0"
+    }
+  ],
+  "coverage": {
+    "registered": 1,
+    "observed": 1
+  },
+  "limitations": [
+    "Mechanical binding only; support statuses are author-supplied, not authenticated.",
+    "Unmarked nonnumeric claims and semantic entailment require human review.",
+    "One claim marker per blank-line-delimited Markdown paragraph; tables need explicit scoping."
+  ]
+}

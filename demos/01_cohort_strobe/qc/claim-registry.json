@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "E001",
+      "path": "results/km-results.json",
+      "sha256": "4878cf404c6f053d1e0bfc293effadfda145e51df442e800f124b4a509a0d292"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C001",
+      "text_sha256": "6226ace5a35d4517a5e62c38e59019cb44b1d4b19f25fad7c257594c61765631",
+      "evidence_ids": [
+        "E001"
+      ],
+      "source_locators": {
+        "E001": "results/km-results.json groups & log_rank_test"
+      },
+      "support_status": "SUPPORTED",
+      "reason": "Exact counts (13 vs 37), 36m KM survival (88.7% vs 68.2%), and log-rank P=0.0001 match km-results.json."
+    }
+  ]
+}

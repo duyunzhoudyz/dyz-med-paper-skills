@@ -42,6 +42,8 @@ description: >-
 
 ### 3. 逐刊核实
 
+可先运行随包脚本 `scripts/fetch_journal_policy.py` 从本地保存的官方作者须知快照（默认离线，支持 UTF-8/GB18030）或在取得明确人类授权文件后通过 `--online --url <https> --authorization <auth.json>`（强制禁代理、禁重定向与防 SSRF 公网 IP 校验）提取字数/摘要/参考文献限额、报告规范与 AI 披露政策原句证据，落盘带日期与哈希的 `journal-policy.json`，再逐项人工核对官方原文：
+
 至少核对：
 
 - 当前 aims & scope；
@@ -100,6 +102,7 @@ description: >-
 
 ## 配套资源
 
+- `scripts/fetch_journal_policy.py`：默认离线的期刊政策与 AI 披露线索提取器（兼容中英文与 GB18030，输出原句证据与 SHA-256；`--online` 强制要求 `--authorization` 人类授权白名单、禁代理、禁重定向与公网 IP 防 SSRF 校验）。
 - [期刊匹配评估表](templates/期刊匹配评估表.md)
 - [虚构推荐示例](examples/示例-2型糖尿病队列研究期刊推荐.md)
 - [期刊评价资源](references/期刊评价与投稿伦理相关资源.md)

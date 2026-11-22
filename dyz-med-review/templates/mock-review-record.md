@@ -43,8 +43,11 @@ verified_closed 须有 current、completed、applicable 的检查，且领域结
 ## 本视角建议性判断
 **PASS / REVISE / REJECT**（说明：这是本视角给出的参考意见，不是自动执行的决定）
 
+- `rescope_level`：`none` / `major_rescope` / `kill`（仅当存在设计硬伤、数据泄漏、无对照强因果、严重伦理/注册缺失且无法靠局部改写修复时标记 `kill` 或 `major_rescope`）
+- `kill_criteria_hit`：[`[]` 或命中的致命缺陷清单]
+- `recommended_rollback_target`：[如 `dyz-med-data-adequacy` / `dyz-med-analyze` / `dyz-med-ideate`；若 `rescope_level=none` 留空]
 - REVISE的具体条件（如适用）：[列出必须处理才可能改善判断的具体项]
-- REJECT的理由（如适用）：[列出导致此判断的关键问题，避免笼统表述]
+- REJECT的理由（如适用）：[列出导致此判断的关键问题，避免笼统表述；若 `rescope_level=kill`，明确要求停止文字润色并退回上游]
 - 科学限制与下游用途：[当前 REJECT、重大未结、stale/unverified 或有限范围不支持无保留 ready；可按授权交内部审阅稿]
 - 材料完整性、科学结论/freshness、外部授权分别记录；校验器退出码 0 和高平均分都不证明科学 PASS。
 - 伦理记录：[研究参与同意；患者发表同意；适用性及有资质复核来源分别填写，未知不推定批准/豁免]

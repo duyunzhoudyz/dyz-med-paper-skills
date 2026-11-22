@@ -75,7 +75,7 @@ description: >-
 1. 合并重复意见，但保留不同视角的理由。
 2. 事实和数值冲突优先于风格问题。
 3. 不用平均分掩盖单个关键风险。
-4. 总体结论由最严重、证据最充分的问题决定，并列出达到下一状态的条件。
+4. 总体结论由最严重、证据最充分的问题决定，并列出达到下一状态的条件。若存在设计层致命缺陷（如结局定义错误、无对照组却做优效推断、数据泄漏、严重伦理缺失或无法通过局部改写修复的核心硬伤），在 `REJECT` 结论下明确标为 **`KILL / Major Re-scope`**：要求停止文字润色，退回研究设计、数据充分性或重分析阶段，避免为不可靠结论做表面美化。
 5. 只提供修订路线；用户要求后才交给 `dyz-med-revision` 执行。
 
 ## 版本绑定与交接
@@ -85,7 +85,7 @@ description: >-
 每次审阅新建唯一 `checks[].id`，记录完整相关 `inputs`、`scope.domain/description`、
 `execution_status`、`applicability`、`domain_result`、`report:{path,sha256}` 和 `checked_at`。
 执行状态为 `not_run / blocked / failed / completed`；适用性为 `applicable / not_applicable / unknown`，
-后两者需理由。已完成的模拟审稿用 `domain_result:{namespace: mock_review, value: PASS|REVISE|REJECT}`；
+后两者需理由。已完成的模拟审稿用 `domain_result:{namespace: mock_review, value: PASS|REVISE|REJECT}`；触发设计层致命缺陷退回时，保持核心 `value: REJECT` 不变，同时在报告与模板中补充结构化字段 `rescope_level: none|major_rescope|kill`、`kill_criteria_hit[]` 与 `recommended_rollback_target`（如 `dyz-med-data-adequacy` / `dyz-med-analyze`）；
 未完成时领域结论为 null，blocked/failed 记 reason。先保存报告，再在独立记录中引用报告哈希，不自哈希。
 
 逐条消费验证输出的 `freshness: current / stale / unverified`，不写入自称 current 的证据。current 只证明

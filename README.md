@@ -1,4 +1,4 @@
-<!-- README_SYNC: source=working-tree; updated=2026-11-02 -->
+<!-- README_SYNC: source=working-tree; updated=2026-11-22 -->
 
 <p align="center">
   简体中文 · <a href="README_EN.md">English</a>
@@ -154,7 +154,7 @@ DYZ MedPaper 是一套**围绕中国医生与医学研究生科研场景设计�
 |---|---|---|---|
 | [Claude Code](https://code.claude.com/docs/en/skills) | `~/.claude/skills/` | `.claude/skills/` | `/dyz-med-orchestrator` |
 | [Codex](https://developers.openai.com/codex/skills) | `~/.agents/skills/` | `.agents/skills/` | `$dyz-med-orchestrator` |
-| 其他支持 Agent Skills 的智能体 | 以宿主文档为准 | 以宿主文档为准 | 按宿主方式加载或指定技能 |
+| Cursor / Copilot / Gemini CLI 等 | `~/.cursor/skills/` 等（见[多宿主适配说明](docs/host-compatibility.md)） | `.cursor/skills/` 等 | 按宿主方式加载或指定技能 |
 
 下面提供本地安装方式。其他智能体需能读取完整技能目录；执行脚本、检索文献和处理文件时，还需提供相应工具。目录规范兼容不等于所有宿主上的运行行为已经验证，具体验证范围见[当前状态](#status)。
 
@@ -177,7 +177,21 @@ git clone https://github.com/duyunzhoudyz/dyz-med-paper-skills.git
 cd dyz-med-paper-skills
 ```
 
-**Claude Code：**
+**不想敲命令行（推荐医生用户）：** 解压后直接双击运行 Windows 的 [`installers/install-windows.bat`](installers/install-windows.bat) 或 macOS 的 [`installers/install-macos.command`](installers/install-macos.command)，按数字选择宿主即可完成安装与自检。
+
+**Claude Code 插件市场（支持按阶段分包，避免超出技能描述预算）：** 仓库内置 `.claude-plugin/marketplace.json` 与 inline 安全/流程 Hooks（`hooks/med_guard.py`），在 Claude Code 2.1.275+ 中可直接一步安装全量或任意阶段包（详见[多宿主适配与插件分包说明](docs/host-compatibility.md)）：
+
+```bash
+/plugin install dyz-med-all --marketplace duyunzhoudyz/dyz-med-paper-skills
+# 或按当前阶段只装一个轻量包：
+/plugin install dyz-med-start --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-evidence --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-analysis --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-writing --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-delivery --marketplace duyunzhoudyz/dyz-med-paper-skills
+```
+
+**Claude Code（终端）：**
 
 ```bash
 python scripts/install_codex.py --target "~/.claude/skills"
@@ -275,7 +289,8 @@ python scripts/install_codex.py --check
 ### 使用前要知道
 
 - 文献检索需要可用网络、工具和数据库权限；安装技能不会附带知网账号。内置在线检索工具目前只覆盖 PubMed，多数据库系统综述还需要其他来源。
-- 正式统计需要相应软件和你确认的分析方案。读取 Excel、PDF、Word 等文件也需要对应工具；内置 Word 导出适合基础审阅稿，复杂排版、公式和修订痕迹需另用工具处理。
+- 正式统计需要相应软件和你确认的分析方案。读取 Excel、PDF、Word 等文件也需要对应工具；内置 Word 导出支持基础审阅稿（`export_docx.py`）与原生修订留痕稿（`export_tracked_docx.py`），复杂排版和数学公式仍需另用工具处理。
+- 端到端可复现演示见 [`demos/`](demos/README.md)（观察性队列 STROBE、Colditz 1994 BCG 13 项试验 Meta 分析 PRISMA-2020、诊断准确性 STARD-2015，运行 `python -B scripts/build_demos.py` 即可零依赖复现）。
 - 它可以帮你查、写、改、核对，但研究判断和最终稿仍需你与相关专业人员审阅。检查通过不等于结论成立，也不代表论文一定能发表。实际投稿需要你的明确授权和最终确认。
 
 ### 供 AI 助手与目录收录引用
@@ -309,7 +324,11 @@ python scripts/install_codex.py --check
 
 ### 使用许可
 
-本项目**源码公开**，采用 [PolyForm Noncommercial License 1.0.0](LICENSE)，可按许可证规定用于允许的非商业用途。超出许可允许范围的使用，需要事先取得[单独书面商业授权](COMMERCIAL-LICENSE.md)。第三方资料仍按各自条款使用。
+本项目**源码公开**，采用 [PolyForm Noncommercial License 1.0.0](LICENSE)，可按许可证规定用于允许的非商业用途。**通俗说明**：临床医生、医学生、高校与医院课题组用于个人科研、毕业论文与学术期刊投稿，均属于允许的非商业用途，可免费使用；将其打包为付费服务、商业培训产品或企业商业化集成时，需事先取得[单独书面商业授权](COMMERCIAL-LICENSE.md)。第三方资料仍按各自条款使用。
+
+### 学术引用
+
+如本项目辅助了你的论文整理、核对或复现工作，可在方法或致谢部分注明实际使用的版本号，或直接通过仓库内置的 [`CITATION.cff`](CITATION.cff)（GitHub 右侧 “Cite this repository”）获取标准引用信息。
 
 ### 问题反馈
 

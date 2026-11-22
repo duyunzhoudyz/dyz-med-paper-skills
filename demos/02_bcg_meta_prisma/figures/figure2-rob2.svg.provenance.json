@@ -1,0 +1,19 @@
+{
+  "tool": "plot_clinical_svg/2.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "kind": "rob2",
+  "computed_by": "build_demos/alloc_map",
+  "spec": {
+    "path": "rob2-spec.json",
+    "sha256": "1850dd19cc149864ac43372362845518e75827e0ef2af8c06eafef8e5c748321"
+  },
+  "source_data": {
+    "path": "bcg_trials_colditz1994.csv",
+    "sha256": "0eb11fa729791eeaaafea686af2fc16b21bcb3d504d169457792b55c46ba9c6f"
+  },
+  "output": {
+    "path": "figure2-rob2.svg",
+    "sha256": "cfbe83feca2bcf7c9d98c4f9b5c8bb5691ee82a07a0b9ea8b01bcea8b60fda9b"
+  },
+  "provenance_scope": "hash_and_computation_bound"
+}

@@ -1,0 +1,367 @@
+{
+  "tool": "meta_analysis/1.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "input": {
+    "path": "bcg_trials_colditz1994.csv",
+    "sha256": "0eb11fa729791eeaaafea686af2fc16b21bcb3d504d169457792b55c46ba9c6f",
+    "k": 13
+  },
+  "model": "DerSimonian-Laird random-effects (log Risk Ratio)",
+  "overall": {
+    "k": 13,
+    "pooled_rr": 0.4896,
+    "ci_95": [
+      0.3449,
+      0.695
+    ],
+    "prediction_interval_95": [
+      0.135,
+      1.769
+    ],
+    "q_stat": 152.23,
+    "df": 12,
+    "tau2": 0.3088,
+    "i2_pct": 92.1
+  },
+  "studies": [
+    {
+      "study": "Aronson (1948)",
+      "tpos": 4,
+      "ttotal": 123,
+      "cpos": 11,
+      "ctotal": 139,
+      "continuity_corrected": false,
+      "rr": 0.4109,
+      "ci_low": 0.1343,
+      "ci_high": 1.2574,
+      "subgroup": "High latitude (>=35 deg)",
+      "weight_pct": 5.04
+    },
+    {
+      "study": "Ferguson & Simes (1949)",
+      "tpos": 6,
+      "ttotal": 306,
+      "cpos": 29,
+      "ctotal": 303,
+      "continuity_corrected": false,
+      "rr": 0.2049,
+      "ci_low": 0.0863,
+      "ci_high": 0.4864,
+      "subgroup": "High latitude (>=35 deg)",
+      "weight_pct": 6.35
+    },
+    {
+      "study": "Rosenthal et al. (1960)",
+      "tpos": 3,
+      "ttotal": 231,
+      "cpos": 11,
+      "ctotal": 220,
+      "continuity_corrected": false,
+      "rr": 0.2597,
+      "ci_low": 0.0734,
+      "ci_high": 0.9186,
+      "subgroup": "High latitude (>=35 deg)",
+      "weight_pct": 4.41
+    },
+    {
+      "study": "Hart & Sutherland (1977)",
+      "tpos": 62,
+      "ttotal": 13598,
+      "cpos": 248,
+      "ctotal": 12867,
+      "continuity_corrected": false,
+      "rr": 0.2366,
+      "ci_low": 0.1793,
+      "ci_high": 0.3121,
+      "subgroup": "High latitude (>=35 deg)",
+      "weight_pct": 9.72
+    },
+    {
+      "study": "Frimodt-Moller et al. (1973)",
+      "tpos": 33,
+      "ttotal": 5069,
+      "cpos": 47,
+      "ctotal": 5808,
+      "continuity_corrected": false,
+      "rr": 0.8045,
+      "ci_low": 0.5163,
+      "ci_high": 1.2536,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 8.88
+    },
+    {
+      "study": "Stein & Aronson (1953)",
+      "tpos": 180,
+      "ttotal": 1541,
+      "cpos": 372,
+      "ctotal": 1451,
+      "continuity_corrected": false,
+      "rr": 0.4556,
+      "ci_low": 0.3871,
+      "ci_high": 0.5362,
+      "subgroup": "High latitude (>=35 deg)",
+      "weight_pct": 10.12
+    },
+    {
+      "study": "Vandiviere et al. (1973)",
+      "tpos": 8,
+      "ttotal": 2545,
+      "cpos": 10,
+      "ctotal": 629,
+      "continuity_corrected": false,
+      "rr": 0.1977,
+      "ci_low": 0.0784,
+      "ci_high": 0.4989,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 6.01
+    },
+    {
+      "study": "TPT Madras (1980)",
+      "tpos": 505,
+      "ttotal": 88391,
+      "cpos": 499,
+      "ctotal": 88391,
+      "continuity_corrected": false,
+      "rr": 1.012,
+      "ci_low": 0.8946,
+      "ci_high": 1.1449,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 10.22
+    },
+    {
+      "study": "Coetzee & Berjak (1968)",
+      "tpos": 29,
+      "ttotal": 7499,
+      "cpos": 45,
+      "ctotal": 7277,
+      "continuity_corrected": false,
+      "rr": 0.6254,
+      "ci_low": 0.3926,
+      "ci_high": 0.9962,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 8.75
+    },
+    {
+      "study": "Rosenthal et al. (1961)",
+      "tpos": 17,
+      "ttotal": 1716,
+      "cpos": 65,
+      "ctotal": 1665,
+      "continuity_corrected": false,
+      "rr": 0.2538,
+      "ci_low": 0.1494,
+      "ci_high": 0.431,
+      "subgroup": "High latitude (>=35 deg)",
+      "weight_pct": 8.37
+    },
+    {
+      "study": "Comstock et al. (1974)",
+      "tpos": 186,
+      "ttotal": 50634,
+      "cpos": 141,
+      "ctotal": 27338,
+      "continuity_corrected": false,
+      "rr": 0.7122,
+      "ci_low": 0.5725,
+      "ci_high": 0.886,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 9.95
+    },
+    {
+      "study": "Comstock & Webster (1969)",
+      "tpos": 5,
+      "ttotal": 2498,
+      "cpos": 3,
+      "ctotal": 2341,
+      "continuity_corrected": false,
+      "rr": 1.5619,
+      "ci_low": 0.3737,
+      "ci_high": 6.5284,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 3.8
+    },
+    {
+      "study": "Comstock et al. (1976)",
+      "tpos": 27,
+      "ttotal": 16913,
+      "cpos": 29,
+      "ctotal": 17854,
+      "continuity_corrected": false,
+      "rr": 0.9828,
+      "ci_low": 0.5821,
+      "ci_high": 1.6593,
+      "subgroup": "Low/Mid latitude (<35 deg)",
+      "weight_pct": 8.4
+    }
+  ],
+  "subgroups": {
+    "High latitude (>=35 deg)": {
+      "k": 6,
+      "pooled_rr": 0.2983,
+      "ci_95": [
+        0.2014,
+        0.4418
+      ],
+      "prediction_interval_95": [
+        0.092,
+        0.964
+      ],
+      "q_stat": 20.35,
+      "df": 5,
+      "tau2": 0.1383,
+      "i2_pct": 75.4,
+      "weights_pct": [
+        8.66,
+        12.06,
+        7.25,
+        25.37,
+        27.65,
+        19.0
+      ]
+    },
+    "Low/Mid latitude (<35 deg)": {
+      "k": 7,
+      "pooled_rr": 0.7644,
+      "ci_95": [
+        0.5824,
+        1.0034
+      ],
+      "prediction_interval_95": [
+        0.349,
+        1.677
+      ],
+      "q_stat": 21.44,
+      "df": 6,
+      "tau2": 0.0741,
+      "i2_pct": 72.0,
+      "weights_pct": [
+        15.38,
+        6.48,
+        24.69,
+        14.76,
+        22.27,
+        3.18,
+        13.24
+      ]
+    }
+  },
+  "leave_one_out": [
+    {
+      "omitted_study": "Aronson (1948)",
+      "pooled_rr": 0.494,
+      "ci_95": [
+        0.3443,
+        0.7089
+      ],
+      "i2_pct": 92.7
+    },
+    {
+      "omitted_study": "Ferguson & Simes (1949)",
+      "pooled_rr": 0.5197,
+      "ci_95": [
+        0.3634,
+        0.7432
+      ],
+      "i2_pct": 92.4
+    },
+    {
+      "omitted_study": "Rosenthal et al. (1960)",
+      "pooled_rr": 0.5042,
+      "ci_95": [
+        0.3524,
+        0.7213
+      ],
+      "i2_pct": 92.7
+    },
+    {
+      "omitted_study": "Hart & Sutherland (1977)",
+      "pooled_rr": 0.5386,
+      "ci_95": [
+        0.3905,
+        0.743
+      ],
+      "i2_pct": 88.6
+    },
+    {
+      "omitted_study": "Frimodt-Moller et al. (1973)",
+      "pooled_rr": 0.4658,
+      "ci_95": [
+        0.3201,
+        0.6778
+      ],
+      "i2_pct": 92.7
+    },
+    {
+      "omitted_study": "Stein & Aronson (1953)",
+      "pooled_rr": 0.4903,
+      "ci_95": [
+        0.3278,
+        0.7333
+      ],
+      "i2_pct": 91.4
+    },
+    {
+      "omitted_study": "Vandiviere et al. (1973)",
+      "pooled_rr": 0.5191,
+      "ci_95": [
+        0.3631,
+        0.7421
+      ],
+      "i2_pct": 92.5
+    },
+    {
+      "omitted_study": "TPT Madras (1980)",
+      "pooled_rr": 0.4538,
+      "ci_95": [
+        0.3296,
+        0.6247
+      ],
+      "i2_pct": 83.8
+    },
+    {
+      "omitted_study": "Coetzee & Berjak (1968)",
+      "pooled_rr": 0.4775,
+      "ci_95": [
+        0.3281,
+        0.6948
+      ],
+      "i2_pct": 92.8
+    },
+    {
+      "omitted_study": "Rosenthal et al. (1961)",
+      "pooled_rr": 0.5207,
+      "ci_95": [
+        0.3636,
+        0.7457
+      ],
+      "i2_pct": 92.1
+    },
+    {
+      "omitted_study": "Comstock et al. (1974)",
+      "pooled_rr": 0.4673,
+      "ci_95": [
+        0.3119,
+        0.7002
+      ],
+      "i2_pct": 92.7
+    },
+    {
+      "omitted_study": "Comstock & Webster (1969)",
+      "pooled_rr": 0.4677,
+      "ci_95": [
+        0.3271,
+        0.6686
+      ],
+      "i2_pct": 92.7
+    },
+    {
+      "omitted_study": "Comstock et al. (1976)",
+      "pooled_rr": 0.4589,
+      "ci_95": [
+        0.3169,
+        0.6645
+      ],
+      "i2_pct": 92.7
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "name": "dyz-med-paper-skills",
+  "owner": {
+    "name": "duyunzhoudyz",
+    "url": "https://github.com/duyunzhoudyz/dyz-med-paper-skills"
+  },
+  "metadata": {
+    "description": "DYZ MedPaper modular medical paper writing & research skills marketplace. Install by stage (aligned with docs/catalog.json) to stay within host skill-description budgets, or install dyz-med-all.",
+    "version": "0.2.0-beta.1"
+  },
+  "plugins": [
+    {
+      "name": "dyz-med-all",
+      "description": "Full suite: all 32 medical writing and research skills plus deterministic safety/workflow hooks.",
+      "source": "./",
+      "strict": false,
+      "hooks": {
+        "PreToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+              }
+            ]
+          }
+        ],
+        "PostToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" post-edit"
+              }
+            ]
+          }
+        ]
+      },
+      "skills": [
+        "./dyz-med-ideate",
+        "./dyz-med-init",
+        "./dyz-med-manuscript-diagnose",
+        "./dyz-med-orchestrator",
+        "./dyz-med-passport",
+        "./dyz-med-mechanism",
+        "./dyz-med-data-adequacy",
+        "./dyz-med-registration",
+        "./dyz-med-cnki",
+        "./dyz-med-key-literature",
+        "./dyz-med-screening-pipeline",
+        "./dyz-med-evidence-audit",
+        "./dyz-med-analyze",
+        "./dyz-med-interpret",
+        "./dyz-med-sensitivity",
+        "./dyz-med-figures-tables",
+        "./dyz-med-flowchart",
+        "./dyz-med-writing-plan",
+        "./dyz-med-introduction",
+        "./dyz-med-methods",
+        "./dyz-med-results",
+        "./dyz-med-discussion",
+        "./dyz-med-abstract",
+        "./dyz-med-write",
+        "./dyz-med-translate",
+        "./dyz-med-deai",
+        "./dyz-med-guideline",
+        "./dyz-med-review",
+        "./dyz-med-revision",
+        "./dyz-med-journal-finder",
+        "./dyz-med-export",
+        "./dyz-med-submit"
+      ]
+    },
+    {
+      "name": "dyz-med-start",
+      "description": "Start & navigation pack (5 skills): ideation, project init, manuscript diagnosis, orchestrator, passport.",
+      "source": "./",
+      "strict": false,
+      "hooks": {
+        "PreToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+              }
+            ]
+          }
+        ]
+      },
+      "skills": [
+        "./dyz-med-ideate",
+        "./dyz-med-init",
+        "./dyz-med-manuscript-diagnose",
+        "./dyz-med-orchestrator",
+        "./dyz-med-passport"
+      ]
+    },
+    {
+      "name": "dyz-med-evidence",
+      "description": "Evidence & data pack (7 skills): mechanism, data adequacy (with local PHI check), registration, PubMed/CNKI search (with retraction alerts), key literature, PRISMA screening, evidence audit.",
+      "source": "./",
+      "strict": false,
+      "hooks": {
+        "PreToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+              }
+            ]
+          }
+        ]
+      },
+      "skills": [
+        "./dyz-med-mechanism",
+        "./dyz-med-data-adequacy",
+        "./dyz-med-registration",
+        "./dyz-med-cnki",
+        "./dyz-med-key-literature",
+        "./dyz-med-screening-pipeline",
+        "./dyz-med-evidence-audit"
+      ]
+    },
+    {
+      "name": "dyz-med-analysis",
+      "description": "Statistics & figures pack (5 skills): analysis (Table 1/KM/Meta/Diagnostic), clinical interpretation, sensitivity analysis, publication SVG figures, flowcharts.",
+      "source": "./",
+      "strict": false,
+      "hooks": {
+        "PreToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+              }
+            ]
+          }
+        ]
+      },
+      "skills": [
+        "./dyz-med-analyze",
+        "./dyz-med-interpret",
+        "./dyz-med-sensitivity",
+        "./dyz-med-figures-tables",
+        "./dyz-med-flowchart"
+      ]
+    },
+    {
+      "name": "dyz-med-writing",
+      "description": "Manuscript drafting pack (7 skills): writing plan, Introduction, Methods, Results, Discussion, Abstract, full synthesis.",
+      "source": "./",
+      "strict": false,
+      "hooks": {
+        "PreToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+              }
+            ]
+          }
+        ],
+        "PostToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" post-edit"
+              }
+            ]
+          }
+        ]
+      },
+      "skills": [
+        "./dyz-med-writing-plan",
+        "./dyz-med-introduction",
+        "./dyz-med-methods",
+        "./dyz-med-results",
+        "./dyz-med-discussion",
+        "./dyz-med-abstract",
+        "./dyz-med-write"
+      ]
+    },
+    {
+      "name": "dyz-med-delivery",
+      "description": "Review, revision & delivery pack (8 skills): translation, naturalization, reporting guidelines, 5-lens mock review, revision (with blind re-review), journal finder, DOCX/tracked-changes export, submission pack.",
+      "source": "./",
+      "strict": false,
+      "hooks": {
+        "PreToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit|Bash|PowerShell",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" pre-tool"
+              }
+            ]
+          }
+        ],
+        "PostToolUse": [
+          {
+            "matcher": "Write|Edit|MultiEdit",
+            "hooks": [
+              {
+                "type": "command",
+                "timeout": 15,
+                "command": "python -B \"${CLAUDE_PLUGIN_ROOT}/hooks/med_guard.py\" post-edit"
+              }
+            ]
+          }
+        ]
+      },
+      "skills": [
+        "./dyz-med-translate",
+        "./dyz-med-deai",
+        "./dyz-med-guideline",
+        "./dyz-med-review",
+        "./dyz-med-revision",
+        "./dyz-med-journal-finder",
+        "./dyz-med-export",
+        "./dyz-med-submit"
+      ]
+    }
+  ]
+}

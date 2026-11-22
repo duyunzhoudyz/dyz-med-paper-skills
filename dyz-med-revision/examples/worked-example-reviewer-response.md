@@ -48,11 +48,13 @@ reviewers:
 
 ## 用户确认后的点对点回应表（节选）
 
-| 审稿人 | 意见编号 | 原始意见 | 类型 | 严重程度 | 回应策略 | 稿件改动位置 | 状态 |
-|--------|----------|----------|------|----------|----------|--------------|------|
-| Reviewer 1 | 1 | 说明MMSE未纳入原因并评估敏感性 | METHODOLOGICAL | MAJOR | 已确认存在基线MMSE数据且测量早于暴露；新增敏感性模型并更新Table 2，不声称仅凭调整即可排除反向因果 | Methods第3段、Table 2 | ACCEPT |
-| Reviewer 1 | 2 | "可改善认知功能"表述过于绝对 | INTERPRETIVE | MINOR | 改为"与认知功能评分改善相关"，讨论新增一段说明观察性设计的因果推断局限 | Discussion第4段、Abstract结论句 | ACCEPT |
-| Reviewer 2 | 1 | 参考文献格式需统一 | FORMATTING | MINOR | 已按期刊Vancouver格式重新排版全部28条参考文献 | 全文参考文献列表 | ACCEPT |
+| 审稿人 | 意见编号 | 原始意见 | 类型 | 严重程度 | 回应策略 | 稿件改动位置 | response_stance | blind_check_status | 问题 status |
+|--------|----------|----------|------|----------|----------|--------------|-----------------|--------------------|-------------|
+| Reviewer 1 | 1 | 说明MMSE未纳入原因并评估敏感性 | METHODOLOGICAL | MAJOR | 已确认存在基线MMSE数据且测量早于暴露；新增敏感性模型并更新Table 2，不声称仅凭调整即可排除反向因果 | Methods第3段、Table 2 | ACCEPT | resolved_in_text（Methods§3 & Table 2） | awaiting_verification（待结果数值一致性复核） |
+| Reviewer 1 | 2 | "可改善认知功能"表述过于绝对 | INTERPRETIVE | MINOR | 改为"与认知功能评分改善相关"，讨论新增一段说明观察性设计的因果推断局限 | Discussion第4段、Abstract结论句 | ACCEPT | resolved_in_text（Discussion§4 & Abstract） | verified_closed（已核对正文并绑定修订稿哈希） |
+| Reviewer 2 | 1 | 参考文献格式需统一 | FORMATTING | MINOR | 已按期刊Vancouver格式重新排版全部28条参考文献 | 全文参考文献列表 | ACCEPT | resolved_in_text（References 1–28） | verified_closed（已核对全部28条格式） |
+
+> 汇总统计示例：回复 3/3；盲审定位通过 3/3；当前已验证关闭 2/3（Reviewer 1 #1 待数值复核后关闭）。
 
 ## 致编辑信节选（示例措辞）
 

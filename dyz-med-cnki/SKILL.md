@@ -95,6 +95,8 @@ description: >-
 - 题录身份`matched/mismatch/unverified`与访问范围、全文已读、六类论断支持裁定分列。真DOI配错题名
   输出mismatch；超时、429、404、无结果或缺DOI均不能判断文献虚构。无DOI但有PMID仍可核对；
   无标识符不联网猜搜题名，保留人工核实。
+- `verify_references.py` 同时解析 Crossref `updated-by`/`relation`/`update-to` 与 PubMed `pubtype`/`references`，
+  区分原论文被撤稿（`retracted`）、关注声明（`expression_of_concern`）、勘误（`erratum_noted`）与“所引 DOI/PMID 本身即撤稿或勘误通知”（`is_update_notice_itself`），汇总到顶层 `integrity_status` 与 `retraction_alerts`；命中已撤稿原论文时退出码为 `4`，绝不静默放行。
 - 只消费当前输入绑定的报告。记录实际接口、日期、核对字段与差异；报告和引用其哈希的独立check分开。
   输入变化使旧检查失效；检查completed/退出0不代表全文已读、论断SUPPORTED或医学质量通过。
 
@@ -124,7 +126,7 @@ description: >-
 ## 完成检查
 
 - 查询式、日期、过滤条件和结果数可追溯；
-- 所有 PMID、DOI 和题录信息均来自实际记录；
+- 所有 PMID、DOI 和题录信息均来自实际记录，且 `retraction_alerts` 中的撤稿/关注声明/勘误均已逐条处置；
 - 不同来源的记录已去重或标为待复核；
 - 每条候选文献有来源与访问状态；
 - 中文数据库访问限制已如实披露；
@@ -137,6 +139,6 @@ description: >-
 - `templates/data/search-protocol.yaml`：PRISMA-S 检索记录骨架。
 - `templates/data/search-templates/`：心血管、肿瘤和公共卫生查询结构。
 - `templates/search-record-skeleton.md`：项目检索记录模板。
-- `scripts/verify_references.py`：默认离线的规范化题录身份核验器；无兄弟技能导入依赖。
+- `scripts/verify_references.py`：默认离线的规范化题录身份核验器，同时解析 PubMed/Crossref 响应中的撤稿（Retraction）、关注声明（Expression of Concern）与勘误（Erratum）提示输出 `retraction_alerts`；无兄弟技能导入依赖。
 - `examples/worked-example.md`：虚构教学示例。
 - `references/规范与文献清单.md`：检索报告方法学参考。

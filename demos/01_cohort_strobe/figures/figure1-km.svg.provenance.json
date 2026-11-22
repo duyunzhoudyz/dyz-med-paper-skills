@@ -1,0 +1,19 @@
+{
+  "tool": "plot_clinical_svg/2.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "kind": "km",
+  "computed_by": "km_survival/1.0",
+  "spec": {
+    "path": "km-spec.json",
+    "sha256": "187341443a1d5d1b3a6ca1ff689124ce8145ee5d2a9af212af8b709e0134dd91"
+  },
+  "source_data": {
+    "path": "cohort_deidentified.csv",
+    "sha256": "fdf9a1fa8dd75e22487cc485816824a516b1ffe94c79c53c1098efa557317eb5"
+  },
+  "output": {
+    "path": "figure1-km.svg",
+    "sha256": "bc17016b21a7b1d2f2ca8488cbfe7ee5ca8dba39e9639369e268630dee9e8c72"
+  },
+  "provenance_scope": "hash_and_computation_bound"
+}

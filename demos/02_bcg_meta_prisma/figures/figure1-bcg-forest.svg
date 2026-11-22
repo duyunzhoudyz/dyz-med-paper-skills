@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="983" height="588" viewBox="0 0 983 588" font-family="Arial, Helvetica, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="20" y="30" font-size="16" font-weight="bold" fill="#111827">Demo 02: BCG Vaccine Effectiveness Meta-Analysis (Colditz 1994, k=13)</text>
+<text x="20" y="58" font-size="12" font-weight="bold" fill="#374151">Study / Subgroup</text>
+<text x="244" y="58" font-size="11" font-weight="bold" fill="#374151">Treat n/N</text>
+<text x="329" y="58" font-size="11" font-weight="bold" fill="#374151">Ctrl n/N</text>
+<text x="746" y="58" font-size="11" font-weight="bold" fill="#374151">Weight</text>
+<text x="818" y="58" font-size="12" font-weight="bold" fill="#374151">Estimate (95% CI)</text>
+<line x1="20" y1="66" x2="963" y2="66" stroke="#111827" stroke-width="1.2"/>
+<line x1="593.6" y1="66" x2="593.6" y2="496" stroke="#6B7280" stroke-dasharray="4,4" stroke-width="1.2"/>
+<text x="20" y="95.0" font-size="11.5" font-weight="normal" fill="#111827">Aronson (1948)</text>
+<text x="244" y="95.0" font-size="11" font-weight="normal" fill="#374151">4/123</text>
+<text x="329" y="95.0" font-size="11" font-weight="normal" fill="#374151">11/139</text>
+<line x1="479.9" y1="91.0" x2="606.6" y2="91.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="538.0" y="85.7" width="10.6" height="10.6" fill="#0072B2"/>
+<text x="746" y="95.0" font-size="11" font-weight="normal" fill="#374151">5.0%</text>
+<text x="818" y="95.0" font-size="11.5" font-weight="normal" fill="#111827">0.41 (0.13–1.26)</text>
+<text x="20" y="125.0" font-size="11.5" font-weight="normal" fill="#111827">Ferguson &amp; Simes (1949)</text>
+<text x="244" y="125.0" font-size="11" font-weight="normal" fill="#374151">6/306</text>
+<text x="329" y="125.0" font-size="11" font-weight="normal" fill="#374151">29/303</text>
+<line x1="454.9" y1="121.0" x2="552.8" y2="121.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="498.2" y="115.3" width="11.3" height="11.3" fill="#0072B2"/>
+<text x="746" y="125.0" font-size="11" font-weight="normal" fill="#374151">6.3%</text>
+<text x="818" y="125.0" font-size="11.5" font-weight="normal" fill="#111827">0.20 (0.09–0.49)</text>
+<text x="20" y="155.0" font-size="11.5" font-weight="normal" fill="#111827">Rosenthal et al. (1960)</text>
+<text x="244" y="155.0" font-size="11" font-weight="normal" fill="#374151">3/231</text>
+<text x="329" y="155.0" font-size="11" font-weight="normal" fill="#374151">11/220</text>
+<line x1="445.7" y1="151.0" x2="588.8" y2="151.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="512.2" y="145.9" width="10.3" height="10.3" fill="#0072B2"/>
+<text x="746" y="155.0" font-size="11" font-weight="normal" fill="#374151">4.4%</text>
+<text x="818" y="155.0" font-size="11.5" font-weight="normal" fill="#111827">0.26 (0.07–0.92)</text>
+<text x="20" y="185.0" font-size="11.5" font-weight="normal" fill="#111827">Hart &amp; Sutherland (1977)</text>
+<text x="244" y="185.0" font-size="11" font-weight="normal" fill="#374151">62/13598</text>
+<text x="329" y="185.0" font-size="11" font-weight="normal" fill="#374151">248/12867</text>
+<line x1="496.3" y1="181.0" x2="527.7" y2="181.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="505.6" y="174.6" width="12.8" height="12.8" fill="#0072B2"/>
+<text x="746" y="185.0" font-size="11" font-weight="normal" fill="#374151">9.7%</text>
+<text x="818" y="185.0" font-size="11.5" font-weight="normal" fill="#111827">0.24 (0.18–0.31)</text>
+<text x="20" y="215.0" font-size="11.5" font-weight="normal" fill="#111827">Frimodt-Moller et al. (1973)</text>
+<text x="244" y="215.0" font-size="11" font-weight="normal" fill="#374151">33/5069</text>
+<text x="329" y="215.0" font-size="11" font-weight="normal" fill="#374151">47/5808</text>
+<line x1="556.2" y1="211.0" x2="606.4" y2="211.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="575.1" y="204.8" width="12.5" height="12.5" fill="#0072B2"/>
+<text x="746" y="215.0" font-size="11" font-weight="normal" fill="#374151">8.9%</text>
+<text x="818" y="215.0" font-size="11.5" font-weight="normal" fill="#111827">0.80 (0.52–1.25)</text>
+<text x="20" y="245.0" font-size="11.5" font-weight="normal" fill="#111827">Stein &amp; Aronson (1953)</text>
+<text x="244" y="245.0" font-size="11" font-weight="normal" fill="#374151">180/1541</text>
+<text x="329" y="245.0" font-size="11" font-weight="normal" fill="#374151">372/1451</text>
+<line x1="539.9" y1="241.0" x2="558.3" y2="241.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="542.6" y="234.5" width="13.0" height="13.0" fill="#0072B2"/>
+<text x="746" y="245.0" font-size="11" font-weight="normal" fill="#374151">10.1%</text>
+<text x="818" y="245.0" font-size="11.5" font-weight="normal" fill="#111827">0.46 (0.39–0.54)</text>
+<text x="20" y="275.0" font-size="11.5" font-weight="normal" fill="#111827">Vandiviere et al. (1973)</text>
+<text x="244" y="275.0" font-size="11" font-weight="normal" fill="#374151">8/2545</text>
+<text x="329" y="275.0" font-size="11" font-weight="normal" fill="#374151">10/629</text>
+<line x1="449.5" y1="271.0" x2="554.3" y2="271.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="496.3" y="265.4" width="11.1" height="11.1" fill="#0072B2"/>
+<text x="746" y="275.0" font-size="11" font-weight="normal" fill="#374151">6.0%</text>
+<text x="818" y="275.0" font-size="11.5" font-weight="normal" fill="#111827">0.20 (0.08–0.50)</text>
+<text x="20" y="305.0" font-size="11.5" font-weight="normal" fill="#111827">TPT Madras (1980)</text>
+<text x="244" y="305.0" font-size="11" font-weight="normal" fill="#374151">505/88391</text>
+<text x="329" y="305.0" font-size="11" font-weight="normal" fill="#374151">499/88391</text>
+<line x1="587.3" y1="301.0" x2="601.3" y2="301.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="587.8" y="294.5" width="13.0" height="13.0" fill="#0072B2"/>
+<text x="746" y="305.0" font-size="11" font-weight="normal" fill="#374151">10.2%</text>
+<text x="818" y="305.0" font-size="11.5" font-weight="normal" fill="#111827">1.01 (0.89–1.14)</text>
+<text x="20" y="335.0" font-size="11.5" font-weight="normal" fill="#111827">Coetzee &amp; Berjak (1968)</text>
+<text x="244" y="335.0" font-size="11" font-weight="normal" fill="#374151">29/7499</text>
+<text x="329" y="335.0" font-size="11" font-weight="normal" fill="#374151">45/7277</text>
+<line x1="540.7" y1="331.0" x2="593.4" y2="331.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="560.8" y="324.8" width="12.4" height="12.4" fill="#0072B2"/>
+<text x="746" y="335.0" font-size="11" font-weight="normal" fill="#374151">8.8%</text>
+<text x="818" y="335.0" font-size="11.5" font-weight="normal" fill="#111827">0.63 (0.39–1.00)</text>
+<text x="20" y="365.0" font-size="11.5" font-weight="normal" fill="#111827">Rosenthal et al. (1961)</text>
+<text x="244" y="365.0" font-size="11" font-weight="normal" fill="#374151">17/1716</text>
+<text x="329" y="365.0" font-size="11" font-weight="normal" fill="#374151">65/1665</text>
+<line x1="486.0" y1="361.0" x2="546.0" y2="361.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="509.9" y="354.9" width="12.2" height="12.2" fill="#0072B2"/>
+<text x="746" y="365.0" font-size="11" font-weight="normal" fill="#374151">8.4%</text>
+<text x="818" y="365.0" font-size="11.5" font-weight="normal" fill="#111827">0.25 (0.15–0.43)</text>
+<text x="20" y="395.0" font-size="11.5" font-weight="normal" fill="#111827">Comstock et al. (1974)</text>
+<text x="244" y="395.0" font-size="11" font-weight="normal" fill="#374151">186/50634</text>
+<text x="329" y="395.0" font-size="11" font-weight="normal" fill="#374151">141/27338</text>
+<line x1="562.0" y1="391.0" x2="586.8" y2="391.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="568.0" y="384.6" width="12.9" height="12.9" fill="#0072B2"/>
+<text x="746" y="395.0" font-size="11" font-weight="normal" fill="#374151">9.9%</text>
+<text x="818" y="395.0" font-size="11.5" font-weight="normal" fill="#111827">0.71 (0.57–0.89)</text>
+<text x="20" y="425.0" font-size="11.5" font-weight="normal" fill="#111827">Comstock &amp; Webster (1969)</text>
+<text x="244" y="425.0" font-size="11" font-weight="normal" fill="#374151">5/2498</text>
+<text x="329" y="425.0" font-size="11" font-weight="normal" fill="#374151">3/2341</text>
+<line x1="537.9" y1="421.0" x2="699.9" y2="421.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="613.9" y="416.1" width="9.9" height="9.9" fill="#0072B2"/>
+<text x="746" y="425.0" font-size="11" font-weight="normal" fill="#374151">3.8%</text>
+<text x="818" y="425.0" font-size="11.5" font-weight="normal" fill="#111827">1.56 (0.37–6.53)</text>
+<text x="20" y="455.0" font-size="11.5" font-weight="normal" fill="#111827">Comstock et al. (1976)</text>
+<text x="244" y="455.0" font-size="11" font-weight="normal" fill="#374151">27/16913</text>
+<text x="329" y="455.0" font-size="11" font-weight="normal" fill="#374151">29/17854</text>
+<line x1="563.0" y1="451.0" x2="622.3" y2="451.0" stroke="#0072B2" stroke-width="1.8"/>
+<rect x="586.5" y="444.9" width="12.3" height="12.3" fill="#0072B2"/>
+<text x="746" y="455.0" font-size="11" font-weight="normal" fill="#374151">8.4%</text>
+<text x="818" y="455.0" font-size="11.5" font-weight="normal" fill="#111827">0.98 (0.58–1.66)</text>
+<line x1="20" y1="466.0" x2="963" y2="466.0" stroke="#E5E7EB" stroke-width="1"/>
+<text x="20" y="485.0" font-size="11.5" font-weight="bold" fill="#111827">Random-Effects Pooled (DL)</text>
+<text x="244" y="485.0" font-size="11" font-weight="bold" fill="#374151">1065/191064</text>
+<text x="329" y="485.0" font-size="11" font-weight="bold" fill="#374151">1510/166283</text>
+<polygon points="533.3,481.0 553.2,474.0 573.0,481.0 553.2,488.0" fill="#D55E00" stroke="#111827" stroke-width="1"/>
+<text x="746" y="485.0" font-size="11" font-weight="bold" fill="#374151">100.0%</text>
+<text x="818" y="485.0" font-size="11.5" font-weight="bold" fill="#111827">0.49 (0.34–0.69)</text>
+<line x1="424" y1="496" x2="724" y2="496" stroke="#111827" stroke-width="1.2"/>
+<line x1="424.0" y1="496" x2="424.0" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="424.0" y="515" font-size="10.5" text-anchor="middle" fill="#374151">0.05</text>
+<line x1="463.2" y1="496" x2="463.2" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="463.2" y="515" font-size="10.5" text-anchor="middle" fill="#374151">0.1</text>
+<line x1="502.5" y1="496" x2="502.5" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="502.5" y="515" font-size="10.5" text-anchor="middle" fill="#374151">0.2</text>
+<line x1="515.1" y1="496" x2="515.1" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="515.1" y="515" font-size="10.5" text-anchor="middle" fill="#374151">0.25</text>
+<line x1="554.4" y1="496" x2="554.4" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="554.4" y="515" font-size="10.5" text-anchor="middle" fill="#374151">0.5</text>
+<line x1="593.6" y1="496" x2="593.6" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="593.6" y="515" font-size="10.5" text-anchor="middle" fill="#374151">1</text>
+<line x1="632.9" y1="496" x2="632.9" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="632.9" y="515" font-size="10.5" text-anchor="middle" fill="#374151">2</text>
+<line x1="672.1" y1="496" x2="672.1" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="672.1" y="515" font-size="10.5" text-anchor="middle" fill="#374151">4</text>
+<line x1="684.8" y1="496" x2="684.8" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="684.8" y="515" font-size="10.5" text-anchor="middle" fill="#374151">5</text>
+<line x1="724.0" y1="496" x2="724.0" y2="501" stroke="#111827" stroke-width="1"/>
+<text x="724.0" y="515" font-size="10.5" text-anchor="middle" fill="#374151">10</text>
+<text x="574.0" y="534" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#111827">Risk Ratio (95% CI, log scale)</text>
+<text x="424" y="550" font-size="10.5" fill="#4B5563">← Favours Treatment</text>
+<text x="724" y="550" font-size="10.5" text-anchor="end" fill="#4B5563">Favours Control →</text>
+<text x="20" y="574" font-size="10.5" fill="#374151">Heterogeneity: Q = 152.23 (df = 12), tau² = 0.3088, I² = 92.1%; 95% PI 0.14–1.77</text>
+</svg>

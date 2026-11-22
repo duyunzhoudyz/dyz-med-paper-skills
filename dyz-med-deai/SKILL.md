@@ -84,6 +84,8 @@ description: >-
 有编辑前后文件时，可按[保护内容检查接口](references/protected-content-cli.md)运行本技能携带的 compare_protected.py。
 语言未变化时保护短语的 source/target 可相同；计数通过不证明科学含义未变，仍需语义复核。
 
+如需扫描中英文高频 AI 套话、过渡词密度、hedging 堆叠、被动语态占比、过强因果措辞、分语言句长与真实 IQR，或一次性联动 `compare_protected.py` 核对改写前后受保护数字未变，可运行随包脚本 `scripts/style_check.py`（支持 `--before`/`--after`、`--reference-corpus` 与用户显式维护的 `--memory-file`），配合 [医学期刊量化风格卡](references/clinical-style-card.md)。
+
 ## 输出
 
 默认交付：
@@ -110,6 +112,9 @@ description: >-
 
 ## 配套资源
 
+- `scripts/style_check.py`：分语言句长/IQR、临床 AI 语域扫描、参考样本基线、个人词库与 `--before/--after` 保护数联动检查。
+- `scripts/compare_protected.py`：数字、比较符号、引用与双语受保护短语机械对照。
+- [医学期刊量化风格卡](references/clinical-style-card.md)
 - [医学文风自查清单](templates/ai-trace-self-check-checklist.md)
 - [虚构前后对比示例](examples/worked-example-before-after.md)
 - [伦理与写作参考](references/references.md)

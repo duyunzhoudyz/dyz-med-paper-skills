@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "E001",
+      "path": "results/diagnostic-metrics.json",
+      "sha256": "38eaf9d3963814237a3b41af4a039d644bb95d43ee416ee8d6642f8bcb4b2fc3"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C001",
+      "text_sha256": "5bff3a94590670ab8a6f7774cc74a09e4555536fdbdbf83f1fca2d2fbf6325e0",
+      "evidence_ids": [
+        "E001"
+      ],
+      "source_locators": {
+        "E001": "results/diagnostic-metrics.json"
+      },
+      "support_status": "SUPPORTED",
+      "reason": "2x2 counts, Wilson 95% CIs, PPV/NPV, LR+/LR-, and DeLong ROC-AUC 95% CI computed directly from diagnostic_cohort.csv."
+    }
+  ]
+}

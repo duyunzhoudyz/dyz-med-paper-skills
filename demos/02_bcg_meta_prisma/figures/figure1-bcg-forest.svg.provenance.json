@@ -1,0 +1,19 @@
+{
+  "tool": "plot_clinical_svg/2.0",
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "kind": "forest",
+  "computed_by": "meta_analysis/1.0",
+  "spec": {
+    "path": "forest-spec.json",
+    "sha256": "a493c33fdfe067468e056df4f0fa949ccd615160f50795c4a22336b2dbc1e971"
+  },
+  "source_data": {
+    "path": "bcg_trials_colditz1994.csv",
+    "sha256": "0eb11fa729791eeaaafea686af2fc16b21bcb3d504d169457792b55c46ba9c6f"
+  },
+  "output": {
+    "path": "figure1-bcg-forest.svg",
+    "sha256": "4c27d4235b02db4d1257d4c617a1f2bf8b50c8a5db675168da243f75c87116d1"
+  },
+  "provenance_scope": "hash_and_computation_bound"
+}

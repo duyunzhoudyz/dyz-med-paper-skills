@@ -16,10 +16,10 @@ Real-host routing, sustained writing and independent medical quality have not al
 
 ## Tools and access
 
-- The built-in online search script covers PubMed. CNKI, Wanfang, VIP and other databases require lawful access. Discovery leads do not establish a completed search or full-text retrieval.
-- Statistical execution needs approval of a specific plan, R or another established engine, and the necessary packages. Skill installation does not include those environments.
-- The local exporter produces basic DOCX review drafts. Advanced layout, equations, native tracked changes and visual inspection require other tools.
-- Numerical and citation checks cover implemented comparisons; they do not certify that a source semantically supports a claim.
+- The built-in online search script covers PubMed (reference identity checks also surface Crossref/PubMed retraction, expression-of-concern and erratum alerts). CNKI, Wanfang, VIP and other databases require lawful access. Discovery leads do not establish a completed search or full-text retrieval.
+- Formal statistical execution needs approval of a specific plan, R or another established engine, and the necessary packages; stdlib helpers cover local PHI screening, Table 1, KM survival, binary DL meta-analysis, diagnostic 2x2/ROC metrics and provenance-bound SVG figures.
+- Local exporters produce basic DOCX review drafts (`export_docx.py`) and native Word tracked-changes drafts (`export_tracked_docx.py` with `<w:trackRevisions/>`). Advanced layout, equations and visual inspection still require Word or LibreOffice.
+- Numerical, reporting-checklist (6 full-subitem official checklists) and citation checks cover implemented deterministic comparisons; they do not certify semantic support or formal compliance.
 
 ## License
 

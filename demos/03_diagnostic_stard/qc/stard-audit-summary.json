@@ -1,0 +1,23 @@
+{
+  "tool": "audit_guideline/2.0",
+  "guideline_id": "STARD-2015",
+  "guideline_version": "2015",
+  "official_main_items": 30,
+  "official_subitems": 34,
+  "granularity": "full_subitems",
+  "official_url": "https://www.equator-network.org/reporting-guidelines/stard/",
+  "manuscript_freshness": "current",
+  "total_items": 34,
+  "applicable_items": 34,
+  "counts": {
+    "COVERED": 3,
+    "NOT_APPLICABLE": 0,
+    "MISSING": 31,
+    "PARTIAL": 0
+  },
+  "applicable_coverage_pct": 8.8,
+  "contract_status": "valid",
+  "issues": [],
+  "warnings": [],
+  "certification": "not_certified_requires_human_review"
+}

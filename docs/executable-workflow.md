@@ -32,11 +32,23 @@
 
 用本地 LibreOffice 或 Word 渲染并逐页检查中文显示、换行、图注、表格、引文与分页，另存绑定该 DOCX 哈希的视觉回执。导出成功不关闭科学问题，也不自动提交期刊。
 
-## 5. 可重复验证
+## 5. 新增确定性工具链与安全门禁
+
+- **本地零联网 PHI 初筛与假名化**：[deidentify_check.py](../dyz-med-data-adequacy/scripts/deidentify_check.py) 检测中文身份证号（含校验码）、手机号、住院号/MRN、敏感表头和 >89 岁年龄；原文件只读，报告不回显原始标识符。
+- **PubMed/Crossref 撤稿与勘误核查**：[verify_references.py](../dyz-med-cnki/scripts/verify_references.py) 在身份核验同时提取 `Retracted Publication`、`Expression of Concern` 与 `Erratum` 提示并汇总到 `retraction_alerts`。
+- **可复现 Table 1 与可溯源 SVG 图**：[table1_summary.py](../dyz-med-analyze/scripts/table1_summary.py) 生成含 SMD 与输入哈希的基线表；[plot_clinical_svg.py](../dyz-med-figures-tables/scripts/plot_clinical_svg.py) 生成色盲友好森林图/KM/RoB2 矢量图及 `.provenance.json`，支持 `--check`。
+- **结构化报告规范核查**：[audit_guideline.py](../dyz-med-guideline/scripts/audit_guideline.py) 配合 [structured-checklists.json](../dyz-med-guideline/data/structured-checklists.json) 校验 STROBE/PRISMA-2020/CONSORT-2025/STARD-2015/CARE/TRIPOD+AI 的证据定位、不适用理由、稿件哈希新鲜度与适用条目覆盖率。
+- **量化临床风格检查与个人记忆**：[style_check.py](../dyz-med-deai/scripts/style_check.py) 扫描中英文 AI 套话、强因果过断言与句长分布，支持用户显式维护跨论文术语偏好文件。
+- **目标期刊政策提取**：[fetch_journal_policy.py](../dyz-med-journal-finder/scripts/fetch_journal_policy.py) 默认从本地快照提取字数/摘要/文献限额、报告规范与 AI 披露政策（`--online --url` 需显式授权）。
+- **Word 原生修订留痕稿**：[export_tracked_docx.py](../dyz-med-export/scripts/export_tracked_docx.py) 基于纯标准库 OOXML `<w:ins>`/`<w:del>` 生成真正的 Word 修订模式文件，服务导师改稿与审稿修回。
+- **宿主安全与流程 Hooks**：[hooks/med_guard.py](../hooks/med_guard.py) 与 [hooks/hooks.json](../hooks/hooks.json) 提供 PHI 拦截、Plan-first 门禁与编辑后未绑定数值提醒（默认 `advisory`，设 `DYZ_MED_HOOK_MODE=strict` 启用退出码 2 硬阻断）。
+
+## 6. 可重复验证
 
 在仓库根目录运行：
 
 ```text
+python -B scripts/build_demos.py
 python -B scripts/run_delivery_demo.py --output tests/results/my-demo
 python -B scripts/run_offline_regression.py
 ```

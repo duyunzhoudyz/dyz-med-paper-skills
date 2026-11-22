@@ -1,0 +1,394 @@
+{
+  "schema_version": "2.0",
+  "guideline_id": "PRISMA-2020",
+  "guideline_version": "2020",
+  "official_main_items": 27,
+  "official_subitems": 42,
+  "granularity": "full_subitems",
+  "official_url": "https://www.prisma-statement.org/prisma-2020-checklist",
+  "manuscript": {
+    "path": "results.md",
+    "sha256": "0a6b47d6b584294329082456d5e0d0020835df3edda04fa828eb505cf13a673b"
+  },
+  "checked_at": "2026-11-22T00:00:00+00:00",
+  "items": [
+    {
+      "id": "1",
+      "section": "Title",
+      "topic": "Identify report as a systematic review",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "2",
+      "section": "Abstract",
+      "topic": "See PRISMA 2020 for Abstracts checklist",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "3",
+      "section": "Introduction",
+      "topic": "Rationale for review in context of existing knowledge",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "4",
+      "section": "Introduction",
+      "topic": "Explicit statement of objective(s) or question(s)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "5",
+      "section": "Methods",
+      "topic": "Inclusion/exclusion criteria and how studies were grouped for syntheses",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "6",
+      "section": "Methods",
+      "topic": "All databases, registers, websites, organizations, reference lists and dates last searched",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "7",
+      "section": "Methods",
+      "topic": "Full search strategies for all databases, registers and websites including filters/limits",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "8",
+      "section": "Methods",
+      "topic": "Selection process: how many reviewers, independence, automation tools",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "9",
+      "section": "Methods",
+      "topic": "Data collection process: reviewers, independence, obtaining/confirming data",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "10a",
+      "section": "Methods",
+      "topic": "List and define all outcomes for which data were sought",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "10b",
+      "section": "Methods",
+      "topic": "List and define all other variables sought and assumptions for missing/unclear data",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "11",
+      "section": "Methods",
+      "topic": "Study risk of bias assessment tool, reviewers, independence",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "12",
+      "section": "Methods",
+      "topic": "Effect measures specified for each outcome",
+      "status": "COVERED",
+      "evidence": "results/meta-analysis-results.json (log Risk Ratio effect measure)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13a",
+      "section": "Methods",
+      "topic": "Processes used to decide which studies were eligible for each synthesis",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13b",
+      "section": "Methods",
+      "topic": "Methods required to prepare data for synthesis (handling missing summary stats, conversions)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13c",
+      "section": "Methods",
+      "topic": "Methods used to tabulate or visually display results of individual studies and syntheses",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13d",
+      "section": "Methods",
+      "topic": "Methods used to synthesize results and rationale (meta-analysis model, heterogeneity estimator, software)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13e",
+      "section": "Methods",
+      "topic": "Methods used to explore possible causes of heterogeneity (subgroup analysis, meta-regression)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "13f",
+      "section": "Methods",
+      "topic": "Sensitivity analyses conducted to assess robustness of synthesized results",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "14",
+      "section": "Methods",
+      "topic": "Methods used to assess risk of bias due to missing results (reporting biases)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "15",
+      "section": "Methods",
+      "topic": "Methods used to assess certainty/confidence in body of evidence (e.g., GRADE)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "16a",
+      "section": "Results",
+      "topic": "Results of search and selection process from identification to inclusion (with PRISMA flow diagram)",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "16b",
+      "section": "Results",
+      "topic": "Cite studies that might appear to meet inclusion criteria but were excluded and explain why",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "17",
+      "section": "Results",
+      "topic": "Cite each included study and present its characteristics",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "18",
+      "section": "Results",
+      "topic": "Present assessments of risk of bias for each included study",
+      "status": "PARTIAL",
+      "evidence": "",
+      "comment": "D1 allocation risk plotted for all 13 trials from published `alloc`; D2–D5 require full-text dual-reviewer RoB 2 adjudication.",
+      "suggested_fix": ""
+    },
+    {
+      "id": "19",
+      "section": "Results",
+      "topic": "For all outcomes, present summary statistics per group and effect estimate with precision for each study",
+      "status": "COVERED",
+      "evidence": "results/study-results-table.md & manuscript/results.md (all 13 studies n/N and RR with 95% CI)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "20a",
+      "section": "Results",
+      "topic": "For each synthesis, summarize characteristics and risk of bias among contributing studies",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "20b",
+      "section": "Results",
+      "topic": "Present results of all statistical syntheses (summary estimate, precision, heterogeneity measures)",
+      "status": "COVERED",
+      "evidence": "manuscript/results.md para 1 & figures/figure1-bcg-forest.svg (pooled RR, 95% CI, 95% PI, Q, tau2, I2)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "20c",
+      "section": "Results",
+      "topic": "Present results of all investigations of possible causes of heterogeneity",
+      "status": "COVERED",
+      "evidence": "manuscript/results.md para 2 (latitude subgroup analysis >=35 deg vs <35 deg)",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "20d",
+      "section": "Results",
+      "topic": "Present results of all sensitivity analyses conducted",
+      "status": "COVERED",
+      "evidence": "manuscript/results.md para 2 & results/meta-analysis-results.json leave_one_out",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "21",
+      "section": "Results",
+      "topic": "Present assessments of risk of bias due to missing results for each synthesis",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "22",
+      "section": "Results",
+      "topic": "Present assessments of certainty/confidence in body of evidence for each outcome",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "23a",
+      "section": "Discussion",
+      "topic": "General interpretation of results in context of other evidence",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "23b",
+      "section": "Discussion",
+      "topic": "Discuss limitations of evidence included in review",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "23c",
+      "section": "Discussion",
+      "topic": "Discuss limitations of review processes used",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "23d",
+      "section": "Discussion",
+      "topic": "Discuss implications of results for practice, policy, and future research",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "24a",
+      "section": "Other",
+      "topic": "Registration information (register name, number) or state not registered",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "24b",
+      "section": "Other",
+      "topic": "Indicate where review protocol can be accessed or state not prepared",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "24c",
+      "section": "Other",
+      "topic": "Describe and explain any amendments to registration or protocol",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "25",
+      "section": "Other",
+      "topic": "Sources of financial/non-financial support and role of funders/sponsors",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "26",
+      "section": "Other",
+      "topic": "Declare competing interests of review authors",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    },
+    {
+      "id": "27",
+      "section": "Other",
+      "topic": "Report availability of data, analytic code, templates, and other materials",
+      "status": "MISSING",
+      "evidence": "",
+      "comment": "",
+      "suggested_fix": ""
+    }
+  ]
+}

@@ -89,7 +89,11 @@ description: >-
 
 ### 5. 生成并运行最小脚本
 
-- 沿用项目已经批准的统计引擎；没有既定选择时优先生成可独立运行的 R 脚本。
+- 沿用项目已经批准的统计引擎；没有既定选择时优先生成可独立运行的 R 脚本。对于高频标准化统计汇总，也可直接运行本技能自带的零依赖标准库脚本并绑定输入哈希：
+  - `scripts/table1_summary.py`（基线表含 Mean±SD、Median[IQR]、缺失数及两组/多分类 Yang & Dalton `|SMD|`）；
+  - `scripts/km_survival.py`（精确 Kaplan-Meier 估计、Greenwood 95% CI、Number-at-Risk 表与 Log-rank 检验，并直接输出绘图规格）；
+  - `scripts/meta_analysis.py`（二分类 DerSimonian-Laird 随机效应合并、95% 预测区间、亚组与留一法敏感性分析，并输出森林图规格）；
+  - `scripts/diagnostic_accuracy.py`（2×2 交叉表、Wilson 95% CI、PPV/NPV/LR+/LR- 与 DeLong ROC-AUC 95% CI，并输出 ROC 规格）。
 - 使用项目相对路径或明确的输入参数，不写死个人目录。
 - 在脚本中保存样本筛选、变量转换、模型公式、随机种子、包版本和会话信息。
 - 缺少依赖时报告缺项和安装命令，等待用户决定；不要自动安装。
@@ -163,6 +167,10 @@ paper/data/stats/session-info.txt
 
 ## 参考材料
 
+- `scripts/table1_summary.py`：基线 Table 1 汇总（含多分类 Yang & Dalton `|SMD|`、统一缺失码与输入 SHA-256）。
+- `scripts/km_survival.py`：精确 Kaplan-Meier 估计、Greenwood 95% CI、风险表与 Log-rank 检验。
+- `scripts/meta_analysis.py`：二分类 DerSimonian-Laird 随机效应 Meta 分析、95% PI、亚组与留一法。
+- `scripts/diagnostic_accuracy.py`：诊断试验 2×2、Wilson 95% CI、PPV/NPV/LR+/LR- 与 DeLong ROC-AUC。
 - [统计分析计划模板](templates/statistical-analysis-plan.md)
 - [虚构队列示例](examples/worked-example-cohort.md)
 - [方法学与报告规范](references/methodology-references.md)

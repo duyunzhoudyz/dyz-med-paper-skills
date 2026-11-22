@@ -9,7 +9,10 @@ PAIRS = [
     ('dyz-med-translate/scripts/compare_protected.py', 'dyz-med-deai/scripts/compare_protected.py'),
     ('dyz-med-translate/references/protected-content-cli.md', 'dyz-med-deai/references/protected-content-cli.md'),
 ] + [('dyz-med-writing-plan/references/writing-craft.md', f'dyz-med-{name}/references/writing-craft.md')
-     for name in ('introduction', 'discussion', 'abstract', 'deai', 'translate')]
+     for name in ('introduction', 'discussion', 'abstract', 'deai', 'translate')] + [
+    ('dyz-med-deai/references/clinical-style-card.md', f'dyz-med-{name}/references/clinical-style-card.md')
+    for name in ('writing-plan', 'introduction', 'discussion', 'abstract')
+]
 
 
 def synchronize(root, apply=False):

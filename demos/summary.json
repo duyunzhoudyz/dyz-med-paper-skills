@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-22T00:00:00+00:00",
+  "demos": [
+    {
+      "demo": "01_cohort_strobe",
+      "phi": "no_obvious_phi_detected",
+      "km": "consistent",
+      "protected": "consistent",
+      "audit": "consistent",
+      "strobe": "valid",
+      "s36_exposed": 88.72,
+      "s36_unexposed": 68.22
+    },
+    {
+      "demo": "02_bcg_meta_prisma",
+      "pooled_rr": 0.49,
+      "i2": 92.1,
+      "forest": "consistent",
+      "prisma": "valid"
+    },
+    {
+      "demo": "03_diagnostic_stard",
+      "auc": 0.8728,
+      "roc": "consistent",
+      "audit": "consistent",
+      "stard": "valid"
+    }
+  ]
+}

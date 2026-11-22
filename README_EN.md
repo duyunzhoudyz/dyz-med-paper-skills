@@ -1,4 +1,4 @@
-<!-- README_SYNC: source=working-tree; updated=2026-11-02 -->
+<!-- README_SYNC: source=working-tree; updated=2026-11-22 -->
 
 <p align="center">
   <a href="README.md">简体中文</a> · English
@@ -152,7 +152,7 @@ Skills use the [Agent Skills](https://agentskills.io/specification) directory fo
 |---|---|---|---|
 | [Claude Code](https://code.claude.com/docs/en/skills) | `~/.claude/skills/` | `.claude/skills/` | `/dyz-med-orchestrator` |
 | [Codex](https://developers.openai.com/codex/skills) | `~/.agents/skills/` | `.agents/skills/` | `$dyz-med-orchestrator` |
-| Other Agent Skills-compatible agents | Follow the host's documentation | Follow the host's documentation | Use the host's skill-loading or invocation mechanism |
+| Cursor, Copilot, Gemini CLI & others | `~/.cursor/skills/` etc. (see [host compatibility](docs/host-compatibility.md)) | `.cursor/skills/` etc. | Use the host's skill-loading or invocation mechanism |
 
 Local installation options follow. Other agents must be able to read complete skill directories and provide the tools needed for scripts, literature search and file processing. Format compatibility does not establish verified runtime behavior on every host; see [Status](#status) for the evaluation scope.
 
@@ -175,7 +175,21 @@ git clone https://github.com/duyunzhoudyz/dyz-med-paper-skills.git
 cd dyz-med-paper-skills
 ```
 
-**Claude Code:**
+**No-terminal installers (recommended for clinicians):** After extracting the ZIP, double-click [`installers/install-windows.bat`](installers/install-windows.bat) (Windows) or [`installers/install-macos.command`](installers/install-macos.command) (macOS) and pick your agent host.
+
+**Claude Code Plugin Marketplace & Stage Packs:** The repository ships `.claude-plugin/marketplace.json` with inline safety/workflow hooks (`hooks/med_guard.py`). Install the full suite or a single stage pack in one step (Claude Code 2.1.275+; see [host compatibility](docs/host-compatibility.md)):
+
+```bash
+/plugin install dyz-med-all --marketplace duyunzhoudyz/dyz-med-paper-skills
+# Or install one lightweight stage pack:
+/plugin install dyz-med-start --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-evidence --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-analysis --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-writing --marketplace duyunzhoudyz/dyz-med-paper-skills
+/plugin install dyz-med-delivery --marketplace duyunzhoudyz/dyz-med-paper-skills
+```
+
+**Claude Code (terminal):**
 
 ```bash
 python scripts/install_codex.py --target "~/.claude/skills"
@@ -273,7 +287,8 @@ This is a **public beta**. The repository includes automated installation and lo
 ### Before you use it
 
 - Literature searches need a working network, tools and database access. Installation does not include a CNKI account. The built-in online search tool currently covers PubMed only; a multi-database systematic review needs additional sources.
-- Formal statistical work requires the relevant software and your approval of the analysis plan. Reading Excel, PDF and Word files also requires suitable tools. The built-in Word exporter creates basic review drafts; complex layouts, equations and tracked changes need other tools.
+- Formal statistical work requires the relevant software and your approval of the analysis plan. Reading Excel, PDF and Word files also requires suitable tools. Built-in Word exporters create basic review drafts (`export_docx.py`) and native OOXML tracked-changes drafts (`export_tracked_docx.py`); complex layouts and equations need other tools.
+- Three reproducible end-to-end demos live in [`demos/`](demos/README.md) (observational cohort STROBE, Colditz 1994 13-trial BCG meta-analysis PRISMA-2020, diagnostic accuracy STARD-2015), runnable with `python -B scripts/build_demos.py`.
 - The assistant helps search, write, revise and check. Research judgments and the final manuscript still require review by you and the relevant professionals. Passing a check does not establish that a conclusion is valid or guarantee publication. Actual submission requires your explicit authorization and final confirmation.
 
 ### Facts you can cite when listing this project
@@ -309,7 +324,11 @@ Detailed tool capabilities, demos and tests are in the [full reference](docs/rea
 
 ### License
 
-This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](LICENSE), for noncommercial uses allowed by its terms. Uses outside that permission require [separate written commercial authorization](COMMERCIAL-LICENSE.md). Third-party materials remain subject to their own terms.
+This project is **source-available** under the [PolyForm Noncommercial License 1.0.0](LICENSE), for noncommercial uses allowed by its terms. In plain terms, clinicians, medical students, and academic/hospital research groups writing theses or scholarly manuscripts fall within permitted noncommercial use; commercial services, paid training products, or commercial integrations require [separate written commercial authorization](COMMERCIAL-LICENSE.md). Third-party materials remain subject to their own terms.
+
+### Citation
+
+If DYZ MedPaper assists your manuscript preparation or audit workflow, cite the exact version used via [`CITATION.cff`](CITATION.cff) (or GitHub's "Cite this repository" button).
 
 ### Report a problem
 

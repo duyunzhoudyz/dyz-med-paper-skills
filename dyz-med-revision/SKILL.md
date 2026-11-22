@@ -87,7 +87,8 @@ ACCEPT 表示采纳立场，不证明修改已完成；不同意且理由完整�
 - 新增或改写论断的证据；
 - 因果和临床应用边界；
 - 目标期刊要求；
-- 所有审稿意见是否有回应，所有回应是否有对应修改或理由。
+- 所有审稿意见是否有回应，所有回应是否有对应修改或理由；
+- **盲审自检（推荐）**：在将关键意见标为 `verified_closed` 前，使用本技能随包脚本 `scripts/blind_rereview_pack.py`（`pack` 生成不含作者回复信的盲审输入包 → 独立填写盲检定位 → `reconcile` 对照回复表），拦截“回复信写 `ACCEPT` 但正文未见实质修改”的冲突，详见 [盲审自检与原生修订交付协议](references/blind-rereview-protocol.md)。
 
 按 R2 schema 1.1 将修订输入与产出登记为稳定 artifact ID、path、version、sha256；保留原稿与旧检查。
 有 passport 时逐条读取相关记录，无 passport 时可用同形独立记录及明确项目根目录，不强制兄弟技能依赖。
@@ -131,6 +132,8 @@ source（human、actor_id、statement、reference、locator）及实际授权权
 
 ## 配套资源
 
+- `scripts/blind_rereview_pack.py`：隐藏回复信盲审打包（`pack`）与回复表冲突拦截（`reconcile`）脚本。
+- [盲审自检与原生修订交付协议](references/blind-rereview-protocol.md)
 - [审稿意见回应表](templates/reviewer-response-table-template.md)
 - [虚构修回示例](examples/worked-example-reviewer-response.md)
 - [参考规范](references/references.md)

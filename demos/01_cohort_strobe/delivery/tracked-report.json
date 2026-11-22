@@ -1,0 +1,39 @@
+{
+  "tool": "export_tracked_docx/2.0",
+  "native_ooxml_tracked_changes": true,
+  "track_revisions_enabled_in_settings": true,
+  "author": "DYZ Demo Author",
+  "date": "2026-11-22T00:00:00Z",
+  "inputs": [
+    {
+      "role": "old",
+      "path": "results-v1.md",
+      "sha256": "003dd25177786cda5d22d426a0e51b1031351b524b999ab3ff668d50b8692e14"
+    },
+    {
+      "role": "new",
+      "path": "results-v2.md",
+      "sha256": "7cae617d24a30c084f2f9cf8ef3bff76af62493e8e7dc4686cd9521c4e511fd5"
+    }
+  ],
+  "output": "results-tracked-v1-to-v2.docx",
+  "output_sha256": "36bb7340bba95f5abc9f7747fc00d045718242cf2f95fe5eb37830f30b58753b",
+  "revision_nodes": 5,
+  "stats": {
+    "insertions": 3,
+    "deletions": 2,
+    "paragraphs_unchanged": 2,
+    "paragraphs_modified": 1,
+    "paragraphs_added": 0,
+    "paragraphs_deleted": 0,
+    "tables_rendered": 0
+  },
+  "sanitization": {
+    "control_chars_removed": 0,
+    "internal_markers_stripped": 4,
+    "keep_internal_markers": false
+  },
+  "unsupported_blocks": [],
+  "visual_review": "not_run",
+  "note": "已启用 Word 原生修订模式（<w:trackRevisions/>），支持 H1-H4、列表、粗斜体与基础管道表格；数学公式、复杂合并表与期刊模板仍需在 Word 中目视校对。"
+}
